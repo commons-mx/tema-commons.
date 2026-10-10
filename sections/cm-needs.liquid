@@ -1,5 +1,5 @@
 <div class="cm4">
-{%- if section.settings.heading != blank -%}<div class="needs-hd"><h2 class="disp h3t">{{ section.settings.heading }}</h2></div>{%- endif -%}
+{%- if section.settings.heading != blank -%}<div class="needs-hd"><h2 class="disp h3t">{{ section.settings.heading }}</h2>{%- if section.settings.quiz_label != blank -%}<a class="tlink" href="{{ section.settings.quiz_link | default: '#cm-quiz' }}">{{ section.settings.quiz_label }}</a>{%- endif -%}</div>{%- endif -%}
 <nav class="box needs" aria-label="Necesidades">
   {%- for block in section.blocks -%}
   <a class="need" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>{%- render 'cm-need-icon', icon: block.settings.icon -%}{{ block.settings.label | default: block.settings.icon }}</a>
@@ -17,6 +17,17 @@
       "id": "heading",
       "label": "Título",
       "default": "¿Qué necesitas hoy?"
+    },
+    {
+      "type": "text",
+      "id": "quiz_label",
+      "label": "Liga al quiz",
+      "default": "¿No sabes cuál? Haz el quiz"
+    },
+    {
+      "type": "url",
+      "id": "quiz_link",
+      "label": "Liga al quiz (si está vacía, baja a la sección del quiz)"
     }
   ],
   "blocks": [

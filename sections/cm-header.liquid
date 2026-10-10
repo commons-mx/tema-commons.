@@ -183,6 +183,14 @@
     </div>
   </div>
 </div>
+<script>
+(function(){
+  function proto(){ return document.querySelector('[id*="buy_your_own_bundle"], [id*="cm-protocol"]'); }
+  function go(e){ var el = proto(); if (!el) return false; if (e) e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true; }
+  document.addEventListener('click', function(e){ var a = e.target.closest && e.target.closest('a[href$="#protocolo"]'); if (a && !go(e) && location.pathname !== '/') { e.preventDefault(); location.href = '/#protocolo'; } });
+  if (location.hash === '#protocolo') window.addEventListener('load', function(){ setTimeout(go, 300); });
+})();
+</script>
 {% schema %}
 {
   "name": "Commons · Header",
@@ -197,7 +205,7 @@
       "type": "text",
       "id": "ann_text",
       "label": "Texto",
-      "default": "Envío gratis desde $999"
+      "default": "Envío gratis desde $990"
     },
     {
       "type": "text",

@@ -1,18 +1,40 @@
-<div class="cm4">
+<div class="cm4" id="cm-quiz">
 <section class="row2" aria-labelledby="qz-{{ section.id }}">
-  <div class="quizcell yellow">
+  <div class="quizcell yellow" data-cm-quiz>
     {%- if section.settings.tag != blank -%}<span class="tag">{{ section.settings.tag }}</span>{%- endif -%}
     <h2 id="qz-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>
-    {%- if section.settings.question != blank -%}<span class="lab">{{ section.settings.question }}</span>{%- endif -%}
-    <div class="qchips">
-      {%- for block in section.blocks -%}<a class="qchip" href="{{ section.settings.link | default: '#' }}" {{ block.shopify_attributes }} style="display:flex;align-items:center;text-decoration:none">{{ block.settings.label }}</a>{%- endfor -%}
+    <div class="cm-q0" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+      {%- if section.settings.intro != blank -%}<p class="sub qintro">{{ section.settings.intro }}</p>{%- endif -%}
+      {%- if section.settings.lines != blank -%}<div class="qlines">{%- assign ls = section.settings.lines | split: ',' -%}{%- for l in ls -%}<span>{{ l | strip }}</span>{%- endfor -%}</div>{%- endif -%}
+      <button type="button" class="btn dark" data-cm-qstart>{{ section.settings.button_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></button>
     </div>
-    <a class="btn dark" href="{{ section.settings.link | default: '#' }}">{{ section.settings.button_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+    <div class="cm-q1" hidden style="flex-direction:column;gap:22px;align-items:flex-start;width:100%">
+      <div class="qprog"><span class="lab">{{ section.settings.question }}</span><div class="qbar"><i></i></div></div>
+      <div class="qchips">
+        {%- for block in section.blocks -%}<button type="button" class="qchip" data-cm-qchip {{ block.shopify_attributes }}>{{ block.settings.label }}</button>{%- endfor -%}
+      </div>
+      <a class="btn dark" href="{{ section.settings.link | default: '/pages/quiz' }}" data-cm-qnext>{{ section.settings.next_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+      <button type="button" class="qback" data-cm-qback>Volver</button>
+    </div>
     {%- if section.settings.note != blank -%}<span class="small" style="color: #2C342F">{{ section.settings.note }}</span>{%- endif -%}
   </div>
   <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-quiz.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}{%- if section.settings.caption != blank -%}<span class="photocap"><span class="n">2</span>{{ section.settings.caption }}</span>{%- endif -%}</div>
 </section>
 </div>
+<script>
+(function(){
+  var root = document.getElementById('shopify-section-{{ section.id }}'); if (!root) return;
+  var c = root.querySelector('[data-cm-quiz]'), q0 = c.querySelector('.cm-q0'), q1 = c.querySelector('.cm-q1'), next = c.querySelector('[data-cm-qnext]'), base = next.getAttribute('href');
+  c.querySelector('[data-cm-qstart]').addEventListener('click', function(){ q0.style.display = 'none'; q1.hidden = false; q1.style.display = 'flex'; });
+  c.querySelector('[data-cm-qback]').addEventListener('click', function(){ q1.hidden = true; q1.style.display = 'none'; q0.style.display = 'flex'; });
+  c.querySelectorAll('[data-cm-qchip]').forEach(function(b){ b.addEventListener('click', function(){
+    var on = c.querySelectorAll('.qchip.on');
+    if (b.classList.contains('on')) b.classList.remove('on'); else if (on.length < 3) b.classList.add('on');
+    var sel = Array.prototype.map.call(c.querySelectorAll('.qchip.on'), function(x){ return x.textContent.trim(); });
+    next.setAttribute('href', base + (sel.length ? (base.indexOf('?') < 0 ? '?' : '&') + 'vive=' + encodeURIComponent(sel.join('|')) : ''));
+  }); });
+})();
+</script>
 {% schema %}
 {
   "name": "Commons · Quiz (entrada)",
@@ -32,21 +54,39 @@
       "default": "¿No sabes por dónde empezar? Encuentra tu Commons."
     },
     {
-      "type": "text",
-      "id": "question",
-      "label": "Pregunta",
-      "default": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días?"
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introducción",
+      "default": "Cinco preguntas sobre cómo te sientes. Te recomendamos 2 o 3 productos de Botanicals y Science, más un ritual para complementar, y los llevas juntos como protocolo."
     },
     {
-      "type": "url",
-      "id": "link",
-      "label": "Liga a la página del quiz"
+      "type": "text",
+      "id": "lines",
+      "label": "Etiquetas (separadas por coma)",
+      "default": "Botanicals, Science, + Rituals"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Botón",
+      "label": "Botón para empezar",
       "default": "Empezar el quiz"
+    },
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Primera pregunta",
+      "default": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días? · Elige hasta 3"
+    },
+    {
+      "type": "text",
+      "id": "next_label",
+      "label": "Botón para seguir",
+      "default": "Siguiente pregunta"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Página del quiz"
     },
     {
       "type": "text",
