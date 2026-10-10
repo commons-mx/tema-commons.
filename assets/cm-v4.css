@@ -633,3 +633,17 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
   .cm4 .nform input,.cm4 .nform button{min-height:40px;font-size:14px}
   .cm4 .flogo{margin-top:32px}
 }
+
+/* carrito lateral v5 (paleta homologada) */
+#CartDrawer,#CartDrawer *{--colors-background:247,247,244 !important;--colors-background-secondary:239,238,232 !important;--colors-text:20,26,22 !important;--colors-heading:20,26,22 !important;--colors-text-secondary:74,82,76 !important;--colors-line-and-border:217,216,209 !important;--colors-button:20,26,22 !important;--colors-button-text:255,255,255 !important;--colors-price-sale:20,26,22 !important;--font-body-family:'Figtree',system-ui,sans-serif !important;--font-heading-family:'Jost',system-ui,sans-serif !important}
+#CartDrawer #update-cart{background:#F7F7F4 !important;color:#141A16;font-family:'Figtree',system-ui,sans-serif}
+#CartDrawer .x-cart-heading{border-bottom:1px solid #D9D8D1;padding-top:14px;padding-bottom:14px}
+#CartDrawer .x-cart-heading .h3{font-family:'Jost',system-ui,sans-serif;font-weight:400;letter-spacing:-0.01em;text-transform:none;font-size:26px}
+#CartDrawer .x-cart-item-count{background:#E4DF74 !important;color:#141A16 !important;font-size:12px;font-weight:600}
+#CartDrawer .h1,#CartDrawer .h2,#CartDrawer .h4,#CartDrawer .h5,#CartDrawer .h6{font-family:'Jost',system-ui,sans-serif;font-weight:400;text-transform:none;letter-spacing:-0.01em}
+#CartDrawer .button,#CartDrawer button.button-solid,#CartDrawer a.button-solid,#CartDrawer [name="checkout"]{border-radius:999px !important;font-family:'Figtree',system-ui,sans-serif;text-transform:none;letter-spacing:0;font-weight:500}
+#CartDrawer .button-solid,#CartDrawer [name="checkout"]{background:#141A16 !important;color:#fff !important;border-color:#141A16 !important}
+#CartDrawer img{background:#fff}
+#CartDrawer .border-t,#CartDrawer .border-b,#CartDrawer .border{border-color:#D9D8D1 !important}
+#CartDrawer #x-cart-drawer-freeshipping [class*="bg-"]{border-radius:999px}
+#CartDrawer #x-cart-drawer-freeshipping .progress-bar,#CartDrawer #x-cart-drawer-freeshipping [style*="width"]{background-color:#E4DF74}
