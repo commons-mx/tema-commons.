@@ -13,7 +13,7 @@
       "next": "Próximo",
       "back": "Atrás",
       "load_more": "Cargar más",
-      "showing_items": "Mostrando {{ item }}\/{{ total }}"
+      "showing_items": "Mostrando {{ item }}/{{ total }}"
     },
     "breadcrumbs": {
       "home": "Inicio",
@@ -36,7 +36,7 @@
       "login_form_password_placeholder": "Tu contraseña",
       "login_form_error": "¡Contraseña incorrecta!",
       "login_form_submit": "Ingresar",
-      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"\/admin\" class=\"nav-link relativo effect-inline\">Inicia sesión aquí<\/a>",
+      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"/admin\" class=\"nav-link relative effect-inline\">Inicia sesión aquí</a>",
       "powered_by_shopify_html": "Esta tienda funcionará con {{ shopify }}"
     },
     "social": {
@@ -75,32 +75,32 @@
       "search": "Buscar..."
     },
     "cart": {
-      "item_added_to_cart": "Artículo agregado al carrito",
+      "item_added_to_cart": "Agregado a tu carrito",
       "view": "Ver mi carrito ({{ count }})",
-      "item_added": "Artículo añadido a tu carrito",
-      "terms_confirm": "Por favor acepte los términos y condiciones.",
-      "enable_amount_freeship_html": "Añade <span class=\"font-semibold\">{{ amount_to_freeshipping }}<\/span> más para conseguir GRATIS gastos de envío.",
-      "enable_amount_freegift_html": "Añade <span class=\"font-semibold\">{{ amount_to_freegift }}<\/span> más para obtener {{ other_offer }}",
-      "freeshipping": "¡Felicidades! ¡Eres elegible para el envío gratis!",
+      "item_added": "Agregado a tu carrito",
+      "terms_confirm": "Acepta los términos y condiciones para continuar.",
+      "enable_amount_freeship_html": "Te faltan <span class=\"font-semibold\">{{ amount_to_freeshipping }}</span> para el envío gratis.",
+      "enable_amount_freegift_html": "Añade <span class=\"font-semibold\">{{ amount_to_freegift }}</span> más para obtener {{ other_offer }}",
+      "freeshipping": "Tu envío es gratis.",
       "freegift": "¡Felicitaciones! Eres elegible para {{ other_offer }}",
       "free_all_offer": "¡Felicitaciones! ¡Tienes derecho a envío gratis y {{ other_offer }}!",
       "freeshipping_value": "Envío gratis",
       "apply": "Aplicar",
-      "copy_link": "Copiar enlace",
-      "share_link": "Compartir enlace",
-      "placeholder_discount": "Por favor introduce el código de descuento",
+      "copy_link": "Copiar liga",
+      "share_link": "Compartir liga",
+      "placeholder_discount": "Escribe tu código",
       "singular_applied_code": "{{ codes_count }} código aplicado",
       "plural_applied_code": "{{ codes_count }} códigos aplicados",
       "discount_code": "Código de descuento",
       "discount": "Descuento",
-      "discount_wrong": "Descuento no válido. Asegúrese de que los detalles del descuento sean correctos.",
-      "discount_correct": "¡Descuento aplicado!",
-      "discount_applied": "El código de descuento ya está aplicado.",
+      "discount_wrong": "Ese código no es válido. Revisa que esté bien escrito.",
+      "discount_correct": "Listo, tu descuento ya está aplicado.",
+      "discount_applied": "Ese código ya está aplicado.",
       "freeshipping_applied": "El código de envío gratuito debe aplicarse más adelante en la página de pago.",
       "payment_methods": "Aceptamos",
-      "share_cart": "compartir carrito",
+      "share_cart": "Compartir carrito",
       "undo": "Deshacer",
-      "discount_removed": "El código de descuento ha sido eliminado.",
+      "discount_removed": "Quitamos el código de descuento.",
       "product_insurance_notification": "Has añadido \"{{ title }}\" a tu cesta.",
       "product_insurance_default_des": "Sin descripción",
       "delivery_date_validation_error": "La fecha seleccionada no está dentro del rango de entrega disponible y ha sido ajustada a la fecha disponible más cercana."
@@ -211,11 +211,11 @@
       "quick_view_label": "Vista rápida",
       "button_quickview": "Vista rápida de botones",
       "done": "Listo",
-      "add_to_cart": "Añadir a la cesta",
+      "add_to_cart": "Agregar al carrito",
       "subscription": {
         "one_time_purchase": "Compra única"
       },
-      "add_all_to_cart": "Añadir todo al carrito",
+      "add_all_to_cart": "Agregar protocolo al carrito",
       "this_product": "Este producto",
       "pre_order": "Hacer un pedido",
       "choose_variants": "Elige variantes",
@@ -226,9 +226,9 @@
       "value_unavailable": "{{ value }} - No disponible",
       "add": "Agregar",
       "edit": "Editar",
-      "remove": "Eliminar",
+      "remove": "Quitar",
       "remove_all": "Quitar todo",
-      "add_selected_to_cart": "Añadir seleccionado al carrito",
+      "add_selected_to_cart": "Agregar al carrito",
       "select": "Seleccionar",
       "item": "artículo(s) añadido(s)",
       "media": {
@@ -243,8 +243,8 @@
       },
       "wholesale": "Precio B2B",
       "clear_qty": "Borrar",
-      "add_again": "Añadir de nuevo",
-      "added_n_to_cart": "Se añadieron {{ quantity }} productos al carrito",
+      "add_again": "Agregar otra vez",
+      "added_n_to_cart": "Agregamos {{ quantity }} productos a tu carrito",
       "variants": "variantes",
       "quantity": {
         "min": "Mín.",
@@ -258,7 +258,7 @@
         "input_label": "Cantidad para {{ product }}",
         "increase": "Aumentar cantidad para {{ product }}",
         "decrease": "Disminuir cantidad para {{ product }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> en el carrito"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> en el carrito"
       },
       "volumn_pricing": {
         "minimum": "Mínimo de",
@@ -272,8 +272,8 @@
         "check_other_stores": "Consultar disponibilidad en otras tiendas.",
         "pick_up_available": "Recogida disponible",
         "pick_up_unavailable": "Recolección no disponible",
-        "pick_up_available_at_html": "Recogida disponible en <span class=\"color-foreground\">{{ location_name }}<\/span>",
-        "pick_up_unavailable_at_html": "La recogida no está disponible actualmente en <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_available_at_html": "Recogida disponible en <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "La recogida no está disponible actualmente en <span class=\"color-foreground\">{{ location_name }}</span>",
         "unavailable": "No se pudo cargar la disponibilidad de recogida",
         "refresh": "Actualizar"
       },
@@ -311,11 +311,11 @@
       "view_full_details": "Ver todos los detalles",
       "xr_button": "Ver en tu espacio",
       "xr_button_label": "Ver en tu espacio, carga el elemento en la ventana de realidad aumentada",
-      "include_taxes": "Impuesto incluido.",
-      "not_include_taxes": "Impuesto no incluido.",
+      "include_taxes": "IVA incluido.",
+      "not_include_taxes": "IVA no incluido.",
       "shipping": "Envío",
       "calculated": "calculado al pagar.",
-      "shipping_policy_html": "<a href=\"{{ link }}\" class='nav-link hover-text-link relativo effect-inline mr-1'>Envío<\/a> calculado al finalizar la compra.",
+      "shipping_policy_html": "<a href=\"{{ link }}\" class='nav-link hover-text-link relative effect-inline mr-1'>Envío</a> se calcula al pagar.",
       "clear": "Borrar historial",
       "gift_wrapping_label": "Envuelva este producto para regalo",
       "gift_wrapping_property_value": "Sí",
@@ -387,7 +387,7 @@
       "product_type_default": "Todos los tipos"
     },
     "cart": {
-      "cart": "Carro"
+      "cart": "Carrito"
     },
     "contact": {
       "form": {
@@ -461,9 +461,9 @@
       "reason": {
         "other": "Otro",
         "changed_my_mind": "Cambié de opinión",
-        "item_doesnt_fit": "El artículo no queda \/ talla incorrecta",
+        "item_doesnt_fit": "El artículo no queda / talla incorrecta",
         "item_not_as_described": "El artículo no es como se describe",
-        "item_damaged": "El artículo llegó dañado\/defectuoso",
+        "item_damaged": "El artículo llegó dañado/defectuoso",
         "ordered_by_mistake": "Pedido por error",
         "found_better_price": "Encontré un mejor precio en otro lugar",
         "delivery_too_long": "Tiempo de entrega demasiado largo",
@@ -471,23 +471,23 @@
       }
     },
     "cart": {
-      "title": "tu carrito",
-      "subtotal": "Total parcial",
+      "title": "Tu carrito",
+      "subtotal": "Subtotal",
       "total": "Total",
-      "total_savings_html": "Con tu pedido ahorras {{total_discount}}!",
-      "order_note": "Nota de pedido",
-      "note": "Ordene instrucciones especiales",
-      "checkout": "Pasar por caja",
-      "empty": "Tu carrito esta vacío",
+      "total_savings_html": "Con tu pedido ahorras {{total_discount}}.",
+      "order_note": "Nota para tu pedido",
+      "note": "¿Algo que debamos saber de tu pedido?",
+      "checkout": "Pagar",
+      "empty": "Tu carrito está vacío.",
       "view_cart": "Ver carrito",
-      "cart_error": "Se produjo un error al actualizar su carrito. Inténtalo de nuevo.",
+      "cart_error": "No pudimos actualizar tu carrito. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
-      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a target='_blank' href='{{ link }}' class='nav-link hover-text-link relativo effect-inline'>envío<\/a> calculados al finalizar la compra",
-      "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado al finalizar la compra.",
-      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a target='_blank' href='{{ link }}' class='nav-link hover-text-link relativo effect-inline'>Envío<\/a> calculado al finalizar la compra.",
-      "taxes_and_shipping_at_checkout": "Impuestos y envío calculados al finalizar la compra",
+      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a target='_blank' href='{{ link }}' class='nav-link hover-text-link relative effect-inline'>envío</a> calculados al finalizar la compra",
+      "taxes_included_but_shipping_at_checkout": "IVA incluido. El envío se calcula al pagar.",
+      "taxes_included_and_shipping_policy_html": "IVA incluido. <a target='_blank' href='{{ link }}' class='nav-link hover-text-link relative effect-inline'>Envío</a> se calcula al pagar.",
+      "taxes_and_shipping_at_checkout": "IVA y envío se calculan al pagar.",
       "cart_enable_terms_and_conditions": "Estoy de acuerdo con los términos y condiciones",
-      "cart_enable_terms_and_conditions_html": "Estoy de acuerdo con los <a href='{{ url }}' class='button-link relative text-[rgba(var(--colors-text-link))]' target='_blank'>términos y condiciones<\/a>",
+      "cart_enable_terms_and_conditions_html": "Estoy de acuerdo con los <a href='{{ url }}' class='button-link relative text-[rgba(var(--colors-text-link))]' target='_blank'>términos y condiciones</a>",
       "headings": {
         "product": "Producto",
         "price": "Precio",
@@ -497,7 +497,7 @@
       },
       "login": {
         "title": "¿Tener una cuenta?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"nav-link relativo effect-inline\">Inicia sesión<\/a> para pagar más rápido."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"nav-link relative effect-inline\">Inicia sesión</a> para pagar más rápido."
       },
       "nested_line_item": {
         "show_item": "Mostrar {{ child_count }} elemento",
@@ -507,7 +507,7 @@
       },
       "required_cart_note": "Ingresar",
       "error_cart_note": "No rellenado",
-      "save": "Ahorra"
+      "save": "Ahorras"
     },
     "featured_blog": {
       "view_all": "Ver todas las publicaciones",
@@ -536,7 +536,7 @@
       "empty": "No se encontraron productos",
       "title": "Recopilación",
       "no_product_collection": "Lo siento, no hay productos en esta colección",
-      "use_fewer_filters_html": "Utilice menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\" data-no-instant>eliminar todo<\/a>"
+      "use_fewer_filters_html": "Utilice menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\" data-no-instant>eliminar todo</a>"
     },
     "page": {
       "title": "Título de la página"
@@ -667,10 +667,10 @@
     }
   },
   "localization": {
-    "country_label": "País\/región",
+    "country_label": "País/región",
     "language_label": "Idioma",
     "update_language": "Actualizar idioma",
-    "update_country": "Actualizar país\/región"
+    "update_country": "Actualizar país/región"
   },
   "customer": {
     "account": {
@@ -699,9 +699,9 @@
       "address1": "Dirección 1",
       "address2": "Dirección 2",
       "city": "Ciudad",
-      "country": "País\/región",
+      "country": "País/región",
       "province": "Provincia",
-      "zip": "Código postal\/ZIP",
+      "zip": "Código postal/ZIP",
       "phone": "Teléfono",
       "set_default": "Establecer como dirección predeterminada",
       "add": "Añadir dirección",
@@ -848,7 +848,7 @@
     "noRates": "No realizamos envíos a este destino.",
     "country": "País",
     "province": "Provincia",
-    "zip": "Código Postal\/Código Postal",
+    "zip": "Código Postal/Código Postal",
     "autoCalculate": "Tarifas de envío para su destino:",
     "emptyAutoCal": "Utilice Estimar envío para obtener más detalles."
   },
