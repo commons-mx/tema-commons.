@@ -1,9 +1,9 @@
 /* generado desde Ayuda5.dc.html */
 .cmpg a{color:#141A16}
 .cmpg a:hover{color:#4A524C}
-.cmpg{--bg:#F7F7F4;--white:#FFFFFF;--ink:#141A16;--ink2:#4A524C;--rule:#141A16;--soft:#DCDCD5;--lime:#E4DF74;--silver:#AEB3B8;
+.cmpg{--bg:#F7F7F4;--white:#FFFFFF;--ink:#141A16;--ink2:#4A524C;--rule:#141A16;--soft:#DCDCD5;--lime:#EDE47A;--pale:#F4F3B2;--silver:#AEB3B8;
 container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.cmpg .acY{--lime:#E4DF74}
+.cmpg .acY{--lime:#EDE47A}
 .cmpg .acL{--lime:#DFF68F}
 .cmpg .tA{--fd:'Jost',system-ui,sans-serif;--dw:400;--dt:none;--dls:-0.02em;--dst:100%;--fb:'Figtree',system-ui,sans-serif;--fl:'Figtree',system-ui,sans-serif;--flst:100%;--fn:'Jost',system-ui,sans-serif;--dscale:1}
 .cmpg .tB{--fd:'Archivo',system-ui,sans-serif;--dw:400;--dt:none;--dls:-0.02em;--dst:108%;--fb:'Archivo',system-ui,sans-serif;--fl:'Archivo',system-ui,sans-serif;--flst:100%;--fn:'Archivo Narrow','Archivo',sans-serif;--dscale:1}
@@ -545,7 +545,7 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .ay-quick a{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:28px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);min-height:150px}
 .cmpg .ay-quick a:nth-child(2n){border-right:0}
 .cmpg .ay-quick a:nth-last-child(-n+2){border-bottom:0}
-.cmpg .ay-quick a:hover{background:var(--lime)}
+.cmpg .ay-quick a:hover{background:var(--pale)}
 .cmpg .ay-quick b{font-family:var(--fd);font-weight:var(--dw);font-stretch:var(--dst);letter-spacing:var(--dls);font-size:calc(30px * var(--dscale));line-height:1.1}
 .cmpg .ay-quick span{font-size:15px;color:var(--ink2)}
 .cmpg .ay-faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);border-bottom:1px solid var(--rule)}
@@ -622,7 +622,7 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .nbt{font-size:15px}
 .cmpg .nform input,.cmpg .nform button{min-height:40px;font-size:14px}
 .cmpg .flogo{margin-top:32px}}
-.cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#E4DF74;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
+.cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#EDE47A;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
