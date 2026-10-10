@@ -49,7 +49,7 @@
         if block.settings.menu_3 != blank
           assign n = n | plus: 1
         endif
-        if block.settings.product_1 != blank or block.settings.product_2 != blank
+        if block.settings.product_1 != blank or block.settings.product_2 != blank or block.settings.items != blank
           assign n = n | plus: 1
         endif
         if block.settings.card_title != blank
@@ -112,7 +112,16 @@
   {%- if true and block.settings.promo_big != blank -%}<div class="promo">{%- if block.settings.promo_label != blank -%}<span class="lab">{{ block.settings.promo_label }}</span>{%- endif -%}<span class="big">{{ block.settings.promo_big }}</span>{%- if block.settings.promo_text != blank -%}<span class="small" style="color: #2C342F">{{ block.settings.promo_text }}</span>{%- endif -%}</div>{%- endif -%}
 </div>
 {%- endif -%}
-        {%- if block.settings.product_1 != blank or block.settings.product_2 != blank -%}
+        {%- if block.settings.items != blank -%}
+        <div class="mcol"><span class="eyb">{{ block.settings.products_title | default: 'Fórmulas' }}</span>
+          <div class="cm-pgrid">
+          {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}{%- for line in lines -%}{%- assign line = line | strip -%}{%- if line == blank -%}{%- continue -%}{%- endif -%}{%- assign f = line | split: '|' -%}{%- assign img = f[5] | strip -%}{%- unless img contains '/' -%}{%- assign img = img | asset_url -%}{%- endunless -%}
+            <a class="pcard" href="{{ f[4] | strip }}"><div class="pimg"><img src="{{ img }}" alt="{{ f[1] | strip }}" loading="lazy" width="600" height="600"></div><div class="ptx"><span class="lab">{{ f[0] | strip }}</span><span class="pn">{{ f[1] | strip }}</span><span class="small">{{ f[2] | strip }}</span><span class="small num">{{ f[3] | strip }}</span></div></a>
+          {%- endfor -%}
+          </div>
+          {%- if block.settings.soon != blank -%}<span class="eyb" style="margin-top: 8px">Próximamente</span><div class="cm-soon">{{ block.settings.soon }}</div>{%- endif -%}
+        </div>
+        {%- elsif block.settings.product_1 != blank or block.settings.product_2 != blank -%}
         <div class="mcol"><span class="eyb">{{ block.settings.products_title | default: 'Fórmulas' }}</span>
           <div class="cm-pgrid">
           {%- for p in (1..2) -%}
@@ -198,9 +207,17 @@
         {%- if block.type == 'panel' and block.settings.mobile_menu != blank -%}
         <div x-show="mp == '{{ block.id }}'" x-data="{ a: 0 }">
           {%- if block.settings.card_title != blank -%}
-          <a class="mintro{% if block.settings.card_eyebrow contains 'Science' %} sci{% endif %}" href="{{ block.settings.card_link | default: block.settings.link }}">{%- if block.settings.card_eyebrow != blank -%}<span class="lab">{{ block.settings.card_eyebrow }}</span>{%- endif -%}<span class="disp h3t">{{ block.settings.card_title }}</span><span class="tlink">{{ block.settings.card_button | default: 'Ver' }}</span></a>
+          <a class="mintro{% if block.settings.card_eyebrow contains 'Science' %} sci{% endif %}" href="{{ block.settings.card_link | default: block.settings.link }}">{%- if block.settings.card_eyebrow != blank -%}<span class="lab">{{ block.settings.card_eyebrow }}</span>{%- endif -%}<span class="disp h3t">{{ block.settings.card_title }}</span>{%- if block.settings.card_text != blank -%}<span class="mit">{{ block.settings.card_text }}</span>{%- endif -%}<span class="tlink">{{ block.settings.card_button | default: 'Ver' }}</span></a>
           {%- endif -%}
-          {%- if block.settings.product_1 != blank or block.settings.product_2 != blank -%}
+          {%- if block.settings.items != blank -%}
+          <div class="msub" style="padding: 8px 16px 12px"><span class="lab">{{ block.settings.products_title | default: 'Fórmulas' }}</span></div>
+          <div class="mprods">
+          {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}{%- for line in lines -%}{%- assign line = line | strip -%}{%- if line == blank -%}{%- continue -%}{%- endif -%}{%- assign f = line | split: '|' -%}{%- assign img = f[5] | strip -%}{%- unless img contains '/' -%}{%- assign img = img | asset_url -%}{%- endunless -%}
+            <a class="cm-mpr" href="{{ f[4] | strip }}"><span class="cm-mpimg"><img src="{{ img }}" alt="{{ f[1] | strip }}" loading="lazy" width="240" height="240"></span><span class="cm-mptx"><span class="lab">{{ f[0] | strip }}</span><span class="cm-mpn">{{ f[1] | strip }}</span><span class="small">{{ f[2] | strip }}</span><span class="small num">{{ f[3] | strip }}</span></span></a>
+          {%- endfor -%}
+          {%- if block.settings.soon != blank -%}<div class="cm-mpr soon"><span class="cm-mptx"><span class="lab">Próximamente</span><span class="small">{{ block.settings.soon }}</span></span></div>{%- endif -%}
+          </div>
+          {%- elsif block.settings.product_1 != blank or block.settings.product_2 != blank -%}
           {%- assign codes = block.settings.product_codes | split: ',' -%}
           <div class="mprods">
           {%- for k in (1..2) -%}
@@ -479,6 +496,12 @@
           "type": "product",
           "id": "product_2",
           "label": "Producto 2"
+        },
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Productos con foto (uno por línea)",
+          "info": "Código | Nombre | Para qué | Precio | liga | foto. Si se llena, se usa en lugar de Producto 1 y 2 (sirve con productos en borrador)."
         },
         {
           "type": "text",

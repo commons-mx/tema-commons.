@@ -1856,6 +1856,7 @@
             "card_title": "El origen: plantas, raíces y hongos.",
             "card_button": "Conoce Botanicals",
             "card_link": "/pages/botanicals",
+            "card_text": "Extractos estandarizados de hongos funcionales, hierbas y raíces, en cápsulas o en polvo.",
             "mobile_menu": "cm-botanicals-movil",
             "mobile_note": "Hongos, hierbas y Rituals"
           }
@@ -1868,18 +1869,20 @@
             "link": "/pages/science",
             "menu_1": "cm-science",
             "title_1": "Commons Science · Designed for human systems",
-            "products_title": "Fórmulas",
+            "products_title": "Compra las fórmulas",
             "product_1": "azafran-1",
             "product_2": "magnesio-p-m",
             "product_codes": "SC-001, SC-002",
             "soon": "Burn · Reducose® + Eriomin® · Creatina · Creapure® [Confirmar lista y fechas]",
             "mobile_menu": "cm-science",
-            "mobile_note": "Ingredientes de patente, dosis exactas",
+            "mobile_note": "Fórmulas con dosis estudiadas",
             "card_style": "image",
             "card_eyebrow": "Nuevo · Commons Science",
             "card_title": "Nature, decoded. La nueva línea.",
             "card_button": "Conoce Science",
-            "card_link": "/pages/science"
+            "card_link": "/pages/science",
+            "card_text": "Fórmulas con ingredientes de patente, estudios clínicos y la dosis exacta en la etiqueta. Acompañan a Botanicals, no lo sustituyen.",
+            "items": "SC-001 | Azafrán | Ánimo · 28 mg de Affron® por cápsula | $950 · 60 cápsulas | /products/azafran-1 | cm-b-25c434e5af.jpg\nSC-002 | Magnesio P.M. | Descanso · magnesio, glicina y L-teanina, sin melatonina | $800 · polvo 450 g | /products/magnesio-p-m | cm-b-1a44e381a8.jpg"
           }
         },
         "b4": {

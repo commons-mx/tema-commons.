@@ -580,6 +580,9 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .cm-hdr .mpills button.on .cm-new{background:var(--lime,#E4DF74);color:var(--ink)}
 .cm-hdr .mintro{display:flex;flex-direction:column;gap:8px;margin:16px;padding:20px;background:var(--lila,#CDBDF0);color:var(--ink);text-decoration:none}
 .cm-hdr .mintro .tlink{align-self:flex-start}
+.cm-hdr .mintro .mit{font-size:15px;line-height:1.45;color:#2C342F}
+.cm-hdr .cm-mptx .small{line-height:1.35}
+.cm-hdr .pcard .ptx .lab{font-size:11px}
 .cm-hdr .mintro.sci,.cm-hdr .mline.sci{background:linear-gradient(135deg,#E6E8E8,#C9CDCE)}
 .cm-hdr .mlines{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px 16px}
 .cm-hdr .mlines .mline{min-height:96px;justify-content:flex-end}
