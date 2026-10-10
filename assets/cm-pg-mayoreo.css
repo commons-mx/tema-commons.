@@ -622,6 +622,34 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .my-why{background:#CDBDF0 !important;color:var(--ink) !important}
 .cmpg .my-why .hd-row,.cmpg .my-why .my-g4,.cmpg .my-why .my-g4 > div{border-color:var(--rule) !important}
 .cmpg .my-why .my-g4 p{color:#2C342F !important}
+.cmpg .ftr{padding:48px 0 20px}
+.cmpg .ftop{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:28px;margin-bottom:32px;border-bottom:1px solid var(--rule)}
+.cmpg .ftag{margin:0;font-family:var(--fd);font-size:22px;letter-spacing:-0.01em;line-height:1.1}
+.cmpg .ftop .fsoc > div{display:flex;gap:16px;align-items:center}
+.cmpg .ftop .fsoc svg{width:20px;height:20px}
+.cmpg .fintro{gap:0}
+.cmpg .nbox{padding:20px;gap:12px;max-width:400px}
+.cmpg .nbt{font-size:16px}
+.cmpg .nform input{min-height:42px;padding:0 16px;font-size:14px}
+.cmpg .nform button{min-height:42px;padding:0 16px;font-size:14px}
+.cmpg .fcols div{gap:8px}
+.cmpg .ftr .fcols a{font-size:14px}
+.cmpg .flogo{margin-top:56px}
+.cmpg .fbot{margin-top:24px;padding-top:16px;font-size:12px}
+@container cmpg (max-width: 760px){.cmpg .ftr{padding:28px 0 16px}
+.cmpg .ftop{padding-bottom:20px;margin-bottom:8px}
+.cmpg .ftag{font-size:18px}
+.cmpg .fgrid{gap:24px}
+.cmpg .facc details:first-child{border-top:0}
+.cmpg .facc summary{padding:10px 0;font-size:14px}
+.cmpg .facc summary svg{width:14px;height:14px}
+.cmpg .facc .flinks{gap:8px;padding:0 0 12px}
+.cmpg .facc .flinks a{font-size:14px}
+.cmpg .nbox{padding:16px;gap:10px}
+.cmpg .nbt{font-size:15px}
+.cmpg .nform input,.cmpg .nform button{min-height:40px;font-size:14px}
+.cmpg .flogo{margin-top:32px}}
+.cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#E4DF74;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
