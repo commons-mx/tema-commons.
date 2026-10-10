@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-blog",
+      "settings": {
+        "link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

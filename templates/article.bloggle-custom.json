@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-article",
+      "settings": {
+        "products": [
+          "ashwagandha-organico-capsulas-extracto",
+          "hongo-reishi-100g-20-β-glucanos",
+          "azafran-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

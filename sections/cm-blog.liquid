@@ -1,0 +1,88 @@
+{{ 'cm-pg-journal.css' | asset_url | stylesheet_tag }}
+{%- assign s = section.settings -%}
+<div class="cmpg" id="cmj-{{ section.id }}"><div class="v4 tA acY">
+<section class="jr-hero" aria-labelledby="jh-{{ section.id }}">
+<div class="cell"><span class="lab">Journal</span><h1 id="jh-{{ section.id }}" class="disp h1">{{ s.title }}</h1></div>
+<div class="cell"><p class="sub">{{ s.intro }}</p><a class="tlink" href="{{ s.link }}" style="align-self: flex-start">{{ s.link_label }}</a></div>
+</section>
+<div class="jr-chips" role="navigation" aria-label="Categorías">
+  <a class="cmj-chip{% if current_tags == blank %} on{% endif %}" href="{{ blog.url }}">Todo</a>
+  {%- assign cats = s.categories | split: ',' -%}
+  {%- for c in cats -%}{%- assign c = c | strip -%}
+  <a class="cmj-chip{% if current_tags contains c %} on{% endif %}" href="{{ blog.url }}/tagged/{{ c | handleize }}">{{ c }}</a>
+  {%- endfor -%}
+  <span class="small">{{ blog.articles_count }} artículos</span>
+</div>
+{%- paginate blog.articles by 13 -%}
+{%- for a in blog.articles -%}
+{%- if forloop.first and current_tags == blank and paginate.current_page == 1 -%}
+{%- assign words = a.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
+<a class="jr-feat" href="{{ a.url }}">
+<div class="im">{%- if a.image -%}{{ a.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: a.title }}{%- endif -%}</div>
+<div class="tx">
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><span class="lab">Destacado</span>{%- if a.tags.first -%}<span class="tag">{{ a.tags.first }}</span>{%- endif -%}<h2 class="disp h2">{{ a.title }}</h2><p class="small" style="font-size: 17px; margin: 0">{{ a.excerpt_or_content | strip_html | truncatewords: 26 }}</p></div>
+<div class="jr-meta"><span>{{ mins }} minutos</span><span>·</span><span>{{ a.author }}</span></div>
+</div>
+</a>
+<div class="jr-grid">
+{%- else -%}
+{%- if forloop.first -%}<div class="jr-grid">{%- endif -%}
+{%- assign words = a.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
+<a class="jr-card" href="{{ a.url }}"><div class="im">{%- if a.image -%}{{ a.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: a.title }}{%- endif -%}</div><div class="tx">{%- if a.tags.first -%}<span class="tag">{{ a.tags.first }}</span>{%- endif -%}<h3>{{ a.title }}</h3><span class="jr-min">{{ mins }} minutos</span></div></a>
+{%- endif -%}
+{%- if forloop.last -%}</div>{%- endif -%}
+{%- else -%}
+<p class="jr-empty">Pronto publicamos en esta categoría.</p>
+{%- endfor -%}
+{%- if paginate.pages > 1 -%}
+<div class="jr-more">{%- if paginate.next -%}<a class="sq" href="{{ paginate.next.url }}">Ver más artículos</a>{%- endif -%}{%- if paginate.previous -%}<a class="tlink" href="{{ paginate.previous.url }}" style="margin-left: 24px">Anteriores</a>{%- endif -%}</div>
+{%- endif -%}
+{%- endpaginate -%}
+<section class="jr-quiz yellow" aria-labelledby="qz-{{ section.id }}">
+<div class="cell"><span class="lab">Quiz · 2 minutos</span><h2 id="qz-{{ section.id }}" class="disp h2" style="max-width: 16ch">¿No sabes por dónde empezar?</h2><p class="sub" style="color: #2C342F">Te recomendamos 2 o 3 productos de Botanicals y Science, más un ritual para complementar.</p></div>
+<div class="cell"><a class="btn dark" href="/pages/quiz" style="align-self: flex-start">Hacer el quiz<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+</section>
+</div></div>
+<style>
+#cmj-{{ section.id }} .cmj-chip{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--ink);border-radius:999px;font-size:15px;color:var(--ink);white-space:nowrap}
+#cmj-{{ section.id }} .cmj-chip.on{background:var(--ink);color:#fff}
+#cmj-{{ section.id }} .jr-card .im img,#cmj-{{ section.id }} .jr-feat .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@container cmpg (max-width: 760px){#cmj-{{ section.id }} .cmj-chip{min-height:38px;font-size:14px}}
+</style>
+{% schema %}
+{
+  "name": "Journal v5",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Aprende antes de elegir."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Texto",
+      "default": "Plantas, evidencia y cómo tomarlas. Escrito con nuestros especialistas, sin promesas que no podamos sostener."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Texto de la liga",
+      "default": "Ver la evidencia"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Liga"
+    },
+    {
+      "type": "text",
+      "id": "categories",
+      "label": "Categorías (etiquetas de los artículos, separadas por coma)",
+      "default": "Sueño, Energía, Estado de ánimo, Salud Intestinal, Inmunidad"
+    }
+  ]
+}
+{% endschema %}

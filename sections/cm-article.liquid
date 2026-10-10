@@ -1,0 +1,90 @@
+{{ 'cm-pg-articulo.css' | asset_url | stylesheet_tag }}
+{%- assign s = section.settings -%}
+{%- assign words = article.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
+<div class="cmpg" id="cma-{{ section.id }}"><div class="v4 tA acY">
+<div class="ar-top"><a href="{{ blog.url }}">Journal</a>{%- if article.tags.first -%}<span>/</span><a href="{{ blog.url }}/tagged/{{ article.tags.first | handleize }}">{{ article.tags.first }}</a>{%- endif -%}</div>
+<section class="ar-head" aria-labelledby="ah-{{ section.id }}">
+<div>{%- if article.tags.first -%}<span class="tag">{{ article.tags.first }}</span>{%- endif -%}<h1 id="ah-{{ section.id }}" class="disp h1">{{ article.title }}</h1></div>
+<div class="ar-by"><span class="lab">{{ s.by_label }}</span><b>{{ article.author }}</b><span class="small">{{ mins }} minutos · {{ article.published_at | date: '%d/%m/%Y' }}</span></div>
+</section>
+{%- if article.image -%}<div class="ar-hero">{{ article.image | image_url: width: 2000 | image_tag: loading: 'eager', alt: article.title }}</div>{%- endif -%}
+<div class="ar-tocm"><details><summary style="display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px"><span class="lab">En este artículo</span><span aria-hidden="true">+</span></summary><div class="ls" data-tocm></div></details></div>
+<section class="ar-body" aria-label="Artículo">
+<nav class="ar-toc" aria-label="En este artículo"><span class="lab" style="margin-bottom: 10px">En este artículo</span><div data-toc></div></nav>
+<article class="ar-txt cm-rte" data-content>{{ article.content }}</article>
+<aside class="ar-side" aria-label="Productos">
+{%- if s.products != blank -%}
+<span class="lab">{{ s.products_title }}</span>
+{%- for p in s.products -%}{%- assign v = p.selected_or_first_available_variant -%}
+<div class="ar-prod"><div class="pi">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}</div><div class="pn"><b><a href="{{ p.url }}" style="color: inherit">{{ p.title }}</a></b><span>{{ p.type }}</span></div><div class="pr"><span class="num">{{ v.price | money_without_trailing_zeros }}</span><button type="button" class="ar-add" data-add="{{ v.id }}">+ Agregar</button></div></div>
+{%- endfor -%}
+<span class="small">2 frascos −10% · 3 o más −20%</span>
+<a class="tlink" href="/#protocolo" style="align-self: flex-start">Arma tu protocolo</a>
+{%- endif -%}
+</aside>
+</section>
+<section aria-labelledby="rl-{{ section.id }}">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Sigue leyendo</span><h2 id="rl-{{ section.id }}" class="disp h2">Artículos relacionados</h2></div><a class="sq" href="{{ blog.url }}">Ir al Journal</a></div>
+<div class="ar-rel">
+{%- assign n = 0 -%}
+{%- for a in blog.articles -%}{%- if a.id != article.id and n < 3 -%}{%- assign n = n | plus: 1 -%}
+{%- assign words = a.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
+<a href="{{ a.url }}"><div class="im">{%- if a.image -%}{{ a.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: a.title }}{%- endif -%}</div><div class="tx">{%- if a.tags.first -%}<span class="tag">{{ a.tags.first }}</span>{%- endif -%}<h3>{{ a.title }}</h3><span class="jr-min">{{ mins }} minutos</span></div></a>
+{%- endif -%}{%- endfor -%}
+</div>
+</section>
+<section class="jr-quiz yellow" aria-labelledby="qz-{{ section.id }}">
+<div class="cell"><span class="lab">Quiz · 2 minutos</span><h2 id="qz-{{ section.id }}" class="disp h2" style="max-width: 16ch">¿No sabes por dónde empezar?</h2><p class="sub" style="color: #2C342F">Te recomendamos 2 o 3 productos de Botanicals y Science, más un ritual para complementar.</p></div>
+<div class="cell"><a class="btn dark" href="/pages/quiz" style="align-self: flex-start">Hacer el quiz<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+</section>
+</div></div>
+<style>
+#cma-{{ section.id }} .ar-hero img,#cma-{{ section.id }} .ar-rel .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cma-{{ section.id }} .cm-rte img{max-width:100%;height:auto;margin:18px 0}
+#cma-{{ section.id }} .cm-rte h2{font-family:var(--fd);font-weight:var(--dw);letter-spacing:var(--dls)}
+#cma-{{ section.id }} .cm-rte h3{font-size:22px;margin:28px 0 10px}
+#cma-{{ section.id }} .cm-rte a{text-decoration:underline;text-underline-offset:3px}
+#cma-{{ section.id }} .cm-rte blockquote{margin:32px 0;padding:28px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font-family:var(--fd);font-size:calc(28px * var(--dscale));line-height:1.2}
+#cma-{{ section.id }} .ar-add.on{background:var(--ink);color:#fff}
+#cma-{{ section.id }} [data-toc] a,#cma-{{ section.id }} [data-tocm] a{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--soft);font-size:16px;color:var(--ink2)}
+#cma-{{ section.id }} [data-toc] a .n{font-size:13px;min-width:20px}
+</style>
+<script>
+(function(){
+  var root = document.getElementById('cma-{{ section.id }}'); if (!root) return;
+  var hs = root.querySelectorAll('[data-content] h2'), toc = root.querySelector('[data-toc]'), tocm = root.querySelector('[data-tocm]');
+  if (!hs.length) { var t = root.querySelector('.ar-toc'); if (t) t.style.visibility = 'hidden'; var m = root.querySelector('.ar-tocm'); if (m) m.hidden = true; }
+  hs.forEach(function(h, i){ if (!h.id) h.id = 'sec-' + (i + 1); var html = '<a href="#' + h.id + '"><span class="n num">' + String(i + 1).padStart(2, '0') + '</span>' + h.textContent + '</a>'; toc.insertAdjacentHTML('beforeend', html); tocm.insertAdjacentHTML('beforeend', html); });
+  root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('click', function(){
+    fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: +b.dataset.add, quantity: 1 }] }) })
+      .then(function(r){ if (!r.ok) throw r; b.classList.add('on'); b.textContent = 'Agregado ✓'; if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart(); } })
+      .catch(function(){ location.href = '{{ routes.cart_url }}'; });
+  }); });
+})();
+</script>
+{% schema %}
+{
+  "name": "Artículo v5",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "by_label",
+      "label": "Etiqueta del autor",
+      "default": "Escrito por"
+    },
+    {
+      "type": "text",
+      "id": "products_title",
+      "label": "Título de productos",
+      "default": "Productos que te pueden interesar"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Productos",
+      "limit": 3
+    }
+  ]
+}
+{% endschema %}
