@@ -14,9 +14,9 @@
             "heading": "Azafrán. La dosis que se estudió.",
             "text": "El extracto de azafrán que se ha estudiado en el estado de ánimo. Una cápsula con 28 mg de extracto al día.",
             "button_label": "Compra Azafrán · $950",
-            "button_link": "shopify://products/azafran-1",
+            "button_link": "/products/azafran-1",
             "button2_label": "Ver evidencia",
-            "button2_link": "shopify://products/azafran-1"
+            "button2_link": "/products/azafran-1"
           }
         },
         "b2": {
@@ -29,7 +29,7 @@
             "heading": "Los adaptógenos más queridos de México.",
             "text": "Ashwagandha, Reishi y Melena de León. Extractos de raíz y cuerpo fructífero, con más de 1,500 reseñas.",
             "button_label": "Ver Botanicals",
-            "button_link": "shopify://collections/mejores-adaptogenos-naturales",
+            "button_link": "/collections/mejores-adaptogenos-naturales",
             "button2_label": "Haz el quiz",
             "button2_link": "/pages/quiz"
           }
@@ -157,7 +157,7 @@
     "cm_products": {
       "type": "cm-products",
       "settings": {
-        "link": "shopify://collections/all"
+        "link": "/collections/all"
       },
       "blocks": {
         "b1": {
@@ -221,9 +221,9 @@
             "title": "El origen con hierbas y adaptógenos",
             "text": "Plantas, raíces y hongos. Y dentro, Rituals: mieles, chocolates y blends para tu día.",
             "button_label": "Explorar Botanicals",
-            "button_link": "shopify://collections/adaptogenos-en-capusulas",
+            "button_link": "/collections/adaptogenos-en-capusulas",
             "link2_label": "Ver Rituals",
-            "link2": "shopify://collections/mieles-adaptogenicas-y-funcionales"
+            "link2": "/collections/mieles-adaptogenicas-y-funcionales"
           }
         },
         "b2": {
@@ -235,7 +235,7 @@
             "title": "La dosis estudiada con Science",
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
-            "button_link": "shopify://collections/all",
+            "button_link": "/collections/all",
             "sig": "-Designed for human systems-"
           }
         }
@@ -530,7 +530,7 @@
     "cm_strip": {
       "type": "cm-strip",
       "settings": {
-        "button_link": "shopify://products/azafran-1"
+        "button_link": "/products/azafran-1"
       }
     },
     "cm_reviews": {
@@ -581,12 +581,14 @@
       "type": "cm-journal",
       "settings": {
         "blog": "noticias",
-        "button_link": "shopify://blogs/noticias"
+        "button_link": "/blogs/noticias"
       }
     },
     "cm_faq": {
       "type": "cm-faq",
-      "settings": {},
+      "settings": {
+        "button_link": "https://wa.me/525564299433"
+      },
       "blocks": {
         "b1": {
           "type": "faq",
