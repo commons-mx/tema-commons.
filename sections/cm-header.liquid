@@ -210,13 +210,6 @@
           <a class="mintro{% if block.settings.card_eyebrow contains 'Science' %} sci{% endif %}" href="{{ block.settings.card_link | default: block.settings.link }}">{%- if block.settings.card_eyebrow != blank -%}<span class="lab">{{ block.settings.card_eyebrow }}</span>{%- endif -%}<span class="disp h3t">{{ block.settings.card_title }}</span>{%- if block.settings.card_text != blank -%}<span class="mit">{{ block.settings.card_text }}</span>{%- endif -%}<span class="tlink">{{ block.settings.card_button | default: 'Ver' }}</span></a>
           {%- endif -%}
           {%- if block.settings.items != blank -%}
-          <div class="msub" style="padding: 8px 16px 12px"><span class="lab">{{ block.settings.products_title | default: 'Fórmulas' }}</span></div>
-          <div class="mprods">
-          {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}{%- for line in lines -%}{%- assign line = line | strip -%}{%- if line == blank -%}{%- continue -%}{%- endif -%}{%- assign f = line | split: '|' -%}{%- assign img = f[5] | strip -%}{%- unless img contains '/' -%}{%- assign img = img | asset_url -%}{%- endunless -%}
-            <a class="cm-mpr" href="{{ f[4] | strip }}"><span class="cm-mpimg"><img src="{{ img }}" alt="{{ f[1] | strip }}" loading="lazy" width="240" height="240"></span><span class="cm-mptx"><span class="lab">{{ f[0] | strip }}</span><span class="cm-mpn">{{ f[1] | strip }}</span><span class="small">{{ f[2] | strip }}</span><span class="small num">{{ f[3] | strip }}</span></span></a>
-          {%- endfor -%}
-          {%- if block.settings.soon != blank -%}<div class="cm-mpr soon"><span class="cm-mptx"><span class="lab">Próximamente</span><span class="small">{{ block.settings.soon }}</span></span></div>{%- endif -%}
-          </div>
           {%- elsif block.settings.product_1 != blank or block.settings.product_2 != blank -%}
           {%- assign codes = block.settings.product_codes | split: ',' -%}
           <div class="mprods">
