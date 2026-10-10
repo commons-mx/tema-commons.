@@ -136,13 +136,21 @@ class Component extends DCLogic {
   build() {
     var st = this.state, P = this.P, N = this.N, self = this;
     var safe = st.safe, warn = {};
-    var needs = st.needs.length ? st.needs : ['Estrés'];
+    var needs = st.needs.filter(function (n) { return !((n === 'Menopausia' && !(st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más'))) || (n === 'Ciclo menstrual' && (st.sex !== 'Mujer' || st.age === '60 o más'))); });
+    if (!needs.length) needs = ['Estrés'];
     var out = {};
     var has = function (x) { return safe.indexOf(x) >= 0; };
-    if (has('Antidepresivos')) out['Rhodiola'] = 1;
-    if (has('Anticoagulantes')) { out['Ginkgo + Bacopa'] = 1; out['Master blend'] = 1; }
-    if (has('Anticonceptivos u hormonas')) out['Vitex'] = 1;
-    if (has('Hipertiroidismo') || has('Enfermedad del hígado')) out['Ashwagandha'] = 1;
+    // contraindicaciones (tabla del Proyecto Quiz Commons)
+    var HONGOS = ['Reishi', 'Melena de León', 'Cordyceps', 'Chaga', 'Cola de Pavo', 'Maitake', 'Master blend'];
+    var drop = function (l) { l.forEach(function (x) { out[x] = 1; }); };
+    if (has('Antidepresivos')) drop(['Rhodiola', 'Mucuna']);
+    if (has('Anticoagulantes')) drop(HONGOS.concat(['Ginkgo + Bacopa']));
+    if (has('Anticonceptivos u hormonas')) drop(['Vitex']);
+    if (has('Hipertiroidismo')) drop(['Ashwagandha']);
+    if (has('Enfermedad del hígado')) drop(['Ashwagandha', 'Gotu Kola', 'Schisandra']);
+    if (has('Presión baja')) drop(['Reishi', 'Chaga', 'Maitake']);
+    if (has('Enfermedad autoinmune')) drop(['Astrágalo']);
+    if (has('Problemas de riñón')) drop(['Shatavari', 'Chaga']);
     if (st.sex === 'Hombre') { out['Vitex'] = 1; out['Shatavari'] = 1; }
     // puntaje por necesidad
     var score = {}, per = {};
@@ -171,7 +179,7 @@ class Component extends DCLogic {
     });
     list = list.slice(0, 4);
     if (has('Antidepresivos') && list.indexOf('Azafrán') >= 0) warn['Azafrán'] = 'Consulta a tu médico';
-    if (has('Enfermedad del hígado') && list.indexOf('Schisandra') >= 0) warn['Schisandra'] = 'Consulta a tu médico';
+    if (has('Enfermedad autoinmune')) list.forEach(function (x) { if (HONGOS.indexOf(x) >= 0) warn[x] = 'Consulta a tu médico'; });
     if (has('Otros medicamentos')) list.forEach(function (x) { warn[x] = 'Consulta a tu médico'; });
     var full = list.slice();
     if (st.ess) list = list.slice(0, 2);
@@ -213,7 +221,8 @@ class Component extends DCLogic {
     var tp = String(this.props.tipografia ?? 'A');
     var mk = function (k, arr, multi, max, subs) { return arr.map(function (t, i) { var on = multi ? st[k].indexOf(t) >= 0 : st[k] === t; return { t: t, s: (subs && subs[i]) || '', cls: 'qo' + (on ? ' on' : ''), pick: function () { self.set(k, t, multi, max); } }; }); };
     var needsAll = ['Sueño', 'Estrés', 'Ánimo', 'Enfoque', 'Energía', 'Defensas', 'Piel'];
-    if (st.sex === 'Mujer') needsAll = needsAll.concat(['Ciclo menstrual', 'Menopausia']);
+    if (st.sex === 'Mujer' && st.age !== '60 o más') needsAll = needsAll.concat(['Ciclo menstrual']);
+    if (st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más')) needsAll = needsAll.concat(['Menopausia']);
     var DET = {
       'Sueño': ['Sueño · ¿qué te pasa en la noche?', ['Me cuesta dormirme', 'Me despierto en la noche', 'Despierto sin descansar']],
       'Estrés': ['Estrés · ¿cuándo lo sientes más?', ['En la mañana', 'En la tarde', 'En la noche']],
@@ -229,7 +238,7 @@ class Component extends DCLogic {
       { name: 'Tú', q: '¿Para quién es?', hint: '', groups: [{ lab: '', cls: 'qopts', opts: mk('who', ['Para mí', 'Para alguien más']) }, { lab: 'Edad', cls: 'qopts three', opts: mk('age', ['Menos de 18', '18 a 29', '30 a 44', '45 a 59', '60 o más']) }, { lab: 'Sexo biológico', cls: 'qopts', opts: mk('sex', ['Mujer', 'Hombre']) }] },
       { name: 'Lo que vives', q: '¿Qué quieres acompañar?', hint: 'Elige hasta 3.', groups: [{ lab: '', cls: 'qopts three', opts: mk('needs', needsAll, true, 3) }] },
       { name: 'Un poco más', q: 'Cuéntanos un poco más.', hint: 'Una pregunta por cada cosa que elegiste.', groups: st.needs.map(function (n) { var d = DET[n]; return { lab: d[0], cls: 'qopts three', opts: d[1].map(function (t) { var on = st.det[n] === t; return { t: t, s: '', cls: 'qo' + (on ? ' on' : ''), pick: function () { var o = Object.assign({}, st.det); o[n] = t; self.setState({ det: o }); } }; }) }; }) },
-      { name: 'Seguridad', q: '¿Algo de esto aplica para ti?', hint: 'Obligatoria. Puedes elegir varias.', groups: [{ lab: '', cls: 'qopts', opts: mk('safe', ['Embarazo o lactancia', 'Antidepresivos', 'Anticoagulantes', 'Anticonceptivos u hormonas', 'Hipertiroidismo', 'Enfermedad del hígado', 'Otros medicamentos', 'Ninguna'], true) }] },
+      { name: 'Seguridad', q: '¿Algo de esto aplica para ti?', hint: 'Obligatoria. Puedes elegir varias.', groups: [{ lab: '', cls: 'qopts', opts: mk('safe', ['Embarazo o lactancia', 'Antidepresivos', 'Anticoagulantes', 'Anticonceptivos u hormonas', 'Hipertiroidismo', 'Enfermedad del hígado', 'Problemas de riñón', 'Presión baja', 'Enfermedad autoinmune', 'Otros medicamentos', 'Ninguna'], true) }] },
       { name: 'Cómo lo prefieres', q: '¿Cómo lo quieres tomar?', hint: '', groups: [{ lab: 'Formato', cls: 'qopts', opts: mk('fmt', ['Cápsulas', 'Polvo'], false, 0, ['Lo más práctico', 'Rinde más']) }, { lab: '¿Te sugerimos hasta 2 complementos de Rituals?', cls: 'qopts', opts: mk('rit', ['Sí', 'No']) }] }
     ];
     var s = STEPS[st.step];
