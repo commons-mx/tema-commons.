@@ -163,6 +163,12 @@ class Component extends DCLogic {
     // 2) completa hasta 3 con lo de más peso en todo lo que eligió
     var rest = Object.keys(score).filter(function (p) { return list.indexOf(p) < 0; }).sort(function (a, b) { return score[b] - score[a]; });
     while (list.length < 3 && rest.length) list.push(rest.shift());
+    // 3) un cuarto si alguna necesidad tiene un segundo producto fuerte (peso 4 o más), p. ej. Reishi junto a Magnesio en sueño
+    needs.forEach(function (n) {
+      if (list.length >= 4) return;
+      var second = Object.keys(per[n]).filter(function (p) { return !out[p] && list.indexOf(p) < 0 && per[n][p] >= 4; }).sort(function (a, b) { return per[n][b] - per[n][a]; })[0];
+      if (second) list.push(second);
+    });
     list = list.slice(0, 4);
     if (has('Antidepresivos') && list.indexOf('Azafrán') >= 0) warn['Azafrán'] = 'Consulta a tu médico';
     if (has('Enfermedad del hígado') && list.indexOf('Schisandra') >= 0) warn['Schisandra'] = 'Consulta a tu médico';
@@ -269,6 +275,17 @@ var root = document.getElementById('cmq-root');
 function paint(){ root.innerHTML = view(C.renderVals()); }
 root.addEventListener('click', function(e){ var b = e.target.closest('[data-fn]'); if (!b) return; var f = FN[+b.dataset.fn]; if (f) f(); });
 paint();
+// fotos, ligas y variantes directo de la tienda (no depende del tope de all_products)
+var HANDLES = {"Ashwagandha": "ashwagandha-organico-capsulas-extracto", "Reishi": "hongo-reishi-100g-20-β-glucanos", "Melena de León": "melena-de-leon-capsulas-organicas", "Schisandra": "baya-schisandra-full-polvo", "Tulsi": "tulsi-full-polvo", "Cordyceps": "cordyceps-extracto-commons", "Rhodiola": "raiz-rhodiola-rosea-full-polvo", "Eleuthero": "eleuthero-full-polvo", "Master blend": "master-blend-160-capsulas", "Ginkgo + Bacopa": "gingko-biloba-y-bacopa", "Maitake": "hongo-maitake-full-polvo", "Gotu Kola": "gotu-kola", "Shatavari": "shatavari-full-polvo", "Vitex": "vitex-extracto", "Astrágalo": "astragalus-full-polvo", "Amla": "amla-full-polvo", "Cola de Pavo": "hongo-cola-de-pavo-full-polvo", "Azafrán": "azafran-1", "Magnesio P.M.": "magnesio-p-m", "Miel Sueño profundo": "miel-sueno-profundo-1", "Miel Balance de estrés y enfoque": "miel-enfoque-y-balance-de-estres", "Chocolate Happiness": "chocolate-happiness", "Chocolate Think": "chocolate-think-80-gr", "Chocolate Defend": "chocolate-defend", "Chocolate Calm": "chocolate-calm"};
+Promise.all(Object.keys(HANDLES).map(function(n){
+  return fetch('/products/' + encodeURIComponent(HANDLES[n]) + '.js', { headers: { 'Accept': 'application/json' } })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(pr){ if (!pr) return; var img = pr.featured_image || (pr.images && pr.images[0]) || null;
+      if (img) img = img + (img.indexOf('?') >= 0 ? '&' : '?') + 'width=300';
+      var v = {}; (pr.variants || []).forEach(function(x){ if (x.available !== false) v[x.title] = [x.id, Math.round(x.price / 100)]; });
+      Q[n] = { img: img, url: pr.url || ('/products/' + HANDLES[n]), av: !!pr.available, v: v }; })
+    .catch(function(){});
+})).then(function(){ paint(); });
 
 })();
 </script>
