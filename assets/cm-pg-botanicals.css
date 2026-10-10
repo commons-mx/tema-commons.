@@ -604,12 +604,12 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .nform input,.cmpg .nform button{min-height:40px;font-size:14px}
 .cmpg .flogo{margin-top:32px}}
 .cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#E4DF74;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
-.cmpg .bfull.raiz{background:linear-gradient(180deg,#9FCED6 0%,#AED5DC 50%,#C4E0E2 100%)}
-.cmpg .bfull.raiz > img{left:auto;right:6%;width:44%;object-fit:contain;object-position:50% 100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent)}
+.cmpg .bfull.raiz{background:#E9E6DF}
+.cmpg .bfull.raiz > img{left:auto;right:0;width:50%;height:100%;object-fit:cover;object-position:50% 30%}
 .cmpg .bfull.raiz:after{display:none}
 .cmpg .bfull.raiz .bfx .lab,.cmpg .bfull.raiz .bfx h1,.cmpg .bfull.raiz .bfx p{color:#141A16 !important}
-@container cmpg (max-width: 760px){.cmpg .bfull.raiz{min-height:720px}
-.cmpg .bfull.raiz > img{left:0;right:0;width:100%;height:60%;bottom:auto;object-position:50% 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent),linear-gradient(0deg,transparent,#000 20%);mask-image:linear-gradient(90deg,transparent 4%,#000 25%,#000 75%,transparent 96%);-webkit-mask-composite:source-in}}
+@container cmpg (max-width: 760px){.cmpg .bfull.raiz{min-height:760px}
+.cmpg .bfull.raiz > img{left:0;right:0;width:100%;height:62%;bottom:auto;object-position:50% 20%}}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
