@@ -256,7 +256,7 @@
           "type": "step",
           "settings": {
             "step_title": "Estrés y sueño",
-            "icon": "tag",
+            "icon": "none",
             "another_icon": "",
             "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
@@ -314,7 +314,7 @@
           "type": "step",
           "settings": {
             "step_title": "Enfoque y ánimo",
-            "icon": "tag",
+            "icon": "none",
             "another_icon": "",
             "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
@@ -372,7 +372,7 @@
           "type": "step",
           "settings": {
             "step_title": "Energía",
-            "icon": "tag",
+            "icon": "none",
             "another_icon": "",
             "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
@@ -430,7 +430,7 @@
           "type": "step",
           "settings": {
             "step_title": "Defensas y ciclo",
-            "icon": "tag",
+            "icon": "none",
             "another_icon": "",
             "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
@@ -493,11 +493,11 @@
       ],
       "name": "t:sections.buy-your-own-bundle.name",
       "settings": {
-        "heading": "Arma tu [protocolo]",
+        "heading": "Arma tu protocolo.",
         "highlight_type": "font_highlight",
         "heading_size": 100,
         "heading_tag": "h2",
-        "heading_alignment": "center",
+        "heading_alignment": "left",
         "subheading": "Todo el año",
         "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −20%.</p>",
         "button_atb_label": "Agregar",
