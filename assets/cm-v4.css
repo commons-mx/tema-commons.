@@ -597,3 +597,34 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .cm-hdr .cm-mptx{display:flex;flex-direction:column;gap:2px}
 .cm-hdr .cm-mpn{font-size:18px;font-weight:500;line-height:1.2}
 @media (max-width: 760px){ .cm-hdr .mega,.cm-hdr .cm-dim{display:none !important} }
+
+/* footer compacto (oct 2026) */
+.cm4 .ftr{padding:48px 0 20px}
+.cm4 .ftop{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:28px;margin-bottom:32px;border-bottom:1px solid var(--rule)}
+.cm4 .ftag{margin:0;font-family:var(--fd);font-size:22px;letter-spacing:-0.01em;line-height:1.1}
+.cm4 .ftop .fsoc > div{display:flex;gap:16px;align-items:center}
+.cm4 .ftop .fsoc svg{width:20px;height:20px}
+.cm4 .fintro{gap:0}
+.cm4 .nbox{padding:20px;gap:12px;max-width:400px}
+.cm4 .nbt{font-size:16px}
+.cm4 .nform input{min-height:42px;padding:0 16px;font-size:14px}
+.cm4 .nform button{min-height:42px;padding:0 16px;font-size:14px}
+.cm4 .fcols div{gap:8px}
+.cm4 .ftr .fcols a{font-size:14px}
+.cm4 .flogo{margin-top:56px}
+.cm4 .fbot{margin-top:24px;padding-top:16px;font-size:12px}
+@media (max-width:760px){
+  .cm4 .ftr{padding:28px 0 16px}
+  .cm4 .ftop{padding-bottom:20px;margin-bottom:8px}
+  .cm4 .ftag{font-size:18px}
+  .cm4 .fgrid{gap:24px}
+  .cm4 .facc details:first-child{border-top:0}
+  .cm4 .facc summary{padding:13px 0;font-size:15px}
+  .cm4 .facc summary svg{width:14px;height:14px}
+  .cm4 .facc .flinks{gap:9px;padding:0 0 14px}
+  .cm4 .facc .flinks a{font-size:14px}
+  .cm4 .nbox{padding:16px;gap:10px}
+  .cm4 .nbt{font-size:15px}
+  .cm4 .nform input,.cm4 .nform button{min-height:40px;font-size:14px}
+  .cm4 .flogo{margin-top:32px}
+}
