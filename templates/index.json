@@ -31,7 +31,7 @@
             "button_label": "Ver Botanicals",
             "button_link": "/collections/mejores-adaptogenos-naturales",
             "button2_label": "Haz el quiz",
-            "button2_link": "/pages/quiz"
+            "button2_link": "/pages/quiz-commons"
           }
         }
       },
@@ -252,16 +252,21 @@
     "buy_your_own_bundle_pTbqYm": {
       "type": "buy-your-own-bundle",
       "blocks": {
-        "step_WiU3gr": {
+        "paso1": {
           "type": "step",
           "settings": {
-            "step_title": "Prep Your Foundation",
+            "step_title": "Estrés y sueño",
             "icon": "tag",
             "another_icon": "",
             "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
             "product_to_show": 3,
-            "products": [],
+            "products": [
+              "ashwagandha-organico-capsulas-extracto",
+              "hongo-reishi-100g-20-β-glucanos",
+              "tulsi-full-polvo",
+              "magnesio-p-m"
+            ],
             "show_max_product": 12,
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
@@ -301,19 +306,25 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         },
-        "step_we8pry": {
+        "paso2": {
           "type": "step",
           "settings": {
-            "step_title": "Boost Daily Performance",
+            "step_title": "Enfoque y ánimo",
             "icon": "tag",
             "another_icon": "",
-            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25574)\">\n<g clip-path=\"url(#clip1_6024_25574)\">\n<path fill=\"none\" d=\"M6.86911 -2V0.317546C6.86911 2.01758 6.26906 3.60764 5.26886 4.69696C4.77019 5.24006 4.46094 5.99576 4.46094 6.83154C4.46094 8.48552 5.67191 9.82631 7.16569 9.82631C7.69252 9.82631 8.18402 9.65944 8.5996 9.37087C9.20402 8.95119 9.92437 8.95119 10.5287 9.37087C10.9444 9.65944 11.4358 9.82631 11.9627 9.82631C13.4565 9.82631 14.6674 8.48552 14.6674 6.83154C14.6674 6.0192 14.3752 5.28237 13.901 4.7429C12.9433 3.65353 12.3724 2.09755 12.3724 0.439667V-2\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path fill=\"none\" d=\"M12.2592 23.1076V20.79C12.2592 19.09 12.8593 17.4999 13.8595 16.4106C14.3581 15.8675 14.6674 15.1118 14.6674 14.276C14.6674 12.622 13.4564 11.2812 11.9627 11.2812C11.4358 11.2812 10.9443 11.4481 10.5287 11.7367C9.92432 12.1564 9.20396 12.1564 8.59959 11.7367C8.18397 11.4481 7.69252 11.2812 7.16568 11.2812C5.67186 11.2812 4.46094 12.622 4.46094 14.276C4.46094 15.0884 4.75309 15.8252 5.22734 16.3647C6.18508 17.454 6.75593 19.01 6.75593 20.6679V23.1076\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path fill=\"none\" d=\"M8.14844 6.29798L8.6944 5.9126C9.2416 5.52633 9.85392 5.51859 10.4044 5.89098L11.006 6.29798\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path fill=\"none\" d=\"M11.1709 15.041L10.5882 15.4264C10.0041 15.8127 9.35067 15.8204 8.76319 15.448L8.12109 15.041\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path fill=\"none\" d=\"M4.77347 8.22852C4.77347 8.22852 3.03316 10.1476 4.77347 12.8779\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M14.5156 12.8779C14.5156 12.8779 16.2559 10.9588 14.5156 8.22852\" stroke=\"currentColor\" stroke-width=\"0.779496\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25574\">\n<rect width=\"20\" height=\"20\" fill=\"white\"></rect>\n</clippath>\n<clippath id=\"clip1_6024_25574\">\n<rect width=\"26.6068\" height=\"26.6068\" fill=\"white\" transform=\"translate(-4.01562 -0.501953)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
             "product_to_show": 3,
-            "products": [],
+            "products": [
+              "melena-de-leon-capsulas-organicas",
+              "azafran-1",
+              "gingko-biloba-y-bacopa",
+              "gotu-kola"
+            ],
             "show_max_product": 12,
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
@@ -353,19 +364,25 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         },
-        "step_9qjANp": {
+        "paso3": {
           "type": "step",
           "settings": {
-            "step_title": "Support Recovery & Balance",
+            "step_title": "Energía",
             "icon": "tag",
             "another_icon": "",
-            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 19 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M13.1023 12.7701C12.9559 12.6267 12.721 12.6291 12.5775 12.7754L12.567 12.7862C12.4235 12.9326 12.4259 13.1675 12.5723 13.311C12.6445 13.3818 12.7383 13.417 12.832 13.417C12.9282 13.417 13.0244 13.3798 13.0971 13.3056L13.1077 13.2949C13.2511 13.1485 13.2487 12.9135 13.1023 12.7701Z\" fill=\"currentColor\"></path>\n<path d=\"M17.0934 8.87873H16.1072V7.89258C16.1072 7.68762 15.9411 7.52148 15.7361 7.52148C15.5312 7.52148 15.3651 7.68762 15.3651 7.89258V8.87873H14.3789C14.174 8.87873 14.0078 9.04486 14.0078 9.24982C14.0078 9.45478 14.174 9.62091 14.3789 9.62091H15.3651V10.6071C15.3651 10.812 15.5312 10.9782 15.7361 10.9782C15.9411 10.9782 16.1072 10.812 16.1072 10.6071V9.62091H17.0934C17.2983 9.62091 17.4645 9.45478 17.4645 9.24982C17.4645 9.04486 17.2983 8.87873 17.0934 8.87873Z\" fill=\"currentColor\"></path>\n<path d=\"M16.9477 6.21657C16.6011 3.65491 14.4595 1.73828 11.9177 1.73828C10.6345 1.73828 9.43422 2.21659 8.49806 3.0933C7.56187 2.21659 6.36156 1.73828 5.07846 1.73828C2.27819 1.73828 0 4.07072 0 6.93769C0 7.50412 0.165248 8.13903 0.494001 8.83988H0.371094C0.166139 8.83988 0 9.00602 0 9.21097C0 9.41593 0.166139 9.58207 0.371094 9.58207H0.889217C1.58231 10.7555 2.67837 12.0898 4.17292 13.5759C6.19835 15.5899 8.25214 17.1655 8.27266 17.1812C8.33916 17.2321 8.41861 17.2575 8.49806 17.2575C8.57752 17.2575 8.65693 17.2321 8.72347 17.1812C8.73913 17.1692 10.3099 15.9647 12.0506 14.3235C12.1998 14.1829 12.2067 13.948 12.0661 13.7989C11.9255 13.6498 11.6906 13.6429 11.5415 13.7835C10.2139 15.0352 8.98832 16.0276 8.4981 16.4153C7.91556 15.9544 6.2938 14.6387 4.69093 13.0443C3.40769 11.7678 2.42533 10.6045 1.76118 9.58207H5.08344C5.24898 9.58207 5.39449 9.47241 5.44013 9.31332L6.08851 7.05328L7.88401 12.8059C7.9324 12.9609 8.07591 13.0665 8.23826 13.0665C8.40061 13.0665 8.54412 12.9609 8.59247 12.8059L9.58682 9.61921H11.2435C11.4485 9.61921 11.6146 9.45307 11.6146 9.24812C11.6146 9.04316 11.4485 8.87703 11.2435 8.87703H9.31388C9.15152 8.87703 9.00799 8.98256 8.95963 9.13757L8.23815 11.4497L6.42773 5.64925C6.37889 5.49276 6.2335 5.38647 6.06918 5.38874C5.90526 5.39063 5.76198 5.49988 5.71675 5.65748L4.80374 8.83992H1.32199C0.938387 8.11569 0.742189 7.47737 0.742189 6.93769C0.742189 4.47996 2.68743 2.48047 5.07846 2.48047C6.28022 2.48047 7.39781 2.97447 8.22531 3.87141C8.29559 3.94755 8.39445 3.99086 8.49806 3.99086C8.60167 3.99086 8.70057 3.94755 8.77082 3.87141C9.59832 2.97447 10.7159 2.48047 11.9177 2.48047C13.9849 2.48047 15.7425 3.97131 16.1602 6.01051C16.0208 5.99229 15.8787 5.98275 15.7344 5.98275C13.9337 5.98275 12.4687 7.44772 12.4687 9.24838C12.4687 11.049 13.9337 12.514 15.7344 12.514C17.535 12.514 19 11.049 19 9.24838C19 7.87622 18.1493 6.69918 16.9477 6.21657ZM15.7344 11.7718C14.343 11.7718 13.211 10.6398 13.211 9.24838C13.211 7.85696 14.343 6.72494 15.7344 6.72494C17.1258 6.72494 18.2578 7.85696 18.2578 9.24838C18.2578 10.6398 17.1258 11.7718 15.7344 11.7718Z\" fill=\"currentColor\"></path>\n</svg>",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
             "collection": "",
             "product_to_show": 3,
-            "products": [],
+            "products": [
+              "cordyceps-extracto-commons",
+              "raiz-rhodiola-rosea-full-polvo",
+              "eleuthero-full-polvo",
+              "baya-schisandra-full-polvo"
+            ],
             "show_max_product": 12,
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
@@ -405,25 +422,85 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
+          }
+        },
+        "paso4": {
+          "type": "step",
+          "settings": {
+            "step_title": "Defensas y ciclo",
+            "icon": "tag",
+            "another_icon": "",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "collection": "",
+            "product_to_show": 3,
+            "products": [
+              "master-blend-160-capsulas",
+              "astragalus-full-polvo",
+              "shatavari-full-polvo",
+              "vitex-extracto"
+            ],
+            "show_max_product": 12,
+            "show_highlighted_features": false,
+            "each_product_can_added_to_bundle_once": false,
+            "show_qty": false,
+            "enable_promotion_highlight": false,
+            "subheading": "",
+            "heading": "Promotion block",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "<p>Describe a promotion, make announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 1,
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "alignment": "center",
+            "content_position": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 3,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         }
       },
       "block_order": [
-        "step_WiU3gr",
-        "step_we8pry",
-        "step_9qjANp"
+        "paso1",
+        "paso2",
+        "paso3",
+        "paso4"
       ],
       "name": "t:sections.buy-your-own-bundle.name",
       "settings": {
-        "heading": "Build Your Own [Wellness Bundle]",
+        "heading": "Arma tu [protocolo]",
         "highlight_type": "font_highlight",
         "heading_size": 100,
         "heading_tag": "h2",
         "heading_alignment": "center",
-        "subheading": "",
-        "text": "<p>Mix & match your daily essentials. Save up to 25% when you build your perfect stack.</p>",
-        "button_atb_label": "ADD TO BUNDLE",
+        "subheading": "Todo el año",
+        "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −20%.</p>",
+        "button_atb_label": "Agregar",
         "step_icon_size": 32,
         "picker_type": "adapt",
         "max_swatch": 20,
@@ -434,7 +511,7 @@
         "change_slides_speed": 5,
         "summary_layout": "vertical",
         "summary_position": "right",
-        "bundler_heading": "Your Wellness Bundle",
+        "bundler_heading": "Tu protocolo",
         "background_color_light": "rgba(0,0,0,0)",
         "heading_color_light": "rgba(0,0,0,0)",
         "text_light": "rgba(0,0,0,0)",
@@ -454,22 +531,22 @@
         "color_marker_dark": "rgba(0,0,0,0)",
         "line_border_dark": "rgba(0,0,0,0)",
         "caculate_discount_by": "quantity",
-        "pre_goal_msg": "Add 5 items → 20% OFF",
-        "reach_goal_msg": "Congratulations! You’ve unlocked all rewards in your bundle!",
+        "pre_goal_msg": "Agrega [x] más para tener [goal_label].",
+        "reach_goal_msg": "Listo: tienes el 20% en tu protocolo.",
         "goal_1": "2",
-        "goal_1_label": "GIFT",
+        "goal_1_label": "10%",
         "discount_type_1": "percentage",
-        "discount_value_1": "0",
+        "discount_value_1": "10",
         "apply_discount_once_per_order_1": false,
-        "goal_2": "5",
-        "goal_2_label": "20% OFF",
+        "goal_2": "3",
+        "goal_2_label": "20%",
         "discount_type_2": "percentage",
         "discount_value_2": "20",
         "apply_discount_once_per_order_2": false,
-        "goal_3": "30",
-        "goal_3_label": "30% OFF",
+        "goal_3": "",
+        "goal_3_label": "",
         "discount_type_3": "percentage",
-        "discount_value_3": "30",
+        "discount_value_3": "0",
         "apply_discount_once_per_order_3": false,
         "spacing": 20,
         "show_section_divider": false,

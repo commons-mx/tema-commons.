@@ -1811,7 +1811,7 @@
       "type": "cm-header",
       "settings": {
         "ann_link": "/#protocolo",
-        "quiz_link": "/pages/quiz",
+        "quiz_link": "/pages/quiz-commons",
         "mobile_footer": "footer"
       },
       "blocks": {
@@ -1837,7 +1837,7 @@
             "card_title": "¿No sabes por dónde empezar?",
             "card_text": "Cuéntanos qué estás viviendo y te armamos tu protocolo.",
             "card_button": "Encuentra tu Commons",
-            "card_link": "/pages/quiz",
+            "card_link": "/pages/quiz-commons",
             "mobile_menu": "cm-ahorra",
             "mobile_note": "−10% / −20%"
           }
@@ -1878,7 +1878,7 @@
           "type": "link",
           "settings": {
             "label": "Quiz",
-            "link": "/pages/quiz",
+            "link": "/pages/quiz-commons",
             "show_mobile": false
           }
         },

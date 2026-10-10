@@ -13,7 +13,7 @@
       <div class="qchips">
         {%- for block in section.blocks -%}<button type="button" class="qchip" data-cm-qchip {{ block.shopify_attributes }}>{{ block.settings.label }}</button>{%- endfor -%}
       </div>
-      <a class="btn dark" href="{{ section.settings.link | default: '/pages/quiz' }}" data-cm-qnext>{{ section.settings.next_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+      <a class="btn dark" href="{{ section.settings.link | default: '/pages/quiz-commons' }}" data-cm-qnext>{{ section.settings.next_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
       <button type="button" class="qback" data-cm-qback>Volver</button>
     </div>
     {%- if section.settings.note != blank -%}<span class="small" style="color: #2C342F">{{ section.settings.note }}</span>{%- endif -%}
