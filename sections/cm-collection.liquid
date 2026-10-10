@@ -1,0 +1,221 @@
+{{ 'cm-pg-coleccion.css' | asset_url | stylesheet_tag }}
+{%- assign s = section.settings -%}
+<div class="cmpg" id="cmc-{{ section.id }}">
+<div class="v4 tA acY">
+
+<section class="chead" aria-labelledby="ct-{{ section.id }}">
+  <div style="display: flex; flex-direction: column">
+    <div class="crumb"><a href="{{ routes.root_url }}">Inicio</a> / {% if s.crumb_label != blank %}<a href="{{ s.crumb_link }}">{{ s.crumb_label }}</a> / {% endif %}{{ collection.title }}</div>
+    <div class="ct">
+      <h1 id="ct-{{ section.id }}" class="disp h1">{{ collection.title }}.</h1>
+      {%- if collection.description != blank -%}<div class="sub" style="max-width: 44ch">{{ collection.description | strip_html | truncatewords: 40 }}</div>{%- elsif s.intro != blank -%}<p class="sub" style="max-width: 44ch">{{ s.intro }}</p>{%- endif -%}
+      <p class="cm-quizline" style="margin: 0">¿No sabes cuál? <a class="tlink" href="{{ s.quiz_link }}">Haz el quiz · 2 min</a></p>
+    </div>
+  </div>
+  <div class="cimg">{%- if collection.image -%}{{ collection.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: collection.title }}{%- elsif s.image != blank -%}{{ s.image | image_url: width: 1600 | image_tag: loading: 'eager' }}{%- endif -%}</div>
+</section>
+
+{%- if s.needs_menu != blank -%}
+<nav class="box needs c" aria-label="Necesidades" style="border-top: 0; border-left: 0">
+  {%- for l in linklists[s.needs_menu].links -%}
+  <a class="need{% if l.url == collection.url %} on{% endif %}" href="{{ l.url }}"{% if l.url == collection.url %} aria-current="page"{% endif %}>{{ l.title }}</a>
+  {%- endfor -%}
+</nav>
+{%- endif -%}
+
+<div class="fbar">
+  <div class="fgroups"><div class="fgroup"><span class="lab">Línea</span>
+    <button type="button" class="on" data-f="">Todo</button><button type="button" data-f="Botanicals">Botanicals</button><button type="button" data-f="Science">Science</button><button type="button" data-f="Rituals">Rituals</button><button type="button" data-f="Kits">Kits</button>
+  </div></div>
+  <div class="fcount"><span data-count>{{ collection.products_count }} productos</span></div>
+</div>
+
+{%- paginate collection.products by 48 -%}
+<section class="pgrid" aria-label="Productos">
+  {%- for p in collection.products -%}
+  {%- liquid
+  assign t = p.type | downcase
+  assign ln = 'Botanicals'
+  if t contains 'science'
+    assign ln = 'Science'
+  elsif t contains 'chocolate' or t contains 'blend' or t contains 'miel'
+    assign ln = 'Rituals'
+  elsif t contains 'kit' or t contains 'bundle'
+    assign ln = 'Kits'
+  endif
+-%}
+  {%- assign v = p.selected_or_first_available_variant -%}
+  <article class="card" data-line="{{ ln }}">
+    <a class="ph" href="{{ p.url }}" style="display: block">
+      {%- if p.featured_image -%}{{ p.featured_image | image_url: width: 900 | image_tag: class: 'prod', loading: 'lazy', alt: p.title, sizes: '(min-width: 990px) 33vw, 50vw' }}{%- endif -%}
+      {%- if p.tags contains 'Best Sellers' -%}<span class="badge">Más vendido</span>{%- endif -%}
+    </a>
+    <div class="cardrow"><div>
+      <span class="lab ctag">{{ ln }}</span>
+      <h3 class="cname"><a href="{{ p.url }}" style="color: inherit">{{ p.title }}</a></h3>
+      <div class="cmeta">{% if p.price_varies %}Desde {% endif %}{{ p.price_min | money_without_trailing_zeros }}</div>
+      {%- if p.variants.size > 1 -%}<div class="cmeta">{{ p.variants | map: 'title' | join: ' · ' }}</div>{%- endif -%}
+      {%- if ln == 'Botanicals' or ln == 'Science' -%}<a class="cm-ptlink" href="{{ routes.root_url }}#protocolo">+ Súmalo a tu protocolo</a>{%- endif -%}
+    </div>
+    <button type="button" class="cart" data-add="{{ v.id }}" aria-label="Agregar {{ p.title | escape }}"{% unless v.available %} disabled{% endunless %}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></button></div>
+  </article>
+  {%- endfor -%}
+</section>
+{%- if paginate.pages > 1 -%}<div class="cm-pag" style="display: flex; justify-content: center; gap: 16px; padding: 24px">{{ paginate | default_pagination }}</div>{%- endif -%}
+{%- endpaginate -%}
+
+<div class="promo2"><div style="display: flex; flex-direction: column; gap: 6px"><span class="lab">Arma tu protocolo</span><span style="font-size: 18px">Mezcla lo que quieras de esta página. Entre más llevas, menos pagas.</span></div>
+<div class="vtiers"><div><b>1 producto</b>Precio normal</div><div><b>2 productos</b>−10%</div><div><b>3 o más</b>−20%</div></div></div>
+
+{%- if s.rituals != blank -%}
+<section class="rits" aria-labelledby="rt-{{ section.id }}">
+  <div class="rhd"><span class="lab">Súmale un ritual</span><h2 id="rt-{{ section.id }}" class="disp h3t">{{ s.rituals_title }}</h2><span class="small">Mieles, chocolates y blends. Van a precio completo y no cuentan para el descuento.</span></div>
+  {%- for r in s.rituals -%}
+  <a class="rit" href="{{ r.url }}"><div class="rph">{%- if r.featured_image -%}{{ r.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: r.title, style: 'width:100%;height:100%;object-fit:cover' }}{%- endif -%}</div><div class="rtx"><div><span class="lab ctag">Rituals</span><div style="font-size: 16px; font-weight: 500">{{ r.title }}</div><div class="cmeta num">{{ r.price | money_without_trailing_zeros }}</div></div><span class="cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></span></div></a>
+  {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- assign whys = section.blocks | where: 'type', 'why' -%}
+{%- if whys.size > 0 -%}
+<section class="row2" aria-labelledby="wy-{{ section.id }}">
+  <div class="cellimg">{%- if s.why_image != blank -%}{{ s.why_image | image_url: width: 1400 | image_tag: loading: 'lazy' }}{%- endif -%}</div>
+  <div class="cell" style="justify-content: center">
+    <span class="lab">¿Por qué estas plantas?</span>
+    <h2 id="wy-{{ section.id }}" class="disp h2" style="max-width: 14ch">{{ s.why_title }}</h2>
+    <div class="why">{%- for b in whys -%}<div class="wr" {{ b.shopify_attributes }}><b>{{ b.settings.name }}</b><span class="small" style="font-size: 16px">{{ b.settings.text }}</span></div>{%- endfor -%}</div>
+  </div>
+</section>
+{%- endif -%}
+
+<section class="row2" aria-labelledby="qz-{{ section.id }}">
+  <div class="quizcell yellow"><span class="tag">Quiz · 2 minutos</span><h2 id="qz-{{ section.id }}" class="disp h2">¿No sabes cuál elegir?</h2><p class="small" style="margin: 0; color: #2C342F; font-size: 17px">Cuéntanos qué estás viviendo y te armamos tu protocolo.</p><a class="btn dark" href="{{ s.quiz_link }}" style="align-self: flex-start">Encuentra tu Commons<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+  <div class="cell" style="justify-content: center">
+    <span class="lab">Preguntas frecuentes</span>
+    <div>{%- for b in section.blocks -%}{%- if b.type == 'faq' -%}<details class="fq" {{ b.shopify_attributes }}><summary class="fqb"><span>{{ b.settings.q }}</span><span aria-hidden="true">+</span></summary><div class="fqa">{{ b.settings.a }}</div></details>{%- endif -%}{%- endfor -%}</div>
+  </div>
+</section>
+</div>
+</div>
+<style>
+  #cmc-{{ section.id }} details > summary span[aria-hidden]{display:inline-block;transition:transform .2s}
+  #cmc-{{ section.id }} details[open] > summary span[aria-hidden]{transform:rotate(45deg)}
+  #cmc-{{ section.id }} .fqa{padding:0 0 16px}
+  #cmc-{{ section.id }} .card[hidden]{display:none}
+  #cmc-{{ section.id }} .cart.on{background:var(--ink);color:#fff}
+  #cmc-{{ section.id }} .need{display:flex;align-items:center;justify-content:center;text-align:center}
+</style>
+<script>
+(function(){
+  var root = document.getElementById('cmc-{{ section.id }}'); if (!root) return;
+  var cards = root.querySelectorAll('.card'), cnt = root.querySelector('[data-count]');
+  function count(){ var n = 0; cards.forEach(function(c){ if (!c.hidden) n++; }); if (cnt) cnt.textContent = n + (n === 1 ? ' producto' : ' productos'); }
+  root.querySelectorAll('[data-f]').forEach(function(b){ b.addEventListener('click', function(){
+    root.querySelectorAll('[data-f]').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on');
+    cards.forEach(function(c){ c.hidden = !!b.dataset.f && c.dataset.line !== b.dataset.f; }); count();
+  }); });
+  count();
+  root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('click', function(){
+    fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: +b.dataset.add, quantity: 1 }] }) })
+      .then(function(r){ if (!r.ok) throw r; b.classList.add('on'); if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart(); } else { location.href = '{{ routes.cart_url }}'; } })
+      .catch(function(){ location.href = '{{ routes.cart_url }}'; });
+  }); });
+})();
+</script>
+{% schema %}
+{
+  "name": "Colección Commons v5",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "crumb_label",
+      "label": "Miga intermedia",
+      "default": "Por necesidad"
+    },
+    {
+      "type": "url",
+      "id": "crumb_link",
+      "label": "Liga de la miga"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Texto si la colección no tiene descripción"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Foto si la colección no tiene imagen"
+    },
+    {
+      "type": "link_list",
+      "id": "needs_menu",
+      "label": "Menú de necesidades",
+      "default": "main-menu"
+    },
+    {
+      "type": "url",
+      "id": "quiz_link",
+      "label": "Liga del quiz"
+    },
+    {
+      "type": "product_list",
+      "id": "rituals",
+      "label": "Rituales sugeridos",
+      "limit": 3
+    },
+    {
+      "type": "text",
+      "id": "rituals_title",
+      "label": "Título de rituales",
+      "default": "Súmale algo rico."
+    },
+    {
+      "type": "image_picker",
+      "id": "why_image",
+      "label": "Foto de por qué estas plantas"
+    },
+    {
+      "type": "text",
+      "id": "why_title",
+      "label": "Título de por qué estas plantas",
+      "default": "Lo que te acompaña."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "why",
+      "name": "Planta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "q",
+          "label": "Pregunta"
+        },
+        {
+          "type": "richtext",
+          "id": "a",
+          "label": "Respuesta"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
