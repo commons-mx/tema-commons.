@@ -26,7 +26,7 @@
             {%- if block.settings.tag2 != blank -%}<span class="tag hide-m">{{ block.settings.tag2 }}</span>{%- endif -%}
           </div>
           {%- if forloop.first -%}<h1 class="disp h1">{{ block.settings.heading }}</h1>{%- else -%}<h2 class="disp h1">{{ block.settings.heading }}</h2>{%- endif -%}
-          {%- if block.settings.text != blank -%}<p class="sub hide-m">{{ block.settings.text }}</p>{%- endif -%}
+          {%- if block.settings.text != blank -%}<p class="sub{% if section.settings.text_mobile %} hdesc{% else %} hide-m{% endif %}">{{ block.settings.text }}</p>{%- endif -%}
           <div class="ctas">
             {%- if block.settings.button_label != blank -%}<a class="btn" href="{{ block.settings.button_link | default: '#' }}"><span>{{ block.settings.button_label }}</span><span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>{%- endif -%}
             {%- if block.settings.button2_label != blank -%}<a class="sq light hide-m" href="{{ block.settings.button2_link | default: '#' }}">{{ block.settings.button2_label }}</a>{%- endif -%}
@@ -79,6 +79,12 @@
       "id": "eyebrow",
       "label": "Línea de arriba",
       "default": "Pioneros de los adaptógenos en México · desde 2019"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_mobile",
+      "label": "Mostrar la descripción también en celular",
+      "default": false
     },
     {
       "type": "range",

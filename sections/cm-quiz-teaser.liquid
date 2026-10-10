@@ -1,4 +1,4 @@
-<div class="cm4" id="cm-quiz">
+<div class="cm4{% if section.settings.compact %} cm-qcompact{% endif %}" id="cm-quiz">
 <section class="row2" aria-labelledby="qz-{{ section.id }}">
   <div class="quizcell yellow" data-cm-quiz>
     {%- if section.settings.tag != blank -%}<span class="tag">{{ section.settings.tag }}</span>{%- endif -%}
@@ -18,7 +18,7 @@
     </div>
     {%- if section.settings.note != blank -%}<span class="small" style="color: #2C342F">{{ section.settings.note }}</span>{%- endif -%}
   </div>
-  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-quiz.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}{%- if section.settings.caption != blank -%}<span class="photocap"><span class="n">2</span>{{ section.settings.caption }}</span>{%- endif -%}</div>
+  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-quiz.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}{%- if section.settings.caption != blank -%}<span class="photocap"><span class="n">{{ section.settings.caption_n | default: 2 }}</span>{{ section.settings.caption }}</span>{%- endif -%}</div>
 </section>
 </div>
 <script>
@@ -104,6 +104,18 @@
       "id": "caption",
       "label": "Pie de foto",
       "default": "minutos"
+    },
+    {
+      "type": "text",
+      "id": "caption_n",
+      "label": "Número del pie de foto",
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "compact",
+      "label": "Versión compacta (menos alto)",
+      "default": false
     }
   ],
   "blocks": [

@@ -647,3 +647,15 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 #CartDrawer .border-t,#CartDrawer .border-b,#CartDrawer .border{border-color:#D9D8D1 !important}
 #CartDrawer #x-cart-drawer-freeshipping [class*="bg-"]{border-radius:999px}
 #CartDrawer #x-cart-drawer-freeshipping .progress-bar,#CartDrawer #x-cart-drawer-freeshipping [style*="width"]{background-color:#E4DF74}
+
+/* home v5.1 · ajustes de claridad (10 oct) */
+.cm4 .hcopy .hdesc{max-width:40ch}
+.cm4 .uintro{margin:12px 0 0;max-width:52ch}
+.cm4.cm-qcompact .cellimg{min-height:500px}
+@container cm4 (max-width: 760px){
+  .cm4 .hcopy:has(.hdesc){gap:18px}
+  .cm4 .hleft:has(.hdesc){padding-top:28px}
+  .cm4 .hcopy .hdesc{font-size:16px;line-height:1.45}
+  .cm4.cm-qcompact .quizcell{gap:18px;padding-block:28px}
+  .cm4.cm-qcompact .cellimg{min-height:0}
+}

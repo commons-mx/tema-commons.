@@ -2,7 +2,9 @@
   "sections": {
     "cm_hero": {
       "type": "cm-hero",
-      "settings": {},
+      "settings": {
+        "text_mobile": true
+      },
       "blocks": {
         "b1": {
           "type": "slide",
@@ -12,7 +14,7 @@
             "badge_style": "sci",
             "tag": "Affron® · 28 mg",
             "heading": "Azafrán. La dosis que se estudió.",
-            "text": "El extracto de azafrán que se ha estudiado en el estado de ánimo. Una cápsula con 28 mg de extracto al día.",
+            "text": "Extracto de azafrán Affron® con 28 mg por cápsula, estudiado por su relación con el estado de ánimo y el descanso.",
             "button_label": "Compra Azafrán · $950",
             "button_link": "/products/azafran-1",
             "button2_label": "Ver evidencia",
@@ -27,7 +29,7 @@
             "badge_style": "bot",
             "tag": "Los más queridos",
             "heading": "Los adaptógenos más queridos de México.",
-            "text": "Ashwagandha, Reishi y Melena de León. Extractos de raíz y cuerpo fructífero, con más de 1,500 reseñas.",
+            "text": "Extractos concentrados de plantas, raíces y hongos para acompañar tu bienestar diario.",
             "button_label": "Ver Botanicals",
             "button_link": "/collections/mejores-adaptogenos-naturales",
             "button2_label": "Haz el quiz",
@@ -42,7 +44,9 @@
     },
     "cm_needs": {
       "type": "cm-needs",
-      "settings": {},
+      "settings": {
+        "quiz_label": ""
+      },
       "blocks": {
         "b1": {
           "type": "need",
@@ -106,7 +110,16 @@
     },
     "cm_quiz": {
       "type": "cm-quiz-teaser",
-      "settings": {},
+      "settings": {
+        "tag": "Quiz · 3 minutos",
+        "heading": "Encuentra tu Commons.",
+        "intro": "Responde cinco preguntas y descubre una selección de productos de nuestras tres líneas, pensada para ti.",
+        "lines": "",
+        "button_label": "Empezar el quiz",
+        "note": "Una guía, no un diagnóstico.",
+        "caption_n": "3",
+        "compact": true
+      },
       "blocks": {
         "b1": {
           "type": "chip",
@@ -157,7 +170,8 @@
     "cm_products": {
       "type": "cm-products",
       "settings": {
-        "link": "/collections/all"
+        "link": "/collections/all",
+        "protocol_head": false
       },
       "blocks": {
         "b1": {
@@ -211,7 +225,10 @@
     },
     "cm_universes": {
       "type": "cm-universes",
-      "settings": {},
+      "settings": {
+        "heading": "Ciencia, plantas y rituales.",
+        "intro": "Adaptógenos, extractos botánicos y fórmulas desarrolladas para acompañar tu bienestar."
+      },
       "blocks": {
         "b1": {
           "type": "universe",

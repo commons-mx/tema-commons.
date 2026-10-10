@@ -1,6 +1,6 @@
 <div class="cm4">
 <section aria-labelledby="uni-{{ section.id }}">
-  {%- if section.settings.heading != blank -%}<div class="hd-row"><h2 id="uni-{{ section.id }}" class="disp h2" style="max-width: 18ch">{{ section.settings.heading }}</h2></div>{%- endif -%}
+  {%- if section.settings.heading != blank -%}<div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2" style="max-width: 18ch">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div></div>{%- endif -%}
   <div class="row2">
     {%- for block in section.blocks -%}
     {%- capture fb -%}cm-universo-{{ forloop.index }}.jpg{%- endcapture -%}
@@ -32,6 +32,11 @@
       "id": "heading",
       "label": "Título",
       "default": "La ciencia no reemplaza el origen, lo acompaña."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introducción"
     }
   ],
   "blocks": [
