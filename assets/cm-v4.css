@@ -607,6 +607,8 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .cm4 .ftag{margin:0;font-family:var(--fd);font-size:22px;letter-spacing:-0.01em;line-height:1.1}
 .cm4 .ftop .fsoc > div{display:flex;gap:16px;align-items:center}
 .cm4 .ftop .fsoc svg{width:20px;height:20px}
+.cm4 .fsoc svg rect,.cm4 .fsoc svg circle,.cm4 .fsoc svg path{fill:none !important}
+.cm4 .fsoc svg circle[fill]{fill:currentColor !important}
 .cm4 .fintro{gap:0}
 .cm4 .nbox{padding:20px;gap:12px;max-width:400px}
 .cm4 .nbt{font-size:16px}
@@ -622,9 +624,9 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
   .cm4 .ftag{font-size:18px}
   .cm4 .fgrid{gap:24px}
   .cm4 .facc details:first-child{border-top:0}
-  .cm4 .facc summary{padding:13px 0;font-size:15px}
+  .cm4 .facc summary{padding:10px 0;font-size:14px}
   .cm4 .facc summary svg{width:14px;height:14px}
-  .cm4 .facc .flinks{gap:9px;padding:0 0 14px}
+  .cm4 .facc .flinks{gap:8px;padding:0 0 12px}
   .cm4 .facc .flinks a{font-size:14px}
   .cm4 .nbox{padding:16px;gap:10px}
   .cm4 .nbt{font-size:15px}

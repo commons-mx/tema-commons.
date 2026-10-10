@@ -1,11 +1,8 @@
 {
   "sections": {
     "main": {
-      "type": "cm-page",
-      "settings": {
-        "eyebrow": "Aprende",
-        "quiz": true
-      }
+      "type": "cm-adaptogenos",
+      "settings": {}
     }
   },
   "order": [
