@@ -1,0 +1,55 @@
+<div class="cm4">
+<section aria-label="{{ section.settings.heading | escape }}">
+  {%- if section.settings.heading != blank -%}<div class="band"><h2 class="disp">{{ section.settings.heading }}</h2></div>{%- endif -%}
+  <div class="row2">
+    <div class="cellimg" style="min-height: {{ section.settings.height }}px">{%- if section.settings.image1 != blank -%}{{ section.settings.image1 | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-naturaleza-1.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}{%- if section.settings.caption != blank -%}<span class="photocap">{{ section.settings.caption }}</span>{%- endif -%}</div>
+    <div class="cellimg" style="min-height: {{ section.settings.height }}px">{%- if section.settings.image2 != blank -%}{{ section.settings.image2 | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-naturaleza-2.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}</div>
+  </div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Banda y fotos",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Frase",
+      "default": "Todo empieza en una planta."
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Foto izquierda"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Pie de foto",
+      "default": "In common with nature"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Foto derecha"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Alto de las fotos",
+      "min": 300,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "default": 720
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Banda y fotos"
+    }
+  ]
+}
+{% endschema %}

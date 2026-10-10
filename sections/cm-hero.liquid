@@ -1,0 +1,188 @@
+{%- liquid
+  assign slides = section.blocks | where: 'type', 'slide'
+-%}
+<div class="cm4" id="cm-hero-{{ section.id }}">
+<section class="hero" aria-label="Destacado">
+  {%- for block in slides -%}
+    {%- capture fb -%}cm-hero-{{ forloop.index }}.jpg{%- endcapture -%}
+    <div class="cm-slide-bg{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}">
+      {%- if block.settings.image != blank -%}
+        {{ block.settings.image | image_url: width: 2400 | image_tag: class: 'hbg', sizes: '100vw', loading: 'eager', alt: block.settings.heading }}
+      {%- else -%}
+        <img class="hbg" src="{{ fb | asset_url }}" alt="{{ block.settings.heading | escape }}" loading="eager">
+      {%- endif -%}
+    </div>
+  {%- endfor -%}
+  <div class="shade"></div>
+  <div class="hgrid">
+    <div class="hleft">
+      <div class="hcopy">
+        {%- if section.settings.eyebrow != blank -%}<span class="hfirst">{{ section.settings.eyebrow }}</span>{%- endif -%}
+        {%- for block in slides -%}
+        <div class="cm-slide{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          <div class="tags">
+            {%- if block.settings.badge != blank -%}<span class="badge{% if block.settings.badge_style == 'bot' %} bot{% endif %}">{{ block.settings.badge }}</span>{%- endif -%}
+            {%- if block.settings.tag != blank -%}<span class="tag">{{ block.settings.tag }}</span>{%- endif -%}
+            {%- if block.settings.tag2 != blank -%}<span class="tag hide-m">{{ block.settings.tag2 }}</span>{%- endif -%}
+          </div>
+          {%- if forloop.first -%}<h1 class="disp h1">{{ block.settings.heading }}</h1>{%- else -%}<h2 class="disp h1">{{ block.settings.heading }}</h2>{%- endif -%}
+          {%- if block.settings.text != blank -%}<p class="sub hide-m">{{ block.settings.text }}</p>{%- endif -%}
+          <div class="ctas">
+            {%- if block.settings.button_label != blank -%}<a class="btn" href="{{ block.settings.button_link | default: '#' }}"><span>{{ block.settings.button_label }}</span><span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>{%- endif -%}
+            {%- if block.settings.button2_label != blank -%}<a class="sq light hide-m" href="{{ block.settings.button2_link | default: '#' }}">{{ block.settings.button2_label }}</a>{%- endif -%}
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+      {%- if slides.size > 1 -%}
+      <div class="hprog" role="tablist" aria-label="Líneas" style="grid-template-columns: repeat({{ slides.size }}, minmax(0,1fr))">
+        {%- for block in slides -%}
+        <button type="button" class="{% if forloop.first %}on{% endif %}" data-i="{{ forloop.index0 }}" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"><b>0{{ forloop.index }}</b>{{ block.settings.tab_label | default: block.settings.heading }}</button>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+    </div>
+    <div class="hright"></div>
+  </div>
+</section>
+</div>
+<style>
+  #cm-hero-{{ section.id }} .cm-slide{display:none;flex-direction:column;gap:24px;align-items:flex-start}
+  #cm-hero-{{ section.id }} .cm-slide.on{display:flex}
+  #cm-hero-{{ section.id }} .cm-slide-bg{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+  #cm-hero-{{ section.id }} .cm-slide-bg.on{opacity:1}
+  #cm-hero-{{ section.id }} .hleft{justify-content:space-between}
+  @media (prefers-reduced-motion: reduce){#cm-hero-{{ section.id }} .cm-slide-bg{transition:none}}
+</style>
+<script>
+  (function(){
+    var root = document.getElementById('cm-hero-{{ section.id }}'); if(!root) return;
+    var tabs = root.querySelectorAll('.hprog button'), n = tabs.length, cur = 0, timer = null;
+    var secs = {{ section.settings.autoplay | default: 0 }};
+    function go(i){ cur = i;
+      root.querySelectorAll('[data-i]').forEach(function(el){ var on = String(el.dataset.i) === String(i); el.classList.toggle('on', on); if(el.getAttribute('role')==='tab') el.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    }
+    tabs.forEach(function(t){ t.addEventListener('click', function(){ go(+t.dataset.i); if(timer){ clearInterval(timer); timer = null; } }); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (secs > 0 && n > 1 && !reduce && !window.Shopify?.designMode) { timer = setInterval(function(){ go((cur + 1) % n); }, secs * 1000); }
+    document.addEventListener('shopify:block:select', function(e){ var el = root.querySelector('.cm-slide[data-i]'); var sl = e.target.closest && e.target.closest('.cm-slide'); if (sl) go(+sl.dataset.i); });
+  })();
+</script>
+{% schema %}
+{
+  "name": "Commons · Hero",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Línea de arriba",
+      "default": "Pioneros de los adaptógenos en México · desde 2019"
+    },
+    {
+      "type": "range",
+      "id": "autoplay",
+      "label": "Cambiar solo cada (segundos, 0 = no)",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Vista",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto de fondo"
+        },
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Texto de la línea de abajo",
+          "default": "Science · nuestra línea nueva"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Etiqueta",
+          "default": "Nuevo"
+        },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "Color de la etiqueta",
+          "options": [
+            {
+              "value": "sci",
+              "label": "Lima (Science)"
+            },
+            {
+              "value": "bot",
+              "label": "Verde bosque (Botanicals)"
+            }
+          ],
+          "default": "sci"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Etiqueta 2"
+        },
+        {
+          "type": "text",
+          "id": "tag2",
+          "label": "Etiqueta 3 (solo escritorio)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Azafrán. La dosis que se estudió."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto (solo escritorio)"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Botón principal",
+          "default": "Compra Azafrán"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Liga del botón principal"
+        },
+        {
+          "type": "text",
+          "id": "button2_label",
+          "label": "Botón secundario"
+        },
+        {
+          "type": "url",
+          "id": "button2_link",
+          "label": "Liga del botón secundario"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Hero",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

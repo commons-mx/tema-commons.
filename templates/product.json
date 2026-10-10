@@ -1,0 +1,850 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "rating_6wq9Xd": {
+          "type": "rating",
+          "settings": {}
+        },
+        "product_name_yd3e3R": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1",
+            "enable_product_rating": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "adapt_custom_price_format": false,
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_cjpkBW": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "collection_link_mTdCHr": {
+          "type": "collection_link",
+          "disabled": true,
+          "settings": {
+            "text": "See more by collection_name",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "estimate_delivery_tggxpX": {
+          "type": "estimate_delivery",
+          "settings": {
+            "hide_when_pre_order": true,
+            "box_type": "square",
+            "message": "<p>You can receive the package between <strong>earliest_delivery_date and latest_delivery_date. </strong>Order within <strong>time_to_cut_off.</strong></p>",
+            "tooltip_text": "",
+            "tooltip_icon": "none",
+            "custom_icon": "",
+            "tooltip_icon_position": "left",
+            "tooltip_message": "",
+            "show_background": true,
+            "show_border": false,
+            "background_color_light": "#eff5ff",
+            "message_color_light": "#2756cd",
+            "border_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)",
+            "bg_tooltip_color_light": "rgba(0,0,0,0)",
+            "tooltip_color_light": "rgba(0,0,0,0)",
+            "bg_tooltip_color_dark": "rgba(0,0,0,0)",
+            "tooltip_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "max_swatch": 20,
+            "show_variant_option": true,
+            "enable_color_swatches": true,
+            "swatch_size": "small",
+            "enable_size_chart": false,
+            "option_to_show_size_chart": "",
+            "heading": "Size chart",
+            "select_page": "",
+            "additional_info": "Add extra details for the image, such as measuring guide or important notes.",
+            "size_chart_type": "popup"
+          }
+        },
+        "subscription_yxpAGn": {
+          "type": "subscription",
+          "settings": {
+            "label": "Best Way to Save – Subscribe & Save 20% Automatically",
+            "text": "<p>✔ Enjoy exclusive savings with every delivery.</p><p>✔ Your favorites, delivered before you run out.</p><p>✔ Skip, pause, or cancel anytime.</p>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "style": "adapt"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_button_style": "secondary",
+            "show_dynamic_checkout": true,
+            "dymanic_checkout_style": "primary",
+            "show_atc_quantity": false,
+            "show_add_to_cart": true,
+            "show_price": false,
+            "hide_sale_price": true,
+            "show_gift_card_recipient": true,
+            "pickup_availability": false,
+            "hide_when_pre_order": true,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "frequently_bought_YtHWHj": {
+          "type": "frequently_bought",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_icon": "",
+            "text": "Frequently Bought Together",
+            "show_background": false,
+            "show_border": true,
+            "list_products": [],
+            "show_vendor": false,
+            "show_rating": false,
+            "show_highlighted_features": false,
+            "variant_type": "button",
+            "border_color_light": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "feature_icon_g9zD4W": {
+          "type": "feature_icon",
+          "settings": {
+            "applied_collections": [],
+            "heading_size": 110,
+            "icon_size": 50,
+            "border_column": "none",
+            "content_alignment": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "line_border_light": "rgba(0,0,0,0)",
+            "color_icon_light": "#b8581d",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "line_border_dark": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "icon_1": "truck",
+            "another_icon_1": "",
+            "custom_icon_1": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_5463_10947)\">\n<path d=\"M42.6816 7.3223C37.9597 2.60046 31.6816 0 25.0039 0C18.3261 0 12.0481 2.60046 7.32621 7.3223C2.60437 12.0442 0.00390625 18.3222 0.00390625 25C0.00390625 31.6777 2.60437 37.9558 7.32621 42.6776C12.0481 47.3995 18.3261 50 25.0039 50C31.6816 50 37.9597 47.3995 42.6816 42.6776C47.4035 37.9558 50.0039 31.6777 50.0039 25C50.0039 18.3222 47.4035 12.0442 42.6816 7.3223ZM25.0039 48.5972C11.9924 48.5972 1.40671 38.0115 1.40671 25C1.40671 18.49 4.0567 12.5873 8.3345 8.31376L15.0164 14.9957C15.1534 15.1327 15.3328 15.2011 15.5123 15.2011C15.6918 15.2011 15.8714 15.1326 16.0083 14.9957C16.2822 14.7218 16.2822 14.2777 16.0083 14.0038L9.35726 7.35268C13.5249 3.65334 19.0061 1.4028 25.0039 1.4028C38.0155 1.4028 48.6011 11.9885 48.6011 25C48.6011 30.9978 46.3506 36.479 42.6512 40.6467L37.7039 35.75C37.4301 35.4762 36.9779 35.2262 36.7039 35.5C36.4299 35.774 36.43 36.1761 36.7039 36.45L41.6901 41.6694C37.4166 45.9472 31.514 48.5972 25.0039 48.5972Z\" fill=\"currentColor\"></path>\n<path d=\"M22.9064 24.95H17.9302V29.5488H16.6017V19.1719H17.9302V23.7393H22.9064V19.1719H24.235V29.5488H22.9064V24.95ZM28.5999 33C28.0915 33 27.6303 32.9475 27.2163 32.8427C26.8075 32.7379 26.4485 32.5885 26.1393 32.3946C25.8353 32.206 25.5916 31.9832 25.4082 31.7264L26.3044 30.8695C26.404 31.0058 26.5376 31.1499 26.7053 31.3019C26.8783 31.4591 27.1115 31.5928 27.405 31.7028C27.6985 31.8129 28.081 31.8679 28.5527 31.8679C29.0139 31.8679 29.4044 31.7683 29.7241 31.5692C30.0438 31.3753 30.2875 31.1106 30.4552 30.7752C30.6229 30.4398 30.7067 30.0624 30.7067 29.6432V29.4309H32.0432V29.7296C32.0432 30.4424 31.8885 31.0399 31.5793 31.522C31.2754 32.0094 30.864 32.3763 30.3451 32.6226C29.8263 32.8742 29.2445 33 28.5999 33ZM30.7067 29.5488V28.291C30.6648 28.422 30.5416 28.6028 30.3372 28.8334C30.1381 29.064 29.8629 29.2737 29.5118 29.4624C29.1659 29.6458 28.7571 29.7375 28.2854 29.7375C27.688 29.7375 27.1455 29.596 26.6581 29.313C26.176 29.03 25.7908 28.6343 25.5025 28.1259C25.2195 27.6123 25.078 27.0122 25.078 26.3257C25.078 25.6391 25.2195 25.0417 25.5025 24.5333C25.7908 24.0197 26.176 23.6214 26.6581 23.3384C27.1455 23.0501 27.688 22.906 28.2854 22.906C28.7519 22.906 29.1554 22.9899 29.4961 23.1576C29.842 23.3253 30.1171 23.5192 30.3215 23.7393C30.5312 23.9594 30.6543 24.1481 30.691 24.3053V23.0947H32.0432V29.5488H30.7067ZM26.4302 26.3257C26.4302 26.7921 26.5324 27.1957 26.7368 27.5363C26.9411 27.877 27.2058 28.1417 27.5307 28.3303C27.8609 28.5138 28.2121 28.6055 28.5842 28.6055C28.9825 28.6055 29.3389 28.5111 29.6533 28.3225C29.9678 28.1338 30.2167 27.8691 30.4001 27.5285C30.5836 27.1826 30.6753 26.7816 30.6753 26.3257C30.6753 25.8697 30.5836 25.4714 30.4001 25.1308C30.2167 24.7849 29.9678 24.5176 29.6533 24.3289C29.3389 24.135 28.9825 24.038 28.5842 24.038C28.2121 24.038 27.8609 24.1324 27.5307 24.321C27.2058 24.5097 26.9411 24.7744 26.7368 25.115C26.5324 25.4557 26.4302 25.8592 26.4302 26.3257Z\" fill=\"currentColor\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_5463_10947\">\n<rect width=\"50\" height=\"50\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title_1": "Mercury-Free",
+            "text_1": "",
+            "link_1": "",
+            "open_new_window_1": false,
+            "icon_2": "truck",
+            "another_icon_2": "",
+            "custom_icon_2": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M34.4729 33.6052C34.0877 33.2277 33.4694 33.2341 33.0919 33.6192L33.0641 33.6476C32.6867 34.0328 32.693 34.6511 33.0783 35.0286C33.2683 35.2148 33.5151 35.3076 33.7617 35.3076C34.0149 35.3076 34.268 35.2097 34.4594 35.0145L34.4871 34.9862C34.8645 34.601 34.8582 33.9827 34.4729 33.6052Z\" fill=\"currentColor\"></path>\n<path d=\"M31.499 37.0495C29.1656 39.0495 23.999 43.3496 21.999 44.5496C16.8323 40.3829 5.99895 30.8495 3.99895 26.0495C1.49895 22.0495 -1.0027 12.7273 6.99895 7.54954C13.7989 3.14944 19.8323 7.04954 21.999 9.54954C24.6656 7.04983 32.5 3.04883 38.499 7.54954C43.299 11.5489 43.8323 15.5487 43.999 17.0487M43.999 17.0487C47 18.5486 48.999 20.5487 48.999 24.5487C48.999 29.5487 44.999 32.0487 41.999 32.0487C37.5 32.0486 34 29.5487 34 24.5487C34 19.5487 38.5 15.0486 43.999 17.0487Z\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M1 24.5488H13L16 15.5488L21.5 33.0488L24.5 24.5488H30M41.5 20.5488V24.2988M41.5 28.0488V24.2988M41.5 24.2988H45H38\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "title_2": "Heart Health",
+            "text_2": "",
+            "link_2": "",
+            "open_new_window_2": false,
+            "icon_3": "truck",
+            "another_icon_3": "",
+            "custom_icon_3": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_5463_10961)\">\n<path d=\"M19.9356 1.19531V5.55049C19.9356 8.74521 18.808 11.7333 16.9284 13.7804C15.9913 14.801 15.4102 16.2211 15.4102 17.7917C15.4102 20.8999 17.6858 23.4195 20.493 23.4195C21.483 23.4195 22.4066 23.106 23.1876 22.5637C24.3234 21.775 25.6771 21.775 26.8129 22.5637C27.5939 23.106 28.5175 23.4195 29.5075 23.4195C32.3147 23.4195 34.5903 20.8999 34.5903 17.7917C34.5903 16.2651 34.0413 14.8805 33.1501 13.8667C31.3503 11.8195 30.2775 8.89551 30.2775 5.77998V1.19531\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M30.0648 48.3785V44.0233C30.0648 40.8286 31.1925 37.8405 33.0721 35.7935C34.0092 34.7729 34.5903 33.3527 34.5903 31.7821C34.5903 28.6739 32.3146 26.1543 29.5075 26.1543C28.5175 26.1543 27.5938 26.4679 26.8129 27.0102C25.6771 27.7988 24.3233 27.7988 23.1876 27.0102C22.4065 26.4679 21.483 26.1543 20.493 26.1543C17.6857 26.1543 15.4102 28.6739 15.4102 31.7821C15.4102 33.3087 15.9592 34.6934 16.8504 35.7071C18.6502 37.7543 19.7229 40.6783 19.7229 43.7939V48.3785\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M22.3398 16.7891L23.3658 16.0649C24.3941 15.339 25.5448 15.3245 26.5792 16.0243L27.7098 16.7891\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M28.0203 33.2207L26.9253 33.9449C25.8277 34.6708 24.5997 34.6854 23.4957 33.9855L22.2891 33.2207\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15.9965 20.418C15.9965 20.418 12.7261 24.0244 15.9965 29.1552\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M34.3047 29.1552C34.3047 29.1552 37.5751 25.5487 34.3047 20.418\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"1.46484\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_5463_10961\">\n<rect width=\"50\" height=\"50\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title_3": "Bone Support",
+            "text_3": "",
+            "link_3": "",
+            "open_new_window_3": false,
+            "icon_4": "none",
+            "another_icon_4": "",
+            "custom_icon_4": "",
+            "title_4": "",
+            "text_4": "",
+            "link_4": "",
+            "open_new_window_4": false,
+            "icon_5": "none",
+            "another_icon_5": "",
+            "custom_icon_5": "",
+            "title_5": "",
+            "text_5": "",
+            "link_5": "",
+            "open_new_window_5": false,
+            "icon_6": "none",
+            "another_icon_6": "",
+            "custom_icon_6": "",
+            "title_6": "",
+            "text_6": "",
+            "link_6": "",
+            "open_new_window_6": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": true,
+            "open_by_default": false,
+            "make_content_center": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Product Description",
+            "custom_description": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "collapsible_tab_cBRXwC": {
+          "type": "collapsible_tab",
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Key Benefits",
+            "tab_content": ""
+          }
+        },
+        "collapsible_tab_mJATRU": {
+          "type": "collapsible_tab",
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Key Ingredients",
+            "tab_content": ""
+          }
+        },
+        "table_of_information_BepjTp": {
+          "type": "table_of_information",
+          "settings": {
+            "show_in_tab": true,
+            "open_by_default": true,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": true,
+            "heading": "Supplement Facts",
+            "left_label": "Nutrient",
+            "right_label": "Amount per Serving",
+            "details": "<p>Calories (kcal): 20<br/>Total Fat: 2g<br/>Omega-3 Fatty Acids: 1400mg<br/>EPA: 800mg<br/>DHA: 600mg</p>",
+            "text_to_use_for_empty_fields": "-",
+            "extra_details": ""
+          }
+        },
+        "collapsible_tab_JjcEKz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Suggested Use",
+            "tab_content": ""
+          }
+        },
+        "payment_methods_nkbAyw": {
+          "type": "payment_methods",
+          "settings": {
+            "heading": "Pay with",
+            "text": "Your transaction is protected with advanced security measures to keep your information confidential",
+            "custom_payment": "",
+            "show_secondary_background": false,
+            "show_border": true,
+            "background_color_light": "rgba(0,0,0,0)",
+            "heading_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "heading_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "disabled": true,
+          "settings": {
+            "desktop_display_type": "popup",
+            "show_quantity_selector": false,
+            "link_to_atc_btn": false
+          }
+        },
+        "collapsible_tab_DTdfbC": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Additional Information",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "rating_6wq9Xd",
+        "product_name_yd3e3R",
+        "price",
+        "text_cjpkBW",
+        "collection_link_mTdCHr",
+        "estimate_delivery_tggxpX",
+        "variant_picker",
+        "subscription_yxpAGn",
+        "quantity_selector",
+        "buy_buttons",
+        "frequently_bought_YtHWHj",
+        "feature_icon_g9zD4W",
+        "description",
+        "collapsible_tab_cBRXwC",
+        "collapsible_tab_mJATRU",
+        "table_of_information_BepjTp",
+        "collapsible_tab_JjcEKz",
+        "payment_methods_nkbAyw",
+        "sticky-atc",
+        "collapsible_tab_DTdfbC"
+      ],
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": false,
+        "title_size": 100,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": true,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "2_columns",
+        "show_arrow_button": true,
+        "mobile_media_size": "full_width",
+        "show_thumnail_mobile": true,
+        "transition_style": "fade",
+        "image_ratio": "3/4",
+        "thumbnail_position": "horizontal",
+        "enable_thumbnail_overlay": true,
+        "enable_image_zoom": true,
+        "zoom_effect": "gallery",
+        "enable_video_autoplay": false,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": true,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": false,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": true,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-center",
+        "mobile_content_alignment": "text-center",
+        "background_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "spacing_col": "small",
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_recently_viewed_tab": false,
+        "enable_clear_history": true,
+        "tabs_desktop_alignment": "center",
+        "title_size": 120,
+        "title_style": "none",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 5,
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "product_specifications_KxhmVp": {
+      "type": "product-specifications",
+      "blocks": {
+        "specs_VgFEjV": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Form",
+            "row_content": ""
+          }
+        },
+        "specs_NmLBxM": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Country of Origin",
+            "row_content": ""
+          }
+        },
+        "specs_UdpH69": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Capsule Color",
+            "row_content": ""
+          }
+        },
+        "specs_3qDnjz": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Purification Process",
+            "row_content": ""
+          }
+        },
+        "specs_FLYH6z": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Flavor",
+            "row_content": ""
+          }
+        },
+        "specs_DBWzge": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Shelf Life",
+            "row_content": ""
+          }
+        },
+        "specs_Bja39J": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Storage",
+            "row_content": ""
+          }
+        },
+        "specs_hr7PfE": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Dietary Attributes",
+            "row_content": ""
+          }
+        },
+        "specs_hXMidg": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Target Audience",
+            "row_content": ""
+          }
+        },
+        "specs_W63VYm": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Certification",
+            "row_content": ""
+          }
+        },
+        "specs_hApNJj": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "llergen Info",
+            "row_content": ""
+          }
+        },
+        "specs_FibLnR": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Source",
+            "row_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "specs_VgFEjV",
+        "specs_NmLBxM",
+        "specs_UdpH69",
+        "specs_3qDnjz",
+        "specs_FLYH6z",
+        "specs_DBWzge",
+        "specs_Bja39J",
+        "specs_hr7PfE",
+        "specs_hXMidg",
+        "specs_W63VYm",
+        "specs_hApNJj",
+        "specs_FibLnR"
+      ],
+      "name": "t:sections.product-specifications.name",
+      "settings": {
+        "heading": "Product specifications",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "{{ product.description }}",
+        "image_link": "",
+        "open_new_window": false,
+        "image_alignment": "left",
+        "hide_empty_rows": false,
+        "text_empty_fields": "-",
+        "row_shown_by_default": 12,
+        "view_more_button": "See more",
+        "view_less_button": "See less",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "table_color": "rgba(0,0,0,0)",
+        "table_text": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "table_color_dark": "rgba(0,0,0,0)",
+        "table_text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "columns_desktop": "2",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "mobile_height": "250px",
+        "show_section_divider_mobile": true,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_cr9yJa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ULQqfi": {
+          "type": "heading",
+          "settings": {
+            "subheading": "WHY WE STARTED",
+            "heading": "I started Arise at 38,[for the ritual I couldn’t find]",
+            "highlight_type": "font_highlight",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>I'd spent a decade in pharma formulation, watching clinical brands sell sub-clinical doses to women older than me. Breeze is what I wanted on my own counter with traceable actives, third-party tested, unbothered about marketing. No overnight transformation. No fairy-dust doses. Just a small cabinet of capsules I reach for before the house wakes up.<br/><br/><em><strong>— Nin, founder & head formulator</strong></em></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_ncRnfx": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore our products",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ULQqfi",
+        "button_ncRnfx"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": false,
+        "image": "",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 100,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "text_column_with_image_w4HWgX": {
+      "type": "text-column-with-image",
+      "blocks": {
+        "column_BKNDNx": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Increase energy (2–4 weeks)",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "<p>In the first few weeks, many users notice improved mood, reduced brain fog, and a gentle increase in daily energy with no fishy aftertaste.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_JqHnAA": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Sharper focus (4–12 weeks)",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "<p>You may experience better joint comfort, sharper focus, and more stable energy levels as inflammation begins to balance.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_h4PKUA": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Daily benefits: overall wellness",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "<p>Consistent use provides ongoing heart, brain, and joint support, along with improved skin health and overall wellness.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_BKNDNx",
+        "column_JqHnAA",
+        "column_h4PKUA"
+      ],
+      "settings": {
+        "title": "What To Expect With This Product",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "subheading": "",
+        "text": "",
+        "secondary_background": "column",
+        "image_ratio": "75%",
+        "adapt_corners": true,
+        "rounded_corner_image": true,
+        "column_content_alignment": "center",
+        "background_color_light": "#fcfaf6",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": false,
+        "change_bar_every": 5,
+        "image_position_desktop": "top",
+        "column_layout_desktop": "lg:w-1/3",
+        "spacing_desktop": 20,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "image_position_mobile": "top",
+        "column_layout_mobile": "w-full",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "recently_viewed_TjeRTp": {
+      "type": "recently-viewed",
+      "name": "t:sections.recently-viewed-products.name",
+      "settings": {
+        "heading": "Recently viewed products",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "enable_clear_history": true,
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": false,
+        "show_highlighted_attributes": false,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": false,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 20,
+        "padding_top": 0,
+        "padding_bottom": 92,
+        "columns_mobile": "2",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "product_specifications_KxhmVp",
+    "image_with_text_cr9yJa",
+    "text_column_with_image_w4HWgX",
+    "recently_viewed_TjeRTp"
+  ]
+}

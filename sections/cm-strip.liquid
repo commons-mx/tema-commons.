@@ -1,0 +1,43 @@
+<div class="cm4">
+<section aria-label="{{ section.settings.label | escape }}" class="evstrip" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding: 28px 40px; border-bottom: 1px solid var(--rule)">
+  <div style="display: flex; flex-direction: column; gap: 8px">{%- if section.settings.label != blank -%}<span class="lab">{{ section.settings.label }}</span>{%- endif -%}<span style="font-size: 18px">{{ section.settings.text }}</span></div>
+  {%- if section.settings.button_label != blank -%}<a class="sq" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }}</a>{%- endif -%}
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Franja",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta",
+      "default": "Evidencia · Commons Science"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto",
+      "default": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Botón",
+      "default": "Ver la evidencia"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Liga"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Franja"
+    }
+  ]
+}
+{% endschema %}

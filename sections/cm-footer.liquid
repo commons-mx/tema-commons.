@@ -1,0 +1,122 @@
+<div class="cm4">
+<footer class="ftr">
+<div class="wrap">
+  <div class="fgrid">
+    <div class="fintro">
+      {%- if section.settings.tagline != blank -%}<p style="margin: 0; font-size: 22px">{{ section.settings.tagline }}</p>{%- endif -%}
+      <div class="nbox">
+        <span class="nbt">{{ section.settings.newsletter_title }}</span>
+        {%- form 'customer', class: 'nform', id: 'cm-news-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label for="cm-news-{{ section.id }}" style="position: absolute; left: -9999px">Tu correo</label>
+          <input id="cm-news-{{ section.id }}" type="email" name="contact[email]" placeholder="Tu correo" required autocomplete="email">
+          <button type="submit">{{ section.settings.newsletter_button }}</button>
+          {%- if form.posted_successfully? -%}<span class="small" style="flex-basis: 100%">Gracias, ya estás en la lista.</span>{%- endif -%}
+        {%- endform -%}
+      </div>
+      <div class="fsoc"><span class="lab" style="color: #4A524C">Síguenos</span><div>
+        {%- if section.settings.instagram != blank -%}<a href="{{ section.settings.instagram }}" aria-label="Instagram" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>{%- endif -%}
+        {%- if section.settings.tiktok != blank -%}<a href="{{ section.settings.tiktok }}" aria-label="TikTok" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.5 2.5 4.5 5 5"></path></svg></a>{%- endif -%}
+        {%- if section.settings.facebook != blank -%}<a href="{{ section.settings.facebook }}" aria-label="Facebook" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M13 21v-8h3M13 13v-2.5A2.5 2.5 0 0 1 15.5 8H17M10 13h3"></path></svg></a>{%- endif -%}
+      </div></div>
+    </div>
+    <div class="fcols">
+      {%- for i in (1..4) -%}
+        {%- capture key -%}menu_{{ i }}{%- endcapture -%}
+        {%- assign menu = section.settings[key] -%}
+        {%- if menu != blank -%}<div><span class="lab" style="color: #4A524C">{{ menu.title }}</span>{%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}</div>{%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="facc">
+      {%- for i in (1..4) -%}
+        {%- capture key -%}menu_{{ i }}{%- endcapture -%}
+        {%- assign menu = section.settings[key] -%}
+        {%- if menu != blank -%}<details><summary>{{ menu.title }}<svg class="fchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><div class="flinks">{%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}</div></details>{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="flogo"><svg viewBox="0 0 442.65 60.96" fill="currentColor" aria-hidden="true"><path d="M439.05,25.69c-2.39-2.4-6.25-4.47-11.58-6.2l-6.79-2.2c-6.32-2.06-9.43-4.29-9.43-8.29,0-1.86.72-3.02,2.17-4.23,1.07-.9,3.03-1.66,4.97-1.58,3.89.16,7.72,4,8.5,9.18.28,1.84.73,3.34,1.48,4.18,1.2,1.35,2.69,2.07,4.86,2.07,4.26,0,6.34-3.29,6.34-6.61,0-3.7-2.06-6.62-5.59-8.42,0,0-1.4-.67-2.45-1-.23-.07-.46-.14-.7-.2-2.32-.64-6.12-1.5-11.57-1.66-.04,0-.06.03-.09.03-.05,0-.11-.03-.16-.03-3.06,0-5.89.42-8.48,1.25-2.59.83-4.84,1.98-6.74,3.45-1.9,1.47-3.39,3.2-4.49,5.2-1.1,2-1.65,4.17-1.65,6.5,0,3.67,1.36,6.82,4.09,9.45,2.73,2.63,7.28,5.51,13.67,7.71l4.89,1.7c3.52,1.2,5.97,2.5,7.33,3.9,1.36,1.4,2,2.97,2,5.17,0,1.44-.79,2.67-2,3.51-1.27.88-3.21,1.61-5.41,1.61s-4.89-.46-6.36-1.43c-2.15-1.53-4.14-4.32-4.81-8.28-.27-1.61-1.16-3.38-1.96-4.27-1.27-1.43-3.08-2.15-5.36-2.15-4.5,0-6.93,3.73-6.93,7.24,0,3.91,2.18,7,5.91,8.9,0,0,1.48.71,2.59,1.05.24.08.49.15.74.21,2.59.72,6.94,1.69,13.24,1.78.04,0,.83,0,1.22,0,3.19,0,6.15-.45,8.88-1.35,2.73-.9,5.07-2.15,7.04-3.75,1.96-1.6,3.49-3.52,4.59-5.75,1.1-2.23,1.65-4.65,1.65-7.25,0-3.6-1.2-7.02-3.59-9.42Z"></path><path d="M88.16.72c-14.41,0-29,9-29,26.21s14.59,26.21,29,26.21,29-9,29-26.21S102.58.72,88.16.72ZM96.07,48.28c-1.29,1.31-3.15,1.94-5.68,1.94-6.47,0-7.79-7.68-10.39-21.89-1.38-7.63-2.01-12.03-1.99-16.1.02-4.96,3.42-8.58,7.94-8.58,6.46,0,7.79,7.68,10.39,21.88,1.27,6.98,1.69,11.86,1.75,16.26.04,2.91-.64,5.09-2.02,6.49Z"></path><path d="M302,.72c-14.41,0-29,9-29,26.21s14.59,26.21,29,26.21,29-9,29-26.21S316.41.72,302,.72ZM309.9,48.28c-1.29,1.31-3.15,1.94-5.68,1.94-6.47,0-7.79-7.68-10.39-21.89-1.38-7.63-2.01-12.03-1.99-16.1.02-4.96,3.42-8.58,7.94-8.58,6.46,0,7.79,7.68,10.39,21.88,1.27,6.98,1.69,11.86,1.75,16.26.04,2.91-.64,5.09-2.02,6.49Z"></path><path d="M265.29,32.12v-11.86c0-13.69-3.75-19.53-12.55-19.53-3.53,0-12.93,1.54-18.14,11.3v-.08c-.81-7.23-5.17-11.21-12.26-11.21-5.52,0-14.15,4.05-18.02,11.23-1.4-7.75-5.15-11.23-11.89-11.23-3.59,0-13,1.99-18.13,11.29,0,0,0-.04,0-.04-1.36-7.68-5.25-11.25-12.27-11.25-5.47,0-13.38,2.81-17.85,11.01V.78c0-.32-.36-.49-.61-.3-6.58,5.06-13.8,8.91-21.06,11.2-.3.1-.35.47-.1.66,2.93,2.25,2.93,5.26,2.93,16.08v3.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12V13.9c1.4-.81,3.8-1.23,4.79-1.23,6.47,0,6.78,6.05,6.78,16.75v2.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12v-11.86c0-1.34-.12-4.32-.2-6.31,1.71-1.1,4.68-1.27,4.99-1.27,6.47,0,6.78,6.05,6.78,16.75v2.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12v-11.86c0-1.84-.07-3.52-.21-5.08l-.15-1.29c.29-.12.86-.53,1.07-.6v.03s.05-.01.08-.02c1.26-.47,2.71-.62,3.51-.62,6.47,0,6.78,6.05,6.78,16.75v2.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12v-11.86c0-2.11-.1-4.09-.29-5.71v-.42c1.69-1.19,4.77-1.44,5.08-1.44,6.47,0,6.78,6.05,6.78,16.75v2.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12Z"></path><path d="M388.92,32.12v-11.86c0-13.69-3.76-19.53-12.56-19.53-4.32,0-12.76,1.5-17.84,11V.78c0-.32-.36-.49-.61-.3-6.58,5.06-13.8,8.91-21.06,11.2-.3.1-.35.47-.1.66,2.93,2.25,2.93,5.26,2.93,16.08v3.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12V13.92l.29-.16c1.39-.86,3.48-1.09,4.5-1.09,6.47,0,6.78,6.05,6.78,16.75v2.69c0,11.08,0,16.53-2.34,19.12-.21.24-.03.61.29.61h22.92c.32,0,.51-.38.29-.61-2.34-2.59-2.34-8.04-2.34-19.12Z"></path><path d="M54.63,43.63c-3.06,1.72-7.3,2.88-11.27,2.88-11.96,0-24.86-9.29-24.83-29.68.01-9.52,3.35-14.11,9.41-14.11,1.62,0,2.78.43,3.54,1.31,1.44,1.67.89,4.34.63,6.1-.89,6.1.39,11.17,3.08,14.2,1.93,2.17,4.66,3.27,8.12,3.27,6.82,0,10.5-5.65,10.5-10.97C53.8,6.52,44.33,0,29.67,0,13.31,0,0,13.83,0,30.83c0,18.31,11.96,30.14,30.48,30.14,7.75,0,18.47-1.79,25.4-16.17.38-.79-.49-1.59-1.26-1.16Z"></path></svg></div>
+  <div class="fbot"><span>{%- assign cm_year = 'now' | date: '%Y' -%}{{ section.settings.bottom | replace: '[year]', cm_year }}</span><span>{%- for link in section.settings.legal.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- unless forloop.last %} · {% endunless -%}{%- endfor -%}</span></div>
+</div>
+</footer>
+</div>
+{% schema %}
+{
+  "name": "Commons · Footer",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Frase",
+      "default": "In common with nature."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Título del newsletter",
+      "default": "Únete a la comunidad Commons."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Botón del newsletter",
+      "default": "Suscribirme →"
+    },
+    {
+      "type": "url",
+      "id": "instagram",
+      "label": "Instagram",
+      "default": "https://www.instagram.com/commons.mexico/"
+    },
+    {
+      "type": "url",
+      "id": "tiktok",
+      "label": "TikTok"
+    },
+    {
+      "type": "url",
+      "id": "facebook",
+      "label": "Facebook"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menú 1 (Comprar)"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menú 2 (Aprende)"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_3",
+      "label": "Menú 3 (Commons)"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_4",
+      "label": "Menú 4 (Ayuda)"
+    },
+    {
+      "type": "text",
+      "id": "bottom",
+      "label": "Texto de abajo",
+      "default": "-Designed for human systems- · © [year] Commons · [Leyenda COFEPRIS]",
+      "info": "[year] se cambia solo por el año actual"
+    },
+    {
+      "type": "link_list",
+      "id": "legal",
+      "label": "Menú legal (aviso de privacidad, términos)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Footer"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,128 @@
+<div class="cm4">
+<section class="row2" aria-labelledby="qz-{{ section.id }}">
+  <div class="quizcell yellow">
+    {%- if section.settings.tag != blank -%}<span class="tag">{{ section.settings.tag }}</span>{%- endif -%}
+    <h2 id="qz-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>
+    {%- if section.settings.question != blank -%}<span class="lab">{{ section.settings.question }}</span>{%- endif -%}
+    <div class="qchips">
+      {%- for block in section.blocks -%}<a class="qchip" href="{{ section.settings.link | default: '#' }}" {{ block.shopify_attributes }} style="display:flex;align-items:center;text-decoration:none">{{ block.settings.label }}</a>{%- endfor -%}
+    </div>
+    <a class="btn dark" href="{{ section.settings.link | default: '#' }}">{{ section.settings.button_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+    {%- if section.settings.note != blank -%}<span class="small" style="color: #2C342F">{{ section.settings.note }}</span>{%- endif -%}
+  </div>
+  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-quiz.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}{%- if section.settings.caption != blank -%}<span class="photocap"><span class="n">2</span>{{ section.settings.caption }}</span>{%- endif -%}</div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Quiz (entrada)",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Etiqueta",
+      "default": "Quiz · 2 minutos"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿No sabes por dónde empezar? Encuentra tu Commons."
+    },
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Pregunta",
+      "default": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días?"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Liga a la página del quiz"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Botón",
+      "default": "Empezar el quiz"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Nota",
+      "default": "Es una guía, no un diagnóstico."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Pie de foto",
+      "default": "minutos"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chip",
+      "name": "Respuesta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texto",
+          "default": "Duermo mal"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Commons · Quiz (entrada)",
+      "blocks": [
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Me siento agotada"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Estoy estresada"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Duermo mal"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Me cuesta enfocarme"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Quiero cuidar mi ciclo"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Quiero más defensas"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

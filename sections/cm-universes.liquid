@@ -1,0 +1,129 @@
+<div class="cm4">
+<section aria-labelledby="uni-{{ section.id }}">
+  {%- if section.settings.heading != blank -%}<div class="hd-row"><h2 id="uni-{{ section.id }}" class="disp h2" style="max-width: 18ch">{{ section.settings.heading }}</h2></div>{%- endif -%}
+  <div class="row2">
+    {%- for block in section.blocks -%}
+    {%- capture fb -%}cm-universo-{{ forloop.index }}.jpg{%- endcapture -%}
+    <div class="ucard" {{ block.shopify_attributes }}>
+      <div class="uhead"><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge" style="align-self: center">{{ block.settings.badge }}</span>{%- endif -%}</div>
+      <div class="uimg">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw' }}{%- else -%}<img src="{{ fb | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy">{%- endif -%}</div>
+      <div class="ubody{% if block.settings.style == 'sci' %} dotted{% endif %}">
+        <h3 class="disp h3t">{{ block.settings.title }}</h3>
+        {%- if block.settings.text != blank -%}<p class="small" style="margin: 0; font-size: 16px">{{ block.settings.text }}</p>{%- endif -%}
+        <div class="ulinks">
+          {%- if block.settings.button_label != blank -%}<a class="sq" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label }}</a>{%- endif -%}
+          {%- if block.settings.link2_label != blank -%}<a class="tlink" href="{{ block.settings.link2 | default: '#' }}">{{ block.settings.link2_label }}</a>{%- endif -%}
+          {%- if block.settings.sig != blank -%}<span class="sig">{{ block.settings.sig }}</span>{%- endif -%}
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Universos",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "La ciencia no reemplaza el origen, lo acompaña."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "universe",
+      "name": "Universo",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Nombre",
+          "default": "Commons Botanicals"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Etiqueta"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Estilo",
+          "options": [
+            {
+              "value": "bot",
+              "label": "Botanicals"
+            },
+            {
+              "value": "sci",
+              "label": "Science (marco punteado)"
+            }
+          ],
+          "default": "bot"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "El origen con hierbas y adaptógenos"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Botón",
+          "default": "Explorar Botanicals"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Liga del botón"
+        },
+        {
+          "type": "text",
+          "id": "link2_label",
+          "label": "Liga secundaria"
+        },
+        {
+          "type": "url",
+          "id": "link2",
+          "label": "Liga secundaria (url)"
+        },
+        {
+          "type": "text",
+          "id": "sig",
+          "label": "Firma en mono"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Universos",
+      "blocks": [
+        {
+          "type": "universe"
+        },
+        {
+          "type": "universe"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

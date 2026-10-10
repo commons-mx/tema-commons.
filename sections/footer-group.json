@@ -1,0 +1,219 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_PGyBAW": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_dKRFAK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unlock 10% Off On Your First Ritual",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Join the community. Get ingredient guides, ritual inspiration, and early access to new drops.</p>",
+            "text_size": 100
+          }
+        },
+        "email_form_CAEgrz": {
+          "type": "email_form",
+          "settings": {
+            "button_label": "Join The Ritual",
+            "background_color_light": "#ffffff",
+            "background_color_dark": ""
+          }
+        },
+        "paragraph_bYqz7P": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>No spam. Unsubscribe anytime.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dKRFAK",
+        "email_form_CAEgrz",
+        "paragraph_bYqz7P"
+      ],
+      "settings": {
+        "overlay_opacity": 0,
+        "form_width": "large",
+        "content_layout": "vertical",
+        "background_color_light": "#fcfaf6",
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "button_light": "rgba(0,0,0,0)",
+        "button_text_light": "rgba(0,0,0,0)",
+        "button_hover_light": "rgba(0,0,0,0)",
+        "button_text_hover_light": "rgba(0,0,0,0)",
+        "line_border": "#dfdfdc",
+        "background_color_dark": "#313131",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "button_dark": "rgba(0,0,0,0)",
+        "button_text_dark": "rgba(0,0,0,0)",
+        "button_hover_dark": "rgba(0,0,0,0)",
+        "button_text_hover_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "#3c3b3b",
+        "desktop_height": "450px",
+        "show_section_divider": false,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "mobile_height": "300px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      },
+      "disabled": true
+    },
+    "quick_links": {
+      "type": "quick-links",
+      "blocks": {
+        "link_list_trXGRy": {
+          "type": "link_list",
+          "settings": {
+            "title": "Quick link",
+            "url": "",
+            "open_new_window_button": false
+          }
+        },
+        "link_list_MBmGzm": {
+          "type": "link_list",
+          "settings": {
+            "title": "Quick link",
+            "url": "",
+            "open_new_window_button": false
+          }
+        },
+        "link_list_HPpnKn": {
+          "type": "link_list",
+          "settings": {
+            "title": "Quick link",
+            "url": "",
+            "open_new_window_button": false
+          }
+        }
+      },
+      "block_order": [
+        "link_list_trXGRy",
+        "link_list_MBmGzm",
+        "link_list_HPpnKn"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "center",
+        "link_spacing": 40,
+        "show_lines": false,
+        "mobile_layout": "1",
+        "mobile_alignment": "start",
+        "bg_light": "rgba(0,0,0,0)",
+        "color_text_light": "rgba(0,0,0,0)",
+        "bg_dark": "rgba(0,0,0,0)",
+        "color_text_dark": "rgba(0,0,0,0)",
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "top_padding_mobile": 28,
+        "bottom_padding_mobile": 28
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_FjJtCr": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "image_width": 200,
+            "link_image_footer": "",
+            "open_new_window": false,
+            "rounded_corner_image": false,
+            "alignment": "left",
+            "text": "<p>At Arise, we believe in the transformative power of beauty and wellness. </p>",
+            "spacing": 28
+          }
+        },
+        "link_list_6LkrYE": {
+          "type": "link_list",
+          "settings": {
+            "open_by_default": true,
+            "heading_menu": "SHOP",
+            "menu": "main-menu",
+            "show_social_icons": false
+          }
+        },
+        "link_list_i9gHXh": {
+          "type": "link_list",
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "CUSTOMER CARE",
+            "menu": "main-menu",
+            "show_social_icons": false
+          }
+        },
+        "link_list_hDAkk3": {
+          "type": "link_list",
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "COMPANY",
+            "menu": "main-menu",
+            "show_social_icons": false
+          }
+        },
+        "email_footer_wXm9HQ": {
+          "type": "email_footer",
+          "disabled": true,
+          "settings": {
+            "open_by_default": true,
+            "heading_email": "Newsletter Signup",
+            "subtext_email": "<p>Subscribe to our newsletter and get 10% off your first purchase</p>",
+            "show_social_icons": true
+          }
+        }
+      },
+      "block_order": [
+        "image_FjJtCr",
+        "link_list_6LkrYE",
+        "link_list_i9gHXh",
+        "link_list_hDAkk3",
+        "email_footer_wXm9HQ"
+      ],
+      "settings": {
+        "columns_desktop": 5,
+        "show_language_selector": false,
+        "show_currency_selector": true,
+        "show_social_icons": false,
+        "payment_enable": true,
+        "custom_payment": "diners-club,discover,master,visa,paypal,american-express",
+        "show_copyright": true,
+        "add_copyright_text": "<p><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms & Conditions</a> <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a></p>",
+        "additional_layout": "horizontal",
+        "show_powered": true,
+        "enable_follow_on_shop": false,
+        "horizontal_position": "right",
+        "top_padding": 0,
+        "bottom_padding": 40,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 28
+      },
+      "disabled": true
+    },
+    "cm_footer": {
+      "type": "cm-footer",
+      "settings": {
+        "menu_1": "productos",
+        "menu_2": "compra-por-objetivo",
+        "menu_3": "aprende-y-escoge",
+        "menu_4": "footer"
+      }
+    }
+  },
+  "order": [
+    "newsletter_PGyBAW",
+    "quick_links",
+    "footer",
+    "cm_footer"
+  ]
+}

@@ -1,0 +1,105 @@
+<div class="cm4" id="cm-rev-{{ section.id }}">
+<section class="rvg" aria-labelledby="rsd-{{ section.id }}" style="display: block">
+  <div class="rvgtop">
+    <div class="rvgt"><h2 id="rsd-{{ section.id }}" class="disp rvgh">{{ section.settings.heading }}</h2></div>
+    <div class="rvgside">{%- if section.settings.badge != blank -%}<span class="badge">{{ section.settings.badge }}</span>{%- endif -%}<div class="rvgsp">{%- if section.settings.specialists != blank -%}<strong style="font-weight: 600">{{ section.settings.specialists }}</strong>{%- endif -%}{%- if section.settings.link_label != blank -%}<a class="tlink" href="{{ section.settings.link | default: '#' }}">{{ section.settings.link_label }}</a>{%- endif -%}</div></div>
+  </div>
+  <div class="rvgrow cm-revrow">
+    {%- for block in section.blocks -%}
+    <article class="rvgc" {{ block.shopify_attributes }}><span class="rvstars" aria-label="5 de 5">★★★★★</span><p class="disp rvgq">“{{ block.settings.quote }}”</p><div class="rvwho"><span class="lab">{{ block.settings.name }}</span><span class="small">{{ block.settings.tag }} · Compra verificada</span></div></article>
+    {%- endfor -%}
+  </div>
+</section>
+</div>
+<style>
+  @container cm4 (max-width: 760px){
+    #cm-rev-{{ section.id }} .rvgtop{grid-template-columns:minmax(0,1fr)}
+    #cm-rev-{{ section.id }} .rvgt{min-height:0;padding:32px 16px 16px;border-right:0}
+    #cm-rev-{{ section.id }} .rvgside{padding:0 16px 24px}
+    #cm-rev-{{ section.id }} .rvgh{font-size:40px}
+    #cm-rev-{{ section.id }} .cm-revrow{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+    #cm-rev-{{ section.id }} .rvgc{flex:0 0 86%;scroll-snap-align:start;padding:24px 16px 28px}
+    #cm-rev-{{ section.id }} .rvgq{font-size:24px}
+  }
+</style>
+{% schema %}
+{
+  "name": "Commons · Reseñas",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Lo que cambió en su día."
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Calificación",
+      "default": "★ 4.91 · +1,500 reseñas"
+    },
+    {
+      "type": "text",
+      "id": "specialists",
+      "label": "Especialistas",
+      "default": "Recomendado por +80 especialistas"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Liga",
+      "default": "Ver todas las reseñas"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Liga (url)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Reseña",
+          "default": "[Reseña real, con permiso]"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "[Nombre]"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Producto o necesidad",
+          "default": "Sueño · Reishi"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Commons · Reseñas",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
