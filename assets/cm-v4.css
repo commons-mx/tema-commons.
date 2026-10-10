@@ -647,5 +647,3 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 #CartDrawer .border-t,#CartDrawer .border-b,#CartDrawer .border{border-color:#D9D8D1 !important}
 #CartDrawer #x-cart-drawer-freeshipping [class*="bg-"]{border-radius:999px}
 #CartDrawer #x-cart-drawer-freeshipping .progress-bar,#CartDrawer #x-cart-drawer-freeshipping [style*="width"]{background-color:#E4DF74}
-
-/* sync 2026-10-10T13:30:06Z */
