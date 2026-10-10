@@ -661,3 +661,4 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg details[open] > summary span[aria-hidden]{transform:rotate(45deg)}
 .cmpg [hidden]{display:none !important}
 .cmpg .cm-ok{padding:20px;background:var(--lime);font-size:16px}
+@media (min-width:761px){.cmpg .fmgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
