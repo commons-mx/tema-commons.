@@ -1,0 +1,69 @@
+{{ 'cm-pg-adaptogenos.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+
+
+<div class="ar-top"><a href="/blogs/noticias">Journal</a><span>/</span><a href="/pages/botanicals">Botanicals</a></div>
+<section class="ar-head" aria-labelledby="ah">
+<div><span class="tag">Botanicals</span><h1 id="ah" class="disp h1">Qué son los adaptógenos y cómo saber si son para ti</h1></div>
+<div class="ar-by"><span class="lab">Escrito por</span><b>Equipo Commons</b><span class="small">4 minutos de lectura</span></div>
+</section>
+<div class="ar-hero"><img src="{{ 'cm-b-311ae64637.jpg' | asset_url }}" loading="lazy" alt="Mano hecha de hojas de helecho y coral"></div>
+
+<details class="ar-tocm"><summary><span class="lab">En este artículo</span><span aria-hidden="true">+</span></summary><div class="ls"><a href="#a1"><span class="n num">01</span>Qué es un adaptógeno</a><a href="#a2"><span class="n num">02</span>De dónde vienen</a><a href="#a3"><span class="n num">03</span>Cómo funcionan</a><a href="#a4"><span class="n num">04</span>Cuáles son</a><a href="#a5"><span class="n num">05</span>Cómo se toman</a><a href="#a6"><span class="n num">06</span>Quién no debería tomarlos</a><a href="#a7"><span class="n num">07</span>Qué dice la evidencia</a></div></details>
+<section class="ar-body" aria-label="Artículo">
+<nav class="ar-toc" aria-label="En este artículo"><span class="lab" style="margin-bottom: 10px">En este artículo</span><a href="#a1"><span class="n num">01</span>Qué es un adaptógeno</a><a href="#a2"><span class="n num">02</span>De dónde vienen</a><a href="#a3"><span class="n num">03</span>Cómo funcionan</a><a href="#a4"><span class="n num">04</span>Cuáles son</a><a href="#a5"><span class="n num">05</span>Cómo se toman</a><a href="#a6"><span class="n num">06</span>Quién no debería tomarlos</a><a href="#a7"><span class="n num">07</span>Qué dice la evidencia</a></nav>
+<article class="ar-txt">
+<p class="lead">Plantas y hongos que ayudan a tu cuerpo a adaptarse al estrés y a volver a su equilibrio. Aquí lo esencial, sin exagerar lo que pueden hacer.</p>
+<h2 class="disp" id="a1">Qué es un adaptógeno</h2>
+<p>Es una planta u hongo que ayuda al cuerpo a responder al estrés físico, mental y del entorno, y a regresar a su equilibrio. Para considerarse adaptógeno tiene que cumplir tres cosas:</p>
+<ul><li>Ayuda de forma general, no a un solo órgano.</li><li>Ayuda a mantener el equilibrio del cuerpo.</li><li>No es tóxico ni crea dependencia.</li></ul>
+<p>No son un medicamento ni un atajo. Funcionan con constancia, como parte de una rutina.</p>
+<h2 class="disp" id="a2">De dónde vienen</h2>
+<p>El Ayurveda y la medicina tradicional china los usan desde hace miles de años; en muchas culturas eran plantas sagradas, reservadas para reyes y emperadores.</p>
+<p>La palabra “adaptógeno” la propuso el científico N. Lazarev en 1940. Años después, el Dr. I. Brekhman la definió mejor estudiando el ginseng.</p>
+<div class="ar-q">“No actúan como un fármaco: apoyan a todo el sistema que es tu cuerpo.” — Dr. I. Brekhman</div>
+<h2 class="disp" id="a3">Cómo funcionan</h2>
+<p>Ayudan a regular el eje del estrés (hipotálamo, hipófisis y glándulas suprarrenales), el sistema que decide cuánto cortisol produces. Así tu cuerpo responde mejor cuando algo lo estresa y se recupera más rápido.</p>
+<h2 class="disp" id="a4">Cuáles son</h2>
+<p>Algunos de los más conocidos son la Ashwagandha, la Rhodiola, la Schisandra y hongos como el Reishi. Cada uno tiene su historia de uso y su propia evidencia.</p>
+<h2 class="disp" id="a5">Cómo se toman</h2>
+<ul><li>Empieza con 1 cápsula o ½ scoop al día.</li><li>Si lo necesitas, sube poco a poco hasta 2 cápsulas o 1 scoop.</li><li>Tómalos 6 días y descansa 1.</li><li>Dales mínimo 8 a 10 semanas.</li></ul>
+<p>¿Quieres combinar? Arma tu protocolo con 2 o 3 frascos según lo que necesitas.</p>
+<h2 class="disp" id="a6">Quién no debería tomarlos</h2>
+<p>No los recomendamos en embarazo, lactancia ni en menores de 18 años. Si tomas medicamentos, consulta a tu médico antes. Cada ficha tiene sus precauciones.</p>
+<div class="ar-note">Rhodiola y Mucuna no se combinan con antidepresivos. Ashwagandha no es para personas con temas de hígado.</div>
+<h2 class="disp" id="a7">Qué dice la evidencia</h2>
+<p>Se han estudiado para la energía, el descanso, el enfoque, el ánimo y las defensas. La evidencia varía mucho por planta: algunas tienen varios estudios en personas y otras, sobre todo uso tradicional. En cada ficha te decimos qué hay y qué tan sólido es.</p>
+<a class="tlink" href="/pages/que-son">Ver el glosario de plantas</a>
+</article>
+<aside class="ar-side" aria-label="Productos en este artículo">
+<span class="lab">Productos en este artículo</span>
+{%- assign p = all_products["ashwagandha-organico-capsulas-extracto"] -%}<a class="ar-prod" href="{{ p.url }}" style="color:inherit;text-decoration:none"><div class="pi">{%- if p.featured_image -%}<img src="{{ p.featured_image | image_url: width: 200 }}" alt="Ashwagandha" loading="lazy" width="200" height="200">{%- endif -%}</div><div class="pn"><b>Ashwagandha</b><span>Botanicals · cápsulas o polvo</span></div><div class="pr"><span class="num">{%- if p.price_varies -%}desde {% endif -%}{{ p.price_min | money_without_trailing_zeros }}</span><span class="ar-add">Ver</span></div></a>{%- assign p = all_products["hongo-reishi-100g-20-β-glucanos"] -%}<a class="ar-prod" href="{{ p.url }}" style="color:inherit;text-decoration:none"><div class="pi">{%- if p.featured_image -%}<img src="{{ p.featured_image | image_url: width: 200 }}" alt="Reishi" loading="lazy" width="200" height="200">{%- endif -%}</div><div class="pn"><b>Reishi</b><span>Botanicals · cápsulas o polvo</span></div><div class="pr"><span class="num">{%- if p.price_varies -%}desde {% endif -%}{{ p.price_min | money_without_trailing_zeros }}</span><span class="ar-add">Ver</span></div></a>{%- assign p = all_products["baya-schisandra-full-polvo"] -%}<a class="ar-prod" href="{{ p.url }}" style="color:inherit;text-decoration:none"><div class="pi">{%- if p.featured_image -%}<img src="{{ p.featured_image | image_url: width: 200 }}" alt="Schisandra" loading="lazy" width="200" height="200">{%- endif -%}</div><div class="pn"><b>Schisandra</b><span>Botanicals · cápsulas o polvo</span></div><div class="pr"><span class="num">{%- if p.price_varies -%}desde {% endif -%}{{ p.price_min | money_without_trailing_zeros }}</span><span class="ar-add">Ver</span></div></a>
+<span class="small">2 frascos −10% · 3 o más −20%</span>
+<a class="tlink" href="/#protocolo" style="align-self: flex-start">Arma tu protocolo</a>
+</aside>
+</section>
+
+<details class="ar-src"><summary style="display:flex;justify-content:space-between;align-items:center"><span>Fuentes</span><span aria-hidden="true">+</span></summary><ol><li>Liao et al. A preliminary review of studies on adaptogens: comparison of their bioactivity in TCM with that of ginseng-like herbs used worldwide.</li><li>Panossian A. Understanding adaptogenic activity: specificity of the pharmacological action of adaptogens and other phytochemicals.</li><li>Wagner H, Nörr H, Winterhoff H. Plant adaptogens.</li><li>Panossian A, Wikman G. Effects of adaptogens on the central nervous system and the molecular mechanisms associated with their stress-protective activity.</li><li>Panossian A, Wikman G, Wagner H. Plant adaptogens III. Earlier and more recent aspects and concepts on their mode of action.</li><li>Panossian A, Wagner H. Stimulating effect of adaptogens: an overview with particular reference to their efficacy following single dose administration.</li><li>Venturella G et al. Medicinal mushrooms: bioactive compounds, use, and clinical trials.</li><li>Geng P et al. Antifatigue functions and mechanisms of edible and medicinal mushrooms.</li></ol></details>
+
+<section aria-labelledby="rl">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Sigue leyendo</span><h2 id="rl" class="disp h2">Artículos relacionados</h2></div><a class="sq" href="/blogs/noticias">Ir al Journal</a></div>
+<div class="ar-rel"><a href="/blogs/noticias"><div class="im"><img src="{{ 'cm-b-bb4dd41550.jpg' | asset_url }}" loading="lazy" alt="Follaje verde en movimiento"></div><div class="tx"><span class="tag">Botanicals</span><h3>Qué es un extracto estandarizado</h3><span class="jr-min">6 minutos</span></div></a><a href="/blogs/noticias"><div class="im"><img src="{{ 'cm-b-f09c60b1fc.jpg' | asset_url }}" loading="lazy" alt="Láminas de un hongo vistas desde abajo"></div><div class="tx"><span class="tag">Botanicals</span><h3>Hongos funcionales: por dónde empezar</h3><span class="jr-min">7 minutos</span></div></a><a href="/blogs/noticias"><div class="im"><img src="{{ 'cm-b-c627c9e08a.jpg' | asset_url }}" loading="lazy" alt="Mano sosteniendo una cápsula"></div><div class="tx"><span class="tag">Cómo se toma</span><h3>Tus primeras 12 semanas</h3><span class="jr-min">3 minutos</span></div></a></div>
+</section>
+
+<section class="jr-quiz yellow" aria-labelledby="qz">
+<div class="cell"><span class="lab">Quiz · 2 minutos</span><h2 id="qz" class="disp h2" style="max-width: 16ch">¿No sabes por dónde empezar?</h2><p class="sub" style="color: #2C342F">Te recomendamos 2 o 3 productos de Botanicals y Science, más un ritual para complementar.</p></div>
+<div class="cell"><a class="btn dark" href="/pages/quiz-commons" style="align-self: flex-start">Hacer el quiz<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+</section>
+
+
+</div>
+</div>
+{% schema %}
+{
+  "name": "Adaptógenos v5",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

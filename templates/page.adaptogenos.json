@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "cm-adaptogenos",
+      "type": "cm-pg-adaptogenos",
       "settings": {}
     }
   },

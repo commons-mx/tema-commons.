@@ -1,0 +1,128 @@
+{{ 'cm-pg-planta.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+{%- assign rp = all_products["hongo-reishi-100g-20-β-glucanos"] -%}
+
+
+<div class="pl-top"><a href="/pages/que-son">Glosario</a><span>/</span><a href="/pages/que-son">Hongos</a><span>/</span><span>Reishi</span></div>
+
+<!-- 1 · PLANTA -->
+<section class="pl-hero" aria-labelledby="ph">
+<div class="pl-ph" style="background-color: #ffffff"><img src="{{ 'cm-b-29c841ded2.png' | asset_url }}" loading="lazy" alt="Hongo Reishi"></div>
+<div class="pl-tx">
+<span class="lab">Glosario · Hongo · Sueño</span>
+<h1 id="ph" class="disp h1">Reishi</h1>
+<span class="pl-lat">Ganoderma lucidum · también conocido como Lingzhi</span>
+<p class="sub">El hongo más venerado de la medicina tradicional china. Lo usamos completo: solo cuerpo fructífero, sin micelio ni grano.</p>
+<div class="pl-buy"><div class="pi"><img src="{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}" loading="lazy" alt="Frasco de Hongo Reishi Commons Botanicals"></div><div><b>Commons Reishi</b><span>25% betaglucanos · cápsulas o polvo · desde $595</span></div><a class="pl-add" href="#s4" style="display:inline-flex;align-items:center;text-decoration:none">Comprar</a></div>
+</div>
+</section>
+<nav class="pl-toc" aria-label="En esta página"><a href="#s0">En 10 segundos</a><a href="#s1">Lo que hay dentro</a><a href="#s2">Lo que dice la investigación</a><a href="#s3">Cómo se toma</a><a href="#s4">Dónde lo encuentras</a><a href="#s5">Antes de tomarlo</a></nav>
+
+<!-- 2 · EN 10 SEGUNDOS -->
+<section id="s0" aria-label="En 10 segundos">
+<div class="pl-facts">
+<div><span class="lab">Parte que usamos</span><b>Cuerpo fructífero</b></div>
+<div><span class="lab">Tradición</span><b>Medicina tradicional china</b></div>
+<div><span class="lab">Origen</span><b>[Origen de nuestro extracto]</b></div>
+<div><span class="lab">Momento</span><b>Noche</b></div>
+<div><span class="lab">Nuestro extracto</span><b>25% betaglucanos</b></div>
+<div><span class="lab">Formatos</span><b>Cápsulas y polvo</b></div>
+</div>
+</section>
+
+<!-- 3 · LO QUE HAY DENTRO -->
+<section id="s1" class="pl-in" aria-labelledby="ld">
+<div class="cell"><span class="lab">Lo que hay dentro</span><h2 id="ld" class="disp h2">Los betaglucanos.</h2><p class="sub" style="max-width: 48ch">Son los compuestos del hongo que más se han estudiado. Por eso nuestro extracto está estandarizado: sabes cuánto trae cada cápsula.</p></div>
+<div class="cell"><span class="pl-big num">125<small>mg</small></span><p class="small" style="margin: 0; font-size: 16px; max-width: 34ch">de betaglucanos en cada cápsula de 500 mg (extracto al 25%).</p></div>
+</section>
+
+<!-- 4 · INVESTIGACIÓN -->
+<section id="s2" aria-labelledby="ri">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Lo que dice la investigación</span><h2 id="ri" class="disp h2">Tradición, con estudios.</h2></div><span class="small">[Validar con Fer]</span></div>
+<div class="pl-res">
+<div><span class="n">[Dosis]</span><p>[Rango de extracto al día usado en los estudios revisados]</p><span class="small">[Fuente]</span></div>
+<div><span class="n">[x] semanas</span><p>[Estudio destacado: población, dosis y resultado]</p><span class="small">[Autor, año, revista]</span></div>
+<div><span class="n">Se ha estudiado para</span><p>[Máximo 3 temas, validados con regulatorio]</p></div>
+</div>
+<div class="pl-refs"><details><summary style="display:flex;justify-content:space-between;align-items:center;min-height:64px;padding:0 40px;font-size:17px"><span>Ver las referencias</span><span aria-hidden="true">+</span></summary><ol><li>[Referencia 1]</li><li>[Referencia 2]</li><li>[Referencia 3]</li></ol></details></div>
+</section>
+
+<!-- 5 · CÓMO SE TOMA -->
+<section id="s3" aria-labelledby="ct">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Cómo se toma</span><h2 id="ct" class="disp h2">Todos los días, con un día de descanso.</h2></div></div>
+<div class="pl-steps">
+<div><span class="n num">1</span><b>1 cápsula o ½ scoop al día</b><p>Empieza con la dosis mínima. Si te sientes bien, puedes subir a 2 cápsulas o 1 scoop.</p></div>
+<div><span class="n num">2</span><b>6 días a la semana</b><p>Descansa 1 día, el que tú elijas. Dale constancia: mínimo 8 a 10 semanas.</p></div>
+<div><span class="n num">3</span><b>En polvo, en tu taza de la noche</b><p>[Ritual: en té, cacao o leche caliente · validar receta]</p></div>
+</div>
+</section>
+
+<!-- 6 · DÓNDE LO ENCUENTRAS -->
+<section id="s4" aria-labelledby="dl">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Dónde lo encuentras</span><h2 id="dl" class="disp h2">Reishi en Commons.</h2></div></div>
+<div class="pl-one">
+<div class="im"><a href="{{ rp.url }}"><img src="{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}" loading="lazy" alt="Frasco de Hongo Reishi Commons Botanicals"></a></div>
+<div class="tx">
+<span class="lab">Commons Botanicals</span>
+<b class="disp">Reishi</b>
+<span class="small">25% betaglucanos · cuerpo fructífero</span>
+<span class="lab" style="margin-top: 8px">Elige tu presentación</span>
+<div class="pl-fmts" role="radiogroup" aria-label="Presentación">{%- for v in rp.variants -%}<button type="button" class="{% if forloop.first %}on{% endif %}" role="radio" data-v="{{ v.id }}" data-p="{{ v.price | money_without_trailing_zeros }}" data-t="{{ v.title | escape }}"{% unless v.available %} disabled{% endunless %}><b>{{ v.title }}</b><span>{{ v.price | money_without_trailing_zeros }}</span></button>{%- endfor -%}</div>
+<span class="small" data-fd>{{ rp.selected_or_first_available_variant.title }}</span>
+<div class="row"><span class="num pl-price" data-fp>{{ rp.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span><button type="button" class="pl-add" data-add data-v="{{ rp.selected_or_first_available_variant.id }}">Agregar al carrito</button></div>
+</div>
+</div>
+<p class="pl-note">Llevando 2 frascos ahorras 10%; con 3 o más, 20%. <a class="tlink" href="/#protocolo">Arma tu protocolo</a></p>
+</section>
+
+<!-- 7 · COMBINA BIEN CON -->
+<section aria-labelledby="cb">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Combina bien con</span><h2 id="cb" class="disp h2">Reishi, acompañado.</h2></div></div>
+<div class="pl-comb"><a href="/products/magnesio-p-m"><div><div class="circ"><img src="{{ 'cm-b-1a44e381a8.jpg' | asset_url }}" loading="lazy" alt="Magnesio P.M."></div></div><div><span class="lab">Sueño</span><b>Magnesio P.M.</b><span>Commons Science · antes de dormir</span></div></a><a href="/products/ashwagandha-organico-capsulas-extracto"><div><div class="circ"><span class="ini">A</span></div></div><div><span class="lab">Estrés</span><b>Ashwagandha</b><span>Botanicals · raíz</span></div></a><a href="/products/miel-sueno-profundo-1"><div><div class="circ"><span class="ini">M</span></div></div><div><span class="lab">Ritual de noche</span><b>Miel Sueño profundo</b><span>Rituals · una cucharadita</span></div></a></div>
+</section>
+
+<!-- 8 · ANTES DE TOMARLO -->
+<section id="s5" class="pl-warn" aria-labelledby="at">
+<div class="cell"><span class="lab">Antes de tomarlo</span><h2 id="at" class="disp h2" style="max-width: 12ch">Lo que debes saber.</h2></div>
+<div class="pl-wl">
+<h3>No se recomienda si…</h3>
+<ul><li>Estás embarazada o lactando.</li><li>Eres menor de 18 años.</li><li>[Precauciones específicas de Reishi · validar con Fer]</li></ul>
+<h3>Si tomas medicamentos</h3>
+<p>Consulta a tu médico antes de tomarlo. [Interacciones de Reishi · validar con Fer]</p>
+<h3>Cómo guardarlo</h3>
+<p>Lejos de la luz y la humedad, a temperatura ambiente. [Caducidad]</p>
+</div>
+</section>
+
+<!-- 9 · SIGUE APRENDIENDO -->
+<nav class="pl-more" aria-label="Sigue aprendiendo">
+<a href="/blogs/noticias">Hongos funcionales: por dónde empezar<span aria-hidden="true">→</span></a>
+<a href="/pages/adaptogenos">Qué es un extracto estandarizado<span aria-hidden="true">→</span></a>
+<a href="/pages/que-son">Volver al glosario<span aria-hidden="true">→</span></a>
+</nav>
+
+
+</div>
+</div>
+<script>
+(function(){
+var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
+var add = root.querySelector('[data-add]'), fp = root.querySelector('[data-fp]'), fd = root.querySelector('[data-fd]');
+root.querySelectorAll('.pl-fmts [data-v]').forEach(function(x){ x.addEventListener('click', function(){
+  root.querySelectorAll('.pl-fmts [data-v]').forEach(function(y){ y.classList.toggle('on', y === x); y.setAttribute('aria-checked', y === x); });
+  add.dataset.v = x.dataset.v; fp.textContent = x.dataset.p; fd.textContent = x.dataset.t; add.textContent = 'Agregar al carrito'; add.classList.remove('on'); }); });
+if (add) add.addEventListener('click', function(){ add.disabled = true;
+  fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: +add.dataset.v, quantity: 1 }] }) })
+  .then(function(r){ if (!r.ok) throw r; add.textContent = 'Agregado ✓'; add.classList.add('on');
+    if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart && Alpine.store('xMiniCart').openCart(); } })
+  .catch(function(){ location.href = '{{ routes.cart_url }}'; }).finally(function(){ add.disabled = false; }); });
+})();
+</script>
+{% schema %}
+{
+  "name": "Planta v5",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
