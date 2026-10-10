@@ -6,7 +6,7 @@
 .cm4 svg{display:inline-block}
 .cm4 a{color:#141A16}
 .cm4 a:hover{color:#4A524C}
-.cm4{--bg:#F7F7F4;--white:#FFFFFF;--ink:#141A16;--ink2:#4A524C;--rule:#141A16;--soft:#DCDCD5;--lime:#DFF68F;--silver:#AEB3B8;
+.cm4{--bg:#F7F7F4;--white:#FFFFFF;--ink:#141A16;--ink2:#4A524C;--rule:#141A16;--soft:#DCDCD5;--lime:#E4DF74;--silver:#AEB3B8;
 container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 .cm4.acY{--lime:#E4DF74}
 .cm4.acL{--lime:#DFF68F}
