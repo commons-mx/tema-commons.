@@ -31,7 +31,7 @@ function opt(o){ return '<button type="button" class="' + o.cls + '" data-fn="' 
 function view(v){
   FN = []; var h = '';
   if (v.isQuiz) {
-    h += '<section class="qwrap" aria-labelledby="qq"><div class="qside"><div style="display:flex;flex-direction:column;gap:16px"><span class="lab">Quiz · 2 minutos</span><h1 class="disp h2">Encuentra tu Commons.</h1><p style="margin:0;font-size:17px;max-width:32ch">Cuéntanos qué estás viviendo y te armamos tu protocolo, con cómo tomarlo.</p></div>';
+    h += '<section class="qwrap" aria-labelledby="qq"><div class="qside"><div style="display:flex;flex-direction:column;gap:16px"><span class="lab">Quiz · 3 minutos</span><h1 class="disp h2">Encuentra tu Commons.</h1><p style="margin:0;font-size:17px;max-width:32ch">Cuéntanos qué estás viviendo y te armamos tu protocolo, con cómo tomarlo.</p></div>';
     h += '<div class="qsteps">' + v.stepList.map(function(s){ return '<span class="' + s.cls + '"><b>' + s.n + '</b>' + esc(s.t) + '</span>'; }).join('') + '</div></div>';
     h += '<div class="qmain"><div class="qbar"><i style="width:' + v.pct + '%"></i></div><span class="lab">Paso ' + v.stepN + ' de 5 · ' + esc(v.stepName) + '</span><h2 id="qq" class="qq">' + esc(v.q) + '</h2>';
     if (v.hint) h += '<p class="qhint">' + esc(v.hint) + '</p>';
@@ -62,7 +62,7 @@ function view(v){
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { view: 'quiz', step: 0, who: 'Para mí', age: '', sex: '', needs: [], det: {}, safe: [], fmt: 'Cápsulas', rit: 'Sí', ess: false, err: '' };
+    this.state = { view: 'quiz', step: 0, who: 'Para mí', age: '', sex: '', needs: [], det: {}, safe: [], fmt: 'Cápsulas', rit: 'Sí', ada: '', ess: false, err: '' };
     var B = '';
     // caps / pw = formatos vigentes (Eri, 9 oct): Vitex, Mucuna y Ginkgo solo cápsulas; Amla y Astrágalo solo polvo; Maitake ambos
     this.P = {
@@ -90,28 +90,35 @@ class Component extends DCLogic {
     // peso base = lo que más evidencia tiene o más se conoce; det = cuánto sube cada producto según el detalle
     this.N = {
       'Sueño': { why: 'para tu descanso', w: { 'Reishi': 4, 'Magnesio P.M.': 4, 'Ashwagandha': 3, 'Schisandra': 1, 'Tulsi': 1 },
-        det: { 'Me cuesta dormirme': { 'Ashwagandha': 2, 'Magnesio P.M.': 1 }, 'Me despierto en la noche': { 'Magnesio P.M.': 2, 'Reishi': 1 }, 'Despierto sin descansar': { 'Reishi': 2, 'Schisandra': 1 } } },
+        det: { 'Me cuesta dormirme': { 'Ashwagandha': 2, 'Magnesio P.M.': 1 }, 'Me despierto en la noche': { 'Magnesio P.M.': 2, 'Reishi': 1 }, 'Despierto sin descansar': { 'Reishi': 2, 'Schisandra': 1 } }, det2: { 'La mente no se apaga': { 'Ashwagandha': 1, 'Reishi': 1 }, 'Siento el cuerpo tenso': { 'Magnesio P.M.': 2 }, 'No sé, solo duermo mal': { 'Reishi': 1 } } },
       'Estrés': { why: 'para el estrés', w: { 'Ashwagandha': 5, 'Reishi': 2, 'Tulsi': 2, 'Rhodiola': 1, 'Schisandra': 1 },
-        det: { 'En la mañana': { 'Rhodiola': 3, 'Tulsi': 1 }, 'En la tarde': { 'Tulsi': 2 }, 'En la noche': { 'Reishi': 2, 'Magnesio P.M.': 1 } } },
+        det: { 'En la mañana': { 'Rhodiola': 3, 'Tulsi': 1 }, 'En la tarde': { 'Tulsi': 2 }, 'En la noche': { 'Reishi': 2, 'Magnesio P.M.': 1 } }, det2: { 'En la mente: no me desconecto': { 'Tulsi': 2, 'Rhodiola': 1 }, 'En el cuerpo: tensión o cansancio': { 'Ashwagandha': 1, 'Eleuthero': 1, 'Magnesio P.M.': 1 }, 'En los dos': { 'Ashwagandha': 2 } } },
       'Ánimo': { why: 'para tu ánimo', w: { 'Azafrán': 6, 'Ashwagandha': 2, 'Melena de León': 2 },
-        det: { 'Bajón de ánimo': { 'Melena de León': 1 }, 'Irritabilidad': { 'Ashwagandha': 2 }, 'Cambia con mi ciclo': { 'Shatavari': 3 } } },
+        det: { 'Bajón de ánimo': { 'Melena de León': 1 }, 'Irritabilidad': { 'Ashwagandha': 2 }, 'Cambia con mi ciclo': { 'Shatavari': 3 } }, det2: { 'Unas semanas': { 'Melena de León': 1 }, 'Varios meses': { 'Azafrán': 2 }, 'Va y viene': { 'Ashwagandha': 1, 'Tulsi': 1 } } },
       'Enfoque': { why: 'para tu enfoque', w: { 'Melena de León': 4, 'Ginkgo + Bacopa': 3, 'Gotu Kola': 2, 'Rhodiola': 1 },
-        det: { 'Me distraigo': { 'Ginkgo + Bacopa': 2 }, 'Se me olvidan las cosas': { 'Melena de León': 2, 'Gotu Kola': 1 }, 'Siento la mente nublada': { 'Rhodiola': 2, 'Melena de León': 1 } } },
+        det: { 'Me distraigo': { 'Ginkgo + Bacopa': 2 }, 'Se me olvidan las cosas': { 'Melena de León': 2, 'Gotu Kola': 1 }, 'Siento la mente nublada': { 'Rhodiola': 2, 'Melena de León': 1 } }, det2: { 'Jornadas largas de trabajo o estudio': { 'Rhodiola': 1, 'Ginkgo + Bacopa': 1 }, 'Para crear o resolver': { 'Melena de León': 2 }, 'Me cuesta empezar': { 'Rhodiola': 2 } } },
       'Energía': { why: 'para tu energía', w: { 'Cordyceps': 5, 'Eleuthero': 2, 'Rhodiola': 2, 'Schisandra': 2, 'Master blend': 1 },
-        det: { 'Me cuesta arrancar': { 'Rhodiola': 2, 'Eleuthero': 1 }, 'Bajón en la tarde': { 'Cordyceps': 2, 'Schisandra': 1 }, 'Todo el día': { 'Eleuthero': 2, 'Master blend': 1 } } },
+        det: { 'Me cuesta arrancar': { 'Rhodiola': 2, 'Eleuthero': 1 }, 'Bajón en la tarde': { 'Cordyceps': 2, 'Schisandra': 1 }, 'Todo el día': { 'Eleuthero': 2, 'Master blend': 1 } }, det2: { 'Cansancio físico': { 'Cordyceps': 2 }, 'Cansancio mental': { 'Rhodiola': 2, 'Schisandra': 1 }, 'Los dos': { 'Eleuthero': 2, 'Master blend': 1 } } },
       'Defensas': { why: 'para tus defensas', w: { 'Master blend': 4, 'Astrágalo': 3, 'Amla': 2, 'Cola de Pavo': 2, 'Maitake': 1 },
-        det: { 'Me enfermo seguido': { 'Astrágalo': 2 }, 'Temporada de frío': { 'Amla': 2 }, 'Recuperarme': { 'Cola de Pavo': 2, 'Cordyceps': 1 } } },
+        det: { 'Me enfermo seguido': { 'Astrágalo': 2 }, 'Temporada de frío': { 'Amla': 2 }, 'Recuperarme': { 'Cola de Pavo': 2, 'Cordyceps': 1 } }, det2: { 'Más de 3 veces al año': { 'Astrágalo': 2 }, '1 o 2 veces al año': { 'Amla': 1, 'Cola de Pavo': 1 }, 'Casi nunca, quiero prevenir': { 'Master blend': 2 } } },
       'Piel': { why: 'para tu piel', w: { 'Amla': 3, 'Gotu Kola': 3, 'Reishi': 2, 'Schisandra': 1 },
-        det: { 'Granitos': { 'Reishi': 2 }, 'Manchas': { 'Amla': 2 }, 'Firmeza e hidratación': { 'Gotu Kola': 2, 'Schisandra': 1 } } },
+        det: { 'Granitos': { 'Reishi': 2 }, 'Manchas': { 'Amla': 2 }, 'Firmeza e hidratación': { 'Gotu Kola': 2, 'Schisandra': 1 } }, det2: { 'Se me cae o no crece': { 'Amla': 2 }, 'Seco o sin brillo': { 'Schisandra': 1, 'Gotu Kola': 1 }, 'Está bien': {} } },
       'Ciclo menstrual': { why: 'para tu ciclo', w: { 'Vitex': 4, 'Shatavari': 3, 'Ashwagandha': 2, 'Schisandra': 1 },
-        det: { 'Ciclo irregular': { 'Vitex': 2 }, 'Síntomas antes de la regla': { 'Vitex': 1, 'Ashwagandha': 1 }, 'Cólicos': { 'Shatavari': 2 } } },
+        det: { 'Ciclo irregular': { 'Vitex': 2 }, 'Síntomas antes de la regla': { 'Vitex': 1, 'Ashwagandha': 1 }, 'Cólicos': { 'Shatavari': 2 } }, det2: { 'Irritabilidad o tristeza antes de la regla': { 'Vitex': 1, 'Ashwagandha': 1 }, 'Me baja la energía': { 'Shatavari': 2 }, 'No cambia mucho': {} } },
       'Menopausia': { why: 'para la menopausia', w: { 'Shatavari': 4, 'Azafrán': 2, 'Magnesio P.M.': 2, 'Schisandra': 2 },
-        det: { 'Bochornos': { 'Shatavari': 2, 'Schisandra': 1 }, 'Sueño': { 'Magnesio P.M.': 3 }, 'Ánimo': { 'Azafrán': 3 } } },
+        det: { 'Bochornos': { 'Shatavari': 2, 'Schisandra': 1 }, 'Sueño': { 'Magnesio P.M.': 3 }, 'Ánimo': { 'Azafrán': 3 } }, det2: { 'Ansiedad o irritabilidad': { 'Ashwagandha': 2 }, 'Cansancio': { 'Schisandra': 2 }, 'Piel o cabello': { 'Amla': 1, 'Gotu Kola': 1 } } },
       // Digestión y Hormonas (hombre): categorías de la hoja Proyecto Quiz Commons (Eri, 10 oct)
       'Digestión': { why: 'para tu digestión', w: { 'Tulsi': 4, 'Cola de Pavo': 3, 'Reishi': 2, 'Amla': 2, 'Schisandra': 1 },
-        det: { 'Inflamación o pesadez': { 'Reishi': 2, 'Cola de Pavo': 1 }, 'Acidez o estómago nervioso': { 'Tulsi': 2 }, 'Digestión lenta': { 'Amla': 2, 'Schisandra': 1 } } },
+        det: { 'Inflamación o pesadez': { 'Reishi': 2, 'Cola de Pavo': 1 }, 'Acidez o estómago nervioso': { 'Tulsi': 2 }, 'Digestión lenta': { 'Amla': 2, 'Schisandra': 1 } }, det2: { 'Sí, mucho': { 'Tulsi': 1, 'Ashwagandha': 2 }, 'A veces': { 'Reishi': 1 }, 'No': { 'Cola de Pavo': 1 } } },
       'Hormonas y libido': { why: 'para tu balance hormonal', w: { 'Mucuna': 4, 'Cordyceps': 4, 'Ashwagandha': 3, 'Eleuthero': 1, 'Rhodiola': 1 },
-        det: { 'Libido baja': { 'Mucuna': 2 }, 'Poca energía o resistencia': { 'Cordyceps': 2, 'Eleuthero': 1 }, 'Me cuesta recuperarme': { 'Ashwagandha': 2, 'Cordyceps': 1 } } }
+        det: { 'Libido baja': { 'Mucuna': 2 }, 'Poca energía o resistencia': { 'Cordyceps': 2, 'Eleuthero': 1 }, 'Me cuesta recuperarme': { 'Ashwagandha': 2, 'Cordyceps': 1 } }, det2: { '3 o más veces por semana': { 'Cordyceps': 2 }, 'A veces': { 'Ashwagandha': 1 }, 'Casi no': { 'Eleuthero': 1 } } }
+      // apagadas (off) hasta que el producto exista: se prenden quitando off
+      ,'Azúcar y antojos': { off: true, why: 'para tu glucosa', w: { 'Glucose Response': 5, 'Schisandra': 1 },
+        det: { 'Me da sueño después de comer': { 'Glucose Response': 2 }, 'Se me antoja el azúcar': { 'Glucose Response': 1 }, 'Energía que sube y baja': { 'Cordyceps': 1 } },
+        det2: { 'Sí, tengo resistencia a la insulina o prediabetes': {}, 'No que yo sepa': {}, 'No sé': {} } },
+      'Ejercicio y recuperación': { off: true, why: 'para tu entrenamiento', w: { 'Cordyceps': 4, 'Creatina': 4, 'Electrolitos': 2, 'Ashwagandha': 1 },
+        det: { 'Fuerza': { 'Creatina': 2 }, 'Resistencia': { 'Cordyceps': 2, 'Electrolitos': 1 }, 'Recuperarme': { 'Ashwagandha': 1, 'Magnesio P.M.': 1 } },
+        det2: { '3 o más veces por semana': { 'Creatina': 1 }, '1 o 2 veces por semana': {}, 'Sudo mucho o hace calor': { 'Electrolitos': 2 } } }
     };
     // kits nuevos (kits-oficiales.md), no los de la tienda actual
     this.K = [
@@ -142,7 +149,7 @@ class Component extends DCLogic {
   build() {
     var st = this.state, P = this.P, N = this.N, self = this;
     var safe = st.safe, warn = {};
-    var needs = st.needs.filter(function (n) { return !((n === 'Menopausia' && !(st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más'))) || (n === 'Ciclo menstrual' && (st.sex !== 'Mujer' || st.age === '60 o más')) || (n === 'Hormonas y libido' && st.sex !== 'Hombre')); });
+    var needs = st.needs.filter(function (n) { return N[n] && !N[n].off && !((n === 'Menopausia' && !(st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más'))) || (n === 'Ciclo menstrual' && (st.sex !== 'Mujer' || st.age === '60 o más')) || (n === 'Hormonas y libido' && st.sex !== 'Hombre')); });
     if (!needs.length) needs = ['Estrés'];
     var out = {};
     var has = function (x) { return safe.indexOf(x) >= 0; };
@@ -161,11 +168,13 @@ class Component extends DCLogic {
     needs.forEach(function (n) {
       var d = N[n], s = {};
       Object.keys(d.w).forEach(function (p) { s[p] = d.w[p]; });
-      var boost = d.det[st.det[n]] || {};
-      Object.keys(boost).forEach(function (p) { s[p] = (s[p] || 0) + boost[p]; });
+      [d.det[st.det[n]], (d.det2 || {})[st.det[n + '#2']]].forEach(function (boost) { boost = boost || {}; Object.keys(boost).forEach(function (p) { s[p] = (s[p] || 0) + boost[p]; }); });
       Object.keys(s).forEach(function (p) { if (out[p]) return; score[p] = (score[p] || 0) + s[p]; });
       per[n] = s;
     });
+    // ¿ya tomas adaptógenos? nunca → empieza con los clásicos y máximo 3; diario → puede sumar Science y llegar a 4
+    var CLASICOS = ['Ashwagandha', 'Reishi', 'Melena de León', 'Cordyceps'], first = st.ada === 'No, nunca', daily = st.ada === 'Sí, diario';
+    Object.keys(score).forEach(function (p) { if (first && CLASICOS.indexOf(p) >= 0) score[p] += 1; if (daily && P[p] && P[p].l === 'sci') score[p] += 1; });
     // 1) el principal de cada necesidad
     var list = [];
     needs.forEach(function (n) {
@@ -177,7 +186,7 @@ class Component extends DCLogic {
     while (list.length < 3 && rest.length) list.push(rest.shift());
     // 3) un cuarto si alguna necesidad tiene un segundo producto fuerte (peso 4 o más), p. ej. Reishi junto a Magnesio en sueño
     needs.forEach(function (n) {
-      if (list.length >= 4) return;
+      if (list.length >= 4 || first) return;
       var second = Object.keys(per[n]).filter(function (p) { return !out[p] && list.indexOf(p) < 0 && per[n][p] >= 4; }).sort(function (a, b) { return per[n][b] - per[n][a]; })[0];
       if (second) list.push(second);
     });
@@ -227,6 +236,7 @@ class Component extends DCLogic {
     var mk = function (k, arr, multi, max, subs) { return arr.map(function (t, i) { var on = multi ? st[k].indexOf(t) >= 0 : st[k] === t; return { t: t, s: (subs && subs[i]) || '', cls: 'qo' + (on ? ' on' : ''), pick: function () { self.set(k, t, multi, max); } }; }); };
     var needsAll = ['Sueño', 'Estrés', 'Ánimo', 'Enfoque', 'Energía', 'Defensas', 'Digestión', 'Piel'];
     if (st.sex === 'Hombre') needsAll = needsAll.concat(['Hormonas y libido']);
+    needsAll = needsAll.concat(['Azúcar y antojos', 'Ejercicio y recuperación'].filter(function (n) { return !self.N[n].off; }));
     if (st.sex === 'Mujer' && st.age !== '60 o más') needsAll = needsAll.concat(['Ciclo menstrual']);
     if (st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más')) needsAll = needsAll.concat(['Menopausia']);
     var DET = {
@@ -240,12 +250,26 @@ class Component extends DCLogic {
       'Ciclo menstrual': ['Ciclo · ¿qué te pasa más?', ['Ciclo irregular', 'Síntomas antes de la regla', 'Cólicos']],
       'Menopausia': ['Menopausia · ¿qué te molesta más?', ['Bochornos', 'Sueño', 'Ánimo']],
       'Digestión': ['Digestión · ¿qué sientes más?', ['Inflamación o pesadez', 'Acidez o estómago nervioso', 'Digestión lenta']],
-      'Hormonas y libido': ['Hormonas · ¿qué notas más?', ['Libido baja', 'Poca energía o resistencia', 'Me cuesta recuperarme']]
+      'Hormonas y libido': ['Hormonas · ¿qué notas más?', ['Libido baja', 'Poca energía o resistencia', 'Me cuesta recuperarme']],
+      'Azúcar y antojos': ['Azúcar · ¿qué te pasa más?', ['Me da sueño después de comer', 'Se me antoja el azúcar', 'Energía que sube y baja']],
+      'Ejercicio y recuperación': ['Ejercicio · ¿qué buscas?', ['Fuerza', 'Resistencia', 'Recuperarme']]
     };
+    var DET2 = {
+      'Sueño': '¿Qué te quita el sueño?', 'Estrés': '¿Dónde lo sientes más?', 'Ánimo': '¿Hace cuánto te sientes así?', 'Enfoque': '¿Para qué lo necesitas?',
+      'Energía': '¿Qué cansancio es?', 'Defensas': '¿Cuántas veces te enfermas?', 'Piel': '¿Y tu cabello?', 'Ciclo menstrual': '¿Cómo cambia tu ánimo en el ciclo?',
+      'Menopausia': '¿Qué más te pasa?', 'Digestión': '¿Tu estómago refleja tu estrés?', 'Hormonas y libido': '¿Haces ejercicio?',
+      'Azúcar y antojos': '¿Te han dicho algo de tu glucosa?', 'Ejercicio y recuperación': '¿Cuánto entrenas?'
+    };
+    var detGroups = [];
+    st.needs.filter(function (n) { return DET[n] && self.N[n] && !self.N[n].off; }).forEach(function (n) {
+      var pickFor = function (key, t) { return function () { var o = Object.assign({}, st.det); o[key] = t; self.setState({ det: o }); }; };
+      detGroups.push({ lab: DET[n][0], cls: 'qopts three', opts: DET[n][1].map(function (t) { return { t: t, s: '', cls: 'qo' + (st.det[n] === t ? ' on' : ''), pick: pickFor(n, t) }; }) });
+      var d2 = self.N[n].det2; if (d2) detGroups.push({ lab: n.split(' ')[0] + ' · ¿' + DET2[n].charAt(1).toLowerCase() + DET2[n].slice(2), cls: 'qopts three', opts: Object.keys(d2).map(function (t) { return { t: t, s: '', cls: 'qo' + (st.det[n + '#2'] === t ? ' on' : ''), pick: pickFor(n + '#2', t) }; }) });
+    });
     var STEPS = [
-      { name: 'Tú', q: '¿Para quién es?', hint: '', groups: [{ lab: '', cls: 'qopts', opts: mk('who', ['Para mí', 'Para alguien más']) }, { lab: 'Edad', cls: 'qopts three', opts: mk('age', ['Menos de 18', '18 a 29', '30 a 44', '45 a 59', '60 o más']) }, { lab: 'Sexo biológico', cls: 'qopts', opts: mk('sex', ['Mujer', 'Hombre']) }] },
+      { name: 'Tú', q: '¿Para quién es?', hint: '', groups: [{ lab: '', cls: 'qopts', opts: mk('who', ['Para mí', 'Para alguien más']) }, { lab: 'Edad', cls: 'qopts three', opts: mk('age', ['Menos de 18', '18 a 29', '30 a 44', '45 a 59', '60 o más']) }, { lab: 'Sexo biológico', cls: 'qopts', opts: mk('sex', ['Mujer', 'Hombre']) }, { lab: '¿Ya tomas adaptógenos?', cls: 'qopts three', opts: mk('ada', ['No, nunca', 'A veces', 'Sí, diario']) }] },
       { name: 'Lo que vives', q: '¿Qué quieres acompañar?', hint: 'Elige hasta 3.', groups: [{ lab: '', cls: 'qopts three', opts: mk('needs', needsAll, true, 3) }] },
-      { name: 'Un poco más', q: 'Cuéntanos un poco más.', hint: 'Una pregunta por cada cosa que elegiste.', groups: st.needs.map(function (n) { var d = DET[n]; return { lab: d[0], cls: 'qopts three', opts: d[1].map(function (t) { var on = st.det[n] === t; return { t: t, s: '', cls: 'qo' + (on ? ' on' : ''), pick: function () { var o = Object.assign({}, st.det); o[n] = t; self.setState({ det: o }); } }; }) }; }) },
+      { name: 'Un poco más', q: 'Cuéntanos un poco más.', hint: 'Dos preguntas por cada cosa que elegiste.', groups: detGroups },
       { name: 'Seguridad', q: '¿Algo de esto aplica para ti?', hint: 'Obligatoria. Puedes elegir varias.', groups: [{ lab: '', cls: 'qopts', opts: mk('safe', ['Embarazo o lactancia', 'Antidepresivos', 'Anticoagulantes', 'Anticonceptivos o tratamiento hormonal', 'Hipertiroidismo', 'Enfermedad del hígado', 'Problemas de riñón', 'Enfermedad autoinmune', 'Otros medicamentos', 'Ninguna'], true) }] },
       { name: 'Cómo lo prefieres', q: '¿Cómo lo quieres tomar?', hint: '', groups: [{ lab: 'Formato', cls: 'qopts', opts: mk('fmt', ['Cápsulas', 'Polvo'], false, 0, ['Lo más práctico', 'Rinde más']) }, { lab: '¿Te sugerimos hasta 2 complementos de Rituals?', cls: 'qopts', opts: mk('rit', ['Sí', 'No']) }] }
     ];
@@ -263,12 +287,12 @@ class Component extends DCLogic {
       pct: Math.round((st.step + 1) / 5 * 100), stepN: st.step + 1, stepName: s.name, q: s.q, hint: s.hint, groups: s.groups, isSafety: st.step === 3,
       canBack: st.step > 0, back: function () { self.setState({ step: st.step - 1 }); },
       nextTxt: st.step === 4 ? 'Ver mi protocolo' : 'Siguiente',
-      next: function () { var e = ''; if (st.step === 0 && (!st.age || !st.sex)) e = 'Elige tu edad y sexo biológico.'; if (st.step === 1 && !st.needs.length) e = 'Elige al menos una cosa.'; if (st.step === 3 && !st.safe.length) e = 'Elige al menos una opción (o Ninguna).'; if (e) { self.setState({ err: e }); return; } if (st.step === 0 && st.age === 'Menos de 18') { self.setState({ view: 'block', err: '' }); return; } if (st.step < 4) self.setState({ step: st.step + 1, err: '' }); else self.setState({ view: blocked ? 'block' : 'res', err: '' }); window.scrollTo({ top: Math.max(0, document.getElementById('cmq-root').getBoundingClientRect().top + window.scrollY - 80) }); },
+      next: function () { var e = ''; if (st.step === 0 && (!st.age || !st.sex || !st.ada)) e = 'Contesta tu edad, tu sexo biológico y si ya tomas adaptógenos.'; if (st.step === 1 && !st.needs.length) e = 'Elige al menos una cosa.'; if (st.step === 3 && !st.safe.length) e = 'Elige al menos una opción (o Ninguna).'; if (e) { self.setState({ err: e }); return; } if (st.step === 0 && st.age === 'Menos de 18') { self.setState({ view: 'block', err: '' }); return; } if (st.step < 4) self.setState({ step: st.step + 1, err: '' }); else self.setState({ view: blocked ? 'block' : 'res', err: '' }); window.scrollTo({ top: Math.max(0, document.getElementById('cmq-root').getBoundingClientRect().top + window.scrollY - 80) }); },
       restart: function () { self.setState({ view: 'quiz', step: 0, ess: false, err: '' }); },
       blockT: blocked === 'minor' ? 'Este quiz es para mayores de 18.' : 'En embarazo o lactancia, mejor con tu médico.',
       blockS: blocked === 'minor' ? 'Nuestros productos no son para menores de edad. Si tienes dudas, escríbenos.' : 'Por ahora no recomendamos ningún producto Commons, Rituals incluido. Si quieres, te orientamos por WhatsApp.',
       needsTxt: st.needs.join(' · '), pname: r.name,
-      pintro: st.ess ? 'Empieza con los 2 principales de tu protocolo. Cuando quieras, sumas el resto.' : 'Armado con lo que nos contaste. Tómalo 12 semanas y evalúa cómo vas.',
+      pintro: st.ess ? 'Empieza con los 2 principales de tu protocolo. Cuando quieras, sumas el resto.' : (st.ada === 'No, nunca' ? 'Como es tu primera vez, empezamos con lo esencial y los clásicos. Tómalo 12 semanas y evalúa cómo vas.' : 'Armado con lo que nos contaste. Tómalo 12 semanas y evalúa cómo vas.'),
       prods: r.prods, total: this.money(r.total), full: r.rate ? this.money(r.full) : '', save: this.money(r.full - r.total),
       discTxt: r.n >= 3 ? r.n + ' productos · −20%' : (r.n === 2 ? '2 productos · −10%' : 'Sin descuento'),
       perDay: this.money(r.perDay) + ' al día', ship: r.total >= 990 ? 'Gratis' : '$150', err: st.err, addTxt: 'Agregar mi protocolo · ' + this.money(r.total), addAll: function () { self.addAll(r.prods); },
