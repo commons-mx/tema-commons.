@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-product",
+      "settings": {
+        "short_name": "Magnesio P.M.",
+        "line_label": "Commons Science",
+        "sci": "[Forma de magnesio · validar]",
+        "needs": "Sueño",
+        "claim": "Para tu ritual de antes de dormir. 5 g en agua.",
+        "ten": "Para: Sueño\nPorción: 5 g\nMomento: Antes de dormir\nRinde: 450 g · 90 noches",
+        "show_volume": true,
+        "forr": "Sueño\nDescanso",
+        "how": "Cuánto|5 g|La dosis de la etiqueta.\nCuándo|Antes de dormir|Disuelto en agua.\nRitmo|Todas las noches|Evalúa cómo vas a los 3 meses.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nToma solo la dosis de la etiqueta.\nSi tienes un tema renal o tomas medicamentos, consulta a tu médico.",
+        "comps": [
+          "ashwagandha-organico-capsulas-extracto",
+          "hongo-reishi-100g-20-β-glucanos",
+          "miel-sueno-profundo-1"
+        ],
+        "comp_why": "Para completar tu noche.",
+        "product_color": "#3B2A63"
+      },
+      "blocks": {
+        "acc1": {
+          "type": "acc",
+          "settings": {
+            "title": "Cómo se toma",
+            "text": "<p>5 g disueltos en agua, antes de dormir.</p>"
+          }
+        },
+        "acc3": {
+          "type": "acc",
+          "settings": {
+            "title": "Precauciones",
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Toma solo la dosis de la etiqueta.</li><li>Si tienes un tema renal o tomas medicamentos, consulta a tu médico.</li></ul>"
+          }
+        },
+        "acc4": {
+          "type": "acc",
+          "settings": {
+            "title": "Envío y devoluciones",
+            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuándo voy a notar algo?",
+            "a": "<p>Cada cuerpo es distinto. Tómalo todos los días en la dosis de la etiqueta y evalúa cómo vas a los 3 meses.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Lo puedo tomar con Botanicals?",
+            "a": "<p>Sí. Science y Botanicals se combinan en un mismo protocolo. Si tomas medicamentos, consulta a tu médico.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Por qué la dosis no se sube?",
+            "a": "<p>Science se toma en la dosis exacta que se estudió, la de la etiqueta.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+          }
+        }
+      },
+      "block_order": [
+        "acc1",
+        "acc3",
+        "acc4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
