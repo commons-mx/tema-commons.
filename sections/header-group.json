@@ -1812,7 +1812,7 @@
       "settings": {
         "ann_link": "/#protocolo",
         "quiz_link": "/pages/quiz-commons",
-        "mobile_footer": "footer"
+        "mobile_footer": "cm-commons"
       },
       "blocks": {
         "b1": {
@@ -1846,7 +1846,7 @@
           "type": "panel",
           "settings": {
             "label": "Botanicals",
-            "link": "/collections/adaptogenos-en-capusulas",
+            "link": "/pages/botanicals",
             "menu_1": "cm-botanicals-hongos",
             "menu_2": "cm-botanicals-hierbas",
             "menu_3": "cm-rituals",
@@ -1854,24 +1854,32 @@
             "card_style": "image",
             "card_eyebrow": "Commons Botanicals",
             "card_title": "El origen: plantas, raíces y hongos.",
-            "card_button": "Ver Botanicals",
-            "card_link": "/collections/adaptogenos-en-capusulas",
+            "card_button": "Conoce Botanicals",
+            "card_link": "/pages/botanicals",
             "mobile_menu": "cm-botanicals-movil",
-            "mobile_note": "+ Rituals"
+            "mobile_note": "Hongos, hierbas y Rituals"
           }
         },
         "b3": {
           "type": "panel",
           "settings": {
             "label": "Science",
-            "link": "/collections/all",
+            "badge": "Nuevo",
+            "link": "/pages/science",
             "menu_1": "cm-science",
             "title_1": "Commons Science · Designed for human systems",
             "products_title": "Fórmulas",
             "product_1": "azafran-1",
             "product_2": "magnesio-p-m",
+            "product_codes": "SC-001, SC-002",
             "soon": "Burn · Reducose® + Eriomin® · Creatina · Creapure® [Confirmar lista y fechas]",
-            "mobile_menu": "cm-science"
+            "mobile_menu": "cm-science",
+            "mobile_note": "Ingredientes de patente, dosis exactas",
+            "card_style": "image",
+            "card_eyebrow": "Nuevo · Commons Science",
+            "card_title": "Nature, decoded. La nueva línea.",
+            "card_button": "Conoce Science",
+            "card_link": "/pages/science"
           }
         },
         "b4": {
@@ -1889,6 +1897,8 @@
             "link": "/blogs/noticias",
             "menu_1": "cm-aprende",
             "title_1": "Aprende",
+            "menu_2": "cm-commons",
+            "title_2": "Commons",
             "card_style": "image",
             "card_eyebrow": "Journal",
             "card_title": "Todo lo educativo, en un lugar.",
