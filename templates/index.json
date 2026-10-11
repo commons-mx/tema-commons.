@@ -315,7 +315,9 @@
       "type": "cm-nature",
       "settings": {
         "heading": "Todo empieza en una planta.",
+        "image1": "shopify://shop_images/IMG_1766_dda1351e-bf17-4d2b-9a0d-304e637a2028.jpg",
         "caption": "In common with nature",
+        "image2": "shopify://shop_images/IMG_1835.jpg",
         "height": 720
       }
     },
