@@ -528,6 +528,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .nbt{font-size:15px}
 .cmpg .nform input,.cmpg .nform button{min-height:40px;font-size:14px}
 .cmpg .flogo{margin-top:32px}}
+.cmpg .tA,.cmpg .tB,.cmpg .tC{--dscale:.76 !important}
+.cmpg .disp.h1{line-height:1.02}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}

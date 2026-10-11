@@ -673,6 +673,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .flogo{margin-top:32px}}
 @container cmpg (min-width: 761px){.cmpg .fmgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#EDE47A;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
+.cmpg .tA,.cmpg .tB,.cmpg .tC{--dscale:.76 !important}
+.cmpg .disp.h1{line-height:1.02}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}

@@ -613,6 +613,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .mani{text-align:left !important;align-items:flex-start !important;padding:96px 40px !important}
 .cmpg section[aria-labelledby="rt"] .cell.yellow,.cmpg section[aria-labelledby="rt"] .yellow{background:var(--bg) !important}
 @container cmpg (max-width: 760px){.cmpg .mani{padding:56px 20px !important}}
+.cmpg .tA,.cmpg .tB,.cmpg .tC{--dscale:.76 !important}
+.cmpg .disp.h1{line-height:1.02}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
