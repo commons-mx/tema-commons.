@@ -412,6 +412,7 @@
             {%- if settings.enable_free_shipping and settings.order_amount_freeshipping != blank or settings.order_amount_freegift != blank -%}
               <div id="x-cart-drawer-freeshipping" class="" :class="{ 'pointer-events-none' : loading {% if settings.cart_upsell_position == 'aside' %}, 'lg:w-7/12' : show, 'w-full': window.xViewport.innerWidth < 1024, 'lg:w-[calc((100%/12)*7)]': window.xViewport.innerWidth >= 1024 && show{% endif %} }">
                 {% render 'freeshipping', cart_drawer: true %}
+{% render 'cm-bulk-nudge' %}
               </div>
             {% endif %}
             {% comment %} Cart items {% endcomment %}

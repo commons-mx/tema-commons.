@@ -1,0 +1,19 @@
+{%- liquid
+  assign cm_n = 0
+  for item in cart.items
+    assign cm_t = item.product.type | downcase
+    assign cm_v = item.variant.title | downcase
+    if cm_v contains 'carry'
+      continue
+    endif
+    if cm_t contains 'chocolate' or cm_t contains 'miel' or cm_t contains 'blend' or cm_t contains 'latte' or cm_t contains 'cacao' or cm_t contains 'kit'
+      continue
+    endif
+    assign cm_n = cm_n | plus: item.quantity
+  endfor
+-%}
+{%- if cm_n >= 3 -%}
+<div class="cm-bulk" style="margin:10px 0 0;padding:10px 14px;background:#F4F3B2;color:#141A16;font-size:13px;line-height:1.4">
+{%- if cm_n >= 5 -%}<b>Listo: tu protocolo lleva 20%.</b> Science se queda en 10%.{%- else -%}{%- assign cm_f = 5 | minus: cm_n -%}Agrega {{ cm_f }} {% if cm_f == 1 %}producto{% else %}productos{% endif %} más y llévate <b>20% en tu protocolo</b>.{%- endif -%}
+</div>
+{%- endif -%}

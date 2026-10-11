@@ -229,6 +229,7 @@
     {% endif %}
     {% unless show_side_bar_freeshipping %}
       {% render 'freeshipping', main_cart: true %}
+{% render 'cm-bulk-nudge' %}
     {% endunless %}
     {%- if show_side_bar_freeshipping -%}
       {% render 'freeshipping', main_cart: true, side_bar_freeshipping: true, mobile: true %}
