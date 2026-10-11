@@ -132,7 +132,17 @@
     {% render 'standard-events-page-view' %}
     {{ content_for_header }}
     {{ settings.additional_head }}
-  </head>
+  {%- liquid
+  assign cm_sci = false
+  if template.suffix == 'science' or template.suffix == 'cm-azafran' or template.suffix == 'cm-magnesio'
+    assign cm_sci = true
+  endif
+  if collection and collection.handle contains 'science'
+    assign cm_sci = true
+  endif
+-%}
+{%- if cm_sci -%}<style>/* Science en lima */ :root,body,.cm4,.cmpg .v4,.acY,.cm-hdr{--lime:#DFF68F !important} #CartDrawer .x-cart-item-count{background:#DFF68F !important}</style>{%- endif -%}
+</head>
   <body 
     class="gradient scrollbar-body overflow-x-hidden body-text-base-size{% if settings.lang_direction contains request.locale.iso_code %} rtl{% endif %}" 
     x-data

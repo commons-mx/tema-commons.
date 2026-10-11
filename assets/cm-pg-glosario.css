@@ -667,7 +667,7 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .nbt{font-size:15px}
 .cmpg .nform input,.cmpg .nform button{min-height:40px;font-size:14px}
 .cmpg .flogo{margin-top:32px}}
-.cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#EDE47A;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
+.cmpg .cm-new{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;border-radius:999px;background:#DFF68F;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;vertical-align:2px}
 .cmpg .circ{background:#EFEFEA !important;box-shadow:inset 0 0 0 1px var(--soft)}
 .cmpg .circ .ini{font-size:calc(40px * var(--dscale)) !important;color:var(--ink2) !important}
 .cmpg .circ .ph-note{color:var(--ink2) !important}
