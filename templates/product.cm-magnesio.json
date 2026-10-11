@@ -5,35 +5,55 @@
       "settings": {
         "short_name": "Magnesio P.M.",
         "line_label": "Commons Science",
-        "sci": "[Forma de magnesio · validar]",
+        "sci": "Bisglicinato · treonato · malato · sin melatonina",
+        "badge": "Nuevo",
         "needs": "Sueño",
-        "claim": "Para tu ritual de antes de dormir. 5 g en agua.",
-        "ten": "Para: Sueño\nPorción: 5 g\nMomento: Antes de dormir\nRinde: 450 g · 90 noches",
+        "claim": "Magnesio, glicina, L-teanina y apigenina de manzanilla, en polvo. Para preparar tu noche, sin melatonina. [Validar claims]",
+        "ev_quick": "Evidencia por ingrediente · ver lo que se ha estudiado",
+        "ten": "Para: Sueño y relajación\nLleva: 3 formas de magnesio, glicina, L-teanina y apigenina\nPorción: 10 g · 1 scoop\nMomento: De 30 a 60 minutos antes de dormir\nRinde: 450 g · 45 noches",
         "show_volume": true,
-        "forr": "Sueño\nDescanso",
-        "how": "Cuánto|5 g|La dosis de la etiqueta.\nCuándo|Antes de dormir|Disuelto en agua.\nRitmo|Todas las noches|Evalúa cómo vas a los 3 meses.",
-        "prec": "No en embarazo, lactancia ni menores de 18.\nToma solo la dosis de la etiqueta.\nSi tienes un tema renal o tomas medicamentos, consulta a tu médico.",
+        "forr": "Sueño\nEstrés y calma",
+        "a1": "Magnesio en tres formas",
+        "a2": "Con glicina, L-teanina y apigenina",
+        "big": "200 mg",
+        "big_text": "de magnesio elemental en cada porción de 10 g, en tres formas.",
+        "tab": "Magnesio elemental (bisglicinato, treonato, malato)|200 mg\nGlicina|3 g\nL-teanina|200 mg\nApigenina (manzanilla al 20%)|50 mg\nMelatonina|Ninguna\nPorción|10 g · 1 scoop",
+        "tab_note": "[Confirmar con la etiqueta final: mg de magnesio, vitamina B6 y scoop]",
+        "how": "Cuánto|10 g · 1 scoop|En agua tibia o tu bebida de la noche.\nCuándo|Antes de dormir|De 30 a 60 minutos antes.\nRitmo|Diario, sin pausa|No necesita días de descanso.",
+        "weeks": "Semana 1|Una porción cada noche, a la misma hora.\nSemana 2|Acompáñalo de luz baja y sin pantallas.\nSemana 4|Revisa cómo duermes y cómo despiertas.\nMes 2|Sigue sin pausa: es tu rutina de noche.",
+        "ev_tag": "Por ingrediente",
+        "ev_word": "Sueño.",
+        "ev_text": "El magnesio, la glicina y la L-teanina se han estudiado en la calidad del sueño y la relajación.",
+        "ev_cite": "[Validar referencias con Fer]",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nSi tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.\nEn dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.",
         "comps": [
-          "ashwagandha-organico-capsulas-extracto",
           "hongo-reishi-100g-20-β-glucanos",
-          "miel-sueno-profundo-1"
+          "miel-sueno-profundo-1",
+          "azafran-1"
         ],
-        "comp_why": "Para completar tu noche.",
-        "product_color": "#3B2A63"
+        "comp_why": "Para tu noche: una planta, un ritual y tu fórmula de la mañana.",
+        "product_color": "#3B2A5E"
       },
       "blocks": {
         "acc1": {
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>5 g disueltos en agua, antes de dormir.</p>"
+            "text": "<p>10 g (1 scoop) en agua tibia, de 30 a 60 minutos antes de dormir. Todas las noches, sin pausa.</p>"
+          }
+        },
+        "acc2": {
+          "type": "acc",
+          "settings": {
+            "title": "Lo que lleva",
+            "text": "<p>Por porción de 10 g: 200 mg de magnesio elemental (bisglicinato, treonato y malato), 3 g de glicina, 200 mg de L-teanina y 50 mg de apigenina (extracto de manzanilla al 20%). Vitamina B6 [X] mg. Sin melatonina. [Confirmar con la etiqueta final]</p>"
           }
         },
         "acc3": {
           "type": "acc",
           "settings": {
             "title": "Precauciones",
-            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Toma solo la dosis de la etiqueta.</li><li>Si tienes un tema renal o tomas medicamentos, consulta a tu médico.</li></ul>"
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.</li><li>En dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.</li></ul>"
           }
         },
         "acc4": {
@@ -46,34 +66,35 @@
         "faq1": {
           "type": "faq",
           "settings": {
-            "q": "¿Cuándo voy a notar algo?",
-            "a": "<p>Cada cuerpo es distinto. Tómalo todos los días en la dosis de la etiqueta y evalúa cómo vas a los 3 meses.</p>"
+            "q": "¿Tiene melatonina?",
+            "a": "<p>No. Lleva magnesio, glicina, L-teanina y apigenina de manzanilla. Sin melatonina y sin hormonas.</p>"
           }
         },
         "faq2": {
           "type": "faq",
           "settings": {
-            "q": "¿Lo puedo tomar con Botanicals?",
-            "a": "<p>Sí. Science y Botanicals se combinan en un mismo protocolo. Si tomas medicamentos, consulta a tu médico.</p>"
+            "q": "¿Me da sueño al día siguiente?",
+            "a": "<p>No lleva sedantes ni melatonina. Tómalo de 30 a 60 minutos antes de dormir. [Validar]</p>"
           }
         },
         "faq3": {
           "type": "faq",
           "settings": {
-            "q": "¿Por qué la dosis no se sube?",
-            "a": "<p>Science se toma en la dosis exacta que se estudió, la de la etiqueta.</p>"
+            "q": "¿Lo puedo combinar con mis Botanicals?",
+            "a": "<p>Sí. Va en el kit Noche profunda con Reishi y Schisandra. Azafrán en la mañana, Magnesio P.M. en la noche.</p>"
           }
         },
         "faq4": {
           "type": "faq",
           "settings": {
-            "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+            "q": "¿Por qué tres formas de magnesio?",
+            "a": "<p>Cada forma se absorbe y se usa de manera distinta. Juntas cubren más que una sola. [Validar con Fer]</p>"
           }
         }
       },
       "block_order": [
         "acc1",
+        "acc2",
         "acc3",
         "acc4",
         "faq1",
