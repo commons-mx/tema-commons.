@@ -211,7 +211,7 @@ class Component extends DCLogic {
       var q = Q[n] || {}; var vid = pickVar(q, usePw, n, pw); return { n: n, vid: vid, url: q.url || '#', img: q.img || '', noimg: !q.img, line: d.l === 'sci' ? 'Science' : 'Botanicals', tgc: d.l === 'sci' ? 'tg sci' : 'tg bot', warn: warn[n] || '', why: fmt + (why.length ? ' · ' + why.join(' y ') : ''), how: (d.how ? '' : moment + ' · ') + how, price: price, p: self.money(price) };
     });
     var tot = prods.reduce(function (a, p) { return a + p.price; }, 0), n = prods.length;
-    var rate = n >= 3 ? 0.2 : (n === 2 ? 0.1 : 0), total = tot * (1 - rate);
+    var rate = n >= 3 ? 0.15 : (n === 2 ? 0.1 : 0), total = prods.reduce(function (a, p) { return a + p.price * (1 - (p.line === 'Science' ? Math.min(rate, 0.1) : rate)); }, 0);
     // nombre: kit exacto, kit + extra o a tu medida
     var name = 'Protocolo a tu medida', near = '';
     this.K.forEach(function (k) {
@@ -294,7 +294,7 @@ class Component extends DCLogic {
       needsTxt: st.needs.join(' · '), pname: r.name,
       pintro: st.ess ? 'Empieza con los 2 principales de tu protocolo. Cuando quieras, sumas el resto.' : (st.ada === 'No, nunca' ? 'Como es tu primera vez, empezamos con lo esencial y los clásicos. Tómalo 12 semanas y evalúa cómo vas.' : 'Armado con lo que nos contaste. Tómalo 12 semanas y evalúa cómo vas.'),
       prods: r.prods, total: this.money(r.total), full: r.rate ? this.money(r.full) : '', save: this.money(r.full - r.total),
-      discTxt: r.n >= 3 ? r.n + ' productos · −20%' : (r.n === 2 ? '2 productos · −10%' : 'Sin descuento'),
+      discTxt: r.n >= 3 ? r.n + ' productos · −15%' : (r.n === 2 ? '2 productos · −10%' : 'Sin descuento'),
       perDay: this.money(r.perDay) + ' al día', ship: r.total >= 990 ? 'Gratis' : '$150', err: st.err, addTxt: 'Agregar mi protocolo · ' + this.money(r.total), addAll: function () { self.addAll(r.prods); },
       essTxt: st.ess ? 'Ver mi protocolo completo' : 'Empezar con lo esencial (2 productos, −10%)',
       toggleEss: function () { self.setState({ ess: !st.ess }); },

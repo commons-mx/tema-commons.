@@ -16,7 +16,7 @@
             "button_label": "Compra Azafrán · $950",
             "button_link": "/products/azafran-1",
             "button2_label": "Ver evidencia",
-            "button2_link": "/products/azafran-1"
+            "button2_link": "/pages/nuestra-ciencia"
           }
         },
         "b2": {
@@ -499,7 +499,7 @@
         "heading_tag": "h2",
         "heading_alignment": "left",
         "subheading": "Todo el año",
-        "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −20%.</p>",
+        "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −15%.</p>",
         "button_atb_label": "Agregar",
         "step_icon_size": 32,
         "picker_type": "adapt",
@@ -532,16 +532,16 @@
         "line_border_dark": "rgba(0,0,0,0)",
         "caculate_discount_by": "quantity",
         "pre_goal_msg": "Agrega [x] más para tener [goal_label].",
-        "reach_goal_msg": "Listo: tienes el 20% en tu protocolo.",
+        "reach_goal_msg": "Listo: tienes el 15% en tu protocolo.",
         "goal_1": "2",
         "goal_1_label": "10%",
         "discount_type_1": "percentage",
         "discount_value_1": "10",
         "apply_discount_once_per_order_1": false,
         "goal_2": "3",
-        "goal_2_label": "20%",
+        "goal_2_label": "15%",
         "discount_type_2": "percentage",
-        "discount_value_2": "20",
+        "discount_value_2": "15",
         "apply_discount_once_per_order_2": false,
         "goal_3": "",
         "goal_3_label": "",

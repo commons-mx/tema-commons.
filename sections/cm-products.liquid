@@ -29,7 +29,7 @@
                   <button type="submit" class="opt"{% unless v.available %} disabled{% endunless %}><span>{{ v.title }}</span><span class="num">{{ v.price | money_without_trailing_zeros }}</span></button>
                 </form>
                 {%- endfor -%}
-                {%- if section.settings.protocol_label != blank -%}<a class="tlink qapt" href="{{ section.settings.protocol_link | default: '#protocolo' }}">o súmalo a tu protocolo y ahorra hasta 20%</a>{%- endif -%}
+                {%- if section.settings.protocol_label != blank -%}<a class="tlink qapt" href="{{ section.settings.protocol_link | default: '#protocolo' }}">o súmalo a tu protocolo y ahorra hasta 15%</a>{%- endif -%}
               </div>
             </details>
           {%- else -%}
@@ -75,7 +75,7 @@
       "type": "text",
       "id": "protocol_label",
       "label": "Liga a Arma tu protocolo",
-      "default": "Arma tu protocolo · hasta −20%"
+      "default": "Arma tu protocolo · hasta −15%"
     },
     {
       "type": "checkbox",

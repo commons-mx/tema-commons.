@@ -18,7 +18,7 @@
 {%- for p in s.products -%}{%- assign v = p.selected_or_first_available_variant -%}
 <div class="ar-prod"><div class="pi">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}</div><div class="pn"><b><a href="{{ p.url }}" style="color: inherit">{{ p.title }}</a></b><span>{{ p.type }}</span></div><div class="pr"><span class="num">{{ v.price | money_without_trailing_zeros }}</span><button type="button" class="ar-add" data-add="{{ v.id }}">+ Agregar</button></div></div>
 {%- endfor -%}
-<span class="small">2 frascos −10% · 3 o más −20%</span>
+<span class="small">2 frascos −10% · 3 o más −15%</span>
 <a class="tlink" href="/#protocolo" style="align-self: flex-start">Arma tu protocolo</a>
 {%- endif -%}
 </aside>

@@ -1830,7 +1830,7 @@
             "menu_3": "cm-ahorra",
             "title_3": "Ahorra",
             "promo_label": "Todo el año",
-            "promo_big": "2 productos −10% · 3 o más −20%",
+            "promo_big": "2 productos −10% · 3 o más −15%",
             "promo_text": "Cuentan cápsulas, polvo de 100 g, Master blend y Science.",
             "card_style": "quiz",
             "card_eyebrow": "Quiz · 2 minutos",
@@ -1839,7 +1839,7 @@
             "card_button": "Encuentra tu Commons",
             "card_link": "/pages/quiz-commons",
             "mobile_menu": "cm-ahorra",
-            "mobile_note": "−10% / −20%"
+            "mobile_note": "−10% / −15%"
           }
         },
         "b2": {
