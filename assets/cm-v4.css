@@ -709,3 +709,6 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .cm4 .ring{border:0;width:72px;height:72px}
 .cm4 .ring svg{width:44px;height:44px}
 @media (max-width:760px){.cm4 .ring{width:56px;height:56px}.cm4 .ring svg{width:36px;height:36px}}
+
+/* fondo bajo footer */
+html,body{background:#F7F7F4 !important}
