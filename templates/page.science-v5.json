@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-pg-science",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
