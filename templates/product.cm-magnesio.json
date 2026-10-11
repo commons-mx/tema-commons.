@@ -10,22 +10,22 @@
         "needs": "Sueño",
         "claim": "Magnesio, glicina, L-teanina y apigenina de manzanilla, en polvo. Para preparar tu noche, sin melatonina. [Validar claims]",
         "ev_quick": "Evidencia por ingrediente · ver lo que se ha estudiado",
-        "ten": "Para: Sueño y relajación\nLleva: 3 formas de magnesio, glicina, L-teanina y apigenina\nPorción: 10 g · 1 scoop\nMomento: De 30 a 60 minutos antes de dormir\nRinde: 450 g · 45 noches",
+        "ten": "Para: Sueño y relajación\nLleva: 3 formas de magnesio, glicina, L-teanina y apigenina\nPorción: 10 g · 2 cucharadas de 5 g\nMomento: En la noche, antes de dormir\nRinde: 450 g · 45 noches",
         "show_volume": true,
         "forr": "Sueño\nEstrés y calma",
         "a1": "Magnesio en tres formas",
         "a2": "Con glicina, L-teanina y apigenina",
         "big": "200 mg",
         "big_text": "de magnesio elemental en cada porción de 10 g, en tres formas.",
-        "tab": "Magnesio elemental (bisglicinato, treonato, malato)|200 mg\nGlicina|3 g\nL-teanina|200 mg\nApigenina (manzanilla al 20%)|50 mg\nMelatonina|Ninguna\nPorción|10 g · 1 scoop",
-        "tab_note": "[Confirmar con la etiqueta final: mg de magnesio, vitamina B6 y scoop]",
-        "how": "Cuánto|10 g · 1 scoop|En agua tibia o tu bebida de la noche.\nCuándo|Antes de dormir|De 30 a 60 minutos antes.\nRitmo|Diario, sin pausa|No necesita días de descanso.",
+        "tab": "Magnesio elemental (bisglicinato, treonato, malato)|200 mg\nGlicina|3 g\nL-teanina|200 mg\nApigenina (manzanilla al 20%)|50 mg\nMelatonina|Ninguna\nVitamina B6|Sí\nPorción|10 g · 2 cucharadas",
+        "tab_note": "Según la etiqueta: 45 porciones de 10 g por lata. Endulzado con alulosa y stevia.",
+        "how": "Cuánto|10 g · 2 cucharadas|En 500 ml de agua. La cuchara viene en la lata.\nCuándo|En la noche|Antes de dormir.\nRitmo|Diario, sin pausa|No necesita días de descanso.",
         "weeks": "Semana 1|Una porción cada noche, a la misma hora.\nSemana 2|Acompáñalo de luz baja y sin pantallas.\nSemana 4|Revisa cómo duermes y cómo despiertas.\nMes 2|Sigue sin pausa: es tu rutina de noche.",
         "ev_tag": "Por ingrediente",
         "ev_word": "Sueño.",
         "ev_text": "El magnesio, la glicina y la L-teanina se han estudiado en la calidad del sueño y la relajación.",
         "ev_cite": "[Validar referencias con Fer]",
-        "prec": "No en embarazo, lactancia ni menores de 18.\nSi tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.\nEn dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.",
+        "prec": "Para mayores de edad. No en embarazo ni lactancia.\nNo lo tomes si eres intolerante o sensible a alguno de sus ingredientes.\nSi tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.\nEn dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.",
         "comps": [
           "hongo-reishi-100g-20-β-glucanos",
           "miel-sueno-profundo-1",
@@ -39,21 +39,21 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>10 g (1 scoop) en agua tibia, de 30 a 60 minutos antes de dormir. Todas las noches, sin pausa.</p>"
+            "text": "<p>10 g (2 cucharadas de 5 g; la cuchara viene en la lata) en 500 ml de agua, en la noche. Todas las noches, sin pausa.</p>"
           }
         },
         "acc2": {
           "type": "acc",
           "settings": {
             "title": "Lo que lleva",
-            "text": "<p>Por porción de 10 g: 200 mg de magnesio elemental (bisglicinato, treonato y malato), 3 g de glicina, 200 mg de L-teanina y 50 mg de apigenina (extracto de manzanilla al 20%). Vitamina B6 [X] mg. Sin melatonina. [Confirmar con la etiqueta final]</p>"
+            "text": "<p>Por porción de 10 g: 200 mg de magnesio elemental (bisglicinato, treonato y malato), 3 g de glicina, 200 mg de L-teanina y 50 mg de apigenina (extracto de manzanilla al 20%). Con vitamina B6. Endulzado con alulosa y stevia. Sin melatonina.</p>"
           }
         },
         "acc3": {
           "type": "acc",
           "settings": {
             "title": "Precauciones",
-            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.</li><li>En dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.</li></ul>"
+            "text": "<ul><li>Para mayores de edad. No en embarazo ni lactancia.</li><li>No lo tomes si eres intolerante o sensible a alguno de sus ingredientes.</li><li>Si tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.</li><li>En dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.</li></ul>"
           }
         },
         "acc4": {
@@ -74,7 +74,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Me da sueño al día siguiente?",
-            "a": "<p>No lleva sedantes ni melatonina. Tómalo de 30 a 60 minutos antes de dormir. [Validar]</p>"
+            "a": "<p>No lleva sedantes ni melatonina. Tómalo en la noche, antes de dormir. [Validar]</p>"
           }
         },
         "faq3": {
