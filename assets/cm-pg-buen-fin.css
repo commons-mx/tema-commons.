@@ -902,6 +902,10 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .bf-rules > div{padding:18px 20px;border-right:0;border-bottom:1px solid var(--rule)}
 .cmpg .bf-rules > div:last-child{border-bottom:0}
 .cmpg .bf-faq{padding:0 20px 40px}}
+.cmpg .kt-ph.has,.cmpg .rt-ph.has,.cmpg .rph.has{position:relative;padding:0;overflow:hidden}
+.cmpg .sy-card .ph.cov{background:#EFEFEA}
+.cmpg .sy-card .ph.cov img{object-fit:cover}
+.cmpg .rph.has{display:block}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}

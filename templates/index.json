@@ -1,16 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "cm_hero": {
       "type": "cm-hero",
+      "settings": {
+        "text_mobile": true
+      },
       "blocks": {
         "b1": {
           "type": "slide",
@@ -19,7 +13,6 @@
             "badge": "Nuevo",
             "badge_style": "sci",
             "tag": "Affron® · 28 mg",
-            "tag2": "",
             "heading": "Azafrán. La dosis que se estudió.",
             "text": "Extracto de azafrán Affron® con 28 mg por cápsula, estudiado por su relación con el estado de ánimo y el descanso.",
             "button_label": "Compra Azafrán · $950",
@@ -35,7 +28,6 @@
             "badge": "Botanicals",
             "badge_style": "bot",
             "tag": "Los más queridos",
-            "tag2": "",
             "heading": "Los adaptógenos más queridos de México.",
             "text": "Extractos concentrados de plantas, raíces y hongos para acompañar tu bienestar diario.",
             "button_label": "Ver Botanicals",
@@ -48,78 +40,60 @@
       "block_order": [
         "b1",
         "b2"
-      ],
-      "settings": {
-        "eyebrow": "Pioneros de los adaptógenos en México · desde 2019",
-        "text_mobile": true,
-        "autoplay": 0
-      }
+      ]
     },
     "cm_needs": {
       "type": "cm-needs",
+      "settings": {
+        "quiz_label": ""
+      },
       "blocks": {
         "b1": {
           "type": "need",
           "settings": {
-            "icon": "Sueño",
-            "label": "",
-            "link": ""
+            "icon": "Sueño"
           }
         },
         "b2": {
           "type": "need",
           "settings": {
-            "icon": "Estrés",
-            "label": "",
-            "link": ""
+            "icon": "Estrés"
           }
         },
         "b3": {
           "type": "need",
           "settings": {
-            "icon": "Ánimo",
-            "label": "",
-            "link": ""
+            "icon": "Ánimo"
           }
         },
         "b4": {
           "type": "need",
           "settings": {
-            "icon": "Enfoque",
-            "label": "",
-            "link": ""
+            "icon": "Enfoque"
           }
         },
         "b5": {
           "type": "need",
           "settings": {
-            "icon": "Energía",
-            "label": "",
-            "link": ""
+            "icon": "Energía"
           }
         },
         "b6": {
           "type": "need",
           "settings": {
-            "icon": "Ciclo",
-            "label": "",
-            "link": ""
+            "icon": "Ciclo"
           }
         },
         "b7": {
           "type": "need",
           "settings": {
-            "icon": "Defensas",
-            "label": "",
-            "link": ""
+            "icon": "Defensas"
           }
         },
         "b8": {
           "type": "need",
           "settings": {
-            "icon": "Metabolismo",
-            "label": "",
-            "link": ""
+            "icon": "Metabolismo"
           }
         }
       },
@@ -132,15 +106,20 @@
         "b6",
         "b7",
         "b8"
-      ],
-      "settings": {
-        "heading": "¿Qué necesitas hoy?",
-        "quiz_label": "",
-        "quiz_link": ""
-      }
+      ]
     },
     "cm_quiz": {
       "type": "cm-quiz-teaser",
+      "settings": {
+        "tag": "Quiz · 3 minutos",
+        "heading": "Encuentra tu Commons.",
+        "intro": "Responde cinco preguntas y descubre una selección de productos de nuestras tres líneas, pensada para ti.",
+        "lines": "",
+        "button_label": "Empezar el quiz",
+        "note": "Una guía, no un diagnóstico.",
+        "caption_n": "3",
+        "compact": true
+      },
       "blocks": {
         "b1": {
           "type": "chip",
@@ -186,24 +165,14 @@
         "b4",
         "b5",
         "b6"
-      ],
-      "settings": {
-        "tag": "Quiz · 3 minutos",
-        "heading": "Encuentra tu Commons.",
-        "intro": "Responde cinco preguntas y descubre una selección de productos de nuestras tres líneas, pensada para ti.",
-        "lines": "",
-        "button_label": "Empezar el quiz",
-        "question": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días? · Elige hasta 3",
-        "next_label": "Siguiente pregunta",
-        "link": "",
-        "note": "Una guía, no un diagnóstico.",
-        "caption": "minutos",
-        "caption_n": "3",
-        "compact": true
-      }
+      ]
     },
     "cm_products": {
       "type": "cm-products",
+      "settings": {
+        "link": "/collections/all",
+        "protocol_head": false
+      },
       "blocks": {
         "b1": {
           "type": "product",
@@ -212,7 +181,6 @@
             "title": "Ashwagandha",
             "tag": "Estrés",
             "badge": "Más vendido",
-            "size": "",
             "per_serving": "Desde $4.95 por porción"
           }
         },
@@ -234,7 +202,6 @@
             "title": "Reishi",
             "tag": "Sueño",
             "badge": "",
-            "size": "",
             "per_serving": "Desde $4.95 por porción"
           }
         },
@@ -245,7 +212,6 @@
             "title": "Master blend",
             "tag": "Defensas",
             "badge": "",
-            "size": "",
             "per_serving": "$13.75 por porción"
           }
         }
@@ -255,34 +221,26 @@
         "b2",
         "b3",
         "b4"
-      ],
-      "settings": {
-        "heading": "Los más queridos.",
-        "link_label": "Ver todo",
-        "link": "/collections/all",
-        "protocol_label": "Arma tu protocolo · hasta −15%",
-        "protocol_head": false,
-        "card_protocol": "+ Súmalo a tu protocolo",
-        "protocol_link": ""
-      }
+      ]
     },
     "cm_universes": {
       "type": "cm-universes",
+      "settings": {
+        "heading": "Ciencia, plantas y rituales.",
+        "intro": "Adaptógenos, extractos botánicos y fórmulas desarrolladas para acompañar tu bienestar."
+      },
       "blocks": {
         "b1": {
           "type": "universe",
           "settings": {
             "label": "Commons Botanicals",
-            "badge": "",
             "style": "bot",
-            "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
             "title": "El origen con hierbas y adaptógenos",
             "text": "Plantas, raíces y hongos. Y dentro, Rituals: mieles, chocolates y blends para tu día.",
             "button_label": "Explorar Botanicals",
             "button_link": "/collections/adaptogenos-en-capusulas",
             "link2_label": "Ver Rituals",
-            "link2": "/collections/mieles-adaptogenicas-y-funcionales",
-            "sig": ""
+            "link2": "/collections/mieles-adaptogenicas-y-funcionales"
           }
         },
         "b2": {
@@ -291,13 +249,10 @@
             "label": "Commons Science",
             "badge": "Nuevo",
             "style": "sci",
-            "image": "shopify://shop_images/D39BF39E-63E0-45F2-A89E-8FC70BA77ABD.png",
             "title": "La dosis estudiada con Science",
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
             "button_link": "/collections/all",
-            "link2_label": "",
-            "link2": "",
             "sig": "-Designed for human systems-"
           }
         }
@@ -305,19 +260,11 @@
       "block_order": [
         "b1",
         "b2"
-      ],
-      "settings": {
-        "heading": "Ciencia, plantas y rituales.",
-        "intro": "Adaptógenos, extractos botánicos y fórmulas desarrolladas para acompañar tu bienestar."
-      }
+      ]
     },
     "cm_nature": {
       "type": "cm-nature",
-      "settings": {
-        "heading": "Todo empieza en una planta.",
-        "caption": "In common with nature",
-        "height": 720
-      }
+      "settings": {}
     },
     "buy_your_own_bundle_pTbqYm": {
       "type": "buy-your-own-bundle",
@@ -341,7 +288,6 @@
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
             "show_qty": false,
-            "min_required": 0,
             "enable_promotion_highlight": false,
             "subheading": "",
             "heading": "Promotion block",
@@ -377,7 +323,8 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         },
         "paso2": {
@@ -399,7 +346,6 @@
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
             "show_qty": false,
-            "min_required": 0,
             "enable_promotion_highlight": false,
             "subheading": "",
             "heading": "Promotion block",
@@ -435,7 +381,8 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         },
         "paso3": {
@@ -457,7 +404,6 @@
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
             "show_qty": false,
-            "min_required": 0,
             "enable_promotion_highlight": false,
             "subheading": "",
             "heading": "Promotion block",
@@ -493,7 +439,8 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         },
         "paso4": {
@@ -515,7 +462,6 @@
             "show_highlighted_features": false,
             "each_product_can_added_to_bundle_once": false,
             "show_qty": false,
-            "min_required": 0,
             "enable_promotion_highlight": false,
             "subheading": "",
             "heading": "Promotion block",
@@ -551,7 +497,8 @@
             "number_of_columns": 3,
             "number_of_row": 1,
             "number_of_columns_mobile": "1",
-            "number_of_row_mobile": "1"
+            "number_of_row_mobile": "1",
+            "min_required": 0
           }
         }
       },
@@ -572,7 +519,6 @@
         "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −15%.</p>",
         "button_atb_label": "Agregar",
         "step_icon_size": 32,
-        "enable_quickview": false,
         "picker_type": "adapt",
         "max_swatch": 20,
         "enable_desktop_slider": false,
@@ -633,6 +579,7 @@
     },
     "cm_standards": {
       "type": "cm-standards",
+      "settings": {},
       "blocks": {
         "b1": {
           "type": "std",
@@ -672,56 +619,48 @@
         "b2",
         "b3",
         "b4"
-      ],
-      "settings": {
-        "tag": "Nuestros estándares",
-        "heading": "Por qué somos diferentes.",
-        "text": "No da igual cuál compras. Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
-        "color": "#cdbdf0"
-      }
+      ]
     },
     "cm_strip": {
       "type": "cm-strip",
       "settings": {
-        "label": "Evidencia · Commons Science",
-        "text": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas.",
-        "button_label": "Ver la evidencia",
         "button_link": "/products/azafran-1"
       }
     },
     "cm_reviews": {
       "type": "cm-reviews",
+      "settings": {},
       "blocks": {
         "b1": {
           "type": "review",
           "settings": {
+            "tag": "Sueño · Reishi",
             "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
-            "tag": "Sueño · Reishi"
+            "name": "[Nombre]"
           }
         },
         "b2": {
           "type": "review",
           "settings": {
+            "tag": "Estrés · Ashwagandha",
             "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
-            "tag": "Estrés · Ashwagandha"
+            "name": "[Nombre]"
           }
         },
         "b3": {
           "type": "review",
           "settings": {
+            "tag": "Ánimo · Azafrán",
             "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
-            "tag": "Ánimo · Azafrán"
+            "name": "[Nombre]"
           }
         },
         "b4": {
           "type": "review",
           "settings": {
+            "tag": "Enfoque · Melena de León",
             "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
-            "tag": "Enfoque · Melena de León"
+            "name": "[Nombre]"
           }
         }
       },
@@ -730,26 +669,20 @@
         "b2",
         "b3",
         "b4"
-      ],
-      "settings": {
-        "heading": "Lo que cambió en su día.",
-        "badge": "★ 4.91 · +1,500 reseñas",
-        "specialists": "Recomendado por +110 especialistas",
-        "link_label": "Ver todas las reseñas",
-        "link": ""
-      }
+      ]
     },
     "cm_journal": {
       "type": "cm-journal",
       "settings": {
-        "heading": "Journal",
         "blog": "noticias",
-        "button_label": "Más artículos en nuestro blog",
         "button_link": "/blogs/noticias"
       }
     },
     "cm_faq": {
       "type": "cm-faq",
+      "settings": {
+        "button_link": "https://wa.me/525564299433"
+      },
       "blocks": {
         "b1": {
           "type": "faq",
@@ -793,12 +726,7 @@
         "b3",
         "b4",
         "b5"
-      ],
-      "settings": {
-        "heading": "Preguntas frecuentes.",
-        "button_label": "Escríbenos por WhatsApp",
-        "button_link": "https://wa.me/525564299433"
-      }
+      ]
     }
   },
   "order": [
