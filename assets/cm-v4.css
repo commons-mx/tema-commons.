@@ -703,3 +703,9 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .x-container-byob .button.button-outline{border-radius:999px !important;border-color:#141A16 !important;color:#141A16 !important;text-transform:none !important}
 .x-container-byob .bundler-product-image img{background:#F2F2EE;border-radius:0 !important}
 .x-container-byob .bundler-button-remove{background:#fff !important}
+
+/* auditoría v5 · 10 oct */
+.cm4 section[aria-labelledby^="fq-"] .cell.yellow{background:var(--bg)}
+.cm4 .ring{border:0;width:72px;height:72px}
+.cm4 .ring svg{width:44px;height:44px}
+@media (max-width:760px){.cm4 .ring{width:56px;height:56px}.cm4 .ring svg{width:36px;height:36px}}

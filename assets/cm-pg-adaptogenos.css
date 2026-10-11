@@ -914,6 +914,13 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .ad-end{margin-top:56px}
 .cmpg .ad-end .disp{font-size:calc(28px * var(--dscale))}
 .cmpg .ad-btns{flex-direction:column;align-items:stretch}}
+.cmpg .ad-hook{background:var(--pale) !important}
+.cmpg .ad-roots,.cmpg .ad-pane.on,.cmpg .ad-pim,.cmpg .tl-pane.on,.cmpg .hb-card.on{border-radius:0 !important}
+.cmpg .ad-pane.on{background:var(--bg) !important;border:1px solid var(--soft)}
+.cmpg .tl-step i{border-radius:0 !important}
+.cmpg .hb-btn{border-radius:0 !important;background:transparent !important;border:0 !important;border-bottom:1px solid rgba(20,26,22,.35) !important}
+.cmpg .hb-btn.on{background:#141A16 !important}
+.cmpg .hb-card.on{background:var(--bg) !important}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
