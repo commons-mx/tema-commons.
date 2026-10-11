@@ -413,7 +413,7 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .nbt{font-size:18px}
 .cmpg .nform button{padding:0 16px}}
 .cmpg .nav a.on{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:9px}
-.cmpg.sp{--lime:#D6F23F}
+.cmpg.sp{--lime:#DFF68F}
 .cmpg .sp{--silverg:linear-gradient(135deg,#F3F4F5 0%,#D5D9DD 38%,#F7F8F9 55%,#C3C8CD 100%)}
 .cmpg .sp .lab,.cmpg .sp .dk,.cmpg .sp .sig,.cmpg .sp .gk{font-family:'DM Mono',ui-monospace,monospace !important;font-stretch:100%;letter-spacing:.04em}
 .cmpg .sp .dn,.cmpg .sp .num,.cmpg .sp .otab .orow .num{font-family:'DM Mono',ui-monospace,monospace}

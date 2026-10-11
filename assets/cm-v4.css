@@ -547,7 +547,7 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 .cm4 .mcards .pcard .ptx{padding:10px 12px 12px}
 .cm4 .mcards .pcard .pn{font-size:15px}
 .cm4 .nb{display:inline-flex;align-items:center;height:20px;padding:0 8px;font-family:'DM Mono',ui-monospace,monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1;white-space:nowrap;vertical-align:middle}
-.cm4 .nb.sci{background:#D6F23F;color:#141A16}
+.cm4 .nb.sci{background:#DFF68F;color:#141A16}
 .cm4 .nb.bot{background:#1F4A33;color:#fff}
 .cm4 .chip .nb{margin-left:6px;height:18px}
 /* header v4 en el tema */
