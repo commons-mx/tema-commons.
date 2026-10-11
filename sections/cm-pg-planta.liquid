@@ -119,6 +119,7 @@ if (add) add.addEventListener('click', function(){ add.disabled = true;
   .catch(function(){ location.href = '{{ routes.cart_url }}'; }).finally(function(){ add.disabled = false; }); });
 })();
 </script>
+{%- comment -%} v5 · planta {%- endcomment -%}
 {% schema %}
 {
   "name": "Planta v5",

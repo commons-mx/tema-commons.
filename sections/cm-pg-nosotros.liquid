@@ -124,6 +124,7 @@ var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
 var s = root.querySelector('[data-essay]'), b = root.querySelector('[data-essay-btn]'); if (b) b.addEventListener('click', function(){ s.classList.toggle('open'); b.textContent = s.classList.contains('open') ? 'Leer menos' : 'Seguir leyendo'; });
 })();
 </script>
+{%- comment -%} v5 · nosotros {%- endcomment -%}
 {% schema %}
 {
   "name": "Nosotros v5",

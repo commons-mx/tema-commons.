@@ -141,6 +141,7 @@ root.querySelectorAll('[data-r="b"]').forEach(function(x){ x.setAttribute('type'
 root.querySelectorAll('[data-tl]').forEach(function(x){ x.addEventListener('click', function(){ var j = cur.tl + (+x.dataset.tl); if (j >= 0 && j < N.tl) set('tl', j); }); });
 })();
 </script>
+{%- comment -%} v5 · adaptogenos {%- endcomment -%}
 {% schema %}
 {
   "name": "Adaptógenos v5",
