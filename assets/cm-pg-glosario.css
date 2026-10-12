@@ -682,6 +682,26 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .rph.has{display:block}
 .cmpg .circ,.cmpg .circ:hover{border-radius:0 !important;background:transparent !important;box-shadow:none !important;transform:none !important}
 .cmpg .circ img{object-fit:contain !important}
+.cmpg .gpw .gp{display:none}
+.cmpg .gpw.s0 .gp0{display:block}
+.cmpg .gpw.s1 .gp1{display:block}
+.cmpg .gpw.s2 .gp2{display:block}
+.cmpg .gpw.s3 .gp3{display:block}
+.cmpg .gpw.s4 .gp4{display:block}
+.cmpg .gpw.s5 .gp5{display:block}
+.cmpg .gpw.s6 .gp6{display:block}
+.cmpg .gpw.s7 .gp7{display:block}
+.cmpg .gpw.s8 .gp8{display:block}
+.cmpg .gpw.s9 .gp9{display:block}
+.cmpg .gpw.s10 .gp10{display:block}
+.cmpg .gpw.s11 .gp11{display:block}
+.cmpg .gpw.s12 .gp12{display:block}
+.cmpg .gpw.s13 .gp13{display:block}
+.cmpg .gpw.s14 .gp14{display:block}
+.cmpg .gpw.s15 .gp15{display:block}
+.cmpg .gpw.s16 .gp16{display:block}
+.cmpg .gpw.s17 .gp17{display:block}
+.cmpg .gpw.s18 .gp18{display:block}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
