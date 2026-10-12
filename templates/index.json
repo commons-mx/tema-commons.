@@ -571,7 +571,7 @@
         "heading_tag": "h2",
         "heading_alignment": "left",
         "subheading": "Todo el año",
-        "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −15%.</p>",
+        "text": "<p>Elige 2 o 3 frascos según lo que necesitas. 2 frascos −10% · 3 o más −15%.</p><p><strong>¿Vas por 5 o más? Te damos 20% en todo.</strong></p>",
         "button_atb_label": "Agregar",
         "step_icon_size": 32,
         "enable_quickview": false,

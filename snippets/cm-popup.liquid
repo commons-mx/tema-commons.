@@ -10,19 +10,19 @@
 }#cm-pp{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:24px}#cm-pp[hidden],#cm-pp-tab[hidden]{display:none}#cm-pp-tab.pp-tabwrap{position:fixed !important;z-index:2147482999;--bg:#F7F7F4;--ink:#141A16;--lime:#EDE47A;--fl:'Inter',system-ui,sans-serif;font-family:var(--fl);color:var(--ink)}#cm-pp .pp-dim{position:absolute;inset:0;background:rgba(20,26,22,.55)}#cm-pp .pp-x{max-height:calc(100vh - 48px);overflow:auto}#cm-pp .pp-ok{margin:0;font-size:14px}
 @media (max-width: 760px){#cm-pp{padding:0;align-items:flex-end}#cm-pp .pp-x{max-height:88vh;border-top:1px solid var(--ink)}}
 </style>
-<div id="cm-pp-tab" class="pp-tabwrap" hidden><button class="pp-tab" aria-label="Abrir: ahorra hasta 25%"><span>Ahorra hasta 25%</span></button><button class="pp-tabx" aria-label="Ocultar"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<div id="cm-pp-tab" class="pp-tabwrap" hidden><button class="pp-tab" aria-label="Abrir: ahorra hasta 20%"><span>Ahorra hasta 20%</span></button><button class="pp-tabx" aria-label="Ocultar"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
 <div id="cm-pp" hidden>
 <div class="pp-dim" data-pp-close></div>
 <div class="pp-x" role="dialog" aria-modal="true" aria-labelledby="pp-h">
 <button class="pp-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-<div class="pp-img"><img class="pp-iv" src="{{ 'cm-b-e2ddf954dc.jpg' | asset_url }}" loading="lazy" width="1200" height="1210" alt="Cinco frascos Commons"><img class="pp-ih" src="{{ 'cm-b-4d65fc747e.jpg' | asset_url }}" loading="lazy" width="1400" height="867" alt=""><span class="pp-badge">Hasta<b>−25%</b></span></div>
+<div class="pp-img"><img class="pp-iv" src="{{ 'cm-b-e2ddf954dc.jpg' | asset_url }}" loading="lazy" width="1200" height="1210" alt="Cinco frascos Commons"><img class="pp-ih" src="{{ 'cm-b-4d65fc747e.jpg' | asset_url }}" loading="lazy" width="1400" height="867" alt=""><span class="pp-badge">Hasta<b>−20%</b></span></div>
 <div class="pp-tx">
 <span class="sy-lbl">In common with nature</span>
-<h2 id="pp-h" class="sy-t-2">Tu primer Commons, con hasta 25% menos.</h2>
+<h2 id="pp-h" class="sy-t-2">Tu primer Commons, con hasta 20% menos.</h2>
 <p class="pp-p">Deja tu correo y llévate <b>10% de bienvenida</b>. Y entre más frascos llevas, más ahorras.</p>
 {%- form "customer", class: "pp-mail" -%}<input type="hidden" name="contact[tags]" value="newsletter,popup"><label for="pp-e" class="pp-sr">Correo</label><input id="pp-e" type="email" name="contact[email]" required autocomplete="email" placeholder="Tu correo"><button class="sy-btn dark" type="submit">Quiero mi 10%<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></button>{%- endform -%}<div class="pp-done" data-pp-done hidden><span class="sy-lbl">Listo. Tu código de bienvenida</span><span class="pp-code">MIPRIMERHONGUITO</span><a class="sy-btn dark" href="/discount/MIPRIMERHONGUITO?redirect=/%23protocolo" data-pp-go>Usar mi código<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
 <button class="pp-no" type="button" data-pp-close>No, gracias</button>
-<p class="pp-fine"><b>10%</b> con tu correo, en tu primera compra. <b>Sin código, por volumen:</b> 2 productos −10% · 3 o más −15% · 5 −20% · 6 o más −25%. No se suman: se aplica el mayor. No aplica en carry-on.</p>
+<p class="pp-fine"><b>10%</b> con tu correo, en tu primera compra. <b>Sin código, por volumen:</b> 2 productos −10% · 3 o más −15% · 5 o más −20%. No se suman: se aplica el mayor. No aplica en carry-on.</p>
 </div>
 </div>
 </div>
