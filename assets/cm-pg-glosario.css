@@ -680,6 +680,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .sy-card .ph.cov{background:#EFEFEA}
 .cmpg .sy-card .ph.cov img{object-fit:cover}
 .cmpg .rph.has{display:block}
+.cmpg .circ,.cmpg .circ:hover{border-radius:0 !important;background:transparent !important;box-shadow:none !important;transform:none !important}
+.cmpg .circ img{object-fit:contain !important}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
