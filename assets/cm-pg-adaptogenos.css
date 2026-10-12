@@ -923,6 +923,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .hb-card.on{background:var(--bg) !important}
 .cmpg .tA,.cmpg .tB,.cmpg .tC{--dscale:.76 !important}
 .cmpg .disp.h1{line-height:1.02}
+.cmpg .hb-gl{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:20px;padding:10px 16px;border:1px solid var(--ink);border-radius:999px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.cmpg .hb-gl:hover{background:var(--ink);color:#fff}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
