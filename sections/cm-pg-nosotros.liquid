@@ -11,7 +11,7 @@
 <p class="sub" style="max-width: 40ch">Un camino de autoconocimiento con plantas, que honra lo que viene de la tierra. Empezó como una búsqueda personal y hoy es un lugar donde ese camino se comparte.</p>
 <div class="ns-btns"><a class="btn dark" href="#carta">Lee mi historia<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="sq" href="#camino">El camino</a></div>
 </div>
-<div class="cellimg"><img src="{{ 'cm-b-c011f6876e.jpg' | asset_url }}" loading="lazy" alt="Eri, fundadora de Commons" style="object-position: 50% 30%"></div>
+<div class="cellimg"><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-c011f6876e.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Eri, fundadora de Commons" style="object-position: 50% 30%"></div>
 </section>
 
 <!-- 2 · MANIFIESTO -->
@@ -77,7 +77,7 @@
 <section class="ns-story" aria-labelledby="uni">
 <div class="st-head"><span class="lab">Cómo llegamos aquí</span><h2 id="uni" class="disp h2">Primero fue la tierra. Después, la evidencia.</h2></div>
 <div class="st-ch">
-<div class="st-img"><img src="{{ 'cm-b-f419632700.jpg' | asset_url }}" loading="lazy" alt="Frasco de Hongo Reishi con dátiles y nueces"></div>
+<div class="st-img"><img src="{%- if section.settings.cm_img_2 != blank -%}{{ section.settings.cm_img_2 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-f419632700.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Frasco de Hongo Reishi con dátiles y nueces"></div>
 <div class="st-txt">
 <span class="st-n">Capítulo 1 · Commons Botanicals</span>
 <h3 class="disp">El origen.</h3>
@@ -94,7 +94,7 @@
 <p>Después quisimos responder otra pregunta: ¿cuánto, y con qué evidencia? Así nació Science, con ingredientes de patente en la dosis que se estudió. La evidencia, a la vista.</p>
 <div class="ulinks"><a class="tlink" href="/collections/all">Explorar Science</a><span class="sig">-Designed for human systems-</span></div>
 </div>
-<div class="st-img"><img src="{{ 'cm-b-446991405b.jpg' | asset_url }}" loading="lazy" alt="Tubos de ensayo con limón, azafrán, miel, sal y hongo"></div>
+<div class="st-img"><img src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-446991405b.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Tubos de ensayo con limón, azafrán, miel, sal y hongo"></div>
 </div>
 </section>
 
@@ -129,6 +129,26 @@ var s = root.querySelector('[data-essay]'), b = root.querySelector('[data-essay-
 {
   "name": "Nosotros v5",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Eri, fundadora de Commons"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_2",
+      "label": "Foto 2 · Frasco de Hongo Reishi con dátiles y nueces"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_3",
+      "label": "Foto 3 · Tubos de ensayo con limón, azafrán, miel, sal y hongo"
+    }
+  ]
 }
 {% endschema %}

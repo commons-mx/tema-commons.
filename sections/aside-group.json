@@ -406,18 +406,19 @@
         "default_style_mobile": "minimal",
         "minimal_title": "Write your store's popup content",
         "minimal_subtitle": ""
-      }
+      },
+      "disabled": true
     },
     "cookie-banner": {
       "type": "cookie-banner",
       "settings": {
         "cookie_enabled": true,
         "enable_manage_preferences": false,
-        "cookie_notice": "<p>We use cookies and similar technologies to provide the best experience on our website. </p>",
+        "cookie_notice": "<p>Usamos cookies para que la tienda funcione bien y para mejorar tu experiencia.</p>",
         "cookie_delay": 4,
         "content_alignment": "",
-        "button_accept": "Got it!",
-        "button_decline": "Decline",
+        "button_accept": "Aceptar",
+        "button_decline": "Rechazar",
         "background_color_cookie_light": "#ded5cd",
         "text_color_cookie_light": "#545252",
         "accept_button_background": "#743718",

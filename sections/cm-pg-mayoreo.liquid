@@ -11,7 +11,7 @@
 <p class="sub">Para tiendas, cafés, restaurantes, spas, gimnasios y estudios que quieren ofrecer adaptógenos con dosis declaradas. Un solo precio de mayoreo para todos.</p>
 <div class="my-btns"><a class="btn dark" href="#catalogo">Recibir el catálogo<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="tlink" href="#como">Cómo funciona</a></div>
 </div>
-<div class="cellimg"><img src="{{ 'cm-b-ff4d9c74ec.jpg' | asset_url }}" loading="lazy" alt="Frascos Commons Botanicals sobre fondo naranja"><span class="photocap">[Foto: anaquel o barra de café con Commons]</span></div>
+<div class="cellimg"><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-ff4d9c74ec.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Frascos Commons Botanicals sobre fondo naranja"><span class="photocap">[Foto: anaquel o barra de café con Commons]</span></div>
 </section>
 <div class="my-stats">
 <div><span class="n num">2018</span><span class="small">desde</span></div>
@@ -100,6 +100,16 @@
 {
   "name": "Mayoreo v5",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Frascos Commons Botanicals sobre fondo naranja"
+    }
+  ]
 }
 {% endschema %}

@@ -712,3 +712,9 @@ container-type:inline-size;container-name:cm4;background:var(--bg);color:var(--i
 
 /* fondo bajo footer */
 html,body{background:#F7F7F4 !important}
+
+/* 12 oct */
+.cm4 .hright{border-left:0 !important}
+.scroll_top{background:#141A16 !important;color:#F7F7F4 !important;border:0 !important}
+.scroll_top:hover{background:#2A322C !important}
+.scroll_top svg{color:#F7F7F4 !important;fill:none}

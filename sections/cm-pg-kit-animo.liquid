@@ -5,7 +5,7 @@
 <!-- KITS v5 · FICHA (Ánimo) -->
 <main class="kt">
 <section class="kf" aria-labelledby="kn">
-<div class="kf-gal"><div class="main" role="img" aria-label="Espacio para foto">[Foto · los 3 frascos del kit juntos · 4:3]</div><div class="j"><img src="{{ 'cm-b-25c434e5af.jpg' | asset_url }}" loading="lazy" alt="Azafrán"></div><div class="j"><img src="{{ 'cm-b-5d962a49fe.jpg' | asset_url }}" loading="lazy" alt="Ashwagandha"></div><div class="j"><img src="{{ 'cm-b-644003cbea.jpg' | asset_url }}" loading="lazy" alt="Melena de León"></div></div>
+<div class="kf-gal"><div class="main" role="img" aria-label="Espacio para foto">[Foto · los 3 frascos del kit juntos · 4:3]</div><div class="j"><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-25c434e5af.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Azafrán"></div><div class="j"><img src="{%- if section.settings.cm_img_2 != blank -%}{{ section.settings.cm_img_2 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-5d962a49fe.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Ashwagandha"></div><div class="j"><img src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-644003cbea.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Melena de León"></div></div>
 <div class="kf-buy">
 <span class="sy-lbl">Kit · 3 productos · Botanicals + Science</span>
 <h1 id="kn" class="sy-t-1">Ánimo.</h1>
@@ -13,7 +13,7 @@
 <p class="sub">Azafrán para tu ánimo, Ashwagandha para el estrés y Melena de León para tu claridad. [Validar claims]</p>
 <div class="pz"><span>$2,320</span><s>$2,730</s><span class="sy-bdg">−15%</span></div>
 <span class="sy-cap" style="margin: 4px 0 0">Qué incluye</span>
-<div class="kf-inc"><div class="r"><img src="{{ 'cm-b-25c434e5af.jpg' | asset_url }}" loading="lazy" alt="Azafrán"><span><b>Azafrán</b><small>Science · 60 cápsulas · 1 cápsula al día</small></span><span class="p">$950</span></div><div class="r"><img src="{{ 'cm-b-5d962a49fe.jpg' | asset_url }}" loading="lazy" alt="Ashwagandha"><span><b>Ashwagandha</b><small>Botanicals · cápsulas · 1 cápsula, 6 días y 1 de descanso</small></span><span class="p">$890</span></div><div class="r"><img src="{{ 'cm-b-644003cbea.jpg' | asset_url }}" loading="lazy" alt="Melena de León"><span><b>Melena de León</b><small>Botanicals · cápsulas · 1 a 2 cápsulas al día</small></span><span class="p">$890</span></div></div>
+<div class="kf-inc"><div class="r"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-25c434e5af.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Azafrán"><span><b>Azafrán</b><small>Science · 60 cápsulas · 1 cápsula al día</small></span><span class="p">$950</span></div><div class="r"><img src="{%- if section.settings.cm_img_5 != blank -%}{{ section.settings.cm_img_5 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-5d962a49fe.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Ashwagandha"><span><b>Ashwagandha</b><small>Botanicals · cápsulas · 1 cápsula, 6 días y 1 de descanso</small></span><span class="p">$890</span></div><div class="r"><img src="{%- if section.settings.cm_img_6 != blank -%}{{ section.settings.cm_img_6 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-644003cbea.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Melena de León"><span><b>Melena de León</b><small>Botanicals · cápsulas · 1 a 2 cápsulas al día</small></span><span class="p">$890</span></div></div>
 <a class="sy-btn" href="#">Agregar kit · $2,320<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>
 <p class="kf-small">Envío gratis desde $990 · El descuento del kit no se suma a otros descuentos.</p>
 <div><div class="sy-acc"><span>Cómo se toma</span><span>+</span></div><div class="sy-acc"><span>Precauciones</span><span>+</span></div><div class="sy-acc"><span>Envío y devoluciones</span><span>+</span></div></div>
@@ -50,7 +50,7 @@
 </section>
 <section class="kt-sec" aria-label="Otros kits">
 <div class="kt-hd"><div><h2 class="sy-t-2">Otros kits.</h2></div><a class="sy-sq" href="#">Ver todos los kits</a></div>
-<div class="kt-grid"><article class="kt-card" data-t="es" data-ids="43310832713901,42370403500205,42370486599853"><div class="kt-jars"><span class=""><img src="{{ 'cm-b-5d962a49fe.jpg' | asset_url }}" loading="lazy" alt="Ashwagandha"></span><span class=""><img src="{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}" loading="lazy" alt="Reishi"></span><span class=""><img src="{{ 'cm-b-4982d53ddc.jpg' | asset_url }}" loading="lazy" alt="Tulsi"></span></div><div class="top"><span class="sy-lbl">Botanicals · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Estrés y sueño</span><p class="why">Para bajar el ritmo y dormir mejor.</p><div class="kt-ps"><span class="sy-tag">Ashwagandha</span><span class="sy-tag">Reishi</span><span class="sy-tag">Tulsi</span></div><span class="warn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Lleva Tulsi.</span><div class="row"><div class="pz"><span>$2,270</span><s>$2,670</s></div><button class="sy-add" aria-label="Agregar kit Estrés y sueño"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article><article class="kt-card" data-t="sc" data-ids="67173285855405,43310837301421,45406076240045"><div class="kt-jars"><span class=""><img src="{{ 'cm-b-25c434e5af.jpg' | asset_url }}" loading="lazy" alt="Azafrán"></span><span class=""><img src="{{ 'cm-b-644003cbea.jpg' | asset_url }}" loading="lazy" alt="Melena de León"></span><span class="gray">[Ginkgo + Bacopa]</span></div><div class="top"><span class="sy-lbl">Botanicals + Science · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Claridad</span><p class="why">Tu entrada a Science: ánimo, enfoque y memoria.</p><div class="kt-ps"><span class="sy-tag">Azafrán</span><span class="sy-tag">Melena de León</span><span class="sy-tag">Ginkgo + Bacopa</span></div><span class="warn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Lleva Ginkgo.</span><div class="row"><div class="pz"><span>$2,320</span><s>$2,730</s></div><button class="sy-add" aria-label="Agregar kit Claridad"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article><article class="kt-card" data-t="sc" data-ids="67173286117549,42370403500205,42370486173869"><div class="kt-jars"><span class=""><img src="{{ 'cm-b-65188fa8a0.jpg' | asset_url }}" loading="lazy" alt="Magnesio P.M."></span><span class=""><img src="{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}" loading="lazy" alt="Reishi"></span><span class=""><img src="{{ 'cm-b-58228ef08c.jpg' | asset_url }}" loading="lazy" alt="Schisandra"></span></div><div class="top"><span class="sy-lbl">Botanicals + Science · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Noche profunda</span><p class="why">Para tus noches.</p><div class="kt-ps"><span class="sy-tag">Magnesio P.M.</span><span class="sy-tag">Reishi</span><span class="sy-tag">Schisandra</span></div><div class="row"><div class="pz"><span>$2,490</span><s>$2,930</s></div><button class="sy-add" aria-label="Agregar kit Noche profunda"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article></div>
+<div class="kt-grid"><article class="kt-card" data-t="es" data-ids="43310832713901,42370403500205,42370486599853"><div class="kt-jars"><span class=""><img src="{%- if section.settings.cm_img_7 != blank -%}{{ section.settings.cm_img_7 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-5d962a49fe.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Ashwagandha"></span><span class=""><img src="{%- if section.settings.cm_img_8 != blank -%}{{ section.settings.cm_img_8 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Reishi"></span><span class=""><img src="{%- if section.settings.cm_img_9 != blank -%}{{ section.settings.cm_img_9 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-4982d53ddc.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Tulsi"></span></div><div class="top"><span class="sy-lbl">Botanicals · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Estrés y sueño</span><p class="why">Para bajar el ritmo y dormir mejor.</p><div class="kt-ps"><span class="sy-tag">Ashwagandha</span><span class="sy-tag">Reishi</span><span class="sy-tag">Tulsi</span></div><span class="warn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Lleva Tulsi.</span><div class="row"><div class="pz"><span>$2,270</span><s>$2,670</s></div><button class="sy-add" aria-label="Agregar kit Estrés y sueño"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article><article class="kt-card" data-t="sc" data-ids="67173285855405,43310837301421,45406076240045"><div class="kt-jars"><span class=""><img src="{%- if section.settings.cm_img_10 != blank -%}{{ section.settings.cm_img_10 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-25c434e5af.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Azafrán"></span><span class=""><img src="{%- if section.settings.cm_img_11 != blank -%}{{ section.settings.cm_img_11 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-644003cbea.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Melena de León"></span><span class="gray">[Ginkgo + Bacopa]</span></div><div class="top"><span class="sy-lbl">Botanicals + Science · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Claridad</span><p class="why">Tu entrada a Science: ánimo, enfoque y memoria.</p><div class="kt-ps"><span class="sy-tag">Azafrán</span><span class="sy-tag">Melena de León</span><span class="sy-tag">Ginkgo + Bacopa</span></div><span class="warn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Lleva Ginkgo.</span><div class="row"><div class="pz"><span>$2,320</span><s>$2,730</s></div><button class="sy-add" aria-label="Agregar kit Claridad"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article><article class="kt-card" data-t="sc" data-ids="67173286117549,42370403500205,42370486173869"><div class="kt-jars"><span class=""><img src="{%- if section.settings.cm_img_12 != blank -%}{{ section.settings.cm_img_12 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-65188fa8a0.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Magnesio P.M."></span><span class=""><img src="{%- if section.settings.cm_img_13 != blank -%}{{ section.settings.cm_img_13 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-b06f4b59fe.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Reishi"></span><span class=""><img src="{%- if section.settings.cm_img_14 != blank -%}{{ section.settings.cm_img_14 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-58228ef08c.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Schisandra"></span></div><div class="top"><span class="sy-lbl">Botanicals + Science · 3 productos</span><span class="sy-bdg">−15%</span></div><span class="nm">Noche profunda</span><p class="why">Para tus noches.</p><div class="kt-ps"><span class="sy-tag">Magnesio P.M.</span><span class="sy-tag">Reishi</span><span class="sy-tag">Schisandra</span></div><div class="row"><div class="pz"><span>$2,490</span><s>$2,930</s></div><button class="sy-add" aria-label="Agregar kit Noche profunda"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></button></div></article></div>
 </section>
 </main>
 
@@ -76,6 +76,81 @@ root.querySelectorAll('[data-ids]').forEach(function(c){ var btn = c.querySelect
 {
   "name": "Kit Ánimo v5",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Azafrán"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_2",
+      "label": "Foto 2 · Ashwagandha"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_3",
+      "label": "Foto 3 · Melena de León"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_4",
+      "label": "Foto 4 · Azafrán"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_5",
+      "label": "Foto 5 · Ashwagandha"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_6",
+      "label": "Foto 6 · Melena de León"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_7",
+      "label": "Foto 7 · Ashwagandha"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_8",
+      "label": "Foto 8 · Reishi"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_9",
+      "label": "Foto 9 · Tulsi"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_10",
+      "label": "Foto 10 · Azafrán"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_11",
+      "label": "Foto 11 · Melena de León"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_12",
+      "label": "Foto 12 · Magnesio P.M."
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_13",
+      "label": "Foto 13 · Reishi"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_14",
+      "label": "Foto 14 · Schisandra"
+    }
+  ]
 }
 {% endschema %}

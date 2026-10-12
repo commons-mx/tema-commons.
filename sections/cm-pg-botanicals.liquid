@@ -5,7 +5,7 @@
 
 <!-- 1 · HERO: FOTO A TODO LO ANCHO -->
 <section class="bfull raiz" aria-labelledby="bh">
-<img src="{{ 'cm-b-9f88a604af.jpg' | asset_url }}" loading="lazy" alt="Mano sosteniendo una planta con sus raíces">
+<img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-9f88a604af.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Mano sosteniendo una planta con sus raíces">
 <div class="bfx"><span class="lab" style="color: #fff">Commons Botanicals · desde 2020</span><h1 id="bh" class="disp h1" style="color: #fff; max-width: 10ch">In common with nature.</h1><p style="margin: 0; font-size: 19px; max-width: 34ch; color: #fff">El origen de todo.</p><a class="btn" href="#fam" style="align-self: flex-start">Ver las plantas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
 </section>
 
@@ -17,8 +17,8 @@
 
 <!-- 3 · TRES FAMILIAS -->
 <section class="fam3" id="fam" aria-label="Familias">
-<a class="fm" href="#mv" data-fam="0"><div class="fimg"><img src="{{ 'cm-b-5c15aa45f9.jpg' | asset_url }}" loading="lazy" alt="Hongos"></div><div class="ftx"><span class="fn">Hongos</span><span class="small">Reishi, Melena de León, Cordyceps, Chaga</span><span class="fcta">Ver los 7 hongos</span></div></a>
-<a class="fm" href="#mv" data-fam="1"><div class="fimg"><img src="{{ 'cm-b-bb4dd41550.jpg' | asset_url }}" loading="lazy" alt="Follaje verde"></div><div class="ftx"><span class="fn">Hierbas</span><span class="small">Ashwagandha, Tulsi, Rhodiola, Schisandra</span><span class="fcta">Ver las 12 hierbas</span></div></a>
+<a class="fm" href="#mv" data-fam="0"><div class="fimg"><img src="{%- if section.settings.cm_img_2 != blank -%}{{ section.settings.cm_img_2 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-5c15aa45f9.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Hongos"></div><div class="ftx"><span class="fn">Hongos</span><span class="small">Reishi, Melena de León, Cordyceps, Chaga</span><span class="fcta">Ver los 7 hongos</span></div></a>
+<a class="fm" href="#mv" data-fam="1"><div class="fimg"><img src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-bb4dd41550.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Follaje verde"></div><div class="ftx"><span class="fn">Hierbas</span><span class="small">Ashwagandha, Tulsi, Rhodiola, Schisandra</span><span class="fcta">Ver las 12 hierbas</span></div></a>
 </section>
 
 <!-- 4 · MEDIO GRAMO CONTRA VEINTE -->
@@ -32,7 +32,7 @@
 
 <!-- 5 · TRADICIÓN -->
 <section class="row2" aria-labelledby="td">
-<div class="cellimg"><img src="{{ 'cm-b-412140a6d6.jpg' | asset_url }}" loading="lazy" alt="Copas de árboles a contraluz"></div>
+<div class="cellimg"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-412140a6d6.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Copas de árboles a contraluz"></div>
 <div class="cell trd" style="justify-content: center">
 <span class="lab">Siglos de uso</span>
 <div class="tl"><span class="disp">Ayurveda</span><span class="small">India</span></div>
@@ -81,6 +81,31 @@ root.querySelectorAll('[data-fam]').forEach(function(x){ x.addEventListener('cli
 {
   "name": "Botanicals v5",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Mano sosteniendo una planta con sus raíces"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_2",
+      "label": "Foto 2 · Hongos"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_3",
+      "label": "Foto 3 · Follaje verde"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_4",
+      "label": "Foto 4 · Copas de árboles a contraluz"
+    }
+  ]
 }
 {% endschema %}
