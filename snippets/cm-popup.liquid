@@ -41,7 +41,16 @@
   el.querySelectorAll('.pp-close,[data-pp-close],[data-pp-go]').forEach(function(b){ b.addEventListener('click', close); });
   if (tab) { tab.querySelector('.pp-tab').addEventListener('click', open); tab.querySelector('.pp-tabx').addEventListener('click', function(){ tab.hidden = true; try { sessionStorage.setItem(T, '1'); } catch(e){} }); }
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !el.hidden) close(); });
-  if (location.search.indexOf('customer_posted=true') > -1) { open(); var f = el.querySelector('.pp-mail'), d = el.querySelector('[data-pp-done]'); if (f) f.hidden = true; if (d) d.hidden = false; return; }
+  function done(){ var f = el.querySelector('.pp-mail'), d = el.querySelector('[data-pp-done]'); if (f) f.hidden = true; if (d) d.hidden = false; try { localStorage.setItem('cm-pp-code', '1'); } catch(e){} }
+  var fm = el.querySelector('form.pp-mail');
+  if (fm) fm.addEventListener('submit', function(e){
+    if (!fm.checkValidity()) return; e.preventDefault();
+    var btn = fm.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+    fetch(fm.action || '/contact', { method: 'POST', body: new FormData(fm), headers: { 'Accept': 'text/html' } })
+      .then(function(r){ if (r.redirected && /challenge/.test(r.url)) { fm.submit(); return; } done(); })
+      .catch(function(){ fm.submit(); });
+  });
+  if (location.search.indexOf('customer_posted=true') > -1) { open(); done(); return; }
   if (seen()) { showTab(); return; }
   var t = setTimeout(open, 8000);
   window.addEventListener('scroll', function f(){ var h = document.documentElement; if ((h.scrollTop + innerHeight) / h.scrollHeight > .4) { clearTimeout(t); if (el.hidden && !seen()) open(); window.removeEventListener('scroll', f); } }, { passive: true });
