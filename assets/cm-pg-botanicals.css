@@ -619,6 +619,15 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .sy-card .ph.cov{background:#EFEFEA}
 .cmpg .sy-card .ph.cov img{object-fit:cover}
 .cmpg .rph.has{display:block}
+.cmpg .bfull.raiz{background:#DEDBD2;aspect-ratio:2048/768;min-height:0;align-items:flex-start}
+.cmpg .bfull.raiz > img{left:0;right:0;top:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.cmpg .bfull.raiz .bfx{padding:48px 40px 40px;max-width:560px}
+@container cmpg (max-width: 760px){.cmpg .bfull.raiz{aspect-ratio:auto;min-height:0;flex-direction:column;align-items:stretch}
+.cmpg .bfull.raiz .bfx{order:1;padding:32px 16px 8px;max-width:none}
+.cmpg .bfull.raiz > img{order:2;position:relative;top:auto;bottom:auto;width:100%;height:auto}}
+.cmpg .mani{text-align:center !important;align-items:center !important}
+.cmpg .mani p{margin:0 auto !important;max-width:100% !important}
+.cmpg .mani .sci{text-align:center}
 
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4,.cmpg p,.cmpg ul,.cmpg ol,.cmpg dl,.cmpg dd,.cmpg figure{margin:0}
 .cmpg h1,.cmpg h2,.cmpg h3,.cmpg h4{letter-spacing:inherit;text-transform:none;font-weight:inherit}
