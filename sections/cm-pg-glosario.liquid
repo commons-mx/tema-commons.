@@ -44,6 +44,12 @@ root.querySelectorAll('[data-fam]').forEach(function(b){ if (b.classList.contain
   root.querySelectorAll('.gl-bar [data-fam]').forEach(function(x){ x.classList.toggle('on', x === b); });
   root.querySelectorAll('.gl-card').forEach(function(c){ c.hidden = !!b.dataset.fam && c.dataset.fam !== b.dataset.fam; });
 }); });
+(function(){ var want = new URLSearchParams(location.search).get('planta'); if (!want) return;
+  var norm = function(t){ return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, '-'); };
+  var i = D.findIndex(function(d){ return norm(d.n) === norm(want); }); if (i < 0) return;
+  var c = root.querySelector('.gl-card[data-i="' + i + '"]'); if (!c) return; c.click();
+  var q = root.querySelector('.gl-quick'); if (q) setTimeout(function(){ q.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+})();
 })();
 </script>
 {%- comment -%} v5 · glosario {%- endcomment -%}

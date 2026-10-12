@@ -13,11 +13,9 @@
 <nav class="ar-toc" aria-label="En este artículo"><span class="lab" style="margin-bottom: 10px">En este artículo</span><div data-toc></div></nav>
 <article class="ar-txt cm-rte" data-content>{{ article.content }}</article>
 <aside class="ar-side" aria-label="Productos">
-{%- assign ar_prods = article.metafields.commons.productos.value -%}
-{%- if ar_prods == blank -%}{%- assign ar_prods = s.products -%}{%- endif -%}
-{%- if ar_prods != blank -%}
+{%- if s.products != blank -%}
 <span class="lab">{{ s.products_title }}</span>
-{%- for p in ar_prods -%}{%- if p == blank or p.available == false -%}{%- continue -%}{%- endif -%}{%- assign v = p.selected_or_first_available_variant -%}
+{%- for p in s.products -%}{%- assign v = p.selected_or_first_available_variant -%}
 <div class="ar-prod"><div class="pi">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}</div><div class="pn"><b><a href="{{ p.url }}" style="color: inherit">{{ p.title }}</a></b><span>{{ p.type }}</span></div><div class="pr"><span class="num">{{ v.price | money_without_trailing_zeros }}</span><button type="button" class="ar-add" data-add="{{ v.id }}">+ Agregar</button></div></div>
 {%- endfor -%}
 <span class="small">2 frascos −10% · 3 o más −15%</span>
@@ -29,16 +27,10 @@
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Sigue leyendo</span><h2 id="rl-{{ section.id }}" class="disp h2">Artículos relacionados</h2></div><a class="sq" href="{{ blog.url }}">Ir al Journal</a></div>
 <div class="ar-rel">
 {%- assign n = 0 -%}
-{%- assign ar_cat = article.tags.first -%}
-{%- assign rel_ids = '' -%}
-{%- for a in blog.articles -%}{%- if a.id != article.id and n < 3 and ar_cat != blank and a.tags contains ar_cat -%}{%- assign n = n | plus: 1 -%}{%- assign rel_ids = rel_ids | append: a.id | append: ',' -%}
+{%- for a in blog.articles -%}{%- if a.id != article.id and n < 3 -%}{%- assign n = n | plus: 1 -%}
 {%- assign words = a.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
 <a href="{{ a.url }}"><div class="im">{%- if a.image -%}{{ a.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: a.title }}{%- endif -%}</div><div class="tx">{%- if a.tags.first -%}<span class="tag">{{ a.tags.first }}</span>{%- endif -%}<h3>{{ a.title }}</h3><span class="jr-min">{{ mins }} minutos</span></div></a>
 {%- endif -%}{%- endfor -%}
-{%- for a in blog.articles -%}{%- assign aid = a.id | append: ',' -%}{%- if a.id != article.id and n < 3 -%}{%- unless rel_ids contains aid -%}{%- assign n = n | plus: 1 -%}
-{%- assign words = a.content | strip_html | split: ' ' | size -%}{%- assign mins = words | divided_by: 200 | at_least: 1 -%}
-<a href="{{ a.url }}"><div class="im">{%- if a.image -%}{{ a.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: a.title }}{%- endif -%}</div><div class="tx">{%- if a.tags.first -%}<span class="tag">{{ a.tags.first }}</span>{%- endif -%}<h3>{{ a.title }}</h3><span class="jr-min">{{ mins }} minutos</span></div></a>
-{%- endunless -%}{%- endif -%}{%- endfor -%}
 </div>
 </section>
 <section class="jr-quiz yellow" aria-labelledby="qz-{{ section.id }}">

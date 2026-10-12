@@ -3,8 +3,7 @@
     "main": {
       "type": "cm-blog",
       "settings": {
-        "link": "/collections/all",
-        "categories": "Entiende tu cuerpo, Plantas y hongos, Saberes ancestrales, Rituales, Guías"
+        "link": "/collections/all"
       }
     }
   },
