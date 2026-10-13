@@ -762,3 +762,12 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .cm-ok{padding:20px;background:var(--lime);font-size:16px}
 
 .cmpg .pl-ph img.cover{inset:0;width:100%;height:100%;object-fit:cover;padding:0}
+
+.cmpg .pl-trad{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 56px;padding:64px 40px;background:#EFEBE3;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.cmpg .pl-trad .ptl{display:flex;flex-direction:column;gap:16px}
+.cmpg .pl-trad .psab{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:16px;border-top:1px solid rgba(20,26,22,.25)}
+.cmpg .pl-trad .psab b{font-weight:500;font-size:18px}
+.cmpg .pl-trad .ptr{display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.6;max-width:62ch}
+.cmpg .pl-trad .ptr p{margin:0}
+.cmpg .pl-trad .pdato{display:flex;flex-direction:column;gap:6px;padding:18px 20px;background:#F7F6F2;border:1px solid #DDD8CC;font-size:16px}
+@media (max-width:760px){.cmpg .pl-trad{grid-template-columns:1fr;padding:40px 16px;gap:20px}.cmpg .pl-trad .ptr{font-size:17px}}
