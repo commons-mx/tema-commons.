@@ -153,6 +153,13 @@
 </section>
 {%- endif -%}
 
+{%- liquid
+  assign life = 'cm-life-acostada.jpg'
+  if s.line_label contains 'Science'
+    assign life = 'cm-life-sonrisa.jpg'
+  endif
+-%}
+<div class="cm4"><section class="pband pb1 pb-txt" aria-hidden="true"><div class="pbt"><p class="disp h2">Sentirte bien también se nota.</p><span class="lab">In common with nature</span></div><div class="pbi">{%- if s.life_image != blank -%}{{ s.life_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- else -%}<img src="{{ life | asset_url }}" alt="" loading="lazy" width="1200" height="1500">{%- endif -%}</div></section></div>
 {%- if s.ev_word != blank -%}
 <section class="row2" id="evidencia" aria-labelledby="ev-{{ section.id }}">
   <div class="cell" style="justify-content: space-between">
@@ -525,8 +532,8 @@
     },
     {
       "type": "image_picker",
-      "id": "faq_image",
-      "label": "Foto de preguntas frecuentes"
+      "id": "life_image",
+      "label": "Foto de ambiente (vacío = la de la línea)"
     }
   ],
   "blocks": [
