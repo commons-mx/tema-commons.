@@ -14,14 +14,14 @@
     {%- liquid
       if i == 1
         assign im = section.settings.image1
-        assign as = section.settings.asset1
+        assign ast = section.settings.asset1
       else
         assign im = section.settings.image2
-        assign as = section.settings.asset2
+        assign ast = section.settings.asset2
       endif
     -%}
     {%- if im != blank -%}<div class="pbi">{{ im | image_url: width: 1600 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 760px) 50vw, 100vw' }}</div>
-    {%- elsif as != blank -%}<div class="pbi"><img src="{{ as | asset_url }}" alt="" loading="lazy" width="1200" height="1500"></div>{%- endif -%}
+    {%- elsif ast != blank -%}<div class="pbi"><img src="{{ ast | asset_url }}" alt="" loading="lazy" width="1200" height="1500"></div>{%- endif -%}
   {%- endfor -%}
 </section>
 </div>
