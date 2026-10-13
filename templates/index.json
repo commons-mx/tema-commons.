@@ -23,10 +23,10 @@
             "tag2": "",
             "heading": "Adaptógenos y fórmulas de verdad: el activo, la dosis y la evidencia.",
             "text": "Extractos estandarizados de hongos, raíces y plantas. Y ahora Science, con ingredientes de patente.",
-            "button_label": "Haz el quiz",
-            "button_link": "/pages/quiz-commons",
-            "button2_label": "Ver los más queridos",
-            "button2_link": "/collections/mejores-adaptogenos-naturales"
+            "button_label": "Ver productos",
+            "button_link": "/collections/all",
+            "button2_label": "",
+            "button2_link": ""
           }
         }
       },
@@ -175,9 +175,9 @@
       "settings": {
         "tag": "Quiz · 3 minutos",
         "heading": "Encuentra tu Commons.",
-        "intro": "Responde cinco preguntas y descubre una selección de productos de nuestras tres líneas, pensada para ti.",
+        "intro": "Cinco preguntas y te armamos tu protocolo: qué tomar, cuándo y cómo tomarlo.",
         "lines": "",
-        "button_label": "Empezar el quiz",
+        "button_label": "Haz el quiz",
         "question": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días? · Elige hasta 3",
         "next_label": "Siguiente pregunta",
         "link": "",
@@ -185,8 +185,7 @@
         "caption": "minutos",
         "caption_n": "3",
         "compact": true
-      },
-      "disabled": true
+      }
     },
     "cm_products": {
       "type": "cm-products",
@@ -250,7 +249,8 @@
         "protocol_head": false,
         "card_protocol": "+ Súmalo a tu protocolo",
         "protocol_link": ""
-      }
+      },
+      "disabled": true
     },
     "cm_universes": {
       "type": "cm-universes",
@@ -845,13 +845,13 @@
     "cm_hero",
     "cm_trust",
     "cm_needs",
-    "cm_products",
+    "cm_quiz",
     "cm_universes",
     "cm_standards",
     "cm_reviews",
     "buy_your_own_bundle_pTbqYm",
     "cm_faq",
-    "cm_quiz",
+    "cm_products",
     "cm_nature",
     "cm_strip",
     "cm_journal"

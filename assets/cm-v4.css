@@ -822,3 +822,27 @@ html,body{background:#F7F7F4 !important}
 .ldot.ld-science{background:#DFF68F}
 .ldot.ld-rituals{background:#E8C77A}
 .ldot.ld-kits{background:#EDE47A}
+
+/* 13 oct · hero limpio: foto y texto separados, texto en crema (mitad y mitad del sistema) */
+.cm4 .hero{background:var(--bg);color:var(--ink);min-height:0}
+.cm4 .hero .shade{display:none}
+.cm4 .hero .cm-slide-bg{left:50% !important;border-left:1px solid var(--rule)}
+.cm4 .hgrid,.cm4 .hero{min-height:640px}
+.cm4 .hgrid{grid-template-columns:1fr 1fr}
+.cm4 .hleft{justify-content:center;padding:56px 48px}
+.cm4 .hright{display:block;border-left:0}
+.cm4 .hcopy .disp{color:var(--ink)}
+.cm4 .hcopy .sub{color:var(--ink2)}
+.cm4 .hrate{color:var(--ink)}
+.cm4 .hstars{color:var(--ink)}
+.cm4 .hlink{color:var(--ink)}
+@container cm4 (max-width: 760px){
+  .cm4 .hero{display:flex;flex-direction:column;min-height:0}
+  .cm4 .hero .cm-slide-bg{position:relative !important;left:0 !important;inset:auto !important;aspect-ratio:1/1;width:100%;border-left:0;border-bottom:1px solid var(--rule);opacity:1}
+  .cm4 .hero .cm-slide-bg:not(.on){display:none}
+  .cm4 .hero .hbg{position:absolute;inset:0}
+  .cm4 .hgrid{min-height:0;grid-template-columns:1fr}
+  .cm4 .hright{display:none}
+  .cm4 .hleft{padding:28px 20px 36px}
+  .cm4 .hcopy .h1{font-size:calc(34px * var(--dscale));line-height:1.05}
+}
