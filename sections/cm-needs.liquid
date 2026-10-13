@@ -1,10 +1,11 @@
 <div class="cm4">
 {%- if section.settings.heading != blank -%}<div class="needs-hd"><h2 class="disp h3t">{{ section.settings.heading }}</h2>{%- if section.settings.quiz_label != blank -%}<a class="tlink" href="{{ section.settings.quiz_link | default: '#cm-quiz' }}">{{ section.settings.quiz_label }}</a>{%- endif -%}</div>{%- endif -%}
-<nav class="box needs" aria-label="Necesidades">
+<div class="needwrap"><nav class="box needs" aria-label="Necesidades">
   {%- for block in section.blocks -%}
   <a class="need" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>{%- render 'cm-need-icon', icon: block.settings.icon -%}{{ block.settings.label | default: block.settings.icon }}</a>
   {%- endfor -%}
-</nav>
+</nav><span class="nswipe" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+<script>(function(){var w=document.currentScript.previousElementSibling;if(!w)return;var n=w.querySelector(".needs");if(n)n.addEventListener("scroll",function(){if(n.scrollLeft>20)w.classList.add("seen");},{passive:true});})();</script>
 </div>
 {% schema %}
 {

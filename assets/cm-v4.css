@@ -919,3 +919,25 @@ html,body{background:#F7F7F4 !important}
   .cm4 .cellimg{aspect-ratio:auto !important;height:220px !important;min-height:0 !important}
   .cm4 .cellimg > img{object-position:center}
 }
+
+/* 13 oct · deslizar en necesidades */
+.cm4 .needwrap{position:relative}
+.cm4 .nswipe{display:none}
+@container cm4 (max-width: 760px){
+  .cm4 .nswipe{display:flex;position:absolute;right:0;top:1px;bottom:1px;width:64px;align-items:center;justify-content:flex-end;padding-right:12px;color:#141A16;background:linear-gradient(90deg,rgba(247,247,244,0),#F7F7F4 60%);pointer-events:none;transition:opacity .3s}
+  .cm4 .nswipe svg{animation:cmNudge 1.4s ease-in-out infinite}
+  .cm4 .needwrap.seen .nswipe{opacity:0}
+}
+
+/* 13 oct · deslizar en necesidades, Rituals aparte */
+.cm4 .needwrap{position:relative}
+.cm4 .nswipe{display:none}
+.cm4 .uextra{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:#EFEBE3;border-radius:14px;color:#141A16;text-decoration:none}
+.cm4 .uextra b{font-weight:500;font-size:15px;line-height:1.35}
+.cm4 .uextra .lab{color:#4A524C}
+.cm4 .uband .uprods:has(.uprod:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+@container cm4 (max-width: 760px){
+  .cm4 .nswipe{display:flex;position:absolute;right:0;top:1px;bottom:1px;width:64px;align-items:center;justify-content:flex-end;padding-right:12px;color:#141A16;background:linear-gradient(90deg,rgba(247,247,244,0),#F7F7F4 60%);pointer-events:none;transition:opacity .3s}
+  .cm4 .nswipe svg{animation:cmNudge 1.4s ease-in-out infinite}
+  .cm4 .needwrap.seen .nswipe{opacity:0}
+}

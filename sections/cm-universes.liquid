@@ -37,6 +37,7 @@
         {%- endfor -%}
       </div>
       {%- endif -%}
+      {%- if block.settings.extra_label != blank -%}<a class="uextra" href="{{ block.settings.extra_link | default: '#' }}">{%- if block.settings.extra_tag != blank -%}<span class="lab">{{ block.settings.extra_tag }}</span>{%- endif -%}<b>{{ block.settings.extra_label }} →</b></a>{%- endif -%}
       <div class="ufoot2"><a class="sq{% if block.settings.style == 'sci' %} light{% endif %}" href="{{ link }}">{{ block.settings.button_label | default: 'Explorar' }}</a>{%- if col != blank and col.products_count > 0 -%}<span class="lab umeta">{{ col.products_count }} productos</span>{%- elsif block.settings.sig != blank -%}<span class="lab umeta">{{ block.settings.sig }}</span>{%- endif -%}</div>
     </div>
   </article>
@@ -160,6 +161,21 @@
           "type": "text",
           "id": "sig",
           "label": "Dato en mono (si no hay colección)"
+        },
+        {
+          "type": "text",
+          "id": "extra_tag",
+          "label": "Tarjeta extra · rótulo"
+        },
+        {
+          "type": "text",
+          "id": "extra_label",
+          "label": "Tarjeta extra · texto"
+        },
+        {
+          "type": "url",
+          "id": "extra_link",
+          "label": "Tarjeta extra · liga"
         }
       ]
     }

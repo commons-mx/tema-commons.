@@ -263,14 +263,17 @@
             "style": "bot",
             "image": "",
             "title": "Adaptógenos.",
-            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado. Y en Rituals, mieles, chocolates y blends para tu día.",
+            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado.",
             "button_label": "Explorar Botanicals",
             "button_link": "/pages/botanicals",
             "sig": "",
             "collection": "adaptogenos-en-capusulas",
             "products": [],
-            "cats": "Hongos funcionales|/collections/adaptogenos-en-capusulas|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/adaptogenos-en-capusulas|raiz-rhodiola-rosea-full-polvo|12 plantas\nRituals|/collections/mieles-adaptogenicas-y-funcionales|miel-sueno-profundo-1|Mieles, chocolates, blends",
-            "asset": "cm-home-botanicals.jpg"
+            "cats": "Hongos funcionales|/collections/adaptogenos-en-capusulas|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/adaptogenos-en-capusulas|raiz-rhodiola-rosea-full-polvo|12 plantas",
+            "asset": "cm-home-botanicals.jpg",
+            "extra_tag": "También en Botanicals",
+            "extra_label": "Rituals: mieles, chocolates y blends con adaptógenos",
+            "extra_link": "/collections/mieles-adaptogenicas-y-funcionales"
           }
         },
         "b2": {
