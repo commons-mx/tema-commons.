@@ -22,9 +22,9 @@
             "tag": "",
             "tag2": "",
             "heading": "Adaptógenos y fórmulas de verdad: el activo, la dosis y la evidencia.",
-            "text": "Extractos estandarizados de hongos, raíces y plantas. Y ahora Science, con ingredientes de patente.",
-            "button_label": "Ver productos",
-            "button_link": "/collections/all",
+            "text": "Adaptógenos de hongos, raíces y plantas: Commons Botanicals. Y fórmulas con ingredientes estudiados: Commons Science.",
+            "button_label": "Ver los más vendidos",
+            "button_link": "/collections/mejores-adaptogenos-naturales",
             "button2_label": "",
             "button2_link": ""
           }
@@ -261,15 +261,16 @@
             "label": "Commons Botanicals",
             "badge": "",
             "style": "bot",
-            "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
+            "image": "",
             "title": "Adaptógenos.",
-            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado en la etiqueta. Y en Rituals, mieles, chocolates y blends.",
+            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado. Y en Rituals, mieles, chocolates y blends para tu día.",
             "button_label": "Explorar Botanicals",
             "button_link": "/pages/botanicals",
             "sig": "",
             "collection": "adaptogenos-en-capusulas",
             "products": [],
-            "cats": "Hongos funcionales|/collections/adaptogenos-en-capusulas|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/adaptogenos-en-capusulas|raiz-rhodiola-rosea-full-polvo|12 plantas\nRituals|/collections/mieles-adaptogenicas-y-funcionales|miel-sueno-profundo-1|Mieles, chocolates, blends"
+            "cats": "Hongos funcionales|/collections/adaptogenos-en-capusulas|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/adaptogenos-en-capusulas|raiz-rhodiola-rosea-full-polvo|12 plantas\nRituals|/collections/mieles-adaptogenicas-y-funcionales|miel-sueno-profundo-1|Mieles, chocolates, blends",
+            "asset": "cm-home-botanicals.jpg"
           }
         },
         "b2": {
@@ -280,7 +281,7 @@
             "style": "sci",
             "image": "shopify://shop_images/D39BF39E-63E0-45F2-A89E-8FC70BA77ABD.png",
             "title": "Fórmulas con ingredientes estudiados.",
-            "text": "Ingredientes de patente con estudios clínicos, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
+            "text": "Ingredientes de patente, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
             "button_label": "Explorar Science",
             "button_link": "/pages/science",
             "sig": "2 fórmulas · 1 en camino",
@@ -297,7 +298,7 @@
       ],
       "settings": {
         "heading": "Nuestras líneas.",
-        "intro": "Adaptógenos de hongos, raíces y plantas, y fórmulas con ingredientes estudiados. Se pueden combinar."
+        "intro": "Botanicals son nuestros adaptógenos. Science, nuestras fórmulas con ingredientes estudiados. Se pueden combinar."
       }
     },
     "cm_nature": {
@@ -654,8 +655,8 @@
           "type": "std",
           "settings": {
             "icon": "3",
-            "title": "Ingredientes de patente",
-            "text": "En Commons Science: ingredientes con estudios clínicos, en la dosis que se estudió."
+            "title": "Te asesora una persona",
+            "text": "Escríbenos por WhatsApp y te ayudamos a armar tu protocolo. Sin bots."
           }
         }
       },
@@ -748,8 +749,8 @@
         "b1": {
           "type": "faq",
           "settings": {
-            "q": "¿Qué diferencia hay entre Botanicals y Science?",
-            "a": "<p>Botanicals son extractos estandarizados de plantas y hongos: el origen de Commons. Science son ingredientes con patente y estudios clínicos, en la dosis que se estudió. Se pueden combinar en un mismo protocolo.</p>"
+            "q": "¿Qué es Botanicals y qué es Science?",
+            "a": "<p>Botanicals son nuestros adaptógenos: extractos estandarizados de hongos, raíces y plantas. Science son nuestras fórmulas con ingredientes de patente y estudios clínicos, en la dosis que se estudió. Puedes combinarlos en un mismo protocolo.</p>"
           }
         },
         "b2": {
@@ -946,7 +947,8 @@
       "type": "cm-marquee",
       "settings": {
         "items": "Extracto estandarizado · 100% cuerpo fructífero · Sin rellenos · Ingredientes de patente · La dosis que se estudió · Hecho en México"
-      }
+      },
+      "disabled": true
     }
   },
   "order": [
