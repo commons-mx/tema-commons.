@@ -8,10 +8,10 @@
 <section class="shero" aria-labelledby="sh">
 <div class="st">
 <span class="sec-n">Commons Science · nuestra línea nueva</span>
-<h1 id="sh" class="disp h1">Fórmulas con ingredientes estudiados.</h1>
+<h1 id="sh" class="disp h1 nd">Nature, decoded.</h1>
+<p class="disp h3t" style="margin:0">La naturaleza, descifrada: fórmulas con ingredientes estudiados.</p>
 <p class="sub" style="max-width: 40ch">Ingredientes de patente, en la dosis que se usó en los estudios clínicos. Para cuando buscas algo específico: ánimo, descanso y, muy pronto, glucosa.</p>
 <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center"><a class="btn dark" href="#formulas">Ver las fórmulas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="sq" href="#evidencia">Cómo lo sabemos</a></div>
-<span class="sig" style="margin-top: 8px">Nature, decoded.</span>
 </div>
 <div class="si wh"><div class="ffr"></div><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-e4e505fc32.png' | asset_url }}{%- endif -%}" loading="lazy" alt="Flor y estigmas de azafrán dentro de un matraz de laboratorio"><span class="fcap"><span>Crocus sativus L.</span><span>→ Affron®</span></span></div>
 </section>
@@ -38,7 +38,7 @@
 <!-- 1b · INGREDIENTES DE PATENTE -->
 
 
-<div class="cm4"><section class="pband pb1 pb-txt" aria-hidden="true"><div class="pbt"><p class="disp h2">La naturaleza, con la dosis que se estudió.</p><span class="lab">Nature, decoded</span></div><div class="pbi"><img src="{{ 'cm-life-capsula.jpg' | asset_url }}" alt="" loading="lazy" width="1200" height="1500"></div></section></div>
+<div class="cm4"><section class="pband pb1 pb-txt" aria-hidden="true"><div class="pbt"><p class="disp h2">De la planta, solo lo que se estudió. Y en la dosis exacta.</p><span class="lab">Nature, decoded</span></div><div class="pbi"><img src="{{ 'cm-life-capsula.jpg' | asset_url }}" alt="" loading="lazy" width="1200" height="1500"></div></section></div>
 <!-- 3 · DECODED: EL INGREDIENTE Y SU DOSIS -->
 <section id="evidencia" aria-labelledby="dc">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Cómo lo sabemos</span><h2 id="dc" class="disp h2" style="max-width: 16ch">Lo que se ha estudiado.</h2><p class="small" style="margin:0;max-width:52ch">Cada fórmula lleva el ingrediente y la dosis que se usaron en los estudios. Los puedes consultar todos.</p></div></div>
@@ -65,6 +65,15 @@
 <div class="pthd"><span class="sec-n">De su fabricante original</span><h2 id="pt" class="disp h3t">Ingredientes de patente.</h2><p class="small" style="margin:0;max-width:52ch">Cada ingrediente viene de su fabricante original, con sus estudios clínicos y la dosis que se estudió.</p></div>
 <div class="ptrow"><div class="pti">{%- if section.settings.logo_affron != blank -%}{{ section.settings.logo_affron | image_url: height: 120 | image_tag: alt: 'Affron®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Affron®</span>{%- endif -%}<span class="small">En Azafrán · SC-001</span></div><div class="pti">{%- if section.settings.logo_reducose != blank -%}{{ section.settings.logo_reducose | image_url: height: 120 | image_tag: alt: 'Reducose®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Reducose®</span>{%- endif -%}<span class="small">En Glucose Response · SC-003</span></div><div class="pti">{%- if section.settings.logo_eriomin != blank -%}{{ section.settings.logo_eriomin | image_url: height: 120 | image_tag: alt: 'Eriomin®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Eriomin®</span>{%- endif -%}<span class="small">En Glucose Response · SC-003</span></div></div>
 <span class="small ptlegal">{{ section.settings.logos_legal }}</span>
+</section>
+<section class="pack" aria-labelledby="pk">
+<div class="pkimg"><img src="{%- if section.settings.cm_img_6 != blank -%}{{ section.settings.cm_img_6 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-4e8a28eca1.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Bolsa plateada sellada de Commons con la leyenda Designed for human systems y el lote SC-001-26"></div>
+<div class="pktx">
+<span class="sec-n">Lo verás en cada etiqueta</span>
+<h2 id="pk" class="disp h2" style="max-width: 16ch">Designed for human systems.</h2>
+<p class="sub" style="max-width: 46ch">Diseñado para cómo funciona tu cuerpo. Cada ingrediente tiene una razón de estar aquí, en la cantidad que se estudió, con el lote y la dosis a la vista.</p>
+<span class="dpill">Lote · ingrediente · dosis</span>
+</div>
 </section>
 <section class="scomb" aria-labelledby="cb"><div><span class="sec-n">Combínalo</span><h2 id="cb" class="disp h3t">Science y Botanicals se toman juntos.</h2><p class="small" style="margin:0">Por ejemplo: Azafrán en la mañana y Reishi en la noche.</p></div><div class="scbr"><div class="dchips"><span><b>−10%</b>2 productos</span><span><b>−15%</b>3 o 4</span><span class="top"><b>−20%</b>5 o más</span></div><a class="tlink" href="/#protocolo">Arma tu protocolo</a></div></section>
 <!-- 6 · QUIZ (franja) -->
