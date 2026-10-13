@@ -718,3 +718,8 @@ html,body{background:#F7F7F4 !important}
 .scroll_top{background:#141A16 !important;color:#F7F7F4 !important;border:0 !important}
 .scroll_top:hover{background:#2A322C !important}
 .scroll_top svg{color:#F7F7F4 !important;fill:none}
+
+/* 12 oct (2) */
+.button-action,#CartDrawer .button-action{background:#141A16 !important;border-color:#141A16 !important;color:#F7F7F4 !important}
+.button-action:hover{background:#2A322C !important}
+.button-action svg{color:#F7F7F4 !important}

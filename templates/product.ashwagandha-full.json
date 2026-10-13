@@ -3,6 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
         "short_name": "Ashwagandha",
         "line_label": "Commons Botanicals",
         "sci": "Withania somnifera · raíz",
@@ -39,6 +40,13 @@
         "product_color": "#4E2F66"
       },
       "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña el estrés del día a día.</li><li>Apoya un mejor descanso.</li><li>Acompaña el ánimo.</li><li>Extracto de raíz al 5% de withanólidos.</li></ul><p>[Validar con regulatorio]</p>"
+          }
+        },
         "acc1": {
           "type": "acc",
           "settings": {
@@ -49,7 +57,7 @@
         "acc2": {
           "type": "acc",
           "settings": {
-            "title": "Lo que lleva",
+            "title": "Lo que lleva · ingredientes",
             "text": "<p>Por cápsula: 500 mg de extracto de raíz de Withania somnifera, estandarizado al 5% de withanólidos (25 mg). Sin rellenos. [Validar ficha técnica con Fer]</p>"
           }
         },
@@ -60,11 +68,11 @@
             "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No la tomes si tienes temas de hígado, hipertiroidismo o alergia a las solanáceas.</li><li>Si tomas sedantes, medicamentos para la tiroides o para la diabetes, consulta a tu médico.</li><li>Si notas piel u ojos amarillos, orina oscura o comezón, suspéndela y consulta a tu médico.</li></ul>"
           }
         },
-        "acc4": {
-          "type": "acc",
+        "nut": {
+          "type": "nut",
           "settings": {
-            "title": "Envío y devoluciones",
-            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
         "faq1": {
@@ -97,10 +105,11 @@
         }
       },
       "block_order": [
+        "ben",
         "acc1",
         "acc2",
         "acc3",
-        "acc4",
+        "nut",
         "faq1",
         "faq2",
         "faq3",

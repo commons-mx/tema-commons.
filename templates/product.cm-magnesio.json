@@ -3,21 +3,22 @@
     "main": {
       "type": "cm-product",
       "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
         "short_name": "Magnesio P.M.",
         "line_label": "Commons Science",
-        "sci": "Bisglicinato · treonato · malato · sin melatonina",
+        "sci": "Bisglicinato de magnesio · glicina · apigenina · sin melatonina",
         "badge": "Nuevo",
-        "needs": "Sueño",
-        "claim": "Magnesio, glicina, L-teanina y apigenina de manzanilla, en polvo. Para preparar tu noche, sin melatonina. [Validar claims]",
+        "needs": "Sueño, Relajación, Calma, Recuperación",
+        "claim": "Bisglicinato de magnesio, glicina y apigenina de manzanilla, con L-teanina, en polvo. Para preparar tu noche, sin melatonina. [Validar claims]",
         "ev_quick": "Evidencia por ingrediente · ver lo que se ha estudiado",
-        "ten": "Para: Sueño y relajación\nLleva: 3 formas de magnesio, glicina, L-teanina y apigenina\nPorción: 10 g · 2 cucharadas de 5 g\nMomento: En la noche, antes de dormir\nRinde: 450 g · 45 noches",
+        "ten": "Para: Sueño y relajación\nLleva: Bisglicinato de magnesio, glicina y apigenina, con L-teanina\nPorción: 10 g · 2 cucharadas de 5 g\nMomento: En la noche, antes de dormir\nRinde: 450 g · 45 noches",
         "show_volume": true,
         "forr": "Sueño\nEstrés y calma",
-        "a1": "Magnesio en tres formas",
-        "a2": "Con glicina, L-teanina y apigenina",
+        "a1": "Bisglicinato de magnesio",
+        "a2": "Con glicina y apigenina de manzanilla",
         "big": "200 mg",
-        "big_text": "de magnesio elemental en cada porción de 10 g, en tres formas.",
-        "tab": "Magnesio elemental (bisglicinato, treonato, malato)|200 mg\nGlicina|3 g\nL-teanina|200 mg\nApigenina (manzanilla al 20%)|50 mg\nMelatonina|Ninguna\nVitamina B6|Sí\nPorción|10 g · 2 cucharadas",
+        "big_text": "de magnesio elemental en cada porción de 10 g, con bisglicinato como forma principal.",
+        "tab": "Magnesio elemental · principal: bisglicinato (con treonato y malato)|200 mg\nGlicina|3 g\nApigenina (manzanilla al 20%)|50 mg\nL-teanina|200 mg\nMelatonina|Ninguna\nVitamina B6|Sí\nPorción|10 g · 2 cucharadas",
         "tab_note": "Según la etiqueta: 45 porciones de 10 g por lata. Endulzado con alulosa y stevia.",
         "how": "Cuánto|10 g · 2 cucharadas|En 500 ml de agua. La cuchara viene en la lata.\nCuándo|En la noche|Antes de dormir.\nRitmo|Diario, sin pausa|No necesita días de descanso.",
         "weeks": "Semana 1|Una porción cada noche, a la misma hora.\nSemana 2|Acompáñalo de luz baja y sin pantallas.\nSemana 4|Revisa cómo duermes y cómo despiertas.\nMes 2|Sigue sin pausa: es tu rutina de noche.",
@@ -36,6 +37,13 @@
         "sub_save": "−10% en cada envío"
       },
       "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña un sueño más profundo.</li><li>Ayuda a relajarte antes de dormir.</li><li>Apoya la calma, sin melatonina.</li><li>Acompaña la recuperación muscular.</li></ul><p>[Validar con regulatorio]</p>"
+          }
+        },
         "acc1": {
           "type": "acc",
           "settings": {
@@ -46,8 +54,8 @@
         "acc2": {
           "type": "acc",
           "settings": {
-            "title": "Lo que lleva",
-            "text": "<p>Por porción de 10 g: 200 mg de magnesio elemental (bisglicinato, treonato y malato), 3 g de glicina, 200 mg de L-teanina y 50 mg de apigenina (extracto de manzanilla al 20%). Con vitamina B6. Endulzado con alulosa y stevia. Sin melatonina.</p>"
+            "title": "Lo que lleva · ingredientes",
+            "text": "<p>Por porción de 10 g: 200 mg de magnesio elemental, con bisglicinato como forma principal (más treonato y malato); 3 g de glicina; 50 mg de apigenina (extracto de manzanilla al 20%) y 200 mg de L-teanina. Con vitamina B6. Endulzado con alulosa y stevia. Sin melatonina.</p>"
           }
         },
         "acc3": {
@@ -57,11 +65,11 @@
             "text": "<ul><li>Para mayores de edad. No en embarazo ni lactancia.</li><li>No lo tomes si eres intolerante o sensible a alguno de sus ingredientes.</li><li>Si tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.</li><li>En dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.</li></ul>"
           }
         },
-        "acc4": {
-          "type": "acc",
+        "nut": {
+          "type": "nut",
           "settings": {
-            "title": "Envío y devoluciones",
-            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
         "faq1": {
@@ -94,10 +102,11 @@
         }
       },
       "block_order": [
+        "ben",
         "acc1",
         "acc2",
         "acc3",
-        "acc4",
+        "nut",
         "faq1",
         "faq2",
         "faq3",

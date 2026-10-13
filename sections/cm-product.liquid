@@ -40,7 +40,7 @@
       {%- if s.line_label != blank -%}<span class="lab">{{ s.line_label }}</span>{%- endif -%}
       <h1 class="disp h2" style="margin: 0">{{ name }}</h1>
       {%- if s.sci != blank -%}<p class="sci">{{ s.sci }}</p>{%- endif -%}
-      {%- if rating != blank -%}<div class="rating"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 2 }}{% if nrev != blank %} · {{ nrev }} reseñas{% endif %}</span></div>{%- endif -%}
+      {%- if rating != blank -%}<div class="rating"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 2 }}{% if nrev != blank %} · {{ nrev }} reseñas{% endif %}</span></div>{%- elsif s.reviews_note != blank -%}<div class="rating rpend"><b aria-hidden="true">★★★★★</b><span>{{ s.reviews_note }}</span></div>{%- endif -%}
       {%- if s.needs != blank -%}<div class="tags">{%- assign nn = s.needs | split: ',' -%}{%- for n in nn -%}<span class="tag">{{ n | strip }}</span>{%- endfor -%}</div>{%- endif -%}
       {%- if s.claim != blank -%}<p style="margin: 0; font-size: 18px">{{ s.claim }}</p>{%- endif -%}
       {%- if s.ev_quick != blank -%}<a class="evq" href="#evidencia"><span class="dt"></span>{{ s.ev_quick }}<span class="go">Ver evidencia ↓</span></a>{%- endif -%}
@@ -84,13 +84,15 @@
       <div class="perks"><span>Envío gratis desde $990</span><span>3 meses sin intereses</span><span>Te asesora una persona por WhatsApp</span></div>
       <a class="tlink" href="/pages/quiz-commons" style="align-self: flex-start">¿Es para ti? Haz el quiz</a>
       <div class="bacc">
-        {%- if s.show_description and product.description != blank -%}
-        <details class="ai"><summary class="ah"><span>Descripción</span><span aria-hidden="true">+</span></summary><div class="ab">{{ product.description }}</div></details>
+        {%- for block in section.blocks -%}
+        {%- if block.type == 'acc' -%}{%- unless block.settings.title contains 'Envío' -%}
+        <details class="ai" {{ block.shopify_attributes }}><summary class="ah"><span>{{ block.settings.title }}</span><span aria-hidden="true">+</span></summary><div class="ab">{%- if block.settings.text != blank -%}{{ block.settings.text }}{%- elsif block.settings.title == 'Beneficios' -%}{{ product.description }}{%- endif -%}</div></details>
+        {%- endunless -%}{%- elsif block.type == 'nut' -%}
+        <details class="ai" {{ block.shopify_attributes }}><summary class="ah"><span>{{ block.settings.title | default: 'Tabla nutrimental' }}</span><span aria-hidden="true">+</span></summary><div class="ab">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: 'Tabla nutrimental', style: 'width:100%;height:auto;background:#fff' }}{%- endif -%}{{ block.settings.text }}</div></details>
         {%- endif -%}
-        {%- for block in section.blocks -%}{%- if block.type == 'acc' -%}
-        <details class="ai" {{ block.shopify_attributes }}><summary class="ah"><span>{{ block.settings.title }}</span><span aria-hidden="true">+</span></summary><div class="ab">{{ block.settings.text }}</div></details>
-        {%- endif -%}{%- endfor -%}
+        {%- endfor -%}
       </div>
+      {%- if s.shipping != blank -%}<div class="shipv"><span class="lab">Envío y devoluciones</span><div>{{ s.shipping }}</div></div>{%- endif -%}
     </div>
   </div>
 </section>
@@ -233,6 +235,11 @@
   #cmp-{{ section.id }} details > summary span[aria-hidden]{display:inline-block;transition:transform .2s}
   #cmp-{{ section.id }} .ab{padding:0 0 18px;font-size:15px;line-height:1.55;color:var(--ink2)}
   #cmp-{{ section.id }} .fqa{padding:0 0 18px}
+  #cmp-{{ section.id }} .ab ul{margin:0;padding-left:18px}
+  #cmp-{{ section.id }} .shipv{display:flex;flex-direction:column;gap:6px;padding:16px 0 0;font-size:14px;line-height:1.5;color:var(--ink2)}
+  #cmp-{{ section.id }} .shipv p{margin:0}
+  #cmp-{{ section.id }} .rpend b{opacity:.35}
+  #cmp-{{ section.id }} .rpend span{font-size:13px}
   #cmp-{{ section.id }} .opt[disabled]{opacity:.45;cursor:not-allowed}
   #cmp-{{ section.id }} .cadd.on{background:var(--ink);color:#fff}
   #cmp-{{ section.id }} [hidden]{display:none !important}
@@ -353,10 +360,16 @@
       "default": true
     },
     {
-      "type": "checkbox",
-      "id": "show_description",
-      "label": "Mostrar descripción del producto en acordeón",
-      "default": true
+      "type": "text",
+      "id": "reviews_note",
+      "label": "Texto mientras no hay reseñas",
+      "default": "[Reseñas: las conecta Paul con la app]"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping",
+      "label": "Envío y devoluciones (a la vista)",
+      "default": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
     },
     {
       "type": "color",
@@ -525,6 +538,29 @@
           "type": "text",
           "id": "title",
           "label": "Título"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto",
+          "info": "Si el título es Beneficios y lo dejas vacío, se usa la descripción del producto"
+        }
+      ]
+    },
+    {
+      "type": "nut",
+      "name": "Tabla nutrimental",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Tabla nutrimental"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto de la tabla"
         },
         {
           "type": "richtext",

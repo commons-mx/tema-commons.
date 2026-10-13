@@ -3,14 +3,15 @@
     "main": {
       "type": "cm-product",
       "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
         "short_name": "Azafrán",
         "line_label": "Commons Science",
         "sci": "Crocus sativus · Affron®",
         "badge": "Nuevo",
-        "needs": "Ánimo, Enfoque",
+        "needs": "Ánimo, Estrés, Calidad de sueño, Enfoque",
         "claim": "El extracto de azafrán que se ha estudiado en el estado de ánimo. Una cápsula al día.",
         "ev_quick": "Affron® 28 mg · ver lo que se ha estudiado",
-        "ten": "Para: Ánimo\nIngrediente: Affron®, extracto patentado de azafrán\nDosis: 28 mg por cápsula\nMomento: En la mañana\nRinde: 60 cápsulas · 2 meses",
+        "ten": "Para: Ánimo, estrés y sueño\nIngrediente: Affron®, extracto patentado de azafrán\nDosis: 28 mg por cápsula\nMomento: En la mañana\nRinde: 60 cápsulas · 2 meses",
         "show_volume": true,
         "forr": "Estado de ánimo\nEnfoque",
         "a1": "Estigma de Crocus sativus",
@@ -36,6 +37,13 @@
         "sub_save": "−10% en cada envío"
       },
       "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña el estado de ánimo.</li><li>Ayuda en días de estrés.</li><li>Apoya la calidad del sueño.</li><li>Una cápsula al día, con la dosis que se estudió.</li></ul><p>[Validar con regulatorio]</p>"
+          }
+        },
         "acc1": {
           "type": "acc",
           "settings": {
@@ -46,7 +54,7 @@
         "acc2": {
           "type": "acc",
           "settings": {
-            "title": "Lo que lleva",
+            "title": "Lo que lleva · ingredientes",
             "text": "<p>Por cápsula: 28 mg de extracto de azafrán Affron®. [Validar ficha técnica con Fer]</p>"
           }
         },
@@ -57,11 +65,11 @@
             "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tomas antidepresivos, consulta a tu médico antes.</li><li>Toma solo la dosis de la etiqueta.</li><li>Si tienes una condición médica o tomas medicamentos, consulta a tu médico.</li></ul>"
           }
         },
-        "acc4": {
-          "type": "acc",
+        "nut": {
+          "type": "nut",
           "settings": {
-            "title": "Envío y devoluciones",
-            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
         "faq1": {
@@ -94,10 +102,11 @@
         }
       },
       "block_order": [
+        "ben",
         "acc1",
         "acc2",
         "acc3",
-        "acc4",
+        "nut",
         "faq1",
         "faq2",
         "faq3",

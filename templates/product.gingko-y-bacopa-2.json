@@ -3,6 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
         "short_name": "Ginkgo + Bacopa",
         "line_label": "Commons Botanicals",
         "sci": "Ginkgo biloba · Bacopa monnieri",
@@ -29,6 +30,13 @@
         "product_color": "#7F9A3E"
       },
       "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña el enfoque.</li><li>Apoya la memoria.</li><li>Dos plantas en una cápsula.</li></ul><p>[Validar con regulatorio]</p>"
+          }
+        },
         "acc1": {
           "type": "acc",
           "settings": {
@@ -39,7 +47,7 @@
         "acc2": {
           "type": "acc",
           "settings": {
-            "title": "Lo que lleva",
+            "title": "Lo que lleva · ingredientes",
             "text": "<p>Por cápsula: 500 mg de extracto de Ginkgo + Bacopa (Ginkgo biloba), estandarizado: 24% + 50%. Sin rellenos. [Validar ficha técnica con Fer]</p>"
           }
         },
@@ -50,11 +58,11 @@
             "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tomas medicamentos o tienes una condición médica, consulta a tu médico antes.</li></ul>"
           }
         },
-        "acc4": {
-          "type": "acc",
+        "nut": {
+          "type": "nut",
           "settings": {
-            "title": "Envío y devoluciones",
-            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
         "faq1": {
@@ -87,10 +95,11 @@
         }
       },
       "block_order": [
+        "ben",
         "acc1",
         "acc2",
         "acc3",
-        "acc4",
+        "nut",
         "faq1",
         "faq2",
         "faq3",

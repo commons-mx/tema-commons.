@@ -3,6 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
         "short_name": "Chaga",
         "line_label": "Commons Botanicals",
         "sci": "Inonotus obliquus · cuerpo fructífero",
@@ -29,6 +30,13 @@
         "product_color": "#6B4A32"
       },
       "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Apoya tus defensas.</li><li>Aporta antioxidantes.</li><li>Base diaria para tu protocolo.</li></ul><p>[Validar con regulatorio]</p>"
+          }
+        },
         "acc1": {
           "type": "acc",
           "settings": {
@@ -39,7 +47,7 @@
         "acc2": {
           "type": "acc",
           "settings": {
-            "title": "Lo que lleva",
+            "title": "Lo que lleva · ingredientes",
             "text": "<p>Por cápsula: 500 mg de extracto de Chaga (Inonotus obliquus), estandarizado: 20% betaglucanos. Sin rellenos. [Validar ficha técnica con Fer]</p>"
           }
         },
@@ -50,11 +58,11 @@
             "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tomas medicamentos o tienes una condición médica, consulta a tu médico antes.</li><li>Haz una pausa cada 2 meses.</li></ul>"
           }
         },
-        "acc4": {
-          "type": "acc",
+        "nut": {
+          "type": "nut",
           "settings": {
-            "title": "Envío y devoluciones",
-            "text": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>"
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
         "faq1": {
@@ -87,10 +95,11 @@
         }
       },
       "block_order": [
+        "ben",
         "acc1",
         "acc2",
         "acc3",
-        "acc4",
+        "nut",
         "faq1",
         "faq2",
         "faq3",
