@@ -13,7 +13,15 @@
         </a>
         <div class="cardrow">
           <div>
-            {%- if block.settings.tag != blank -%}<span class="lab ctag">{{ block.settings.tag }}</span>{%- endif -%}
+            {%- liquid
+  assign _t = p.type | downcase
+  assign _ln = 'Botanicals'
+  if _t contains 'science' or p.handle == 'azafran-1' or p.handle == 'magnesio-p-m'
+    assign _ln = 'Science'
+  elsif _t contains 'chocolate' or _t contains 'blend' or _t contains 'miel'
+    assign _ln = 'Rituals'
+  endif
+-%}<span class="lab ctag"><i class="ldot ld-{{ _ln | downcase }}" aria-hidden="true"></i>{{ _ln }}{% if block.settings.tag != blank %} · {{ block.settings.tag }}{% endif %}</span>
             <h3 class="cname"><a href="{{ p.url }}" style="color: inherit">{{ block.settings.title | default: p.title }}</a></h3>
             <div class="cmeta">{%- if p.variants.size > 1 -%}<span class="num">Desde {{ p.price_min | money_without_trailing_zeros }}</span> · {{ p.variants.size }} presentaciones{%- else -%}<span class="num">{{ p.price | money_without_trailing_zeros }}</span>{%- if block.settings.size != blank %} · {{ block.settings.size }}{% endif -%}{%- endif -%}</div>
             {%- if block.settings.per_serving != blank -%}<div class="cmeta">{{ block.settings.per_serving }}</div>{%- endif -%}
