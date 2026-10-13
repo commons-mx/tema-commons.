@@ -1,0 +1,71 @@
+<div class="cm4">
+{%- liquid
+  assign n = 0
+  if section.settings.image1 != blank or section.settings.asset1 != blank
+    assign n = n | plus: 1
+  endif
+  if section.settings.image2 != blank or section.settings.asset2 != blank
+    assign n = n | plus: 1
+  endif
+-%}
+<section class="pband{% if section.settings.text != blank %} pb-txt{% endif %} pb{{ n }}" aria-label="{{ section.settings.text | default: 'Commons' | escape }}">
+  {%- if section.settings.text != blank -%}<div class="pbt"><p class="disp h2">{{ section.settings.text }}</p>{%- if section.settings.sub != blank -%}<span class="lab">{{ section.settings.sub }}</span>{%- endif -%}</div>{%- endif -%}
+  {%- for i in (1..2) -%}
+    {%- liquid
+      if i == 1
+        assign im = section.settings.image1
+        assign as = section.settings.asset1
+      else
+        assign im = section.settings.image2
+        assign as = section.settings.asset2
+      endif
+    -%}
+    {%- if im != blank -%}<div class="pbi">{{ im | image_url: width: 1600 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 760px) 50vw, 100vw' }}</div>
+    {%- elsif as != blank -%}<div class="pbi"><img src="{{ as | asset_url }}" alt="" loading="lazy" width="1200" height="1500"></div>{%- endif -%}
+  {%- endfor -%}
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Foto",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Frase (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "sub",
+      "label": "Rótulo bajo la frase"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Foto 1"
+    },
+    {
+      "type": "text",
+      "id": "asset1",
+      "label": "Foto 1 del tema"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Foto 2 (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "asset2",
+      "label": "Foto 2 del tema"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Foto de ambiente"
+    }
+  ]
+}
+{% endschema %}

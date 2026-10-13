@@ -279,7 +279,7 @@
             "label": "Commons Science",
             "badge": "Nuevo",
             "style": "sci",
-            "image": "shopify://shop_images/D39BF39E-63E0-45F2-A89E-8FC70BA77ABD.png",
+            "image": "",
             "title": "Fórmulas con ingredientes estudiados.",
             "text": "Ingredientes de patente, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
             "button_label": "Explorar Science",
@@ -288,7 +288,8 @@
             "products": [
               "azafran-1",
               "magnesio-p-m"
-            ]
+            ],
+            "asset": "cm-life-capsula.jpg"
           }
         }
       },
@@ -949,6 +950,21 @@
         "items": "Extracto estandarizado · 100% cuerpo fructífero · Sin rellenos · Ingredientes de patente · La dosis que se estudió · Hecho en México"
       },
       "disabled": true
+    },
+    "cm_life1": {
+      "type": "cm-photoband",
+      "settings": {
+        "text": "Sentirte bien también se nota.",
+        "sub": "In common with nature",
+        "asset1": "cm-life-acostada.jpg"
+      }
+    },
+    "cm_life2": {
+      "type": "cm-photoband",
+      "settings": {
+        "asset1": "cm-life-corriendo.jpg",
+        "asset2": "cm-life-sonrisa.jpg"
+      }
     }
   },
   "order": [
@@ -957,10 +973,12 @@
     "cm_needs",
     "cm_quiz",
     "buy_your_own_bundle_pTbqYm",
+    "cm_life1",
     "cm_marquee",
     "cm_universes",
     "cm_ingredients",
     "cm_standards",
+    "cm_life2",
     "cm_reviews",
     "cm_faq",
     "cm_products",

@@ -889,3 +889,20 @@ html,body{background:#F7F7F4 !important}
   .cm4 .ingtx b{font-size:17px}
   .cm4 .mqt span{font-size:17px;padding:14px 20px}
 }
+
+/* 13 oct · fotos de ambiente */
+.cm4 .pband{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--rule)}
+.cm4 .pband.pb1:not(.pb-txt){grid-template-columns:minmax(0,1fr)}
+.cm4 .pbi{position:relative;aspect-ratio:4/5;overflow:hidden;background:#EFEFEA}
+.cm4 .pb2 .pbi + .pbi{border-left:1px solid var(--rule)}
+.cm4 .pbi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cm4 .pbt{display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding:48px;background:var(--beige,#EFEBE3);border-right:1px solid var(--rule)}
+.cm4 .pbt .h2{margin:0;max-width:14ch}
+.cm4 .pbt .lab{color:var(--ink2)}
+.cm4 .pb-txt .pbi{aspect-ratio:auto;min-height:620px}
+@container cm4 (max-width: 760px){
+  .cm4 .pband.pb-txt{grid-template-columns:minmax(0,1fr)}
+  .cm4 .pb-txt .pbt{order:2;padding:28px 20px 36px;border-right:0}
+  .cm4 .pb-txt .pbi{min-height:0;aspect-ratio:4/5}
+  .cm4 .pb2:not(.pb-txt) .pbi{aspect-ratio:3/4}
+}
