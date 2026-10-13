@@ -908,3 +908,14 @@ html,body{background:#F7F7F4 !important}
 }
 
 @container cm4 (max-width: 760px){.cm4 .uband.u-sci .uph2{aspect-ratio:1/1}}
+
+/* 13 oct · deslizar */
+@keyframes cmNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media (max-width: 767px){
+  [id^="byop-content-"] .x-sticky-step-title{position:sticky}
+  [id^="byop-content-"] .x-sticky-step-title::after{content:"→";position:absolute;right:0;top:0;bottom:0;width:56px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-size:20px;color:#141A16;background:linear-gradient(90deg,rgba(239,235,227,0),#EFEBE3 55%);pointer-events:none;animation:cmNudge 1.4s ease-in-out infinite}
+}
+@container cm4 (max-width: 760px){
+  .cm4 .cellimg{aspect-ratio:auto !important;height:220px !important;min-height:0 !important}
+  .cm4 .cellimg > img{object-position:center}
+}

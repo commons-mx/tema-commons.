@@ -1,6 +1,6 @@
 <div class="cm4">
 <section class="ulines2" aria-labelledby="uni-{{ section.id }}">
-  <div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div><span class="lab ucount">{{ section.blocks.size }} líneas</span></div>
+  <div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div></div>
   {%- for block in section.blocks -%}
   {%- liquid
     assign mk = block.settings.mark
