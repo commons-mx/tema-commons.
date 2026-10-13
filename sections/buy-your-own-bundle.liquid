@@ -2040,11 +2040,11 @@
                         <div class="flex gap-2{% if is_rtl %} ltr{% endif %}">
                           {% if min_required == 0 and max_required == 0 or min_required == 0 and max_required != 0 %}
                             <span class="flex gap-1 text-[rgba(var(--color-success))]">
-                              <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                              <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                             </span>
                           {% elsif min_required != 0 and max_required == 0 or min_required != 0 and max_required != 0 %}
                             <span :class="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0) >= {{ min_required }} ? 'text-[rgba(var(--color-success))]' : 'text-[rgba(var(--color-error))]'" class="flex gap-1">
-                              <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                              <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                             </span>
                           {% endif %}
                           <span class="w-2.5 inline-block duration-500{% if block.settings.open_by_default %} rotate-180{% endif %}" :class="open ? 'rotate-180' : 'rotate-0'">
@@ -2059,7 +2059,7 @@
                           {% elsif block.settings.min_required != nil and block.settings.max_required != nil %}
                             <p>{{ 'buy-your-own-bundle.at_least_min_and_max' | t: min_required: min_required, max_required: max_required }}</p>
                           {% elsif block.settings.min_required != nil and block.settings.max_required == nil %}
-                            <p>{{ 'buy-your-own-bundle.at_least_min' | t: min_required: min_required }}</p>
+                            {%- if min_required > 0 -%}<p>{{ 'buy-your-own-bundle.at_least_min' | t: min_required: min_required }}</p>{%- endif -%}
                           {% elsif block.settings.min_required == nil and block.settings.max_required != nil %}
                             <p>{{ 'buy-your-own-bundle.max_item' | t: max_required: max_required }}</p>
                           {% endif %}
@@ -2446,11 +2446,11 @@
                     <div class="flex gap-2{% if is_rtl %} ltr{% endif %}">
                       {% if min_required == 0 and max_required == 0 or min_required == 0 and max_required != 0 %}
                         <span class="flex gap-1 text-[rgba(var(--color-success))]">
-                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                         </span>
                       {% elsif min_required != 0 and max_required == 0 or min_required != 0 and max_required != 0 %}
                         <span :class="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0) >= {{ min_required }} ? 'text-[rgba(var(--color-success))]' : 'text-[rgba(var(--color-error))]'" class="flex gap-1">
-                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                         </span>
                       {% endif %}
                       <span class="w-2.5 md:hidden inline-block duration-500{% if block.settings.open_by_default %} rotate-180{% endif %}" :class="open ? 'rotate-180' : 'rotate-0'">
@@ -2463,11 +2463,11 @@
                     <div class="flex gap-2{% if is_rtl %} ltr{% endif %}">
                       {% if min_required == 0 and max_required == 0 or min_required == 0 and max_required != 0 %}
                         <span class="flex gap-1 text-[rgba(var(--color-success))]">
-                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                         </span>      
                       {% elsif min_required != 0 and max_required == 0 or min_required != 0 and max_required != 0 %}
                         <span :class="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0) >= {{ min_required }} ? 'text-[rgba(var(--color-success))]' : 'text-[rgba(var(--color-error))]'" class="flex gap-1">
-                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> {{ 'products.product.item' | t }}
+                          <span x-html="JSON.parse(JSON.stringify(productsBundle)).filter(item => item.current_step == {{ forloop.index }}).reduce((total, item) => total + Number(item.quantity), 0)"></span> elegidos
                         </span>
                       {% endif %}            
                       <span class="w-2.5 md:hidden inline-block duration-500{% if block.settings.open_by_default %} rotate-180{% endif %}" :class="open ? 'rotate-180' : 'rotate-0'">
@@ -2482,7 +2482,7 @@
                       {% elsif block.settings.min_required != nil and block.settings.max_required != nil %}
                         <p>{{ 'buy-your-own-bundle.at_least_min_and_max' | t: min_required: min_required, max_required: max_required }}</p>
                       {% elsif block.settings.min_required != nil and block.settings.max_required == nil %}
-                        <p>{{ 'buy-your-own-bundle.at_least_min' | t: min_required: min_required }}</p>
+                        {%- if min_required > 0 -%}<p>{{ 'buy-your-own-bundle.at_least_min' | t: min_required: min_required }}</p>{%- endif -%}
                       {% elsif block.settings.min_required == nil and block.settings.max_required != nil %}
                         <p>{{ 'buy-your-own-bundle.max_item' | t: max_required: max_required }}</p>
                       {% endif %}

@@ -941,3 +941,9 @@ html,body{background:#F7F7F4 !important}
   .cm4 .nswipe svg{animation:cmNudge 1.4s ease-in-out infinite}
   .cm4 .needwrap.seen .nswipe{opacity:0}
 }
+
+/* Arma tu protocolo: botones en tinta, también al pasar el mouse */
+.x-container-byob,.x-container-byob *{--colors-button-hover:#2C342F !important;--colors-button:#141A16 !important}
+.x-container-byob .button-solid:hover,.x-container-byob .button-atc:hover,.x-container-byob button.button-solid:hover:not(:disabled){background:#2C342F !important;border-color:#2C342F !important;color:#fff !important}
+.x-container-byob .button-solid:not(:disabled),.x-container-byob .button-atc:not(:disabled){background:#141A16 !important;border-color:#141A16 !important;color:#fff !important}
+.x-container-byob .button-solid .button-text::after,.x-container-byob .button-solid::before,.x-container-byob .button-solid::after{background:transparent !important}

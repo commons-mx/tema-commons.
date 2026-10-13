@@ -12,7 +12,7 @@
 <h1 id="ph" class="disp h1">Ginkgo</h1>
 <span class="pl-lat">Ginkgo biloba · también conocido como &quot;Fósil viviente&quot;</span>
 <p class="sub">El árbol más antiguo que existe: lleva más de 200 millones de años en la Tierra. En Commons va junto con Bacopa en una sola cápsula.</p>
-{%- if rp.id -%}<div class="pl-buy"><div class="pi"><img src="{%- if rp.featured_image -%}{{ rp.featured_image | image_url: width: 800 }}{%- endif -%}" loading="lazy" alt="{{ rp.title | escape }}"></div><div><b>Commons Ginkgo</b><span>24% [marcador por confirmar] · cápsulas, con bacopa · desde {{ rp.price_min | money_without_trailing_zeros }}</span></div><a class="pl-add" href="#s4" style="display:inline-flex;align-items:center;text-decoration:none">Comprar</a></div>{%- endif -%}
+{%- if rp.id -%}<div class="pl-buy"><div class="pi"><img src="{{ 'cm-ginkgo-bacopa.jpg' | asset_url }}" loading="lazy" alt="{{ rp.title | escape }}"></div><div><b>Commons Ginkgo</b><span>24% [marcador por confirmar] · cápsulas, con bacopa · desde {{ rp.price_min | money_without_trailing_zeros }}</span></div><a class="pl-add" href="#s4" style="display:inline-flex;align-items:center;text-decoration:none">Comprar</a></div>{%- endif -%}
 </div>
 </section>
 <nav class="pl-toc" aria-label="En esta página"><a href="#s0">En 10 segundos</a><a href="#s1">Lo que hay dentro</a><a href="#s2">Lo que dice la investigación</a><a href="#s3">Cómo se toma</a><a href="#s4">Dónde lo encuentras</a><a href="#s5">Antes de tomarlo</a></nav>
@@ -56,7 +56,7 @@
 <section id="s4" aria-labelledby="dl">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Dónde lo encuentras</span><h2 id="dl" class="disp h2">Ginkgo en Commons.</h2></div></div>
 <div class="pl-one">
-<div class="im"><a href="{{ rp.url }}"><img src="{%- if rp.featured_image -%}{{ rp.featured_image | image_url: width: 800 }}{%- endif -%}" loading="lazy" alt="{{ rp.title | escape }}"></a></div>
+<div class="im"><a href="{{ rp.url }}"><img src="{{ 'cm-ginkgo-bacopa.jpg' | asset_url }}" loading="lazy" alt="{{ rp.title | escape }}"></a></div>
 <div class="tx">
 <span class="lab">Commons Botanicals</span>
 <b class="disp">{{ rp.title }}</b>

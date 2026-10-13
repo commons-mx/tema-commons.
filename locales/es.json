@@ -884,7 +884,7 @@
   },
   "buy-your-own-bundle": {
     "step": "Paso {{ index }}",
-    "no_product_chosen": "Ningún producto elegido",
+    "no_product_chosen": "Elige arriba los de esta necesidad",
     "min_require": "{{ min_required }} elemento(s) requerido(s)",
     "at_least_min_and_max": "Al menos {{ min_required }}, máximo {{ max_required }} elemento(s)",
     "at_least_min": "Al menos {{ min_required }} elemento(s)",
