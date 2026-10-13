@@ -771,3 +771,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .pl-trad .ptr p{margin:0}
 .cmpg .pl-trad .pdato{display:flex;flex-direction:column;gap:6px;padding:18px 20px;background:#F7F6F2;border:1px solid #DDD8CC;font-size:16px}
 @media (max-width:760px){.cmpg .pl-trad{grid-template-columns:1fr;padding:40px 16px;gap:20px}.cmpg .pl-trad .ptr{font-size:17px}}
+
+.cmpg .pl-trad .puso{display:flex;flex-direction:column;gap:10px;padding:20px 0 4px;border-top:1px solid rgba(20,26,22,.25)}
+.cmpg .pl-trad .puso ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.cmpg .pl-trad .puso li{position:relative;padding-left:22px;font-size:17px;line-height:1.5}
+.cmpg .pl-trad .puso li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:99px;background:#C9B98F}
