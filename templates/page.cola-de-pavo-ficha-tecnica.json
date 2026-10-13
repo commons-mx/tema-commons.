@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-pg-planta-cola",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

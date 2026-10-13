@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "cm-pg-planta",
+      "type": "cm-pg-planta-reishi",
       "settings": {}
     }
   },

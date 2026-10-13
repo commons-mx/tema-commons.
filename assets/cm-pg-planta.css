@@ -760,3 +760,5 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg details[open] > summary span[aria-hidden]{transform:rotate(45deg)}
 .cmpg [hidden]{display:none !important}
 .cmpg .cm-ok{padding:20px;background:var(--lime);font-size:16px}
+
+.cmpg .pl-ph img.cover{inset:0;width:100%;height:100%;object-fit:cover;padding:0}
