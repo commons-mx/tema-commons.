@@ -262,8 +262,8 @@
             "badge": "",
             "style": "bot",
             "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
-            "title": "El origen.",
-            "text": "Plantas, raíces y hongos funcionales en extractos estandarizados. Y en Rituals, mieles, chocolates y blends para tu día.",
+            "title": "Adaptógenos.",
+            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado en la etiqueta. Y en Rituals, mieles, chocolates y blends.",
             "button_label": "Explorar Botanicals",
             "button_link": "/pages/botanicals",
             "sig": "",
@@ -279,8 +279,8 @@
             "badge": "Nuevo",
             "style": "sci",
             "image": "shopify://shop_images/D39BF39E-63E0-45F2-A89E-8FC70BA77ABD.png",
-            "title": "La dosis estudiada.",
-            "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
+            "title": "Fórmulas con ingredientes estudiados.",
+            "text": "Ingredientes de patente con estudios clínicos, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
             "button_label": "Explorar Science",
             "button_link": "/pages/science",
             "sig": "2 fórmulas · 1 en camino",
@@ -297,7 +297,7 @@
       ],
       "settings": {
         "heading": "Nuestras líneas.",
-        "intro": "El origen y la dosis estudiada. La ciencia no reemplaza el origen, lo acompaña."
+        "intro": "Adaptógenos de hongos, raíces y plantas, y fórmulas con ingredientes estudiados. Se pueden combinar."
       }
     },
     "cm_nature": {
