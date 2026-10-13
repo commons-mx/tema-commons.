@@ -43,8 +43,8 @@
 <section id="evidencia" aria-labelledby="dc">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Cómo lo sabemos</span><h2 id="dc" class="disp h2" style="max-width: 16ch">Lo que se ha estudiado.</h2><p class="small" style="margin:0;max-width:52ch">Cada fórmula lleva el ingrediente y la dosis que se usaron en los estudios. Los puedes consultar todos.</p></div></div>
 <div class="dec3">
-<div class="dc"><div class="dimg"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-5f343f143d.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Hebras de azafrán"></div><div class="dtx"><span class="dn">28 mg</span><span class="dk">Affron® · estigma de azafrán</span><span class="small" style="display:block;margin:6px 0 10px">Estudiado en estado de ánimo, estrés y calidad del sueño · estudios de 8 a 12 semanas [validar con Fer]</span><a class="tlink" href="/products/azafran-1">Ver Azafrán</a></div></div>
-<div class="dc"><div class="dimg wh"><img src="{%- if section.settings.cm_img_5 != blank -%}{{ section.settings.cm_img_5 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-48a261a431.png' | asset_url }}{%- endif -%}" loading="lazy" alt="Piedra de magnesio en bruto"></div><div class="dtx"><span class="dn">200 mg</span><span class="dk">Magnesio · glicina 3 g · apigenina 50 mg</span><span class="small" style="display:block;margin:6px 0 10px">Cada ingrediente con estudios en descanso y relajación [validar con Fer]</span><a class="tlink" href="/products/magnesio-p-m">Ver Magnesio P.M.</a></div></div>
+<div class="dc"><div class="dimg wh"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-flor.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Flor de azafrán con sus estigmas"></div><div class="dtx"><span class="dn">28 mg</span><span class="dk">Affron® · estigma de azafrán</span><span class="small" style="display:block;margin:6px 0 10px">Estudiado en estado de ánimo, estrés y calidad del sueño · estudios de 8 a 12 semanas [validar con Fer]</span><a class="tlink" href="/products/azafran-1">Ver Azafrán</a></div></div>
+<div class="dc"><div class="dimg wh"><img src="{%- if section.settings.cm_img_5 != blank -%}{{ section.settings.cm_img_5 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-cristal.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Cristal de magnesio"></div><div class="dtx"><span class="dn">200 mg</span><span class="dk">Magnesio · glicina 3 g · apigenina 50 mg</span><span class="small" style="display:block;margin:6px 0 10px">Cada ingrediente con estudios en descanso y relajación [validar con Fer]</span><a class="tlink" href="/products/magnesio-p-m">Ver Magnesio P.M.</a></div></div>
 </div>
 <div style="padding:24px 40px"><a class="sq" href="/pages/nuestra-ciencia">Ver la biblioteca de evidencia</a></div>
 </section>
@@ -96,6 +96,12 @@ root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('cli
 </script>
 {%- comment -%} prueba · science-v6 {%- endcomment -%}
 <style>
+#cmpg-{{ section.id }} #evidencia .dc{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:0}
+#cmpg-{{ section.id }} #evidencia .dimg{aspect-ratio:1/1 !important;height:auto;background:#fff;border-right:1px solid var(--rule);border-bottom:0}
+#cmpg-{{ section.id }} #evidencia .dimg img{object-fit:contain;padding:10px}
+#cmpg-{{ section.id }} #evidencia .dtx{padding:16px 20px;gap:4px}
+#cmpg-{{ section.id }} #evidencia .dn{font-size:34px;line-height:1}
+@media (max-width:760px){#cmpg-{{ section.id }} #evidencia .dc{grid-template-columns:104px minmax(0,1fr)}#cmpg-{{ section.id }} #evidencia .dtx{padding:12px 14px}#cmpg-{{ section.id }} #evidencia .dn{font-size:28px}}
 #cmpg-{{ section.id }} .sbcmp{display:flex;flex-direction:column;gap:24px;padding:56px 40px;background:#EFEBE3;border-bottom:1px solid var(--rule)}
 #cmpg-{{ section.id }} .sbh{display:flex;flex-direction:column;gap:12px}
 #cmpg-{{ section.id }} .sbt{border-top:1px solid var(--rule)}
