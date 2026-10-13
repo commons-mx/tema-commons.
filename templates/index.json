@@ -277,11 +277,11 @@
             "style": "bot",
             "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
             "title": "El origen con hierbas y adaptógenos",
-            "text": "Plantas, raíces y hongos. Y dentro, Rituals: mieles, chocolates y blends para tu día.",
+            "text": "Plantas, raíces y hongos funcionales en extractos estandarizados, con el activo declarado.",
             "button_label": "Explorar Botanicals",
             "button_link": "/collections/adaptogenos-en-capusulas",
-            "link2_label": "Ver Rituals",
-            "link2": "/collections/mieles-adaptogenicas-y-funcionales",
+            "link2_label": "",
+            "link2": "",
             "sig": ""
           }
         },
@@ -295,16 +295,33 @@
             "title": "La dosis estudiada con Science",
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
-            "button_link": "/collections/all",
+            "button_link": "/pages/science",
             "link2_label": "",
             "link2": "",
             "sig": "-Designed for human systems-"
+          }
+        },
+        "b3": {
+          "type": "universe",
+          "settings": {
+            "label": "Commons Rituals",
+            "badge": "",
+            "style": "rit",
+            "image": "shopify://shop_images/IMG-2112.png",
+            "title": "Lo cotidiano, con intención",
+            "text": "Mieles, chocolates y blends con adaptógenos para tus momentos del día.",
+            "button_label": "Explorar Rituals",
+            "button_link": "/collections/mieles-adaptogenicas-y-funcionales",
+            "link2_label": "",
+            "link2": "",
+            "sig": ""
           }
         }
       },
       "block_order": [
         "b1",
-        "b2"
+        "b2",
+        "b3"
       ],
       "settings": {
         "heading": "Ciencia, plantas y rituales.",

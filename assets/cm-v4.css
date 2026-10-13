@@ -723,3 +723,26 @@ html,body{background:#F7F7F4 !important}
 .button-action,#CartDrawer .button-action{background:#141A16 !important;border-color:#141A16 !important;color:#F7F7F4 !important}
 .button-action:hover{background:#2A322C !important}
 .button-action svg{color:#F7F7F4 !important}
+
+/* 13 oct · líneas separadas en el home */
+.cm4 .urow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 12px 12px;border-bottom:1px solid var(--rule)}
+.cm4 .urow3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cm4 .urow > *{min-width:0}
+.cm4 .ucard{--ubg:#F7F7F4;background:var(--ubg);border-radius:20px;overflow:hidden}
+.cm4 .ucard.u-bot{--ubg:#E3E9D6}
+.cm4 .ucard.u-rit{--ubg:#F2E2C4}
+.cm4 .ucard.u-sci{--ubg:#141A16;color:#F7F7F4}
+.cm4 .ucard .uhead{border-bottom:0;gap:14px}
+.cm4 .ucard .uimg{border-bottom:0;margin:0 16px;border-radius:14px}
+.cm4 .unum{font-family:var(--fd);font-size:28px;line-height:1;letter-spacing:-.02em}
+.cm4 .ucard.u-sci .ulab,.cm4 .ucard.u-sci h3,.cm4 .ucard.u-sci .small,.cm4 .ucard.u-sci .tlink,.cm4 .ucard.u-sci .sig{color:#F7F7F4}
+.cm4 .ucard.u-sci .badge{background:var(--lime);color:#141A16}
+.cm4 .ucard.u-sci .dotted,.cm4 .ucard .ubody.dotted{outline:0}
+@container cm4 (max-width: 760px){
+  .cm4 .urow,.cm4 .urow3{grid-template-columns:minmax(0,1fr);gap:14px;padding:0 12px 14px}
+  .cm4 .ucard{border-radius:18px}
+  .cm4 .ucard .uhead{min-height:64px}
+  .cm4 .unum{font-size:24px}
+  .cm4 .ucard .uimg{height:240px;margin:0 12px}
+  .cm4 .ubody{padding:20px 18px 24px}
+}

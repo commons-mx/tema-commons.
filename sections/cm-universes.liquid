@@ -1,17 +1,17 @@
 <div class="cm4">
 <section aria-labelledby="uni-{{ section.id }}">
   {%- if section.settings.heading != blank -%}<div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2" style="max-width: 18ch">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div></div>{%- endif -%}
-  <div class="row2">
+  <div class="urow urow{{ section.blocks.size }}">
     {%- for block in section.blocks -%}
     {%- capture fb -%}cm-universo-{{ forloop.index }}.jpg{%- endcapture -%}
-    <div class="ucard" {{ block.shopify_attributes }}>
-      <div class="uhead"><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge" style="align-self: center">{{ block.settings.badge }}</span>{%- endif -%}</div>
+    <div class="ucard u-{{ block.settings.style }}"{% if block.settings.bg != blank %} style="--ubg: {{ block.settings.bg }}"{% endif %} {{ block.shopify_attributes }}>
+      <div class="uhead"><span class="unum">{{ forloop.index | prepend: '0' }}</span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge" style="align-self: center">{{ block.settings.badge }}</span>{%- endif -%}</div>
       <div class="uimg">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw' }}{%- else -%}<img src="{{ fb | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy">{%- endif -%}</div>
       <div class="ubody{% if block.settings.style == 'sci' %} dotted{% endif %}">
         <h3 class="disp h3t">{{ block.settings.title }}</h3>
         {%- if block.settings.text != blank -%}<p class="small" style="margin: 0; font-size: 16px">{{ block.settings.text }}</p>{%- endif -%}
         <div class="ulinks">
-          {%- if block.settings.button_label != blank -%}<a class="sq" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label }}</a>{%- endif -%}
+          {%- if block.settings.button_label != blank -%}<a class="sq{% if block.settings.style == 'sci' %} light{% endif %}" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label }}</a>{%- endif -%}
           {%- if block.settings.link2_label != blank -%}<a class="tlink" href="{{ block.settings.link2 | default: '#' }}">{{ block.settings.link2_label }}</a>{%- endif -%}
           {%- if block.settings.sig != blank -%}<span class="sig">{{ block.settings.sig }}</span>{%- endif -%}
         </div>
@@ -43,7 +43,7 @@
     {
       "type": "universe",
       "name": "Universo",
-      "limit": 2,
+      "limit": 3,
       "settings": [
         {
           "type": "text",
@@ -67,10 +67,19 @@
             },
             {
               "value": "sci",
-              "label": "Science (marco punteado)"
+              "label": "Science (oscuro)"
+            },
+            {
+              "value": "rit",
+              "label": "Rituals"
             }
           ],
           "default": "bot"
+        },
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "Color de fondo (vacío = el de la línea)"
         },
         {
           "type": "image_picker",
@@ -121,6 +130,9 @@
     {
       "name": "Commons · Universos",
       "blocks": [
+        {
+          "type": "universe"
+        },
         {
           "type": "universe"
         },
