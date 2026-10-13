@@ -906,3 +906,5 @@ html,body{background:#F7F7F4 !important}
   .cm4 .pb-txt .pbi{min-height:0;aspect-ratio:4/5}
   .cm4 .pb2:not(.pb-txt) .pbi{aspect-ratio:3/4}
 }
+
+@container cm4 (max-width: 760px){.cm4 .uband.u-sci .uph2{aspect-ratio:1/1}}
