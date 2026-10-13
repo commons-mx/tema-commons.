@@ -777,3 +777,42 @@ html,body{background:#F7F7F4 !important}
   .cm4 .tfacts{flex-direction:column;align-items:center;gap:6px}
   .cm4 .hcopy .ctas{flex-direction:column;align-items:flex-start;gap:16px}
 }
+
+/* 13 oct · líneas en mitad y mitad; Science es el bloque oscuro de la página */
+.cm4 .ulines2{border-bottom:1px solid var(--rule)}
+.cm4 .ulines2 .hd-row{align-items:flex-end}
+.cm4 .uband{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--rule);background:var(--bg);color:var(--ink)}
+.cm4 .uband.flip .uph2{order:2;border-left:1px solid var(--rule);border-right:0}
+.cm4 .uph2{position:relative;display:block;min-height:520px;overflow:hidden;background:#EFEFEA;border-right:1px solid var(--rule)}
+.cm4 .uph2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cm4 .utx2{display:flex;flex-direction:column;gap:20px;padding:48px 48px 48px}
+.cm4 .umark2{display:flex;align-items:center;gap:10px}
+.cm4 .umark2 .ulab{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.cm4 .umark2 .badge{position:static;align-self:center}
+.cm4 .utitle{margin:8px 0 0}
+.cm4 .utext{margin:0;font-size:17px;line-height:1.5;color:var(--ink2);max-width:44ch}
+.cm4 .uprods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:8px}
+.cm4 .uprod{display:flex;flex-direction:column;gap:4px;padding:12px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);color:inherit;text-decoration:none;font-size:13px}
+.cm4 .upim{display:block;aspect-ratio:1/1;background:#fff;margin-bottom:6px;overflow:hidden}
+.cm4 .upim img{width:100%;height:100%;object-fit:contain}
+.cm4 .upn{font-weight:500;font-size:14px;line-height:1.25}
+.cm4 .upp{color:var(--ink2)}
+.cm4 .ufoot2{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.cm4 .uband.u-sci{background:#141A16;color:#F7F7F4;--rule:rgba(247,247,244,.22)}
+.cm4 .uband.u-sci .utext,.cm4 .uband.u-sci .upp,.cm4 .uband.u-sci .umeta,.cm4 .uband.u-sci .unum{color:#C9CCC6}
+.cm4 .uband.u-sci .utitle,.cm4 .uband.u-sci .ulab{color:#F7F7F4}
+.cm4 .uband.u-sci .badge{background:#DFF68F;color:#141A16}
+.cm4 .uband.u-sci .uprod:hover{background:rgba(255,255,255,.06)}
+.cm4 .uband:not(.u-sci) .uprod:hover{background:#F4F3B2}
+@container cm4 (max-width: 760px){
+  .cm4 .uband,.cm4 .uband.flip{grid-template-columns:minmax(0,1fr)}
+  .cm4 .uband.flip .uph2{order:0;border-left:0}
+  .cm4 .uph2{min-height:0;aspect-ratio:3/2;border-right:0;border-bottom:1px solid var(--rule)}
+  .cm4 .utx2{padding:24px 20px 36px;gap:16px}
+  .cm4 .uband + .uband{border-top:1px solid #141A16}
+  .cm4 .utext{font-size:16px}
+  .cm4 .uprods{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cm4 .uprod{padding:8px}
+  .cm4 .upn{font-size:12px}
+  .cm4 .upp{font-size:12px}
+}

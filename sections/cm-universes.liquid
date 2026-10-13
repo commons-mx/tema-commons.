@@ -1,36 +1,39 @@
 <div class="cm4">
-<section class="ulines" aria-labelledby="uni-{{ section.id }}">
+<section class="ulines2" aria-labelledby="uni-{{ section.id }}">
   <div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div><span class="lab ucount">{{ section.blocks.size }} líneas</span></div>
-  <div class="ugrid ug{{ section.blocks.size }}">
-    {%- for block in section.blocks -%}
-    {%- liquid
-      assign mk = block.settings.mark
-      if mk == blank
-        case block.settings.style
-          when 'sci'
-            assign mk = '#DFF68F'
-          when 'rit'
-            assign mk = '#E8C77A'
-          else
-            assign mk = '#CDBDF0'
-        endcase
-      endif
-      assign col = block.settings.collection
-    -%}
-    <a class="uline" href="{{ block.settings.button_link | default: col.url | default: '#' }}" {{ block.shopify_attributes }}>
-      <div class="umark"><span class="udot" style="background: {{ mk }}"></span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}<span class="unum">{{ forloop.index | prepend: '0' }} / {{ forloop.length | prepend: '0' }}</span></div>
-      <div class="uph">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 33vw, 100vw', alt: block.settings.label }}{%- else -%}<span class="uphn">[Foto 3:2 · {{ block.settings.label }}]</span>{%- endif -%}</div>
-      <div class="utx">
-        <h3 class="disp h3t">{{ block.settings.title }}</h3>
-        {%- if block.settings.text != blank -%}<p class="small">{{ block.settings.text }}</p>{%- endif -%}
-        <div class="ufoot">
-          <span class="sq">{{ block.settings.button_label | default: 'Explorar' }}</span>
-          {%- if col != blank and col.products_count > 0 -%}<span class="lab umeta">{{ col.products_count }} productos</span>{%- elsif block.settings.sig != blank -%}<span class="lab umeta">{{ block.settings.sig }}</span>{%- endif -%}
-        </div>
+  {%- for block in section.blocks -%}
+  {%- liquid
+    assign mk = block.settings.mark
+    if mk == blank
+      case block.settings.style
+        when 'sci'
+          assign mk = '#DFF68F'
+        when 'rit'
+          assign mk = '#E8C77A'
+        else
+          assign mk = '#CDBDF0'
+      endcase
+    endif
+    assign col = block.settings.collection
+    assign link = block.settings.button_link | default: col.url | default: '#'
+  -%}
+  <article class="uband u-{{ block.settings.style }}{% cycle '', ' flip' %}" {{ block.shopify_attributes }}>
+    <a class="uph2" href="{{ link }}" tabindex="-1" aria-hidden="true">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw', alt: '' }}{%- else -%}<span class="uphn">[Foto 3:2 · {{ block.settings.label }}]</span>{%- endif -%}</a>
+    <div class="utx2">
+      <div class="umark2"><span class="udot" style="background: {{ mk }}"></span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}<span class="unum">{{ forloop.index | prepend: '0' }} / {{ forloop.length | prepend: '0' }}</span></div>
+      <h3 class="disp h2 utitle">{{ block.settings.title }}</h3>
+      {%- if block.settings.text != blank -%}<p class="utext">{{ block.settings.text }}</p>{%- endif -%}
+      {%- if block.settings.products != blank -%}
+      <div class="uprods">
+        {%- for p in block.settings.products -%}
+        <a class="uprod" href="{{ p.url }}"><span class="upim">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}</span><span class="upn">{{ p.metafields.custom.short_name | default: p.title | truncatewords: 3, '' }}</span><span class="upp">{%- if p.price_varies -%}Desde {% endif -%}{{ p.price_min | money_without_trailing_zeros }}</span></a>
+        {%- endfor -%}
       </div>
-    </a>
-    {%- endfor -%}
-  </div>
+      {%- endif -%}
+      <div class="ufoot2"><a class="sq{% if block.settings.style == 'sci' %} light{% endif %}" href="{{ link }}">{{ block.settings.button_label | default: 'Explorar' }}</a>{%- if col != blank and col.products_count > 0 -%}<span class="lab umeta">{{ col.products_count }} productos</span>{%- elsif block.settings.sig != blank -%}<span class="lab umeta">{{ block.settings.sig }}</span>{%- endif -%}</div>
+    </div>
+  </article>
+  {%- endfor -%}
 </section>
 </div>
 {% schema %}
@@ -117,6 +120,12 @@
           "type": "textarea",
           "id": "text",
           "label": "Texto"
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Productos de la línea (hasta 3)",
+          "limit": 3
         },
         {
           "type": "text",

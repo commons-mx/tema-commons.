@@ -267,7 +267,12 @@
             "button_label": "Explorar Botanicals",
             "button_link": "/pages/botanicals",
             "sig": "",
-            "collection": "adaptogenos-en-capusulas"
+            "collection": "adaptogenos-en-capusulas",
+            "products": [
+              "ashwagandha-organico-capsulas-extracto",
+              "hongo-reishi-100g-20-β-glucanos",
+              "melena-de-leon-capsulas-organicas"
+            ]
           }
         },
         "b2": {
@@ -281,7 +286,11 @@
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
             "button_link": "/pages/science",
-            "sig": "2 fórmulas · 1 en camino"
+            "sig": "2 fórmulas · 1 en camino",
+            "products": [
+              "azafran-1",
+              "magnesio-p-m"
+            ]
           }
         }
       },
