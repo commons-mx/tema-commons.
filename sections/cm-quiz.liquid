@@ -8,7 +8,7 @@
 #cmq-{{ section.id }} .rmchk{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#4A524C}
 #cmq-{{ section.id }} .rmok{color:#2F6B3A}#cmq-{{ section.id }} .rmerr{color:#A33}
 @media (max-width:760px){#cmq-{{ section.id }} .rmrow{flex-direction:column}}
-@media print{body *{visibility:hidden !important}#cmq-{{ section.id }} .rhero,#cmq-{{ section.id }} .rhero *,#cmq-{{ section.id }} .rweeks,#cmq-{{ section.id }} .rweeks *{visibility:visible !important}#cmq-{{ section.id }} .rhero{position:absolute;left:0;top:0;width:100%}#cmq-{{ section.id }} .rmail,#cmq-{{ section.id }} .rshare,#cmq-{{ section.id }} .rbox button,#cmq-{{ section.id }} .rbox .sq,#cmq-{{ section.id }} .rbox .tlink{display:none !important}}
+@media print{body > *:not(#cmq-print){display:none !important}#cmq-print{display:block !important}}
 </style>
 <script>
 (function(){
@@ -59,7 +59,7 @@ function view(v){
     h += '<a class="tlink" href="/#protocolo" style="align-self:center">Ajustarlo en Arma tu protocolo</a><button type="button" class="sq" data-fn="' + on(v.toggleEss) + '">' + esc(v.essTxt) + '</button>';
     if (v.kitNear) h += '<div class="rkit"><span class="lab">Kit cercano</span><b style="font-weight:500">' + esc(v.kitNear) + '</b><span class="small">' + esc(v.kitNearS) + '</span></div>';
     if (v.anyWarn) h += '<p class="qpriv" style="margin:0">Algunos productos llevan "consulta a tu médico". Revisa tu protocolo con tu médico antes de empezar.</p>';
-    window.__cmq = { n: v.pname, needs: v.needsTxt, prods: v.prods.map(function(p){ return p.n; }) };
+    window.__cmq = { n: v.pname, needs: v.needsTxt, intro: v.pintro, total: v.total, full: v.full, perDay: v.perDay, disc: v.discTxt, prods: v.prods.map(function(p){ return p.n; }), det: v.prods.map(function(p){ return { n: p.n, line: String(p.line || '').replace(/<[^>]+>/g, ''), why: p.why, how: p.how, p: p.p, img: p.img, warn: p.warn }; }) };
     h += '<form class="rmail" data-mail novalidate><span class="lab">Tu protocolo, por correo</span><p class="small" style="margin:0">Te lo mandamos en PDF, con cuándo y cómo tomar cada uno.</p><div class="rmrow"><input type="email" name="email" class="in" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo"><button type="submit" class="btn dark" style="border:0;cursor:pointer">Mándamelo</button></div><label class="rmchk"><input type="checkbox" name="mkt" checked> Quiero recibir guías y novedades de Commons.</label><span class="small rmok" data-mailok hidden>Listo. Te llega en unos minutos; revisa también promociones.</span><span class="small rmerr" data-mailerr hidden>No se pudo enviar. Revisa tu correo o descárgalo en PDF.</span></form>';
     h += '<div class="rshare"><button type="button" class="tlink" data-pdf style="background:none;border:0;cursor:pointer;padding:0">Descargar en PDF</button><a class="tlink" data-wa href="https://wa.me/525564299433">Pregúntanos por WhatsApp</a><button type="button" class="qback" data-fn="' + on(v.restart) + '">Volver a empezar</button></div></div></section>';
     if (v.hasRit) h += '<section aria-label="Complementos"><div class="hd-row"><div style="display:flex;flex-direction:column;gap:10px"><span class="lab">Súmale un ritual · precio completo</span><h2 class="disp h3t">Para tu día.</h2></div></div><div class="rprods rrits">' + v.rits.map(function(r){ return '<div class="rp"><div class="th">' + (r.img ? '<img src="' + esc(r.img) + '" alt="' + esc(r.n) + '">' : '') + '</div><div><span class="lab">' + esc(r.when) + '</span><div class="nm">' + (r.url ? '<a href="' + esc(r.url) + '" style="color:inherit">' + esc(r.n) + '</a>' : esc(r.n)) + '</div><div class="why">' + esc(r.s) + '</div></div>' + (r.vid ? '<div class="radd"><span class="num">' + r.p + '</span><button type="button" class="sq" data-fn="' + on(r.add) + '">Agregar</button></div>' : '<span></span>') + '</div>'; }).join('') + '</div></section>';
@@ -342,8 +342,24 @@ Promise.all(Object.keys(HANDLES).map(function(n){
 <script>
 (function(){
   var root = document.getElementById('cmq-{{ section.id }}'); if (!root) return;
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function cmqPrint(){
+    var q = window.__cmq; if (!q) { window.print(); return; }
+    var old = document.getElementById('cmq-print'); if (old) old.remove();
+    var d = document.createElement('div'); d.id = 'cmq-print'; d.style.display = 'none';
+    var rows = q.det.map(function(p){ return '<tr><td class="ci">' + (p.img ? '<img src="' + esc(p.img) + '" alt="">' : '') + '</td><td><b>' + esc(p.n) + '</b> <span class="cl">' + esc(p.line) + '</span><div class="cw">' + esc(p.why) + '</div><div class="ch">' + esc(p.how) + '</div>' + (p.warn ? '<div class="cx">' + esc(p.warn) + '</div>' : '') + '</td><td class="cp">' + esc(p.p) + '</td></tr>'; }).join('');
+    d.innerHTML = '<style>#cmq-print{font-family:Figtree,Arial,sans-serif;color:#141A16;padding:8mm 6mm;font-size:11pt;line-height:1.4}#cmq-print .hd{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid #141A16;padding-bottom:4mm;margin-bottom:6mm}#cmq-print .lg{font-family:Georgia,serif;font-size:22pt;font-weight:700}#cmq-print .lb{font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#4A524C}#cmq-print h1{font-size:24pt;font-weight:500;margin:2mm 0}#cmq-print p{margin:0 0 4mm}#cmq-print table{width:100%;border-collapse:collapse;margin:4mm 0}#cmq-print td{border-top:1px solid #D9D8D1;padding:3mm 2mm;vertical-align:top}#cmq-print .ci{width:16mm}#cmq-print .ci img{width:14mm;height:14mm;object-fit:contain}#cmq-print .cl{font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:#6E757B}#cmq-print .cw{color:#4A524C;margin-top:1mm}#cmq-print .ch{font-family:monospace;font-size:8.5pt;margin-top:1.5mm;text-transform:uppercase}#cmq-print .cx{color:#8A2B2B;font-size:9pt;margin-top:1mm}#cmq-print .cp{text-align:right;white-space:nowrap}#cmq-print .tt{display:flex;justify-content:flex-end;gap:6mm;border-top:1.5px solid #141A16;padding-top:3mm;font-size:12pt}#cmq-print .wk{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:6mm}#cmq-print .wk div{border-top:1px solid #141A16;padding-top:2mm;font-size:9.5pt}#cmq-print .ft{margin-top:8mm;font-size:8.5pt;color:#6E757B;border-top:1px solid #D9D8D1;padding-top:3mm}#cmq-print tr{page-break-inside:avoid}</style>'
+      + '<div class="hd"><span class="lg">commons</span><span class="lb">Tu protocolo · ' + esc(q.needs) + '</span></div>'
+      + '<h1>' + esc(q.n) + '</h1><p>' + esc(q.intro) + '</p>'
+      + '<table>' + rows + '</table>'
+      + '<div class="tt"><span>' + esc(q.disc) + '</span><b>Total ' + esc(q.total) + '</b>' + (q.perDay ? '<span>' + esc(q.perDay) + ' al día</span>' : '') + '</div>'
+      + '<div class="lb" style="margin-top:8mm">Tus primeras 12 semanas</div><div class="wk"><div><b>Semana 1–2</b><br>Empieza con la dosis mínima para ver cómo te sienta.</div><div><b>Semana 3</b><br>Si te sientes bien, sube a tu dosis completa.</div><div><b>Semana 8–10</b><br>Evalúa cómo vas.</div><div><b>Semana 12</b><br>Descansa las que lo piden y retoma.</div></div>'
+      + '<div class="ft">Este producto no es un medicamento. Si tomas medicamentos, consulta a tu médico. Es una guía, no un diagnóstico. · commons.mx · WhatsApp 55 6429 9433</div>';
+    document.body.appendChild(d);
+    setTimeout(function(){ window.print(); }, 150);
+  }
   root.addEventListener('click', function(e){
-    if (e.target.closest('[data-pdf]')) { e.preventDefault(); window.print(); }
+    if (e.target.closest('[data-pdf]')) { e.preventDefault(); cmqPrint(); }
     var wa = e.target.closest('[data-wa]');
     if (wa && window.__cmq) { wa.href = 'https://wa.me/525564299433?text=' + encodeURIComponent('Hola, hice el quiz y me salió: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). ¿Me ayudan?'); }
   });
