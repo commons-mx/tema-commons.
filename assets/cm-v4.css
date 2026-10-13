@@ -846,3 +846,15 @@ html,body{background:#F7F7F4 !important}
   .cm4 .hleft{padding:28px 20px 36px}
   .cm4 .hcopy .h1{font-size:calc(34px * var(--dscale));line-height:1.05}
 }
+
+/* 13 oct · hero con las dos líneas */
+.cm4 .hero .hh{position:absolute;inset:0;overflow:hidden}
+.cm4 .hero .dual .hh{position:absolute;left:0;right:0;height:50%}
+.cm4 .hero .dual .hh:first-child{top:0;border-bottom:1px solid var(--rule)}
+.cm4 .hero .dual .hh + .hh{top:50%;background:#FDFDFD}
+.cm4 .hero .dual .hh + .hh .hbg{object-fit:contain}
+.cm4 .hcap{position:absolute;left:16px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:var(--bg);padding:6px 12px;border-radius:999px;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.cm4 .hcap i{width:8px;height:8px;border-radius:99px;box-shadow:inset 0 0 0 1px rgba(20,26,22,.18)}
+@container cm4 (max-width: 760px){
+  .cm4 .hero .cm-slide-bg.dual{aspect-ratio:4/5}
+}

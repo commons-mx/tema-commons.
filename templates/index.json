@@ -26,7 +26,10 @@
             "button_label": "Ver productos",
             "button_link": "/collections/all",
             "button2_label": "",
-            "button2_link": ""
+            "button2_link": "",
+            "cap1": "Commons Botanicals",
+            "asset2": "cm-hero-sci.jpg",
+            "cap2": "Commons Science"
           }
         }
       },

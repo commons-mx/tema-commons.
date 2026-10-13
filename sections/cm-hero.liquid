@@ -5,11 +5,21 @@
 <section class="hero" aria-label="Destacado">
   {%- for block in slides -%}
     {%- capture fb -%}{{ block.settings.asset | default: 'cm-hero-' | append: '' }}{%- if block.settings.asset == blank -%}{{ forloop.index }}.jpg{%- endif -%}{%- endcapture -%}
-    <div class="cm-slide-bg{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}">
+    {%- assign dual = false -%}{%- if block.settings.image2 != blank or block.settings.asset2 != blank -%}{%- assign dual = true -%}{%- endif -%}
+    <div class="cm-slide-bg{% if forloop.first %} on{% endif %}{% if dual %} dual{% endif %}" data-i="{{ forloop.index0 }}">
+      <div class="hh">
       {%- if block.settings.image != blank -%}
         {{ block.settings.image | image_url: width: 2400 | image_tag: class: 'hbg', sizes: '100vw', loading: 'eager', alt: block.settings.heading }}
       {%- else -%}
         <img class="hbg" src="{{ fb | asset_url }}" alt="{{ block.settings.heading | escape }}" loading="eager">
+      {%- endif -%}
+      {%- if dual and block.settings.cap1 != blank -%}<span class="hcap"><i style="background:#CDBDF0"></i>{{ block.settings.cap1 }}</span>{%- endif -%}
+      </div>
+      {%- if dual -%}
+      <div class="hh">
+        {%- if block.settings.image2 != blank -%}{{ block.settings.image2 | image_url: width: 1600 | image_tag: class: 'hbg', sizes: '100vw', loading: 'eager', alt: block.settings.cap2 }}{%- else -%}<img class="hbg" src="{{ block.settings.asset2 | asset_url }}" alt="{{ block.settings.cap2 | escape }}" loading="eager">{%- endif -%}
+        {%- if block.settings.cap2 != blank -%}<span class="hcap"><i style="background:#DFF68F"></i>{{ block.settings.cap2 }}</span>{%- endif -%}
+      </div>
       {%- endif -%}
     </div>
   {%- endfor -%}
@@ -118,6 +128,28 @@
           "id": "asset",
           "label": "Foto del tema (si no subes una)",
           "info": "Ej. cm-hero-2.jpg"
+        },
+        {
+          "type": "text",
+          "id": "cap1",
+          "label": "Rótulo foto 1",
+          "info": "Ej. Commons Botanicals"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Foto 2 (segunda línea)"
+        },
+        {
+          "type": "text",
+          "id": "asset2",
+          "label": "Foto 2 del tema (si no subes una)"
+        },
+        {
+          "type": "text",
+          "id": "cap2",
+          "label": "Rótulo foto 2",
+          "info": "Ej. Commons Science"
         },
         {
           "type": "text",
