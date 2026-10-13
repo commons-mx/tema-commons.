@@ -276,13 +276,12 @@
             "badge": "",
             "style": "bot",
             "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
-            "title": "El origen con hierbas y adaptógenos",
+            "title": "El origen.",
             "text": "Plantas, raíces y hongos funcionales en extractos estandarizados, con el activo declarado.",
             "button_label": "Explorar Botanicals",
-            "button_link": "/collections/adaptogenos-en-capusulas",
-            "link2_label": "",
-            "link2": "",
-            "sig": ""
+            "button_link": "/pages/botanicals",
+            "sig": "",
+            "collection": "adaptogenos-en-capusulas"
           }
         },
         "b2": {
@@ -292,13 +291,11 @@
             "badge": "Nuevo",
             "style": "sci",
             "image": "shopify://shop_images/D39BF39E-63E0-45F2-A89E-8FC70BA77ABD.png",
-            "title": "La dosis estudiada con Science",
+            "title": "La dosis estudiada.",
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
             "button_link": "/pages/science",
-            "link2_label": "",
-            "link2": "",
-            "sig": "-Designed for human systems-"
+            "sig": "2 fórmulas · 1 en camino"
           }
         },
         "b3": {
@@ -308,12 +305,10 @@
             "badge": "",
             "style": "rit",
             "image": "shopify://shop_images/IMG-2112.png",
-            "title": "Lo cotidiano, con intención",
+            "title": "Lo cotidiano, con intención.",
             "text": "Mieles, chocolates y blends con adaptógenos para tus momentos del día.",
             "button_label": "Explorar Rituals",
             "button_link": "/collections/mieles-adaptogenicas-y-funcionales",
-            "link2_label": "",
-            "link2": "",
             "sig": ""
           }
         }
@@ -324,8 +319,8 @@
         "b3"
       ],
       "settings": {
-        "heading": "Ciencia, plantas y rituales.",
-        "intro": "Adaptógenos, extractos botánicos y fórmulas desarrolladas para acompañar tu bienestar."
+        "heading": "Nuestras líneas.",
+        "intro": "Tres formas de acompañarte: el origen, la dosis estudiada y el ritual diario."
       }
     },
     "cm_nature": {

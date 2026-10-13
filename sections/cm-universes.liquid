@@ -1,29 +1,41 @@
 <div class="cm4">
-<section aria-labelledby="uni-{{ section.id }}">
-  {%- if section.settings.heading != blank -%}<div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2" style="max-width: 18ch">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div></div>{%- endif -%}
-  <div class="urow urow{{ section.blocks.size }}">
+<section class="ulines" aria-labelledby="uni-{{ section.id }}">
+  <div class="hd-row"><div><h2 id="uni-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub uintro">{{ section.settings.intro }}</p>{%- endif -%}</div><span class="lab ucount">{{ section.blocks.size }} líneas</span></div>
+  <div class="ugrid ug{{ section.blocks.size }}">
     {%- for block in section.blocks -%}
-    {%- capture fb -%}cm-universo-{{ forloop.index }}.jpg{%- endcapture -%}
-    <div class="ucard u-{{ block.settings.style }}"{% if block.settings.bg != blank %} style="--ubg: {{ block.settings.bg }}"{% endif %} {{ block.shopify_attributes }}>
-      <div class="uhead"><span class="unum">{{ forloop.index | prepend: '0' }}</span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge" style="align-self: center">{{ block.settings.badge }}</span>{%- endif -%}</div>
-      <div class="uimg">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw' }}{%- else -%}<img src="{{ fb | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy">{%- endif -%}</div>
-      <div class="ubody{% if block.settings.style == 'sci' %} dotted{% endif %}">
+    {%- liquid
+      assign mk = block.settings.mark
+      if mk == blank
+        case block.settings.style
+          when 'sci'
+            assign mk = '#DFF68F'
+          when 'rit'
+            assign mk = '#E8C77A'
+          else
+            assign mk = '#CDBDF0'
+        endcase
+      endif
+      assign col = block.settings.collection
+    -%}
+    <a class="uline" href="{{ block.settings.button_link | default: col.url | default: '#' }}" {{ block.shopify_attributes }}>
+      <div class="umark"><span class="udot" style="background: {{ mk }}"></span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}<span class="unum">{{ forloop.index | prepend: '0' }} / {{ forloop.length | prepend: '0' }}</span></div>
+      <div class="uph">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 33vw, 100vw', alt: block.settings.label }}{%- else -%}<span class="uphn">[Foto 3:2 · {{ block.settings.label }}]</span>{%- endif -%}</div>
+      <div class="utx">
         <h3 class="disp h3t">{{ block.settings.title }}</h3>
-        {%- if block.settings.text != blank -%}<p class="small" style="margin: 0; font-size: 16px">{{ block.settings.text }}</p>{%- endif -%}
-        <div class="ulinks">
-          {%- if block.settings.button_label != blank -%}<a class="sq{% if block.settings.style == 'sci' %} light{% endif %}" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label }}</a>{%- endif -%}
-          {%- if block.settings.link2_label != blank -%}<a class="tlink" href="{{ block.settings.link2 | default: '#' }}">{{ block.settings.link2_label }}</a>{%- endif -%}
-          {%- if block.settings.sig != blank -%}<span class="sig">{{ block.settings.sig }}</span>{%- endif -%}
+        {%- if block.settings.text != blank -%}<p class="small">{{ block.settings.text }}</p>{%- endif -%}
+        <div class="ufoot">
+          <span class="sq">{{ block.settings.button_label | default: 'Explorar' }}</span>
+          {%- if col != blank and col.products_count > 0 -%}<span class="lab umeta">{{ col.products_count }} productos</span>{%- elsif block.settings.sig != blank -%}<span class="lab umeta">{{ block.settings.sig }}</span>{%- endif -%}
         </div>
       </div>
-    </div>
+    </a>
     {%- endfor -%}
   </div>
 </section>
 </div>
 {% schema %}
 {
-  "name": "Commons · Universos",
+  "name": "Commons · Líneas",
   "tag": "div",
   "class": "cm-section",
   "settings": [
@@ -42,8 +54,8 @@
   "blocks": [
     {
       "type": "universe",
-      "name": "Universo",
-      "limit": 3,
+      "name": "Línea",
+      "limit": 6,
       "settings": [
         {
           "type": "text",
@@ -59,27 +71,36 @@
         {
           "type": "select",
           "id": "style",
-          "label": "Estilo",
+          "label": "Color de la marca",
           "options": [
             {
               "value": "bot",
-              "label": "Botanicals"
+              "label": "Botanicals (lila)"
             },
             {
               "value": "sci",
-              "label": "Science (oscuro)"
+              "label": "Science (lima)"
             },
             {
               "value": "rit",
-              "label": "Rituals"
+              "label": "Rituals (ámbar · por aprobar)"
+            },
+            {
+              "value": "otra",
+              "label": "Otra línea (elige color)"
             }
           ],
           "default": "bot"
         },
         {
           "type": "color",
-          "id": "bg",
-          "label": "Color de fondo (vacío = el de la línea)"
+          "id": "mark",
+          "label": "Color del punto (vacío = el de la línea)"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Colección de la línea (muestra cuántos productos)"
         },
         {
           "type": "image_picker",
@@ -110,18 +131,8 @@
         },
         {
           "type": "text",
-          "id": "link2_label",
-          "label": "Liga secundaria"
-        },
-        {
-          "type": "url",
-          "id": "link2",
-          "label": "Liga secundaria (url)"
-        },
-        {
-          "type": "text",
           "id": "sig",
-          "label": "Firma en mono"
+          "label": "Dato en mono (si no hay colección)"
         }
       ]
     }
