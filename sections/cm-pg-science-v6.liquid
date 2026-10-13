@@ -13,7 +13,7 @@
 <p class="sub" style="max-width: 40ch">Ingredientes de patente, en la dosis que se usó en los estudios clínicos. Para cuando buscas algo específico: ánimo, descanso y, muy pronto, glucosa.</p>
 <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center"><a class="btn dark" href="#formulas">Ver las fórmulas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="sq" href="#evidencia">Cómo lo sabemos</a></div>
 </div>
-<div class="si wh"><div class="ffr"></div><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-capsula-azafran-h.jpg' | asset_url }}"><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-capsula-azafran-h.jpg' | asset_url }}"><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-capsula-azafran.jpg' | asset_url }}{%- endif -%}" loading="eager" alt="Cápsula de Azafrán Commons Science" class="hcap"></picture></picture><span class="fcap"><span>Crocus sativus L.</span><span>Affron® · 28 mg</span></span></div>
+<div class="si wh"><div class="ffr"></div><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-e4e505fc32.png' | asset_url }}{%- endif -%}" loading="eager" alt="Flor y estigmas de azafrán dentro de un matraz de laboratorio"></picture><span class="fcap"><span>Crocus sativus L.</span><span>→ Affron®</span></span></div>
 </section>
 
 
@@ -33,7 +33,7 @@
 <!-- 1b · INGREDIENTES DE PATENTE -->
 
 
-<section class="natb" aria-label="Nature, decoded"><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-flores-v.jpg' | asset_url }}"><img src="{{ 'cm-sci-flores-h.jpg' | asset_url }}" alt="Campo de flores en movimiento al atardecer" loading="lazy" width="2000" height="751"></picture><div class="natx"><span class="lab">Nature, decoded</span><p class="disp h2">Empieza en una flor.<br>Termina en una dosis exacta.</p><p class="small">De la planta tomamos solo lo que se estudió, y en la cantidad que se usó en los estudios.</p></div></section>
+<section class="natb" aria-label="Nature, decoded"><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-flores-v.jpg' | asset_url }}"><img src="{{ 'cm-sci-flores-h.jpg' | asset_url }}" alt="Campo de flores en movimiento al atardecer" loading="lazy" width="2000" height="751"></picture><picture class="ncap"><source media="(max-width:760px)" srcset="{{ 'cm-sci-capsula-h.png' | asset_url }}"><img src="{{ 'cm-sci-capsula-v.png' | asset_url }}" alt="Cápsula de Azafrán Commons Science" loading="lazy" width="376" height="1100"></picture><div class="natx"><span class="lab">Nature, decoded</span><p class="disp h2">Empieza en una flor.<br>Termina en una dosis exacta.</p><p class="small">De la planta tomamos solo lo que se estudió, y en la cantidad que se usó en los estudios.</p></div></section>
 <!-- 3 · DECODED: EL INGREDIENTE Y SU DOSIS -->
 <section id="evidencia" aria-labelledby="dc">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Etiqueta abierta</span><h2 id="dc" class="disp h2" style="max-width: 18ch">Lo que lleva y lo que se ha estudiado.</h2><p class="small" style="margin:0;max-width:52ch">Sin mezclas secretas: el ingrediente y la dosis que se usaron en los estudios, a la vista.</p></div></div>
@@ -91,6 +91,9 @@ root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('cli
 </script>
 {%- comment -%} prueba · science-v6 {%- endcomment -%}
 <style>
+#cmpg-{{ section.id }} .natb .ncap{position:absolute;inset:auto;right:12%;top:50%;transform:translateY(-50%) rotate(14deg);width:auto;height:auto;z-index:1;pointer-events:none}
+#cmpg-{{ section.id }} .natb .ncap img{position:static;width:auto;height:400px;object-fit:contain;filter:drop-shadow(0 24px 28px rgba(20,24,10,.35))}
+@media (max-width:760px){#cmpg-{{ section.id }} .natb{align-items:flex-end;padding-top:150px}#cmpg-{{ section.id }} .natb .ncap{right:auto;left:50%;top:40px;transform:translateX(-50%) rotate(-8deg)}#cmpg-{{ section.id }} .natb .ncap img{height:auto;width:270px}}
 #cmpg-{{ section.id }} .sbm{display:none}
 @media (max-width:760px){#cmpg-{{ section.id }} .sbt{display:none}#cmpg-{{ section.id }} .sbm{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 #cmpg-{{ section.id }} .sbmc{background:#F7F6F2;border:1px solid #DDD8CC;padding:14px 12px;display:flex;flex-direction:column;gap:10px}
