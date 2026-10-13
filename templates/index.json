@@ -205,12 +205,12 @@
         "b2": {
           "type": "product",
           "settings": {
-            "product": "azafran-1",
-            "title": "Azafrán",
-            "tag": "Ánimo",
-            "badge": "Nuevo",
-            "size": "60 cápsulas",
-            "per_serving": "$15.83 por porción"
+            "product": "melena-de-leon-capsulas-organicas",
+            "title": "Melena de León",
+            "tag": "Enfoque",
+            "badge": "",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
           }
         },
         "b3": {
@@ -268,11 +268,8 @@
             "button_link": "/pages/botanicals",
             "sig": "",
             "collection": "adaptogenos-en-capusulas",
-            "products": [
-              "ashwagandha-organico-capsulas-extracto",
-              "hongo-reishi-100g-20-β-glucanos",
-              "melena-de-leon-capsulas-organicas"
-            ]
+            "products": [],
+            "cats": "Hongos funcionales|/collections/adaptogenos-en-capusulas|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/adaptogenos-en-capusulas|raiz-rhodiola-rosea-full-polvo|12 plantas\nRituals|/collections/mieles-adaptogenicas-y-funcionales|miel-sueno-profundo-1|Mieles, chocolates, blends"
           }
         },
         "b2": {

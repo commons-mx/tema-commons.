@@ -23,7 +23,14 @@
       <div class="umark2"><span class="udot" style="background: {{ mk }}"></span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}<span class="unum">{{ forloop.index | prepend: '0' }} / {{ forloop.length | prepend: '0' }}</span></div>
       <h3 class="disp h2 utitle">{{ block.settings.title }}</h3>
       {%- if block.settings.text != blank -%}<p class="utext">{{ block.settings.text }}</p>{%- endif -%}
-      {%- if block.settings.products != blank -%}
+      {%- if block.settings.cats != blank -%}
+      <div class="uprods">
+        {%- assign cl = block.settings.cats | newline_to_br | split: '<br />' -%}
+        {%- for c in cl -%}{%- assign cp = c | strip | split: '|' -%}{%- if cp.size > 1 -%}{%- assign ph = all_products[cp[2]] -%}
+        <a class="uprod" href="{{ cp[1] }}"><span class="upim">{%- if ph.featured_image -%}{{ ph.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', alt: cp[0] }}{%- endif -%}</span><span class="upn">{{ cp[0] }}</span><span class="upp">{{ cp[3] }}</span></a>
+        {%- endif -%}{%- endfor -%}
+      </div>
+      {%- elsif block.settings.products != blank -%}
       <div class="uprods">
         {%- for p in block.settings.products -%}
         <a class="uprod" href="{{ p.url }}"><span class="upim">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}</span><span class="upn">{{ p.metafields.custom.short_name | default: p.title | truncatewords: 3, '' }}</span><span class="upp">{%- if p.price_varies -%}Desde {% endif -%}{{ p.price_min | money_without_trailing_zeros }}</span></a>
@@ -120,6 +127,12 @@
           "type": "textarea",
           "id": "text",
           "label": "Texto"
+        },
+        {
+          "type": "textarea",
+          "id": "cats",
+          "label": "Familias de la línea (en vez de productos)",
+          "info": "Una por línea: Nombre|liga|handle del producto para la foto|dato"
         },
         {
           "type": "product_list",
