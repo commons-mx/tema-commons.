@@ -277,7 +277,7 @@
             "style": "bot",
             "image": "shopify://shop_images/commons-cordyceps_600x_9e26e211-055f-4ed1-a864-9ec4b4baa677.jpg",
             "title": "El origen.",
-            "text": "Plantas, raíces y hongos funcionales en extractos estandarizados, con el activo declarado.",
+            "text": "Plantas, raíces y hongos funcionales en extractos estandarizados. Y en Rituals, mieles, chocolates y blends para tu día.",
             "button_label": "Explorar Botanicals",
             "button_link": "/pages/botanicals",
             "sig": "",
@@ -297,30 +297,15 @@
             "button_link": "/pages/science",
             "sig": "2 fórmulas · 1 en camino"
           }
-        },
-        "b3": {
-          "type": "universe",
-          "settings": {
-            "label": "Commons Rituals",
-            "badge": "",
-            "style": "rit",
-            "image": "shopify://shop_images/IMG-2112.png",
-            "title": "Lo cotidiano, con intención.",
-            "text": "Mieles, chocolates y blends con adaptógenos para tus momentos del día.",
-            "button_label": "Explorar Rituals",
-            "button_link": "/collections/mieles-adaptogenicas-y-funcionales",
-            "sig": ""
-          }
         }
       },
       "block_order": [
         "b1",
-        "b2",
-        "b3"
+        "b2"
       ],
       "settings": {
         "heading": "Nuestras líneas.",
-        "intro": "Tres formas de acompañarte: el origen, la dosis estudiada y el ritual diario."
+        "intro": "El origen y la dosis estudiada. La ciencia no reemplaza el origen, lo acompaña."
       }
     },
     "cm_nature": {
