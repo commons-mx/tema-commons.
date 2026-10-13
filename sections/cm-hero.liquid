@@ -4,7 +4,7 @@
 <div class="cm4" id="cm-hero-{{ section.id }}">
 <section class="hero" aria-label="Destacado">
   {%- for block in slides -%}
-    {%- capture fb -%}cm-hero-{{ forloop.index }}.jpg{%- endcapture -%}
+    {%- capture fb -%}{{ block.settings.asset | default: 'cm-hero-' | append: '' }}{%- if block.settings.asset == blank -%}{{ forloop.index }}.jpg{%- endif -%}{%- endcapture -%}
     <div class="cm-slide-bg{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}">
       {%- if block.settings.image != blank -%}
         {{ block.settings.image | image_url: width: 2400 | image_tag: class: 'hbg', sizes: '100vw', loading: 'eager', alt: block.settings.heading }}
@@ -17,7 +17,7 @@
   <div class="hgrid">
     <div class="hleft">
       <div class="hcopy">
-        {%- if section.settings.eyebrow != blank -%}<span class="hfirst">{{ section.settings.eyebrow }}</span>{%- endif -%}
+        {%- if section.settings.rating != blank -%}<span class="hrate"><span class="hstars" aria-hidden="true">★★★★★</span>{{ section.settings.rating }}</span>{%- endif -%}{%- if section.settings.eyebrow != blank -%}<span class="hfirst">{{ section.settings.eyebrow }}</span>{%- endif -%}
         {%- for block in slides -%}
         <div class="cm-slide{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
           <div class="tags">
@@ -29,7 +29,7 @@
           {%- if block.settings.text != blank -%}<p class="sub{% if section.settings.text_mobile %} hdesc{% else %} hide-m{% endif %}">{{ block.settings.text }}</p>{%- endif -%}
           <div class="ctas">
             {%- if block.settings.button_label != blank -%}<a class="btn" href="{{ block.settings.button_link | default: '#' }}"><span>{{ block.settings.button_label }}</span><span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>{%- endif -%}
-            {%- if block.settings.button2_label != blank -%}<a class="sq light hide-m" href="{{ block.settings.button2_link | default: '#' }}">{{ block.settings.button2_label }}</a>{%- endif -%}
+            {%- if block.settings.button2_label != blank -%}<a class="hlink" href="{{ block.settings.button2_link | default: '#' }}">{{ block.settings.button2_label }}</a>{%- endif -%}
           </div>
         </div>
         {%- endfor -%}
@@ -76,6 +76,12 @@
   "settings": [
     {
       "type": "text",
+      "id": "rating",
+      "label": "Estrellas · texto",
+      "info": "Ej. 4.91 · +1,500 reseñas. Vacío = sin estrellas"
+    },
+    {
+      "type": "text",
       "id": "eyebrow",
       "label": "Línea de arriba",
       "default": "Pioneros de los adaptógenos en México · desde 2019"
@@ -106,6 +112,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Foto de fondo"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Foto del tema (si no subes una)",
+          "info": "Ej. cm-hero-2.jpg"
         },
         {
           "type": "text",

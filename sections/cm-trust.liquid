@@ -1,0 +1,56 @@
+<div class="cm4">
+<section class="trust" aria-label="{{ section.settings.label | escape }}">
+  {%- if section.settings.label != blank -%}<span class="lab tlab">{{ section.settings.label }}</span>{%- endif -%}
+  <div class="trow">
+    {%- for block in section.blocks -%}
+    <span class="ti" {{ block.shopify_attributes }}>{%- if block.settings.logo != blank -%}{{ block.settings.logo | image_url: height: 96 | image_tag: alt: block.settings.name, loading: 'lazy', class: 'tlogo' }}{%- else -%}{{ block.settings.name }}{%- endif -%}</span>
+    {%- endfor -%}
+  </div>
+  {%- if section.settings.facts != blank -%}<div class="tfacts">{%- assign ff = section.settings.facts | newline_to_br | split: '<br />' -%}{%- for f in ff -%}{%- assign x = f | strip -%}{%- if x != '' -%}<span>{{ x }}</span>{%- endif -%}{%- endfor -%}</div>{%- endif -%}
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Confianza",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Rótulo",
+      "default": "También nos encuentras en"
+    },
+    {
+      "type": "textarea",
+      "id": "facts",
+      "label": "Datos (uno por línea)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "Tienda",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo (PNG transparente)",
+          "info": "Se muestra en tinta"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Confianza"
+    }
+  ]
+}
+{% endschema %}

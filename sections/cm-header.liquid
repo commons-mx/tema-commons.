@@ -14,7 +14,7 @@
 </style>
 <div class="cm4 cm-hdr" x-data="{ open: null, mob: false, mp: null }" @keydown.escape.window="open = null; mob = false" @mouseleave="open = null">
   {%- if section.settings.ann_text != blank -%}
-  <div class="ann">{{ section.settings.ann_text }}{%- if section.settings.ann_more != blank -%}<span class="hide-m"> · {{ section.settings.ann_more }}{%- if section.settings.ann_link_label != blank %} <a href="{{ section.settings.ann_link | default: '#' }}" style="color: #141A16">{{ section.settings.ann_link_label }}</a>{%- endif -%}</span>{%- endif -%}</div>
+  <div class="ann">{%- if section.settings.ann_link != blank -%}<a href="{{ section.settings.ann_link }}" style="color: inherit; text-decoration: none">{{ section.settings.ann_text }} <span aria-hidden="true">→</span></a>{%- else -%}{{ section.settings.ann_text }}{%- endif -%}{%- if section.settings.ann_more != blank -%}<span class="hide-m"> · {{ section.settings.ann_more }}{%- if section.settings.ann_link_label != blank %} <a href="{{ section.settings.ann_link | default: '#' }}" style="color: #141A16">{{ section.settings.ann_link_label }}</a>{%- endif -%}</span>{%- endif -%}</div>
   {%- endif -%}
   <header class="hdr">
     <div class="wrap">

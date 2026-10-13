@@ -12,47 +12,32 @@
     "cm_hero": {
       "type": "cm-hero",
       "blocks": {
-        "b1": {
+        "b0": {
           "type": "slide",
           "settings": {
-            "tab_label": "Science · nuestra línea nueva",
-            "badge": "Nuevo",
-            "badge_style": "sci",
-            "tag": "Affron® · 28 mg",
-            "tag2": "",
-            "heading": "Azafrán. La dosis que se estudió.",
-            "text": "Extracto de azafrán Affron® con 28 mg por cápsula, estudiado por su relación con el estado de ánimo y el descanso.",
-            "button_label": "Compra Azafrán · $950",
-            "button_link": "/products/azafran-1",
-            "button2_label": "Ver evidencia",
-            "button2_link": "/pages/nuestra-ciencia"
-          }
-        },
-        "b2": {
-          "type": "slide",
-          "settings": {
-            "tab_label": "Botanicals · los más queridos",
-            "badge": "Botanicals",
+            "asset": "cm-hero-2.jpg",
+            "tab_label": "Commons",
+            "badge": "",
             "badge_style": "bot",
-            "tag": "Los más queridos",
+            "tag": "",
             "tag2": "",
-            "heading": "Los adaptógenos más queridos de México.",
-            "text": "Extractos concentrados de plantas, raíces y hongos para acompañar tu bienestar diario.",
-            "button_label": "Ver Botanicals",
-            "button_link": "/collections/mejores-adaptogenos-naturales",
-            "button2_label": "Haz el quiz",
-            "button2_link": "/pages/quiz-commons"
+            "heading": "Adaptógenos con la dosis a la vista.",
+            "text": "Extractos estandarizados de hongos, raíces y plantas. Y ahora Science, con ingredientes de patente.",
+            "button_label": "Encuentra tu Commons",
+            "button_link": "/pages/quiz-commons",
+            "button2_label": "Ver los más queridos",
+            "button2_link": "/collections/mejores-adaptogenos-naturales"
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2"
+        "b0"
       ],
       "settings": {
-        "eyebrow": "Pioneros de los adaptógenos en México · desde 2019",
+        "eyebrow": "",
         "text_mobile": true,
-        "autoplay": 0
+        "autoplay": 0,
+        "rating": "4.91 · +1,500 reseñas"
       }
     },
     "cm_needs": {
@@ -200,7 +185,8 @@
         "caption": "minutos",
         "caption_n": "3",
         "compact": true
-      }
+      },
+      "disabled": true
     },
     "cm_products": {
       "type": "cm-products",
@@ -316,7 +302,8 @@
         "caption": "In common with nature",
         "image2": "shopify://shop_images/IMG_1835.jpg",
         "height": 720
-      }
+      },
+      "disabled": true
     },
     "buy_your_own_bundle_pTbqYm": {
       "type": "buy-your-own-bundle",
@@ -686,7 +673,8 @@
         "text": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas.",
         "button_label": "Ver la evidencia",
         "button_link": "/products/azafran-1"
-      }
+      },
+      "disabled": true
     },
     "cm_reviews": {
       "type": "cm-reviews",
@@ -745,7 +733,8 @@
         "blog": "noticias",
         "button_label": "Más artículos en nuestro blog",
         "button_link": "/blogs/noticias"
-      }
+      },
+      "disabled": true
     },
     "cm_faq": {
       "type": "cm-faq",
@@ -798,20 +787,67 @@
         "button_label": "Escríbenos por WhatsApp",
         "button_link": "https://wa.me/525564299433"
       }
+    },
+    "cm_trust": {
+      "type": "cm-trust",
+      "blocks": {
+        "s1": {
+          "type": "store",
+          "settings": {
+            "name": "HEB"
+          }
+        },
+        "s2": {
+          "type": "store",
+          "settings": {
+            "name": "Liverpool"
+          }
+        },
+        "s3": {
+          "type": "store",
+          "settings": {
+            "name": "Sanborns"
+          }
+        },
+        "s4": {
+          "type": "store",
+          "settings": {
+            "name": "San Pablo"
+          }
+        },
+        "s5": {
+          "type": "store",
+          "settings": {
+            "name": "La Comer"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "label": "También nos encuentras en",
+        "facts": "Pioneros de los adaptógenos en México desde 2019\nRecomendado por +110 especialistas\nEnvío gratis desde $990"
+      }
     }
   },
   "order": [
     "cm_hero",
+    "cm_trust",
     "cm_needs",
-    "cm_quiz",
     "cm_products",
     "cm_universes",
-    "cm_nature",
-    "buy_your_own_bundle_pTbqYm",
     "cm_standards",
-    "cm_strip",
     "cm_reviews",
-    "cm_journal",
-    "cm_faq"
+    "buy_your_own_bundle_pTbqYm",
+    "cm_faq",
+    "cm_quiz",
+    "cm_nature",
+    "cm_strip",
+    "cm_journal"
   ]
 }

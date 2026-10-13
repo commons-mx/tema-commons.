@@ -1810,9 +1810,12 @@
     "cm_header": {
       "type": "cm-header",
       "settings": {
-        "ann_link": "/#protocolo",
+        "ann_link": "/products/azafran-1",
         "quiz_link": "/pages/quiz-commons",
-        "mobile_footer": "cm-commons"
+        "mobile_footer": "cm-commons",
+        "ann_text": "Nuevo · Azafrán, nuestra primera fórmula Science",
+        "ann_more": "",
+        "ann_link_label": ""
       },
       "blocks": {
         "b1": {

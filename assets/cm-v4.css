@@ -755,3 +755,25 @@ html,body{background:#F7F7F4 !important}
   .cm4 .umark{padding:0 20px;min-height:52px}
   .cm4 .utx{padding:20px 20px 28px}
 }
+
+/* 13 oct · hero con estrellas, franja de confianza */
+.cm4 .hrate{display:inline-flex;align-items:center;gap:10px;font-family:var(--fb);font-size:14px;font-weight:500;color:#fff}
+.cm4 .hstars{letter-spacing:2px;color:var(--lime);font-size:15px}
+.cm4 .hlink{color:#fff;font-family:var(--fb);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:underline;text-underline-offset:5px;align-self:center}
+.cm4 .hcopy .ctas{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.cm4 .trust{display:flex;flex-direction:column;align-items:center;gap:16px;padding:28px 40px;border-bottom:1px solid var(--rule);text-align:center}
+.cm4 .tlab{color:var(--ink2)}
+.cm4 .trow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 36px}
+.cm4 .ti{font-family:var(--fd);font-size:22px;letter-spacing:-.01em;line-height:1.2;color:var(--ink)}
+.cm4 .tlogo{height:28px;width:auto;filter:grayscale(1) brightness(.2)}
+.cm4 .tfacts{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 24px;font-size:13px;color:var(--ink2)}
+.cm4 .tfacts span{display:inline-flex;align-items:center;gap:8px}
+.cm4 .tfacts span:before{content:"";width:6px;height:6px;border-radius:99px;background:var(--ink)}
+@container cm4 (max-width: 760px){
+  .cm4 .trust{padding:22px 20px;gap:12px}
+  .cm4 .trow{gap:6px 20px}
+  .cm4 .ti{font-size:18px}
+  .cm4 .tlogo{height:22px}
+  .cm4 .tfacts{flex-direction:column;align-items:center;gap:6px}
+  .cm4 .hcopy .ctas{flex-direction:column;align-items:flex-start;gap:16px}
+}
