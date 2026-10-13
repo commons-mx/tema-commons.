@@ -9,18 +9,18 @@
         "sci": "Eleutherococcus senticosus · raíz",
         "needs": "Energía",
         "claim": "Extracto estandarizado de la planta, con el activo declarado en la etiqueta. Medio gramo por porción.",
-        "ten": "Para: Energía\nParte: Raíz\nEstandarizado: 0.8% eleuterósidos\nMomento: Solo en la mañana, antes de las 11\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
+        "ten": "Para: Energía\nParte: Raíz\nEstandarizado: 0.8% eleuterósidos\nMomento: Solo en la mañana, antes de las 12\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
         "opt_hints": "Cápsulas 120|120 de 500 mg · alrededor de 2 meses\nPolvo 100g|Extracto en polvo · rinde más, desde $4.95 por porción\nCarry On 50g|Para llevar · va a precio completo",
         "show_volume": true,
         "forr": "Energía\nResistencia",
-        "big": "0.5 g",
-        "big_text": "de extracto estandarizado por porción (0.8% eleuterósidos).",
+        "big": "4 mg",
+        "big_text": "de eleuterósidos en cada cápsula de 500 mg (extracto al 0.8%).",
         "tab": "Extracto de Eleuthero|500 mg por cápsula\nEstandarizado|0.8% eleuterósidos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|0.8% eleuterósidos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|1 cápsula o ½ scoop|Empieza bajo. Puedes subir a 2 cápsulas o 1 scoop.\nCuándo|Solo en la mañana, antes de las 11|Todos los días.\nRitmo|6 días y 1 de descanso|Dale constancia: mínimo 8 a 10 semanas.",
-        "weeks": "Semana 1|Empieza con la dosis mínima.\nSemana 4|Si te sientes bien, puedes subir.\nSemana 8|Dale constancia; ahí se nota.\nMes 3|Evalúa cómo vas.",
-        "prec": "No en embarazo, lactancia ni menores de 18.\nSi tomas medicamentos o tienes una condición médica, consulta a tu médico antes.\nTómalo antes de las 11 o 12: puede quitarte el sueño.\nHaz una pausa cada 2 meses.",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Solo en la mañana|Tómalo en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 2 meses y 1 mes de descanso.",
+        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar alrededor de 1 mes.\nCiclo|2 meses y 1 mes de descanso.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes la presión alta. [validar con Fer]\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
         "comps": [
           "melena-de-leon-capsulas-organicas",
           "master-blend-160-capsulas",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>Empieza con 1 cápsula o ½ scoop al día; puedes subir a 2 cápsulas o 1 scoop. 6 días de toma y 1 de descanso. Momento: solo en la mañana, antes de las 11.</p>"
+            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 2 meses y 1 mes de descanso. Momento: solo en la mañana.</p>"
           }
         },
         "acc2": {
@@ -55,7 +55,7 @@
           "type": "acc",
           "settings": {
             "title": "Precauciones",
-            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tomas medicamentos o tienes una condición médica, consulta a tu médico antes.</li><li>Tómalo antes de las 11 o 12: puede quitarte el sueño.</li><li>Haz una pausa cada 2 meses.</li></ul>"
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tienes la presión alta. [validar con Fer]</li><li>Consulta a tu médico antes si tomas anticoagulantes.</li><li>Consulta a tu médico antes si tomas medicamentos para la diabetes.</li></ul>"
           }
         },
         "nut": {
@@ -63,6 +63,13 @@
           "settings": {
             "title": "Tabla nutrimental",
             "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+          }
+        },
+        "glos": {
+          "type": "acc",
+          "settings": {
+            "title": "Conoce la planta",
+            "text": "<p>De dónde viene, su tradición, lo que hay dentro y las referencias, en el glosario.</p><p><a href=\"/pages/eleuthero-ficha-tecnica\">Ver la ficha de Eleuthero →</a></p>"
           }
         },
         "faq1": {
@@ -100,6 +107,7 @@
         "acc2",
         "acc3",
         "nut",
+        "glos",
         "faq1",
         "faq2",
         "faq3",

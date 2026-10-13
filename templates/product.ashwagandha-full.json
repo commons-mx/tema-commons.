@@ -75,6 +75,13 @@
             "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
           }
         },
+        "glos": {
+          "type": "acc",
+          "settings": {
+            "title": "Conoce la planta",
+            "text": "<p>De dónde viene, su tradición, lo que hay dentro y las referencias, en el glosario.</p><p><a href=\"/pages/ashwagandha-ficha-tecnica\">Ver la ficha de Ashwagandha →</a></p>"
+          }
+        },
         "faq1": {
           "type": "faq",
           "settings": {
@@ -110,6 +117,7 @@
         "acc2",
         "acc3",
         "nut",
+        "glos",
         "faq1",
         "faq2",
         "faq3",
