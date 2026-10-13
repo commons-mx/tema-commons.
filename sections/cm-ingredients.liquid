@@ -1,0 +1,104 @@
+<div class="cm4">
+<section class="ingr" aria-labelledby="ing-{{ section.id }}">
+  <div class="ingh"><h2 id="ing-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2>{%- if section.settings.intro != blank -%}<p class="sub">{{ section.settings.intro }}</p>{%- endif -%}</div>
+  <div class="inglist">
+    {%- for block in section.blocks -%}
+    {%- assign d = '#CDBDF0' -%}{%- if block.settings.line == 'Science' -%}{%- assign d = '#DFF68F' -%}{%- elsif block.settings.line == 'Rituals' -%}{%- assign d = '#E8C77A' -%}{%- endif -%}
+    <a class="ingrow" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+      <span class="ingim">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', alt: block.settings.name }}{%- elsif block.settings.asset != blank -%}<img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.name | escape }}" loading="lazy" width="400" height="400">{%- endif -%}</span>
+      <span class="ingtx"><b>{{ block.settings.name }}</b><span class="ingmeta"><i style="background: {{ d }}"></i>{{ block.settings.line }}{% if block.settings.note != blank %} · {{ block.settings.note }}{% endif %}</span></span>
+    </a>
+    {%- endfor -%}
+  </div>
+  {%- if section.settings.link_label != blank -%}<a class="tlink ingmore" href="{{ section.settings.link | default: '#' }}">{{ section.settings.link_label }}</a>{%- endif -%}
+</section>
+</div>
+{% schema %}
+{
+  "name": "Commons · Ingredientes",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Lo que hay dentro."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Texto"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Liga (texto)"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Liga"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ing",
+      "name": "Ingrediente",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre"
+        },
+        {
+          "type": "select",
+          "id": "line",
+          "label": "Línea",
+          "options": [
+            {
+              "value": "Botanicals",
+              "label": "Botanicals"
+            },
+            {
+              "value": "Science",
+              "label": "Science"
+            },
+            {
+              "value": "Rituals",
+              "label": "Rituals"
+            }
+          ],
+          "default": "Botanicals"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Dato corto",
+          "info": "Ej. 25% betaglucanos"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto en crudo (textura)"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Foto del tema (si no subes una)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Liga"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Ingredientes"
+    }
+  ]
+}
+{% endschema %}

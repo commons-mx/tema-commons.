@@ -1,0 +1,23 @@
+<div class="cm4">
+<div class="mq" aria-label="{{ section.settings.items | escape }}"><div class="mqt">{%- for r in (1..2) -%}{%- assign it = section.settings.items | split: '·' -%}{%- for x in it -%}<span><i></i>{{ x | strip }}</span>{%- endfor -%}{%- endfor -%}</div></div>
+</div>
+{% schema %}
+{
+  "name": "Commons · Franja corrida",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "items",
+      "label": "Frases separadas por ·",
+      "default": "Extracto estandarizado · Cuerpo fructífero · Sin rellenos · Ingredientes de patente"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commons · Franja corrida"
+    }
+  ]
+}
+{% endschema %}

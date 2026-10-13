@@ -858,3 +858,34 @@ html,body{background:#F7F7F4 !important}
 @container cm4 (max-width: 760px){
   .cm4 .hero .cm-slide-bg.dual{aspect-ratio:4/5}
 }
+
+/* 13 oct · Sistema 5.1: beige, tarjetas redondas para destacar, ingredientes en crudo, franja corrida */
+.cm4{--beige:#EFEBE3}
+.cm4 .ingr{background:var(--beige);padding:64px 40px;display:flex;flex-direction:column;gap:28px;border-bottom:1px solid var(--rule)}
+.cm4 .ingh{display:flex;flex-direction:column;gap:12px;max-width:640px}
+.cm4 .ingh .sub{margin:0;color:var(--ink2)}
+.cm4 .inglist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cm4 .ingrow{display:flex;align-items:center;gap:20px;padding:16px;background:#F7F6F2;border:1px solid #E2DED4;border-radius:16px;color:var(--ink);text-decoration:none;transition:border-color .2s}
+.cm4 .ingrow:hover{border-color:var(--ink)}
+.cm4 .ingim{flex:none;width:88px;height:88px;border-radius:12px;overflow:hidden;background:#E6E2D8}
+.cm4 .ingim img{width:100%;height:100%;object-fit:cover;display:block}
+.cm4 .ingtx{display:flex;flex-direction:column;gap:6px}
+.cm4 .ingtx b{font-family:var(--fb);font-weight:500;font-size:18px;line-height:1.2}
+.cm4 .ingmeta{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2)}
+.cm4 .ingmeta i{width:8px;height:8px;border-radius:99px;box-shadow:inset 0 0 0 1px rgba(20,26,22,.18)}
+.cm4 .ingmore{align-self:center}
+.cm4 .mq{overflow:hidden;border-bottom:1px solid var(--rule);background:var(--bg)}
+.cm4 .mqt{display:flex;width:max-content;animation:cmmq 32s linear infinite}
+.cm4 .mqt span{display:inline-flex;align-items:center;gap:14px;padding:18px 28px;font-family:var(--fd);font-size:20px;white-space:nowrap}
+.cm4 .mqt i{width:10px;height:10px;border-radius:99px;background:var(--lime)}
+@keyframes cmmq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.cm4 .mqt{animation:none}}
+.cm4 .cell.lila{background:var(--beige) !important}
+@container cm4 (max-width: 760px){
+  .cm4 .ingr{padding:40px 20px;gap:20px}
+  .cm4 .inglist{grid-template-columns:minmax(0,1fr);gap:10px}
+  .cm4 .ingrow{padding:14px;gap:16px}
+  .cm4 .ingim{width:76px;height:76px}
+  .cm4 .ingtx b{font-size:17px}
+  .cm4 .mqt span{font-size:17px;padding:14px 20px}
+}
