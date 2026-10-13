@@ -67,6 +67,7 @@
 <section class="sbcmp" aria-labelledby="sb">
 <div class="sbh"><span class="sec-n">¿Science o Botanicals?</span><h2 id="sb" class="disp h2">Dos formas de acompañarte.</h2><p class="small" style="margin:0;max-width:48ch">Se combinan: muchas personas toman un adaptógeno de Botanicals y una fórmula de Science.</p></div>
 <div class="sbt"><div class="sbr sbhd"><span></span><b><i style="background:#CDBDF0"></i>Botanicals</b><b><i style="background:#DFF68F"></i>Science</b></div><div class="sbr"><span>Qué es</span><p>Plantas, raíces y hongos completos, en extracto estandarizado.</p><p>Un ingrediente de patente, aislado y medido.</p></div><div class="sbr"><span>La evidencia</span><p>Siglos de uso tradicional y estudios del activo.</p><p>Estudios clínicos de ese mismo ingrediente.</p></div><div class="sbr"><span>La dosis</span><p>Empiezas bajo y ajustas, con descansos.</p><p>Fija: la que se usó en los estudios.</p></div><div class="sbr"><span>Elígelo si…</span><p>Buscas acompañar tu bienestar en general.</p><p>Buscas algo específico: ánimo o descanso.</p></div></div>
+<div class="sbm"><div class="sbmc"><b><i style="background:#CDBDF0"></i>Botanicals</b><div><span>Qué es</span><p>La planta o el hongo completo</p></div><div><span>Evidencia</span><p>Uso tradicional y estudios</p></div><div><span>Dosis</span><p>Empiezas bajo y ajustas</p></div><div><span>Para</span><p>Tu bienestar en general</p></div></div><div class="sbmc"><b><i style="background:#DFF68F"></i>Science</b><div><span>Qué es</span><p>Un ingrediente de patente</p></div><div><span>Evidencia</span><p>Estudios clínicos</p></div><div><span>Dosis</span><p>Fija, la de los estudios</p></div><div><span>Para</span><p>Algo específico: ánimo o descanso</p></div></div></div>
 <a class="tlink" href="/pages/botanicals" style="align-self:flex-start">Conoce Botanicals</a>
 </section>
 <section class="scomb" aria-labelledby="cb"><div><span class="sec-n">Combínalo</span><h2 id="cb" class="disp h3t">Science y Botanicals se toman juntos.</h2><p class="small" style="margin:0">Por ejemplo: Azafrán en la mañana y Reishi en la noche.</p></div><div class="scbr"><div class="dchips"><span><b>−10%</b>2 productos</span><span><b>−15%</b>3 o 4</span><span class="top"><b>−20%</b>5 o más</span></div><a class="tlink" href="/#protocolo">Arma tu protocolo</a></div></section>
@@ -90,6 +91,12 @@ root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('cli
 </script>
 {%- comment -%} prueba · science-v6 {%- endcomment -%}
 <style>
+#cmpg-{{ section.id }} .sbm{display:none}
+@media (max-width:760px){#cmpg-{{ section.id }} .sbt{display:none}#cmpg-{{ section.id }} .sbm{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#cmpg-{{ section.id }} .sbmc{background:#F7F6F2;border:1px solid #DDD8CC;padding:14px 12px;display:flex;flex-direction:column;gap:10px}
+#cmpg-{{ section.id }} .sbmc b{font-weight:500;font-size:16px;display:flex;align-items:center;gap:8px}#cmpg-{{ section.id }} .sbmc b i{width:10px;height:10px;border-radius:99px;display:inline-block}
+#cmpg-{{ section.id }} .sbmc span{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+#cmpg-{{ section.id }} .sbmc p{margin:2px 0 0;font-size:14px;line-height:1.35}}
 #cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:48px 24px 64px}
 @media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:250px !important}#cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:36px 32px 52px}}
 @media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:0 !important;aspect-ratio:16/9}#cmpg-{{ section.id }} .shero .si img{padding:20px 28px 44px !important}}
