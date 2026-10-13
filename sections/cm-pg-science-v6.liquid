@@ -13,7 +13,7 @@
 <p class="sub" style="max-width: 40ch">Ingredientes de patente, en la dosis que se usó en los estudios clínicos. Para cuando buscas algo específico: ánimo, descanso y, muy pronto, glucosa.</p>
 <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center"><a class="btn dark" href="#formulas">Ver las fórmulas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="sq" href="#evidencia">Cómo lo sabemos</a></div>
 </div>
-<div class="si wh"><div class="ffr"></div><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-capsula-azafran.jpg' | asset_url }}{%- endif -%}" loading="eager" alt="Cápsula de Azafrán Commons Science" style="padding:48px 24px 64px"><span class="fcap"><span>Crocus sativus L.</span><span>Affron® · 28 mg</span></span></div>
+<div class="si wh"><div class="ffr"></div><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-capsula-azafran-h.jpg' | asset_url }}"><picture><source media="(max-width:760px)" srcset="{{ 'cm-sci-capsula-azafran-h.jpg' | asset_url }}"><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-capsula-azafran.jpg' | asset_url }}{%- endif -%}" loading="eager" alt="Cápsula de Azafrán Commons Science" class="hcap"></picture></picture><span class="fcap"><span>Crocus sativus L.</span><span>Affron® · 28 mg</span></span></div>
 </section>
 
 
@@ -90,6 +90,9 @@ root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('cli
 </script>
 {%- comment -%} prueba · science-v6 {%- endcomment -%}
 <style>
+#cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:48px 24px 64px}
+@media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:250px !important}#cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:36px 32px 52px}}
+@media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:0 !important;aspect-ratio:16/9}#cmpg-{{ section.id }} .shero .si img{padding:20px 28px 44px !important}}
 #cmpg-{{ section.id }} .natb{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 #cmpg-{{ section.id }} .natb picture,#cmpg-{{ section.id }} .natb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 #cmpg-{{ section.id }} .natb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,24,10,.55),rgba(18,24,10,0) 55%)}
