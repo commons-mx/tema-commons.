@@ -12,19 +12,19 @@
 <h1 id="ph" class="disp h1">Bacopa</h1>
 <span class="pl-lat">Bacopa monnieri · también conocido como Brahmi</span>
 <p class="sub">En el Ayurveda se llama brahmi, por Brahma, el dios de la creación. En Commons va junto con Ginkgo en una sola cápsula.</p>
-{%- if rp.id -%}<div class="pl-buy"><div class="pi"><img src="{{ 'cm-ginkgo-bacopa.jpg' | asset_url }}" loading="lazy" alt="{{ rp.title | escape }}"></div><div><b>Commons Bacopa</b><span>50% bacósidos [confirmar] · cápsulas, con ginkgo · desde {{ rp.price_min | money_without_trailing_zeros }}</span></div><a class="pl-add" href="#s4" style="display:inline-flex;align-items:center;text-decoration:none">Comprar</a></div>{%- endif -%}
+{%- if rp.id -%}<div class="pl-buy"><div class="pi"><img src="{{ 'cm-ginkgo-bacopa.jpg' | asset_url }}" loading="lazy" alt="{{ rp.title | escape }}"></div><div><b>Commons Bacopa</b><span>50% bacósidos [confirmar] · cápsulas, con ginkgo · desde {{ rp.price_min | money_without_trailing_zeros }}</span></div><a class="pl-btn" href="#s4">Comprar<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>{%- endif -%}
 </div>
 </section>
 <nav class="pl-toc" aria-label="En esta página"><a href="#sd">Para qué se toma</a><a href="#s1">Lo que hay dentro</a><a href="#s3">Cómo se toma</a><a href="#s4">Comprar</a><a href="#s5">Antes de tomarlo</a></nav>
 
 <section id="s0" aria-label="En 10 segundos">
-<div class="pl-facts">
-<div><span class="lab">Parte que usamos</span><b>Planta entera</b></div>
-<div><span class="lab">Tradición</span><b>Ayurveda</b></div>
-<div><span class="lab">De dónde viene</span><b>India y Sri Lanka</b></div>
-<div><span class="lab">Momento</span><b>Con la comida</b></div>
-<div><span class="lab">Nuestro extracto</span><b>50% bacósidos [confirmar]</b></div>
-<div><span class="lab">Formatos</span><b>Cápsulas, con Ginkgo</b></div>
+<div class="pl-spec">
+<div class="r2"><span>Parte que usamos</span><span>Planta entera</span></div>
+<div class="r2"><span>Tradición</span><span>Ayurveda</span></div>
+<div class="r2"><span>De dónde viene</span><span>India y Sri Lanka</span></div>
+<div class="r2"><span>Momento</span><span>Con la comida</span></div>
+<div class="r2"><span>Nuestro extracto</span><span>50% bacósidos [confirmar]</span></div>
+<div class="r2"><span>Formatos</span><span>Cápsulas, con Ginkgo</span></div>
 </div>
 </section>
 
@@ -37,9 +37,9 @@
 <section id="s3" aria-labelledby="ct">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Cómo se toma</span><h2 id="ct" class="disp h2">Poco, todos los días y con constancia.</h2></div></div>
 <div class="pl-steps">
-<div><span class="n num">1</span><b>1 cápsula al día</b><p>Empieza con la mitad la primera semana y luego sube a la porción completa.</p></div>
-<div><span class="n num">2</span><b>6 días a la semana</b><p>Descansa 1 día, el que tú elijas. Ciclo: 3 meses y una pausa de 2 semanas.</p></div>
-<div><span class="n num">3</span><b>Con tus comidas</b><p>Con grasa se aprovecha mejor. No subas la dosis.</p></div>
+<div><span class="lab">Cuánto</span><b>1 cápsula al día</b><p>Empieza con la mitad la primera semana y luego sube a la porción completa.</p></div>
+<div><span class="lab">Ritmo</span><b>6 días a la semana</b><p>Descansa 1 día, el que tú elijas. Ciclo: 3 meses y una pausa de 2 semanas.</p></div>
+<div><span class="lab">Cuándo</span><b>Con tus comidas</b><p>Con grasa se aprovecha mejor. No subas la dosis.</p></div>
 </div>
 </section>
 
@@ -55,11 +55,11 @@
 <span class="lab" style="margin-top: 8px">Elige tu presentación</span>
 <div class="pl-fmts" role="radiogroup" aria-label="Presentación">{%- for v in rp.variants -%}<button type="button" class="{% if forloop.first %}on{% endif %}" role="radio" data-v="{{ v.id }}" data-p="{{ v.price | money_without_trailing_zeros }}" data-t="{{ v.title | escape }}"{% unless v.available %} disabled{% endunless %}><b>{{ v.title }}</b><span>{{ v.price | money_without_trailing_zeros }}</span></button>{%- endfor -%}</div>
 <span class="small" data-fd>{{ rp.selected_or_first_available_variant.title }}</span>
-<div class="row"><span class="num pl-price" data-fp>{{ rp.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span><button type="button" class="pl-add" data-add data-v="{{ rp.selected_or_first_available_variant.id }}">Agregar al carrito</button></div>
+<div class="row"><span class="num pl-price" data-fp>{{ rp.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span><button type="button" class="pl-add pl-btn" data-add data-v="{{ rp.selected_or_first_available_variant.id }}">Agregar al carrito</button></div>
 <a class="tlink" href="{{ rp.url }}" style="align-self:flex-start">Ver la ficha completa</a>
 </div>
 </div>
-<p class="pl-note">Llevando 2 frascos ahorras 10%; con 3 o más, 15%. <a class="tlink" href="/#protocolo">Arma tu protocolo</a></p>
+<p class="pl-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Llevando 2 frascos ahorras 10%; con 3 o más, 15%. <a class="tlink" href="/#protocolo">Arma tu protocolo</a></p>
 </section>
 {%- endif -%}
 
