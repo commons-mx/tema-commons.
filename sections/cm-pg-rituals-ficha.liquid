@@ -20,19 +20,19 @@
 </div>
 </section>
 
-<section class="rt-sec" aria-label="Para qué">
+<section class="rt-sec rf-para" aria-label="Para qué">
 <div class="rt-hd"><div><h2 class="sy-t-2">Formulada para acompañar.</h2><p>Lleva alrededor de un gramo de mezcla de plantas por porción [confirmar con ficha técnica]. Acompaña tu noche; tu dosis está en tu protocolo.</p></div></div>
 <div class="rt-rows"><div class="r"><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 23 C12 32 36 32 41 23"></path><line x1="11.5" y1="28.5" x2="8.5" y2="32.5"></line><line x1="17.5" y1="31" x2="16" y2="35.8"></line><line x1="24" y1="31.8" x2="24" y2="36.8"></line><line x1="30.5" y1="31" x2="32" y2="35.8"></line><line x1="36.5" y1="28.5" x2="39.5" y2="32.5"></line><path d="M30 8 H37 L30 16 H37"></path></g></svg></span><span class="t">Sueño</span><span class="sy-t-3">Descanso</span><span class="d">Reishi, pasiflora y lavanda, plantas que tradicionalmente acompañan la noche.</span></div><div class="r"><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 C12 10 16 10 20 16 C24 22 28 22 32 16 C36 10 40 10 40 13"></path><path d="M8 25 C12 21.5 16 21.5 20 25 C24 28.5 28 28.5 32 25 C36 21.5 40 21.5 40 23.5"></path><line x1="8" y1="34" x2="40" y2="34"></line></g></svg></span><span class="t">Estrés</span><span class="sy-t-3">Calma</span><span class="d">Ashwagandha, tulsi, manzanilla y toronjil para bajar el ritmo antes de dormir.</span></div></div>
-<div class="rf-tags"><span class="sy-cap" style="margin: 0">Qué lleva</span><div style="display: flex; gap: 8px; flex-wrap: wrap"><span class="sy-tag">Miel [origen]</span><span class="sy-tag">Ashwagandha</span><span class="sy-tag">Reishi</span><span class="sy-tag">Tulsi</span><span class="sy-tag">Manzanilla</span><span class="sy-tag">Toronjil</span><span class="sy-tag">Lavanda</span><span class="sy-tag">Pasiflora</span></div></div>
+<details class="rf-acc"><summary><span>Qué lleva</span><span class="pm" aria-hidden="true"></span></summary><div class="rf-tagl"><span class="sy-tag">Miel [origen]</span><span class="sy-tag">Ashwagandha</span><span class="sy-tag">Reishi</span><span class="sy-tag">Tulsi</span><span class="sy-tag">Manzanilla</span><span class="sy-tag">Toronjil</span><span class="sy-tag">Lavanda</span><span class="sy-tag">Pasiflora</span></div></details>
 </section>
 
-<section class="rt-sec" aria-label="Cómo se disfruta">
+<section class="rt-sec rf-como" aria-label="Cómo se disfruta">
 <div class="rt-hd"><div><h2 class="sy-t-2">Cómo se disfruta.</h2></div></div>
-<div class="rt-steps">
+<div class="rf-cbody"><div class="rf-cimg"><img src="{{ 'cm-miel-rituals.jpg' | asset_url }}" alt="Miel Commons con una taza de té" loading="lazy" width="1200" height="900"></div><div class="rt-steps">
 <div><span class="sy-lbl">01</span><b class="sy-t-3">Prepara tu té</b><p>Una infusión tibia, sin cafeína: manzanilla, lavanda o la que te guste.</p></div>
 <div><span class="sy-lbl">02</span><b class="sy-t-3">Una cucharadita</b><p>Agrégala cuando el té ya no esté hirviendo. También va directo o en tu yogurt.</p></div>
 <div><span class="sy-lbl">03</span><b class="sy-t-3">Tu momento</b><p>Media hora antes de dormir, lejos de pantallas. Que se vuelva tu ritual de noche.</p></div>
-</div>
+</div></div>
 </section>
 
 <section class="rt-sec" aria-label="Preguntas">
@@ -59,6 +59,32 @@ var f = root.querySelector('.rf-act'); if (f){ var q = f.querySelector('[data-qt
   q.addEventListener('change', upd); }
 })();
 </script>
+<style>
+#cmpg-{{ section.id }} .rf-para{background:#F4F3B2}
+#cmpg-{{ section.id }} .rf-acc{border-top:1px solid var(--rule);padding:0 40px}
+#cmpg-{{ section.id }} .rf-acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:56px;font-family:var(--fl);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+#cmpg-{{ section.id }} .rf-acc summary::-webkit-details-marker{display:none}
+#cmpg-{{ section.id }} .rf-acc .pm::before{content:"+";font-size:18px;font-weight:400}
+#cmpg-{{ section.id }} .rf-acc[open] .pm::before{content:"\2212"}
+#cmpg-{{ section.id }} .rf-acc .rf-tagl{display:flex;gap:8px;flex-wrap:wrap;padding:0 0 22px}
+#cmpg-{{ section.id }} .rf-acc .rf-tagl .sy-tag{background:#F7F7F4}
+#cmpg-{{ section.id }} .rf-cbody{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-top:1px solid var(--rule)}
+#cmpg-{{ section.id }} .rf-cimg{position:relative;min-height:360px;border-right:1px solid var(--rule);overflow:hidden;background:#EFEFEA}
+#cmpg-{{ section.id }} .rf-cimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#cmpg-{{ section.id }} .rf-como .rt-steps{grid-template-columns:minmax(0,1fr)}
+#cmpg-{{ section.id }} .rf-como .rt-steps > div{border-right:0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:16px;align-items:start}
+#cmpg-{{ section.id }} .rf-como .rt-steps > div:last-child{border-bottom:0}
+#cmpg-{{ section.id }} .rf-como .rt-steps .sy-lbl{grid-row:span 2;font-family:var(--fd);font-size:44px;line-height:1;letter-spacing:-.02em;color:var(--ink);font-weight:400}
+@media (max-width:760px){
+#cmpg-{{ section.id }} .rf-acc{padding:0 20px}
+#cmpg-{{ section.id }} .rf-cbody{grid-template-columns:minmax(0,1fr)}
+#cmpg-{{ section.id }} .rf-cimg{min-height:0;aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .rf-como .rt-steps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+#cmpg-{{ section.id }} .rf-como .rt-steps > div{flex:0 0 78%;scroll-snap-align:start;border-bottom:0;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;padding:22px 20px 26px}
+#cmpg-{{ section.id }} .rf-como .rt-steps > div:last-child{border-right:0}
+#cmpg-{{ section.id }} .rf-como .rt-steps .sy-lbl{font-size:36px}
+}
+</style>
 {% schema %}
 {
   "name": "Rituals · ficha v5",
