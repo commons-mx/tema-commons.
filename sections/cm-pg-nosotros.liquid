@@ -50,12 +50,12 @@
 <section aria-labelledby="lc">
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Lo que creemos</span><h2 id="lc" class="disp h2">Lo que nos mueve.</h2></div></div>
 <div class="ns-bel">
-<div><span class="rn">i</span><h3>Las plantas acompañan; el trabajo es tuyo.</h3><p>Ningún frasco sustituye el acto de observarte. Conocerte también es cuidarte.</p></div>
-<div><span class="rn">ii</span><h3>Sin autoconocimiento no hay sanación.</h3><p>Todo empieza por observar qué sientes, cuándo y por qué.</p></div>
-<div><span class="rn">iii</span><h3>La ciencia no reemplaza el origen, lo acompaña.</h3><p>Respetamos el conocimiento ancestral y buscamos entenderlo a través de la evidencia.</p></div>
-<div><span class="rn">iv</span><h3>Nadie debería tomar algo sin entenderlo.</h3><p>Queremos que sepas qué estás tomando, cuánto contiene y por qué lo elegimos.</p></div>
-<div><span class="rn">v</span><h3>La calidad no se negocia.</h3><p>Desde el origen y la extracción hasta la concentración de cada ingrediente. Cada detalle importa.</p></div>
-<div><span class="rn">vi</span><h3>Somos parte de algo mucho más grande.</h3><p>De la naturaleza, de sus ciclos y de los demás. No estamos separados de la naturaleza: somos naturaleza.</p></div>
+<details class="nsb" open><summary><span class="rn">i</span><h3>Las plantas acompañan; el trabajo es tuyo.</h3><span class="pm" aria-hidden="true"></span></summary><p>Ningún frasco sustituye el acto de observarte. Conocerte también es cuidarte.</p></details>
+<details class="nsb" open><summary><span class="rn">ii</span><h3>Sin autoconocimiento no hay sanación.</h3><span class="pm" aria-hidden="true"></span></summary><p>Todo empieza por observar qué sientes, cuándo y por qué.</p></details>
+<details class="nsb" open><summary><span class="rn">iii</span><h3>La ciencia no reemplaza el origen, lo acompaña.</h3><span class="pm" aria-hidden="true"></span></summary><p>Respetamos el conocimiento ancestral y buscamos entenderlo a través de la evidencia.</p></details>
+<details class="nsb" open><summary><span class="rn">iv</span><h3>Nadie debería tomar algo sin entenderlo.</h3><span class="pm" aria-hidden="true"></span></summary><p>Queremos que sepas qué estás tomando, cuánto contiene y por qué lo elegimos.</p></details>
+<details class="nsb" open><summary><span class="rn">v</span><h3>La calidad no se negocia.</h3><span class="pm" aria-hidden="true"></span></summary><p>Desde el origen y la extracción hasta la concentración de cada ingrediente. Cada detalle importa.</p></details>
+<details class="nsb" open><summary><span class="rn">vi</span><h3>Somos parte de algo mucho más grande.</h3><span class="pm" aria-hidden="true"></span></summary><p>De la naturaleza, de sus ciclos y de los demás. No estamos separados de la naturaleza: somos naturaleza.</p></details>
 </div>
 </section>
 
@@ -123,10 +123,35 @@
 <script>
 (function(){
 var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
-var s = root.querySelector('[data-essay]'), b = root.querySelector('[data-essay-btn]'); if (b) b.addEventListener('click', function(){ s.classList.toggle('open'); b.textContent = s.classList.contains('open') ? 'Leer menos' : 'Seguir leyendo'; });
+var s = root.querySelector('[data-essay]'), b = root.querySelector('[data-essay-btn]'); if (window.matchMedia('(max-width: 760px)').matches) { root.querySelectorAll('details.nsb').forEach(function(d){ d.open = false; }); }
+if (b) b.addEventListener('click', function(){ s.classList.toggle('open'); b.textContent = s.classList.contains('open') ? 'Leer menos' : 'Seguir leyendo'; });
 })();
 </script>
 {%- comment -%} v5 · nosotros {%- endcomment -%}
+<style>
+#cmpg-{{ section.id }} .ns-bel > details{padding:36px 40px 44px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .ns-bel > details:nth-child(3n){border-right:0}
+#cmpg-{{ section.id }} .ns-bel > details:nth-last-child(-n+3){border-bottom:0}
+#cmpg-{{ section.id }} .ns-bel summary{list-style:none;display:flex;flex-direction:column;gap:14px;pointer-events:none}
+#cmpg-{{ section.id }} .ns-bel summary::-webkit-details-marker{display:none}
+#cmpg-{{ section.id }} .ns-bel details > p{margin:14px 0 0}
+#cmpg-{{ section.id }} .ns-bel .pm{display:none}
+@media (max-width:760px){
+#cmpg-{{ section.id }} .ns-bel > details{padding:0 16px;border-right:0;border-bottom:1px solid var(--soft)}
+#cmpg-{{ section.id }} .ns-bel > details:nth-last-child(-n+3){border-bottom:1px solid var(--soft)}
+#cmpg-{{ section.id }} .ns-bel > details:last-child{border-bottom:0}
+#cmpg-{{ section.id }} .ns-bel summary{pointer-events:auto;cursor:pointer;display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;min-height:60px;padding:12px 0}
+#cmpg-{{ section.id }} .ns-bel summary h3{font-size:18px;line-height:1.25;margin:0;max-width:none}
+#cmpg-{{ section.id }} .ns-bel .pm{display:block;font-size:18px;line-height:1}
+#cmpg-{{ section.id }} .ns-bel .pm::before{content:"+"}
+#cmpg-{{ section.id }} .ns-bel details[open] .pm::before{content:"\2212"}
+#cmpg-{{ section.id }} .ns-bel details > p{margin:0 0 18px 38px;font-size:15px}
+#cmpg-{{ section.id }} .st-img{aspect-ratio:16/9 !important;max-height:220px;overflow:hidden}
+#cmpg-{{ section.id }} .st-img img{width:100%;height:100%;object-fit:cover}
+#cmpg-{{ section.id }} .pband.pb2 .pbi{aspect-ratio:1/1;max-height:200px;overflow:hidden}
+#cmpg-{{ section.id }} .pband.pb2 .pbi img{width:100%;height:100%;object-fit:cover}
+}
+</style>
 {% schema %}
 {
   "name": "Nosotros v5",
