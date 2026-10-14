@@ -800,6 +800,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .pl-wl:has(.pl-acc){gap:0}
 .cmpg .pl-wl:has(.pl-acc)>.small{margin-top:20px}
 /* apego al sistema v5 */
+.cmpg .pl-in > .cell:last-child{background:var(--lime)}
+.cmpg .pl-in > .cell:last-child .small{color:var(--ink)}
 .cmpg .pl-dm .dmt,.cmpg .pl-dm .dmm{background:transparent}
 .cmpg .pl-dm .dmt{border-right:1px solid var(--rule)}
 .cmpg .pl-dm h3{font-family:var(--fd);font-weight:400;font-size:20px;line-height:1.2;letter-spacing:-.01em}
