@@ -831,8 +831,8 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .pl-btn{display:inline-flex;align-items:center;gap:14px;min-height:48px;padding:0 6px 0 22px;border-radius:999px;border:0;background:var(--lime);color:var(--ink);font-family:var(--fb);font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap}
 .cmpg .pl-btn:hover{filter:brightness(.95);color:var(--ink)}
 .cmpg .pl-btn .arw{width:36px;height:36px;border-radius:999px;background:var(--ink);color:var(--lime);display:inline-flex;align-items:center;justify-content:center;flex:none}
-.cmpg .pl-add.pl-btn{padding:0 24px;min-height:52px}
-.cmpg .pl-add.pl-btn.on{background:var(--ink);color:#fff}
+.cmpg .pl-one .pl-add.pl-btn{padding:0 26px;min-height:52px;background:var(--lime);color:var(--ink);border:0}
+.cmpg .pl-one .pl-add.pl-btn.on{background:var(--ink);color:#fff}
 .cmpg .pl-fmts{grid-template-columns:1fr;gap:6px}
 .cmpg .pl-fmts button{flex-direction:row;justify-content:space-between;align-items:center;border:1px solid var(--soft);padding:12px 14px;font-size:14px}
 .cmpg .pl-fmts button.on{border:1.5px solid var(--ink)}
