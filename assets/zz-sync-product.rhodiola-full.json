@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "main": {
+      "type": "cm-product",
+      "settings": {
+        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "short_name": "Rhodiola",
+        "line_label": "Commons Botanicals",
+        "sci": "Rhodiola rosea · raíz",
+        "needs": "Energía",
+        "claim": "Extracto estandarizado de la planta, con el activo declarado en la etiqueta. Medio gramo por porción.",
+        "ten": "Para: Energía\nParte: Raíz\nEstandarizado: 3% rosavinas · 1% salidrosida\nMomento: Solo en la mañana, antes de las 12\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
+        "opt_hints": "Cápsulas 120|120 de 500 mg · alrededor de 2 meses\nPolvo 100g|Extracto en polvo · rinde más, desde $4.95 por porción\nCarry On 50g|Para llevar · va a precio completo",
+        "show_volume": true,
+        "forr": "Energía\nEnfoque",
+        "big": "15 mg",
+        "big_text": "de rosavinas y 5 mg de salidrosida en cada cápsula de 500 mg.",
+        "tab": "Extracto de Rhodiola|500 mg por cápsula\nEstandarizado|3% rosavinas · 1% salidrosida\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
+        "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|3% rosavinas · 1% salidrosida|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
+        "tab_note": "[Validar ficha técnica con Fer]",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Solo en la mañana|Tómala en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
+        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 2 a 4 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tomas antidepresivos.\nConsulta a tu médico antes si eres sensible a la cafeína o a los estimulantes.",
+        "comps": [
+          "melena-de-leon-capsulas-organicas",
+          "master-blend-160-capsulas",
+          "cacao-latte-boost"
+        ],
+        "comp_why": "Elegidos por lo que hace Rhodiola: uno de Botanicals, uno de Science o Rituals.",
+        "product_color": "#B8475A"
+      },
+      "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña la energía y el enfoque.</li><li>Ayuda a sostenerte en días de cansancio.</li><li>Apoya la respuesta al estrés.</li></ul><p><b>En la tradición</b></p><ul><li>La energía y la resistencia en el frío y la altura.</li><li>El cansancio físico y mental.</li><li>La concentración en épocas de mucha carga.</li></ul><p><b>En estudios</b></p><ul><li><b>Cansancio.</b> Adultos con fatiga por estrés que la tomaron 4 semanas reportaron menos cansancio y mejor concentración.</li><li><b>Estrés.</b> Mejoró síntomas de estrés de la vida diaria en estudios de 4 semanas.</li><li><b>Enfoque bajo presión.</b> Médicos en guardias nocturnas tuvieron mejor rendimiento mental tomándola.</li></ul><p><small>Estudios del ingrediente, no de nuestro producto terminado. Usos tradicionales: no sustituyen la atención médica.</small></p>"
+          }
+        },
+        "acc1": {
+          "type": "acc",
+          "settings": {
+            "title": "Cómo se toma",
+            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas. Momento: solo en la mañana.</p>"
+          }
+        },
+        "acc2": {
+          "type": "acc",
+          "settings": {
+            "title": "Lo que lleva · ingredientes",
+            "text": "<p>Por cápsula: 500 mg de extracto de Rhodiola (Rhodiola rosea), estandarizado: 3% rosavinas · 1% salidrosida. Sin rellenos. [Validar ficha técnica con Fer]</p>"
+          }
+        },
+        "acc3": {
+          "type": "acc",
+          "settings": {
+            "title": "Precauciones",
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tomas antidepresivos.</li><li>Consulta a tu médico antes si eres sensible a la cafeína o a los estimulantes.</li></ul>"
+          }
+        },
+        "nut": {
+          "type": "nut",
+          "settings": {
+            "title": "Tabla nutrimental",
+            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+          }
+        },
+        "glos": {
+          "type": "acc",
+          "settings": {
+            "title": "Conoce la planta",
+            "text": "<p>De dónde viene, su tradición, lo que hay dentro y las referencias, en el glosario.</p><p><a href=\"/pages/rhodiola-ficha-tecnica\">Ver la ficha de Rhodiola →</a></p>"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuándo voy a notar algo?",
+            "a": "<p>Cada cuerpo es distinto. Dale constancia: mínimo 8 a 10 semanas, 6 días de toma y 1 de descanso.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cápsulas o polvo?",
+            "a": "<p>Es el mismo extracto. Las cápsulas son prácticas; el polvo de 100 g rinde más y sale más barato por porción.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Lo puedo combinar?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas. Si tomas medicamentos, consulta a tu médico.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ben",
+        "acc1",
+        "acc2",
+        "acc3",
+        "nut",
+        "glos",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
