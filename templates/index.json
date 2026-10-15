@@ -566,7 +566,7 @@
         "heading_tag": "h2",
         "heading_alignment": "left",
         "subheading": "Todo el año",
-        "text": "<p>Elige 2 o más y ahorra: 2 productos −10% · 3 o más −15%.</p><p><small>Pss: con 5 o más, −20%.</small></p>",
+        "text": "<p>Elige 2 o más y ahorra: 2 productos −10% · 3 o más −15%.</p><p><em>Pss: con 5 o más, −20%.</em></p>",
         "button_atb_label": "Agregar",
         "step_icon_size": 32,
         "enable_quickview": false,
