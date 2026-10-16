@@ -40,7 +40,7 @@
       {%- if s.line_label != blank -%}<span class="lab">{{ s.line_label }}</span>{%- endif -%}
       <h1 class="disp h2" style="margin: 0">{{ name }}</h1>
       {%- if s.sci != blank -%}<p class="sci">{{ s.sci }}</p>{%- endif -%}
-      {%- if rating != blank -%}<div class="rating"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 2 }}{% if nrev != blank %} · {{ nrev }} reseñas{% endif %}</span></div>{%- elsif s.reviews_note != blank -%}<div class="rating rpend"><b aria-hidden="true">★★★★★</b><span>{{ s.reviews_note }}</span></div>{%- endif -%}
+      {%- if rating != blank -%}<a class="rating" href="#resenas" style="text-decoration:none;color:inherit"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 2 }}{% if nrev != blank %} · {{ nrev }} reseñas{% endif %}</span></a>{%- elsif s.reviews_note != blank -%}<div class="rating rpend"><b aria-hidden="true">★★★★★</b><span>{{ s.reviews_note }}</span></div>{%- endif -%}
       {%- if s.needs != blank -%}<div class="tags">{%- assign nn = s.needs | split: ',' -%}{%- for n in nn -%}<span class="tag">{{ n | strip }}</span>{%- endfor -%}</div>{%- endif -%}
       {%- if s.claim != blank -%}<p style="margin: 0; font-size: 18px">{{ s.claim }}</p>{%- endif -%}
       {%- if s.ev_quick != blank -%}<a class="evq" href="#evidencia"><span class="dt"></span>{{ s.ev_quick }}<span class="go">Ver evidencia ↓</span></a>{%- endif -%}
@@ -217,12 +217,58 @@
 </section>
 {%- endif -%}
 
-{%- if product.metafields.loox.reviews != blank -%}
-<section aria-label="Reseñas" style="border-bottom: 1px solid var(--rule); padding: 40px">
-  <h2 class="disp h2" style="margin-bottom: 24px">Lo que cambió en su día.</h2>
-  <div class="cmp-loox">{{ product.metafields.loox.reviews }}</div>
+{%- assign feed = product.metafields.loox.review_feed.value -%}
+{%- if feed.reviews.size > 0 or product.metafields.loox.reviews != blank -%}
+<section class="cmrv" id="resenas" aria-labelledby="rv-{{ section.id }}">
+  <div class="rvh">
+    <div><span class="lab">Reseñas</span><h2 id="rv-{{ section.id }}" class="disp h2">Lo que cambió en su día.</h2></div>
+    {%- if rating != blank -%}<div class="rvsum"><span class="rvbig">{{ rating | round: 1 }}</span><span><b class="rvst" aria-label="{{ rating }} de 5">★★★★★</b><span class="small">{% if nrev != blank %}{{ nrev }} reseñas verificadas{% endif %}</span></span></div>{%- endif -%}
+  </div>
+  {%- if feed.reviews.size > 0 -%}
+  <div class="rvg">
+    {%- assign shown = 0 -%}
+    {%- for r in feed.reviews -%}
+      {%- if shown >= 6 -%}{%- break -%}{%- endif -%}
+      {%- if r.review.size < 15 -%}{%- continue -%}{%- endif -%}
+      {%- assign shown = shown | plus: 1 -%}
+      <article class="rvc">
+        <span class="rvst" aria-label="{{ r.rating }} de 5">{%- for i in (1..5) -%}{%- if i <= r.rating -%}★{%- else -%}<i>★</i>{%- endif -%}{%- endfor -%}</span>
+        <p>{{ r.review | escape | truncate: 280 }}</p>
+        {%- for m in r.media -%}{%- if m.t == 'photo' -%}<img src="https:{{ m.src }}" alt="Foto de la reseña de {{ r.author | escape }}" loading="lazy" width="{{ m.w }}" height="{{ m.h }}">{%- break -%}{%- endif -%}{%- endfor -%}
+        <span class="rva">{{ r.author | escape }}{% if r.verified %} · Compra verificada{% endif %}</span>
+      </article>
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+  <details class="rvall">
+    <summary><span class="sq">Ver todas las reseñas</span></summary>
+    <div id="looxReviews" data-product-id="{{ product.id }}" class="loox-reviews-default">{{ product.metafields.loox.reviews }}</div>
+  </details>
 </section>
+<style>
+#cmp-{{ section.id }} .cmrv{border-bottom:1px solid var(--rule);padding:48px 40px;display:flex;flex-direction:column;gap:28px}
+#cmp-{{ section.id }} .cmrv .rvh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+#cmp-{{ section.id }} .cmrv .rvh .lab{display:block;margin-bottom:10px}
+#cmp-{{ section.id }} .cmrv .rvsum{display:flex;align-items:center;gap:14px}
+#cmp-{{ section.id }} .cmrv .rvbig{font-family:Jost,sans-serif;font-size:48px;line-height:1}
+#cmp-{{ section.id }} .cmrv .rvsum>span:last-child{display:flex;flex-direction:column;gap:2px}
+#cmp-{{ section.id }} .cmrv .rvst{color:var(--ink);letter-spacing:2px;font-size:14px}
+#cmp-{{ section.id }} .cmrv .rvst i{font-style:normal;color:#DCDCD5}
+#cmp-{{ section.id }} .cmrv .rvg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+#cmp-{{ section.id }} .cmrv .rvc{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff}
+#cmp-{{ section.id }} .cmrv .rvc p{margin:0;font-size:15px;line-height:1.55}
+#cmp-{{ section.id }} .cmrv .rvc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;background:#EFEFEA}
+#cmp-{{ section.id }} .cmrv .rva{margin-top:auto;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+#cmp-{{ section.id }} .cmrv .rvall summary{list-style:none;cursor:pointer}
+#cmp-{{ section.id }} .cmrv .rvall summary::-webkit-details-marker{display:none}
+#cmp-{{ section.id }} .cmrv .rvall[open] summary{margin-bottom:20px}
+@media (max-width: 760px){
+  #cmp-{{ section.id }} .cmrv{padding:36px 20px}
+  #cmp-{{ section.id }} .cmrv .rvg{grid-template-columns:minmax(0,1fr)}
+}
+</style>
 {%- endif -%}
+
 
 {%- assign faqs = section.blocks | where: 'type', 'faq' -%}
 {%- if faqs.size > 0 -%}
