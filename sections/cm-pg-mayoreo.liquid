@@ -57,7 +57,7 @@
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Cómo funciona</span><h2 id="cf" class="disp h2">Cuatro pasos, sin contratos.</h2></div></div>
 <div class="my-steps">
 <div><span class="n num">1</span><b>Llena el formulario</b><p>Dos minutos. Cuéntanos de tu negocio.</p></div>
-<div><span class="n num">2</span><b>Recibe el catálogo</b><p>Te llega a tu correo al instante, con la lista de precios de mayoreo.</p></div>
+<div><span class="n num">2</span><b>Recibe el catálogo</b><p>Revisamos tus datos y te lo mandamos por correo, con la lista de precios de mayoreo.</p></div>
 <div><span class="n num">3</span><b>Haz tu primer pedido</b><p>Por correo o WhatsApp. Pedido mínimo de $8,000.</p></div>
 <div><span class="n num">4</span><b>Reabastece cuando quieras</b><p>Sin contratos. Pides cuando lo necesites.</p></div>
 </div>
@@ -73,10 +73,10 @@
 <section id="catalogo" class="my-form" aria-labelledby="ca">
 <div class="cell">
 <div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Catálogo de mayoreo</span><h2 id="ca" class="disp h2" style="max-width: 10ch">Recibe el catálogo.</h2></div>
-<p class="sub">Te mandamos el catálogo y la lista de precios a tu correo, al instante. Si prefieres hablar con alguien, escríbenos por WhatsApp a ventas: 55 7908 4274.</p>
+<p class="sub">Déjanos tus datos y te mandamos el catálogo y la lista de precios a tu correo. Si prefieres hablar con alguien, escríbenos por WhatsApp a ventas: 55 7908 4274.</p>
 </div>
 {%- form 'contact', id: 'cm-mayoreo', class: 'my-fields' -%}
-{%- if form.posted_successfully? -%}<div class="my-ok"><span class="lab">Listo</span><b>Revisa tu correo.</b><span class="small" style="color: #2C342F">Te mandamos el catálogo y la lista de precios. Alguien de ventas te escribe pronto.</span></div>
+{%- if form.posted_successfully? -%}<div class="my-ok"><span class="lab">Listo</span><b>Recibimos tus datos.</b><span class="small" style="color: #2C342F">Alguien de ventas te manda el catálogo y la lista de precios a tu correo en 1 a 2 días hábiles.</span></div>
 {%- else -%}
 {%- if form.errors -%}<div class="cm-ok" style="background:#F2B8C0">Revisa los campos: {{ form.errors | default_errors }}</div>{%- endif -%}
 <input type="hidden" name="contact[Asunto]" value="Mayoreo · catálogo">

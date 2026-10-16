@@ -9,7 +9,7 @@
     <div class="ct">
       <h1 id="ct-{{ section.id }}" class="disp h1">{{ collection.title }}.</h1>
       {%- if collection.description != blank -%}<div class="sub" style="max-width: 44ch">{{ collection.description | strip_html | truncatewords: 40 }}</div>{%- elsif s.intro != blank -%}<p class="sub" style="max-width: 44ch">{{ s.intro }}</p>{%- endif -%}
-      <p class="cm-quizline" style="margin: 0">¿No sabes cuál? <a class="tlink" href="{{ s.quiz_link }}">Haz el quiz · 2 min</a></p>
+      <p class="cm-quizline" style="margin: 0">¿No sabes cuál? <a class="tlink" href="{{ s.quiz_link }}">Haz el quiz · 3 min</a></p>
     </div>
   </div>
   <div class="cimg">{%- if collection.image -%}{{ collection.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: collection.title }}{%- elsif s.image != blank -%}{{ s.image | image_url: width: 1600 | image_tag: loading: 'eager' }}{%- endif -%}</div>
@@ -89,7 +89,7 @@
 {%- endif -%}
 
 <section class="row2" aria-labelledby="qz-{{ section.id }}">
-  <div class="quizcell yellow"><span class="tag">Quiz · 2 minutos</span><h2 id="qz-{{ section.id }}" class="disp h2">¿No sabes cuál elegir?</h2><p class="small" style="margin: 0; color: #2C342F; font-size: 17px">Cuéntanos qué estás viviendo y te armamos tu protocolo.</p><a class="btn dark" href="{{ s.quiz_link }}" style="align-self: flex-start">Encuentra tu Commons<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+  <div class="quizcell yellow"><span class="tag">Quiz · 3 minutos</span><h2 id="qz-{{ section.id }}" class="disp h2">¿No sabes cuál elegir?</h2><p class="small" style="margin: 0; color: #2C342F; font-size: 17px">Cuéntanos qué estás viviendo y te armamos tu protocolo.</p><a class="btn dark" href="{{ s.quiz_link }}" style="align-self: flex-start">Encuentra tu Commons<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
   <div class="cell" style="justify-content: center">
     <span class="lab">Preguntas frecuentes</span>
     <div>{%- for b in section.blocks -%}{%- if b.type == 'faq' -%}<details class="fq" {{ b.shopify_attributes }}><summary class="fqb"><span>{{ b.settings.q }}</span><span aria-hidden="true">+</span></summary><div class="fqa">{{ b.settings.a }}</div></details>{%- endif -%}{%- endfor -%}</div>

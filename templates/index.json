@@ -214,7 +214,16 @@
         },
         "b3": {
           "type": "product",
-          "settings": {"product": "azafran-1", "title": "Azafrán", "tag": "Science · Ánimo", "badge": "Nuevo", "size": "", "per_serving": "", "fallback": "hongo-reishi-100g-20-β-glucanos", "fallback_tag": "Sueño"}
+          "settings": {
+            "product": "melena-de-leon-capsulas-organicas",
+            "title": "Melena de León",
+            "tag": "Enfoque",
+            "badge": "",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción",
+            "fallback": "hongo-reishi-100g-20-β-glucanos",
+            "fallback_tag": "Sueño"
+          }
         },
         "b4": {
           "type": "product",
