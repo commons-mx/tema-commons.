@@ -3,7 +3,7 @@
   for item in cart.items
     assign cm_t = item.product.type | downcase
     assign cm_v = item.variant.title | downcase
-    if cm_v contains 'carry'
+    if cm_v contains 'carry' or cm_v contains '50 g' or cm_v contains '50g'
       continue
     endif
     if cm_t contains 'chocolate' or cm_t contains 'miel' or cm_t contains 'blend' or cm_t contains 'latte' or cm_t contains 'cacao' or cm_t contains 'kit'

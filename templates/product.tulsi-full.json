@@ -10,7 +10,7 @@
         "needs": "Estrés",
         "claim": "Extracto estandarizado de la planta, con el activo declarado en la etiqueta. Medio gramo por porción.",
         "ten": "Para: Estrés\nParte: Hoja\nEstandarizado: 10:1\nMomento: Día o noche\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
-        "opt_hints": "Cápsulas 120|120 de 500 mg · alrededor de 2 meses\nPolvo 100g|Extracto en polvo · rinde más, desde $4.95 por porción\nCarry On 50g|Para llevar · va a precio completo",
+        "opt_hints": "Cápsulas 120|120 de 500 mg · alrededor de 2 meses\nPolvo 100 g|Extracto en polvo · rinde más, desde $4.95 por porción\nPolvo 50 g|Para llevar · va a precio completo",
         "show_volume": true,
         "forr": "Estrés y calma",
         "big": "5 g",
