@@ -25,7 +25,7 @@
             <h3 class="cname"><a href="{{ p.url }}" style="color: inherit">{{ block.settings.title | default: p.title }}</a></h3>
             <div class="cmeta">{%- if p.variants.size > 1 -%}<span class="num">Desde {{ p.price_min | money_without_trailing_zeros }}</span> · {{ p.variants.size }} presentaciones{%- else -%}<span class="num">{{ p.price | money_without_trailing_zeros }}</span>{%- if block.settings.size != blank %} · {{ block.settings.size }}{% endif -%}{%- endif -%}</div>
             {%- if block.settings.per_serving != blank -%}<div class="cmeta">{{ block.settings.per_serving }}</div>{%- endif -%}
-            {%- if section.settings.card_protocol != blank -%}<a class="ptadd" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.card_protocol }}</a>{%- endif -%}
+            {%- if section.settings.card_protocol != blank and _ln != 'Rituals' -%}<a class="ptadd" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.card_protocol }}</a>{%- endif -%}
           </div>
           {%- if p.variants.size > 1 -%}
             <details class="cm-qa"><summary class="cart" aria-label="Elegir presentación de {{ p.title | escape }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></summary>

@@ -225,14 +225,7 @@
         },
         "b4": {
           "type": "product",
-          "settings": {
-            "product": "master-blend-160-capsulas",
-            "title": "Master blend",
-            "tag": "Defensas",
-            "badge": "",
-            "size": "",
-            "per_serving": "$13.75 por porción"
-          }
+          "settings": {"product": "relaxing-hot-cacao", "title": "Relaxing Hot Cacao", "tag": "Relajación", "badge": "", "size": "", "per_serving": ""}
         }
       },
       "block_order": [
@@ -242,9 +235,9 @@
         "b4"
       ],
       "settings": {
-        "heading": "Los más queridos.",
+        "heading": "Los más vendidos.",
         "link_label": "Ver todo",
-        "link": "/collections/all",
+        "link": "/collections/all?sort_by=best-selling",
         "protocol_label": "Arma tu protocolo · hasta −15%",
         "protocol_head": false,
         "card_protocol": "+ Súmalo a tu protocolo",
