@@ -57,6 +57,7 @@
         endif
       -%}
       <div class="mega cm-mega" x-cloak x-show="open == '{{ block.id }}'" x-transition.opacity style="grid-template-columns: {% if block.settings.needs_menu != blank %}minmax(0,1.45fr) repeat({{ n | minus: 1 | at_least: 1 }}, minmax(0,1fr)){% else %}repeat({{ n | at_least: 1 }}, minmax(0,1fr)){% endif %}">
+        {%- if block.settings.label contains 'Botanicals' -%}<div class="mallbar"><a class="tlink" href="/collections/botanicals">Comprar todo Botanicals</a><a class="tlink" href="/collections/rituals">Comprar todo Rituals</a></div>{%- elsif block.settings.label contains 'Science' -%}<div class="mallbar"><a class="tlink" href="/collections/science">Comprar todo Science</a></div>{%- elsif block.settings.label contains 'Comprar' -%}<div class="mallbar"><a class="btn mall" href="{{ routes.all_products_collection_url }}?sort_by=best-selling">Comprar todo<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>{%- endif -%}
         {%- if block.settings.needs_menu != blank -%}
         <div class="mcol"><span class="eyb">{{ block.settings.needs_title | default: 'Por necesidad' }}</span>
           <div class="ngrid">{%- for l in block.settings.needs_menu.links -%}<a href="{{ l.url }}">{%- render 'cm-need-icon', icon: l.title -%}{{ l.title }}</a>{%- endfor -%}</div>
@@ -170,6 +171,9 @@
     <div class="mbody">
       <div x-show="!mp">
         <div class="mpad"><form action="{{ routes.search_url }}" method="get" class="msearch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg><input type="search" name="q" placeholder="Busca una planta, producto o necesidad" aria-label="Buscar"></form></div>
+        <div class="mpad mallw"><a class="btn mall" href="{{ routes.all_products_collection_url }}?sort_by=best-selling">Comprar todo<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
+        <div class="msub" style="padding-bottom: 12px"><span class="lab">Los más vendidos</span></div>
+        <div class="mbest">{%- assign cm_b8 = 'ashwagandha-organico-capsulas-extracto,melena-de-leon-capsulas-organicas,relaxing-hot-cacao,azafran-1,hongo-reishi-100g-20-β-glucanos,raiz-rhodiola-rosea-full-polvo,cordyceps-extracto-commons,master-blend-160-capsulas' | split: ',' -%}{%- assign cm_bn = 0 -%}{%- for h in cm_b8 -%}{%- if cm_bn >= 4 -%}{%- break -%}{%- endif -%}{%- assign bp = all_products[h] -%}{%- if bp.id and bp.available -%}{%- assign cm_bn = cm_bn | plus: 1 -%}<a href="{{ bp.url }}"><span class="mbi">{%- if bp.featured_image -%}<img src="{{ bp.featured_image | image_url: width: 240 }}" alt="{{ bp.title | escape }}" loading="lazy" width="120" height="120">{%- endif -%}</span><span class="mbn">{{ bp.title | split: ' ' | slice: 0, 3 | join: ' ' }}</span></a>{%- endif -%}{%- endfor -%}</div>
         <div class="mlines">
         {%- for block in section.blocks -%}
           {%- if block.type == 'panel' and block.settings.mobile_menu != blank and block.settings.card_eyebrow contains 'Commons' -%}
@@ -230,7 +234,7 @@
             <a class="mrow" href="{{ l.url }}">{{ l.title }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
             {%- endif -%}
           {%- endfor -%}
-          <a class="mrow" href="{{ routes.all_products_collection_url }}?sort_by=best-selling">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+          {%- if block.settings.label contains 'Botanicals' -%}<a class="mrow mrall" href="/collections/botanicals">Comprar todo Botanicals<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a><a class="mrow mrall" href="/collections/rituals">Comprar todo Rituals<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- elsif block.settings.label contains 'Science' -%}<a class="mrow mrall" href="/collections/science">Comprar todo Science<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- elsif block.settings.label contains 'Journal' -%}{%- else -%}<a class="mrow mrall" href="{{ routes.all_products_collection_url }}?sort_by=best-selling">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- endif -%}
         </div>
         {%- endif -%}
       {%- endfor -%}
@@ -245,6 +249,15 @@
   if (location.hash === '#protocolo') window.addEventListener('load', function(){ setTimeout(go, 300); });
 })();
 </script>
+<style>
+.cm-mega .mallbar{grid-column:1/-1;display:flex;gap:24px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:8px}
+.mallw{padding-top:0 !important}.btn.mall{width:100%;justify-content:space-between}.cm-mega .btn.mall{width:auto}
+.mbest{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 20px 20px}
+.mbest a{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);font-size:12px;line-height:1.25;text-align:center}
+.mbest .mbi{aspect-ratio:1;border-radius:50%;background:#fff;overflow:hidden;display:block}
+.mbest img{width:100%;height:100%;object-fit:contain;display:block}
+.mrall{font-weight:500}
+</style>
 {% schema %}
 {
   "name": "Commons · Header",
