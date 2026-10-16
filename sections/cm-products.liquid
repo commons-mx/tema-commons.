@@ -3,7 +3,8 @@
   <div class="hd-row"><h2 id="mv-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2><div class="hdl">{%- if section.settings.protocol_label != blank and section.settings.protocol_head -%}<a class="tlink" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.protocol_label }}</a>{%- endif -%}{%- if section.settings.link_label != blank -%}<a class="sq" href="{{ section.settings.link | default: '/collections/all' }}">{{ section.settings.link_label }}</a>{%- endif -%}</div></div>
   <div class="box cards">
     {%- for block in section.blocks -%}
-      {%- assign p = block.settings.product -%}
+      {%- assign p = block.settings.product -%}{%- assign cm_tag = block.settings.tag -%}{%- assign cm_ttl = block.settings.title -%}
+      {%- if p == blank or p.available == false -%}{%- if block.settings.fallback != blank -%}{%- assign p = block.settings.fallback -%}{%- assign cm_tag = block.settings.fallback_tag -%}{%- assign cm_ttl = '' -%}{%- endif -%}{%- endif -%}
       {%- if p == blank -%}{%- continue -%}{%- endif -%}
       <article class="card" {{ block.shopify_attributes }}>
         <a class="ph" href="{{ p.url }}" aria-label="{{ p.title | escape }}">
@@ -21,8 +22,8 @@
   elsif _t contains 'chocolate' or _t contains 'blend' or _t contains 'miel'
     assign _ln = 'Rituals'
   endif
--%}<span class="lab ctag">{{ block.settings.tag | default: _ln }}</span>
-            <h3 class="cname"><a href="{{ p.url }}" style="color: inherit">{{ block.settings.title | default: p.title }}</a></h3>
+-%}<span class="lab ctag">{{ cm_tag | default: _ln }}</span>
+            <h3 class="cname"><a href="{{ p.url }}" style="color: inherit">{{ cm_ttl | default: p.title }}</a></h3>
             <div class="cmeta">{%- if p.variants.size > 1 -%}<span class="num">Desde {{ p.price_min | money_without_trailing_zeros }}</span> · {{ p.variants.size }} presentaciones{%- else -%}<span class="num">{{ p.price | money_without_trailing_zeros }}</span>{%- if block.settings.size != blank %} · {{ block.settings.size }}{% endif -%}{%- endif -%}</div>
             {%- if block.settings.per_serving != blank -%}<div class="cmeta">{{ block.settings.per_serving }}</div>{%- endif -%}
             {%- if section.settings.card_protocol != blank and _ln != 'Rituals' -%}<a class="ptadd" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.card_protocol }}</a>{%- endif -%}
@@ -112,6 +113,16 @@
           "type": "product",
           "id": "product",
           "label": "Producto"
+        },
+        {
+          "type": "product",
+          "id": "fallback",
+          "label": "Si no está disponible, mostrar"
+        },
+        {
+          "type": "text",
+          "id": "fallback_tag",
+          "label": "Etiqueta del de respaldo"
         },
         {
           "type": "text",

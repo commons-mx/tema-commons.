@@ -214,18 +214,18 @@
         },
         "b3": {
           "type": "product",
-          "settings": {
-            "product": "hongo-reishi-100g-20-β-glucanos",
-            "title": "Reishi",
-            "tag": "Sueño",
-            "badge": "",
-            "size": "",
-            "per_serving": "Desde $4.95 por porción"
-          }
+          "settings": {"product": "azafran-1", "title": "Azafrán", "tag": "Science · Ánimo", "badge": "Nuevo", "size": "", "per_serving": "", "fallback": "hongo-reishi-100g-20-β-glucanos", "fallback_tag": "Sueño"}
         },
         "b4": {
           "type": "product",
-          "settings": {"product": "relaxing-hot-cacao", "title": "Relaxing Hot Cacao", "tag": "Relajación", "badge": "", "size": "", "per_serving": ""}
+          "settings": {
+            "product": "relaxing-hot-cacao",
+            "title": "Relaxing Hot Cacao",
+            "tag": "Relajación",
+            "badge": "",
+            "size": "",
+            "per_serving": ""
+          }
         }
       },
       "block_order": [
