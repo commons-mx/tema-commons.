@@ -230,7 +230,7 @@
             <a class="mrow" href="{{ l.url }}">{{ l.title }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
             {%- endif -%}
           {%- endfor -%}
-          <a class="mrow" href="{{ routes.all_products_collection_url }}">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+          <a class="mrow" href="{{ routes.all_products_collection_url }}?sort_by=best-selling">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
         </div>
         {%- endif -%}
       {%- endfor -%}
