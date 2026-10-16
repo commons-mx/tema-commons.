@@ -645,3 +645,5 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg details[open] > summary span[aria-hidden]{transform:rotate(45deg)}
 .cmpg [hidden]{display:none !important}
 .cmpg .cm-ok{padding:20px;background:var(--lime);font-size:16px}
+
+@container cmpg (min-width: 761px){.cmpg .bfull.raiz{align-items:flex-end}.cmpg .bfull.raiz .bfx{padding:40px 40px 56px}}
