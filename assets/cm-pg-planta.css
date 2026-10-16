@@ -857,3 +857,6 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg .pl-trad .puso ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
 .cmpg .pl-trad .puso li{position:relative;padding-left:22px;font-size:17px;line-height:1.5}
 .cmpg .pl-trad .puso li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:99px;background:#C9B98F}
+
+.cmpg .pl-dm .dmi{aspect-ratio:3/2}
+@container cmpg (max-width: 760px){.cmpg .pl-dm .dmi{aspect-ratio:4/3}}
