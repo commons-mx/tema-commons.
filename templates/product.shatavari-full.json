@@ -18,8 +18,8 @@
         "tab": "Extracto de Shatavari|500 mg por cápsula\nEstandarizado|4:1\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|4:1|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Mañana o noche|Como te acomode; en polvo va bien en leche caliente.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas [validar].",
-        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 8 semanas.\nCiclo|3 meses y una pausa de 2 semanas [validar].",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Mañana o noche|Como te acomode; en polvo va bien en leche caliente.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
+        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 8 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nConsulta a tu médico antes si tomas anticonceptivos o terapia hormonal.",
         "comps": [
           "ashwagandha-organico-capsulas-extracto",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas [validar]. Momento: mañana o noche.</p>"
+            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas. Momento: mañana o noche.</p>"
           }
         },
         "acc2": {

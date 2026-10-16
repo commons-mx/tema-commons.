@@ -38,7 +38,7 @@
 <div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Cómo se toma</span><h2 id="ct" class="disp h2">Poco, todos los días y con constancia.</h2></div></div>
 <div class="pl-steps">
 <div><span class="lab">Cuánto</span><b>1 cápsula al día</b><p>Empieza con la mitad la primera semana y luego sube a la porción completa.</p></div>
-<div><span class="lab">Ritmo</span><b>6 días a la semana</b><p>Descansa 1 día, el que tú elijas. Ciclo: 3 meses y una pausa de 2 semanas.</p></div>
+<div><span class="lab">Descansos</span><b>6 días y 1 de descanso</b><p>Cada semana descansa 1 día, el que tú elijas. Toma 3 meses seguidos y descansa 2 semanas.</p></div>
 <div><span class="lab">Cuándo</span><b>Con tus comidas</b><p>Con grasa se aprovecha mejor. No subas la dosis.</p></div>
 </div>
 </section>
@@ -53,8 +53,8 @@
 <b class="disp">{{ rp.title }}</b>
 <span class="small">50% bacósidos [confirmar] · planta entera</span>
 <span class="lab" style="margin-top: 8px">Elige tu presentación</span>
-<div class="pl-fmts" role="radiogroup" aria-label="Presentación">{%- for v in rp.variants -%}<button type="button" class="{% if forloop.first %}on{% endif %}" role="radio" data-v="{{ v.id }}" data-p="{{ v.price | money_without_trailing_zeros }}" data-t="{{ v.title | escape }}"{% unless v.available %} disabled{% endunless %}><b>{{ v.title }}</b><span>{{ v.price | money_without_trailing_zeros }}</span></button>{%- endfor -%}</div>
-<span class="small" data-fd>{{ rp.selected_or_first_available_variant.title }}</span>
+<div class="pl-fmts" role="radiogroup" aria-label="Presentación">{%- for v in rp.variants -%}<button type="button" class="{% if forloop.first %}on{% endif %}" role="radio" data-v="{{ v.id }}" data-p="{{ v.price | money_without_trailing_zeros }}" data-t="{{ v.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' | escape }}"{% unless v.available %} disabled{% endunless %}><b>{{ v.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' }}</b><span>{{ v.price | money_without_trailing_zeros }}</span></button>{%- endfor -%}</div>
+<span class="small" data-fd>{{ rp.selected_or_first_available_variant.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' }}</span>
 <div class="row"><span class="num pl-price" data-fp>{{ rp.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span><button type="button" class="pl-add pl-btn" data-add data-v="{{ rp.selected_or_first_available_variant.id }}">Agregar al carrito</button></div>
 <a class="tlink" href="{{ rp.url }}" style="align-self:flex-start">Ver la ficha completa</a>
 </div>
@@ -74,7 +74,7 @@
 <details class="pl-acc"><summary><span>No se recomienda si…</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><ul><li>Estás embarazada o lactando.</li><li>Eres menor de 18 años.</li><li>Tomas anticoagulantes.</li><li>Tienes una cirugía programada.</li><li>Tienes epilepsia.</li><li>Tomas sedantes.</li><li>Tienes algún tema de tiroides.</li></ul></div></details>
 <details class="pl-acc"><summary><span>Consulta a tu médico antes si…</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><ul><li>Tomas cualquier medicamento o tienes una condición médica.</li></ul></div></details>
 <details class="pl-acc"><summary><span>Cómo guardarlo</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><p>Lejos de la luz y la humedad, a temperatura ambiente. Dura hasta 36 meses en buenas condiciones. [Confirmar caducidad por lote]</p></div></details>
-<p class="small">Si tienes dudas, escríbenos por WhatsApp y te orientamos. [Validar precauciones con Fer]</p>
+<p class="small"><a class="tlink" href="https://wa.me/523316035820" target="_blank" rel="noopener">WhatsApp para consultas sobre adaptógenos o dosis</a></p><p class="small">[Validar precauciones con Fer]</p>
 </div>
 </section>
 
