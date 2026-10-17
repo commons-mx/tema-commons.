@@ -83,7 +83,7 @@ class Component extends DCLogic {
       'Cordyceps': { img: '', l: 'bot', caps: true, pw: true, day: true },
       'Rhodiola': { img: '', l: 'bot', caps: true, pw: true, day: true, am: true },
       'Eleuthero': { img: '', l: 'bot', caps: true, pw: true, day: true, am: true },
-      'Master blend': { img: '', l: 'bot', caps: true, pw: true, price: 1100, how: '2 cápsulas al día' },
+      'Master blend': { img: '', l: 'bot', caps: true, pw: true, price: 1100, how: 'Empieza con 1 cápsula en la mañana, luego sube a 2 · diario' },
       'Ginkgo + Bacopa': { img: '', l: 'bot', caps: true, pw: false, day: true },
       'Maitake': { img: '', l: 'bot', caps: true, pw: true },
       'Gotu Kola': { img: '', l: 'bot', caps: true, pw: true },
@@ -214,7 +214,7 @@ class Component extends DCLogic {
       var fmt = d.l === 'sci' ? 'Science' : (n === 'Master blend' ? (pw ? 'Polvo 120 g' : '160 cápsulas') : (usePw ? 'Polvo 100 g' : 'Cápsulas'));
       if (d.l !== 'sci' && !d.caps && !pw) fmt += ' (solo viene en polvo)';
       if (!d.pw && pw && d.l !== 'sci') fmt += ' (solo viene en cápsulas)';
-      var how = d.how || (usePw ? '1 scoop (1 g) al día · 6 días y 1 de descanso' : (n === 'Ashwagandha' ? '1 cápsula al día' : '2 cápsulas al día') + ' · 6 días y 1 de descanso');
+      var how = d.how || (usePw ? 'Empieza con ½ scoop al día, puedes subir a 1 · 6 días y 1 de descanso' : (n === 'Ashwagandha' ? '1 cápsula al día' : 'Empieza con 1 cápsula al día, puedes subir a 2') + ' · 6 días y 1 de descanso');
       var moment = d.am ? 'Antes de las 12' : (d.night ? 'En la noche' : (d.day ? 'En la mañana' : ((st.det['Estrés'] || '') === 'En la noche' || needs.indexOf('Sueño') >= 0 ? 'En la noche' : 'Con el desayuno')));
       var why = needs.filter(function (k) { return (per[k][n] || 0) > 0; }).map(function (k) { return N[k].why; });
       var q = Q[n] || {}; var vid = pickVar(q, usePw, n, pw); return { n: n, vid: vid, url: q.url || '#', img: q.img || '', noimg: !q.img, line: d.l === 'sci' ? 'Science' : 'Botanicals', tgc: d.l === 'sci' ? 'tg sci' : 'tg bot', warn: warn[n] || '', why: fmt + (why.length ? ' · ' + why.join(' y ') : ''), how: (d.how ? '' : moment + ' · ') + how, price: price, p: self.money(price) };
