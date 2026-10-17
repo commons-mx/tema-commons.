@@ -43,7 +43,7 @@ function view(v){
     h += '<div class="qmain"><div class="qbar"><i style="width:' + v.pct + '%"></i></div><span class="lab">Paso ' + v.stepN + ' de 5 · ' + esc(v.stepName) + '</span><h2 id="qq" class="qq">' + esc(v.q) + '</h2>';
     if (v.hint) h += '<p class="qhint">' + esc(v.hint) + '</p>';
     h += v.groups.map(function(g){ return '<div class="qgrp">' + (g.lab ? '<span class="lab">' + esc(g.lab) + '</span>' : '') + '<div class="' + g.cls + '">' + g.opts.map(opt).join('') + '</div></div>'; }).join('');
-    if (v.isSafety) h += '<p class="qpriv">Tus respuestas de salud se quedan en esta página: no se guardan ni se usan para anuncios.</p>';
+    if (v.isSafety) h += '<p class="qpriv">Tus respuestas de salud no salen de tu navegador: no se envían ni se usan para anuncios. Tu resultado se guarda aquí 30 días para que lo retomes.</p>';
     if (v.err) h += '<p class="qpriv" style="color:#8a1c1c">' + esc(v.err) + '</p>';
     h += '<div class="qnav">' + (v.canBack ? '<button type="button" class="qback" data-fn="' + on(v.back) + '">← Regresar</button>' : '') + '<span></span><button type="button" class="btn dark" data-fn="' + on(v.next) + '" style="border:0;cursor:pointer">' + esc(v.nextTxt) + '<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span>' + '</button></div></div></section>';
   }
@@ -61,7 +61,7 @@ function view(v){
     if (v.anyWarn) h += '<p class="qpriv" style="margin:0">Algunos productos llevan "consulta a tu médico". Revisa tu protocolo con tu médico antes de empezar.</p>';
     window.__cmq = { n: v.pname, needs: v.needsTxt, intro: v.pintro, total: v.total, full: v.full, perDay: v.perDay, disc: v.discTxt, prods: v.prods.map(function(p){ return p.n; }), det: v.prods.map(function(p){ return { n: p.n, line: String(p.line || '').replace(/<[^>]+>/g, ''), why: p.why, how: p.how, p: p.p, img: p.img, warn: p.warn }; }) };
     h += '<form class="rmail" data-mail novalidate><span class="lab">Tu protocolo, por correo</span><p class="small" style="margin:0">Te lo mandamos en PDF, con cuándo y cómo tomar cada uno.</p><div class="rmrow"><input type="email" name="email" class="in" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo"><button type="submit" class="btn dark" style="border:0;cursor:pointer">Mándamelo</button></div><label class="rmchk"><input type="checkbox" name="mkt" checked> Quiero recibir guías y novedades de Commons.</label><span class="small rmok" data-mailok hidden>Listo. Te llega en unos minutos; revisa también promociones.</span><span class="small rmerr" data-mailerr hidden>No se pudo enviar. Revisa tu correo o descárgalo en PDF.</span></form>';
-    h += '<div class="rshare"><button type="button" class="tlink" data-pdf style="background:none;border:0;cursor:pointer;padding:0">Descargar en PDF</button><a class="tlink" data-wa href="https://wa.me/525564299433">Pregúntanos por WhatsApp</a><button type="button" class="qback" data-fn="' + on(v.restart) + '">Volver a empezar</button></div></div></section>';
+    h += '<div class="rshare"><button type="button" class="tlink" data-pdf style="background:none;border:0;cursor:pointer;padding:0">Descargar en PDF</button><a class="tlink" data-wa href="https://wa.me/525564299433">Pregúntanos por WhatsApp</a><a class="tlink" data-wsh href="https://wa.me/" target="_blank" rel="noopener">Compartir</a><button type="button" class="qback" data-fn="' + on(v.restart) + '">Volver a empezar</button>' + (cmqRestored ? '<p class="small" style="margin:12px 0 0;color:#5a5f58">Guardamos tu protocolo en este navegador por 30 días. <button type="button" class="tlink" data-fn="' + on(cmqForget) + '" style="background:none;border:0;cursor:pointer;padding:0;font:inherit">Borrarlo</button></p>' : '') + '</div></div></section>';
     if (v.hasRit) h += '<section aria-label="Complementos"><div class="hd-row"><div style="display:flex;flex-direction:column;gap:10px"><span class="lab">Súmale un ritual · precio completo</span><h2 class="disp h3t">Para tu día.</h2></div></div><div class="rprods rrits">' + v.rits.map(function(r){ return '<div class="rp"><div class="th">' + (r.img ? '<img src="' + esc(r.img) + '" alt="' + esc(r.n) + '">' : '') + '</div><div><span class="lab">' + esc(r.when) + '</span><div class="nm">' + (r.url ? '<a href="' + esc(r.url) + '" style="color:inherit">' + esc(r.n) + '</a>' : esc(r.n)) + '</div><div class="why">' + esc(r.s) + '</div></div>' + (r.vid ? '<div class="radd"><span class="num">' + r.p + '</span><button type="button" class="sq" data-fn="' + on(r.add) + '">Agregar</button></div>' : '<span></span>') + '</div>'; }).join('') + '</div></section>';
     h += '<section class="rweeks"><span class="lab">Tus primeras 12 semanas</span><div class="rwl"><div class="rw on"><b>Semana 1–2</b><p>Empieza con la dosis mínima para ver cómo te sienta.</p></div><div class="rw"><b>Semana 3</b><p>Si te sientes bien, sube a tu dosis completa.</p></div><div class="rw"><b>Semana 8–10</b><p>Evalúa cómo vas.</p></div><div class="rw"><b>Semana 12</b><p>Descansa las que lo piden y retoma.</p></div></div></section>';
   }
@@ -214,7 +214,7 @@ class Component extends DCLogic {
       var fmt = d.l === 'sci' ? 'Science' : (n === 'Master blend' ? (pw ? 'Polvo 120 g' : '160 cápsulas') : (usePw ? 'Polvo 100 g' : 'Cápsulas'));
       if (d.l !== 'sci' && !d.caps && !pw) fmt += ' (solo viene en polvo)';
       if (!d.pw && pw && d.l !== 'sci') fmt += ' (solo viene en cápsulas)';
-      var how = d.how || (usePw ? '1 scoop (1 g) al día · 6 días y 1 de descanso' : '2 cápsulas al día · 6 días y 1 de descanso');
+      var how = d.how || (usePw ? '1 scoop (1 g) al día · 6 días y 1 de descanso' : (n === 'Ashwagandha' ? '1 cápsula al día' : '2 cápsulas al día') + ' · 6 días y 1 de descanso');
       var moment = d.am ? 'Antes de las 12' : (d.night ? 'En la noche' : (d.day ? 'En la mañana' : ((st.det['Estrés'] || '') === 'En la noche' || needs.indexOf('Sueño') >= 0 ? 'En la noche' : 'Con el desayuno')));
       var why = needs.filter(function (k) { return (per[k][n] || 0) > 0; }).map(function (k) { return N[k].why; });
       var q = Q[n] || {}; var vid = pickVar(q, usePw, n, pw); return { n: n, vid: vid, url: q.url || '#', img: q.img || '', noimg: !q.img, line: d.l === 'sci' ? 'Science' : 'Botanicals', tgc: d.l === 'sci' ? 'tg sci' : 'tg bot', warn: warn[n] || '', why: fmt + (why.length ? ' · ' + why.join(' y ') : ''), how: (d.how ? '' : moment + ' · ') + how, price: price, p: self.money(price) };
@@ -315,6 +315,12 @@ class Component extends DCLogic {
 
 
 var C = new Component({});
+var CMQ_KEY = 'cmq-protocolo', CMQ_TTL = 30 * 864e5, cmqRestored = false;
+try { var cmqSv = JSON.parse(localStorage.getItem(CMQ_KEY) || 'null');
+  if (cmqSv && cmqSv.t && Date.now() - cmqSv.t < CMQ_TTL && cmqSv.s && cmqSv.s.view === 'res' && !new URLSearchParams(location.search).get('vive')) { Object.assign(C.state, cmqSv.s, { err: '' }); cmqRestored = true; }
+  else if (cmqSv) localStorage.removeItem(CMQ_KEY);
+} catch (e) {}
+function cmqForget(){ try { localStorage.removeItem(CMQ_KEY); } catch (e) {} cmqRestored = false; C.state = new Component({}).state; paint(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 var V = { 'agotad': 'Energía', 'energ': 'Energía', 'estr': 'Estrés', 'duermo': 'Sueño', 'sueñ': 'Sueño', 'enfoc': 'Enfoque', 'ciclo': 'Ciclo menstrual', 'defens': 'Defensas', 'ánimo': 'Ánimo', 'animo': 'Ánimo', 'piel': 'Piel', 'menopaus': 'Menopausia' };
 try {
   var vive = new URLSearchParams(location.search).get('vive');
@@ -322,7 +328,7 @@ try {
     C.state.needs = ns.slice(0, 3); if (ns.indexOf('Ciclo menstrual') >= 0 || ns.indexOf('Menopausia') >= 0) C.state.sex = 'Mujer'; }
 } catch (e) {}
 var root = document.getElementById('cmq-root');
-function paint(){ root.innerHTML = view(C.renderVals()); }
+function paint(){ root.innerHTML = view(C.renderVals()); try { if (C.state.view === 'res') localStorage.setItem(CMQ_KEY, JSON.stringify({ t: Date.now(), s: C.state })); } catch (e) {} }
 root.addEventListener('click', function(e){ var b = e.target.closest('[data-fn]'); if (!b) return; var f = FN[+b.dataset.fn]; if (f) f(); });
 paint();
 // fotos, ligas y variantes directo de la tienda (no depende del tope de all_products)
@@ -360,6 +366,9 @@ Promise.all(Object.keys(HANDLES).map(function(n){
   }
   root.addEventListener('click', function(e){
     if (e.target.closest('[data-pdf]')) { e.preventDefault(); cmqPrint(); }
+    var sh = e.target.closest('[data-wsh]');
+    if (sh && window.__cmq) { var stx = 'Me salió este protocolo en Commons: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). Haz el quiz aquí: ' + location.origin + '/pages/quiz';
+      if (navigator.share) { e.preventDefault(); navigator.share({ text: stx }).catch(function(){}); } else { sh.href = 'https://wa.me/?text=' + encodeURIComponent(stx); } }
     var wa = e.target.closest('[data-wa]');
     if (wa && window.__cmq) { wa.href = 'https://wa.me/525564299433?text=' + encodeURIComponent('Hola, hice el quiz y me salió: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). ¿Me ayudan?'); }
   });
