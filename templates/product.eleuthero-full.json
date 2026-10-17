@@ -18,8 +18,8 @@
         "tab": "Extracto de Eleuthero|500 mg por cápsula\nEstandarizado|0.8% eleuterósidos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|0.8% eleuterósidos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Solo en la mañana|Tómalo en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 2 meses y 1 mes de descanso.",
-        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar alrededor de 1 mes.\nCiclo|2 meses y 1 mes de descanso.",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Solo en la mañana|Tómalo en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 2 meses y 1 mes de descanso.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar alrededor de 1 mes.\nCiclo|2 meses y 1 mes de descanso.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes la presión alta. [validar con Fer]\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
         "comps": [
           "melena-de-leon-capsulas-organicas",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 2 meses y 1 mes de descanso. Momento: solo en la mañana.</p>"
+            "text": "<p>1 cápsula o ½ scoop al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: 2 meses y 1 mes de descanso. Momento: solo en la mañana.</p>"
           }
         },
         "acc2": {

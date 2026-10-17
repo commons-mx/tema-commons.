@@ -18,8 +18,8 @@
         "tab": "Extracto de Amla|500 mg por cápsula\nEstandarizado|[Pendiente]\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Con la comida|En agua o jugo; tiene un sabor ácido.\nRitmo|6 días a la semana|Ciclo: Sin pausa larga.",
-        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 12 semanas.\nCiclo|Sin pausa larga.",
+        "how": "Cuánto|½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Con la comida|En agua o jugo; tiene un sabor ácido.\nRitmo|6 días a la semana|Ciclo: Sin pausa larga.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 12 semanas.\nCiclo|Sin pausa larga.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes una cirugía programada.\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
         "comps": [
           "hongo-reishi-100g-20-β-glucanos",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: Sin pausa larga. Momento: con la comida.</p>"
+            "text": "<p>½ scoop al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: Sin pausa larga. Momento: con la comida.</p>"
           }
         },
         "acc2": {

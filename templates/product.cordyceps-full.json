@@ -18,8 +18,8 @@
         "tab": "Extracto de Cordyceps|500 mg por cápsula\nEstandarizado|20% betaglucanos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|20% betaglucanos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|1 cápsula o ½ scoop al día|Empieza con la mitad la primera semana.\nCuándo|Mañana o tarde|En la mañana o antes de entrenar. No quita el sueño, así que también va en la tarde.\nRitmo|6 días a la semana|Ciclo: Sin pausa larga.",
-        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 3 semanas.\nCiclo|Sin pausa larga.",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Mañana o tarde|En la mañana o antes de entrenar. No quita el sueño, así que también va en la tarde.\nRitmo|6 días a la semana|Ciclo: Sin pausa larga.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar unas 3 semanas.\nCiclo|Sin pausa larga.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.\nConsulta a tu médico antes si tienes una condición autoinmune o tomas inmunosupresores.",
         "comps": [
           "melena-de-leon-capsulas-organicas",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>1 cápsula o ½ scoop al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: Sin pausa larga. Momento: mañana o tarde.</p>"
+            "text": "<p>1 cápsula o ½ scoop al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: Sin pausa larga. Momento: mañana o tarde.</p>"
           }
         },
         "acc2": {

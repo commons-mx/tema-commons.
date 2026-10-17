@@ -18,8 +18,8 @@
         "tab": "Extracto de Ginkgo + Bacopa|500 mg por cápsula\nEstandarizado|24% + 50%\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|24% + 50%|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "[Validar ficha técnica con Fer]",
-        "how": "Cuánto|1 cápsula al día|Empieza con la mitad la primera semana.\nCuándo|Con la comida|No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
-        "weeks": "Semana 1|Empieza con la mitad de la porción.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 8 a 12 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
+        "how": "Cuánto|1 cápsula al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Con la comida|No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 8 a 12 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tomas anticoagulantes.\nNo se recomienda si tienes una cirugía programada.\nNo se recomienda si tienes epilepsia.\nNo se recomienda si tomas sedantes.\nNo se recomienda si tienes algún tema de tiroides.",
         "comps": [
           "azafran-1",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Cómo se toma",
-            "text": "<p>1 cápsula al día. Empieza con la mitad la primera semana. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas. Momento: con la comida.</p>"
+            "text": "<p>1 cápsula al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas. Momento: con la comida.</p>"
           }
         },
         "acc2": {
