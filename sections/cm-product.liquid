@@ -22,6 +22,49 @@
 </div>
 
 <section class="buy" aria-label="Comprar {{ name | escape }}">
+  {%- liquid
+    assign gal_list = ''
+    case product.handle
+      when 'ashwagandha-organico-capsulas-extracto'
+        assign gal_list = 'cm-gal-ashwagandha-1.jpg,cm-gal-ashwagandha-2.jpg,cm-gal-ashwagandha-3.jpg,cm-gal-ashwagandha-4.jpg,cm-gal-ashwagandha-5.jpg,cm-gal-ashwagandha-6.jpg,cm-gal-ashwagandha-7.jpg,cm-gal-ashwagandha-8.jpg,cm-gal-ashwagandha-9.jpg'
+    endcase
+  -%}
+  {%- if gal_list != blank -%}
+  {%- assign ga = gal_list | split: ',' -%}
+  <div class="gal gsl" data-gsl>
+    <div class="gstage">
+    <div class="gtrack" tabindex="0" aria-label="Galería de {{ name | escape }}">
+      {%- for a in ga -%}<div class="gslide">{%- assign af = a | strip -%}<img src="{{ af | asset_url }}" alt="{{ name | escape }} · imagen {{ forloop.index }}" width="1400" height="1400" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{%- if forloop.first and s.badge != blank -%}<span class="badge">{{ s.badge }}</span>{%- endif -%}</div>{%- endfor -%}
+    </div>
+    <button type="button" class="garr gprev" aria-label="Anterior" data-gp>‹</button><button type="button" class="garr gnext" aria-label="Siguiente" data-gn>›</button>
+    </div>
+    <div class="gthumbs">{%- for a in ga -%}{%- assign af = a | strip -%}<button type="button" class="gth{% if forloop.first %} on{% endif %}" data-gi="{{ forloop.index0 }}" aria-label="Ver imagen {{ forloop.index }}"><img src="{{ af | asset_url }}" alt="" width="120" height="120" loading="lazy"></button>{%- endfor -%}</div>
+  </div>
+  <style>
+  .gsl{position:relative;min-width:0;display:block !important;height:auto !important}.gsl .gstage{position:relative}
+  .gsl .gtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .gsl .gtrack::-webkit-scrollbar{display:none}
+  .gsl .gslide{flex:0 0 100%;scroll-snap-align:start;position:relative;aspect-ratio:1;background:#f7f8f3}
+  .gsl .gslide img{width:100%;height:100%;object-fit:cover;display:block}
+  .gsl .garr{position:absolute;top:calc(50% - 22px);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink,#141a16);background:rgba(255,255,255,.9);font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink,#141a16)}
+  .gsl .gprev{left:12px}.gsl .gnext{right:12px}
+  .gsl .gthumbs{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-top:10px}
+  .gsl .gth{padding:0;border:1px solid transparent;background:none;cursor:pointer;aspect-ratio:1;opacity:.6}
+  .gsl .gth.on{border-color:var(--ink,#141a16);opacity:1}
+  .gsl .gth img{width:100%;height:100%;object-fit:cover;display:block}
+  @media (max-width:749px){.gsl .garr{display:none}.gsl .gthumbs{display:flex;justify-content:center;gap:6px;margin-top:12px}.gsl .gth{width:7px;height:7px;border-radius:50%;background:#c9cbc4;border:0;opacity:1}.gsl .gth.on{background:var(--ink,#141a16)}.gsl .gth img{display:none}}
+  </style>
+  <script>
+  (function(){ document.querySelectorAll('[data-gsl]').forEach(function(g){ if (g.__ok) return; g.__ok = 1;
+    var tr = g.querySelector('.gtrack'), th = g.querySelectorAll('.gth'), n = th.length;
+    function idx(){ return Math.round(tr.scrollLeft / tr.clientWidth); }
+    function go(i){ i = (i + n) % n; tr.scrollTo({ left: i * tr.clientWidth, behavior: 'smooth' }); }
+    tr.addEventListener('scroll', function(){ var i = idx(); th.forEach(function(b, k){ b.classList.toggle('on', k === i); }); }, { passive: true });
+    g.addEventListener('click', function(e){ var b = e.target.closest('[data-gi]'); if (b) go(+b.dataset.gi); if (e.target.closest('[data-gp]')) go(idx() - 1); if (e.target.closest('[data-gn]')) go(idx() + 1); });
+    tr.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') go(idx() + 1); if (e.key === 'ArrowLeft') go(idx() - 1); });
+  }); })();
+  </script>
+  {%- else -%}
   <div class="gal">
     {%- assign m = product.media -%}
     <div class="gimg">
@@ -35,6 +78,7 @@
     </div>
     {%- endif -%}
   </div>
+  {%- endif -%}
   <div class="bcol">
     <div class="bbox">
       {%- if s.line_label != blank -%}<span class="lab">{{ s.line_label }}</span>{%- endif -%}
