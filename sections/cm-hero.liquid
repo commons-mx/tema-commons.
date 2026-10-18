@@ -257,8 +257,16 @@
 #cm-hero-{{ section.id }} .hcopy .h1{font-size:28px !important;line-height:1.08 !important;margin:0 !important}
 #cm-hero-{{ section.id }} .hcopy .hdesc,#cm-hero-{{ section.id }} .hcopy .tags{display:none !important}
 #cm-hero-{{ section.id }} .hcopy .ctas{margin:0 !important;gap:0 !important}
-#cm-hero-{{ section.id }} .hcopy .ctas .btn{position:absolute !important;left:14px;top:396px;z-index:3;padding-top:5px;padding-bottom:5px;font-size:14px;box-shadow:0 6px 18px rgba(20,26,22,.18)}
+#cm-hero-{{ section.id }} .hh .btn.hqz{position:absolute !important;left:14px;bottom:14px;top:auto !important;z-index:3;padding-top:5px;padding-bottom:5px;font-size:14px;box-shadow:0 6px 18px rgba(20,26,22,.18)}
 #cm-hero-{{ section.id }} .hcopy .hlink{font-size:13px;margin-top:4px}
 #cm-hero-{{ section.id }} .hright{display:none}
 }
 </style>
+
+<script>/* quiz sobre la foto */
+(function(){ var r = document.getElementById('cm-hero-{{ section.id }}'); if (!r) return;
+  var mq = window.matchMedia('(max-width:749px)'), b = r.querySelector('.hcopy .ctas .btn'), home = b && b.parentNode, nx = b && b.nextSibling;
+  function place(){ if (!b) return; var hh = r.querySelector('.cm-slide-bg.on .hh'); if (mq.matches && hh) { hh.appendChild(b); b.classList.add('hqz'); } else if (home) { home.insertBefore(b, nx); b.classList.remove('hqz'); } }
+  place(); mq.addEventListener ? mq.addEventListener('change', place) : mq.addListener(place);
+})();
+</script>
