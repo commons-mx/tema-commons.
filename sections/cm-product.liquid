@@ -28,7 +28,7 @@
       when 'ashwagandha-organico-capsulas-extracto'
         assign gal_list = 'cm-gal-ashwagandha-01.jpg,cm-gal-ashwagandha-02.jpg,cm-gal-ashwagandha-03.jpg,cm-gal-ashwagandha-04.jpg,cm-gal-ashwagandha-05.jpg,cm-gal-ashwagandha-06.jpg,cm-gal-ashwagandha-07.jpg,cm-gal-ashwagandha-08.jpg,cm-gal-ashwagandha-09.jpg'
       when 'hongo-reishi-100g-20-β-glucanos'
-        assign gal_list = 'cm-gal-reishi-01.jpg,cm-gal-reishi-03.jpg,cm-gal-reishi-04.jpg,cm-gal-reishi-05.jpg,cm-gal-reishi-06.jpg,cm-gal-reishi-07.jpg,cm-gal-reishi-08.jpg'
+        assign gal_list = 'cm-gal-reishi-01.jpg,cm-gal-reishi-02.jpg,cm-gal-reishi-03.jpg,cm-gal-reishi-04.jpg,cm-gal-reishi-05.jpg,cm-gal-reishi-06.jpg,cm-gal-reishi-07.jpg,cm-gal-reishi-08.jpg'
       when 'melena-de-leon-capsulas-organicas'
         assign gal_list = 'cm-gal-melena-01.jpg,cm-gal-melena-03.jpg,cm-gal-melena-04.jpg,cm-gal-melena-05.jpg,cm-gal-melena-06.jpg,cm-gal-melena-07.jpg,cm-gal-melena-08.jpg,cm-gal-melena-09.jpg'
       when 'raiz-rhodiola-rosea-full-polvo'
@@ -70,7 +70,8 @@
   <div class="gal gsl" data-gsl>
     <div class="gstage">
     <div class="gtrack" tabindex="0" aria-label="Galería de {{ name | escape }}">
-      {%- for a in ga -%}<div class="gslide">{%- assign af = a | strip -%}<img src="{{ af | asset_url }}" alt="{{ name | escape }} · imagen {{ forloop.index }}" width="1400" height="1400" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{%- if forloop.first and s.badge != blank -%}<span class="badge">{{ s.badge }}</span>{%- endif -%}</div>{%- endfor -%}
+      {%- assign glast = ga | last | strip -%}{%- assign gfirst = ga | first | strip -%}<div class="gslide" aria-hidden="true"><img src="{{ glast | asset_url }}" alt="" width="1400" height="1400" loading="lazy"></div>
+      {%- for a in ga -%}<div class="gslide">{%- assign af = a | strip -%}<img src="{{ af | asset_url }}" alt="{{ name | escape }} · imagen {{ forloop.index }}" width="1400" height="1400" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{%- if forloop.first and s.badge != blank -%}<span class="badge">{{ s.badge }}</span>{%- endif -%}</div>{%- endfor -%}<div class="gslide" aria-hidden="true"><img src="{{ gfirst | asset_url }}" alt="" width="1400" height="1400" loading="lazy"></div>
     </div>
     <button type="button" class="garr gprev" aria-label="Anterior" data-gp>‹</button><button type="button" class="garr gnext" aria-label="Siguiente" data-gn>›</button>
     </div>
@@ -92,14 +93,20 @@
   </style>
   <script>
   (function(){ document.querySelectorAll('[data-gsl]').forEach(function(g){ if (g.__ok) return; g.__ok = 1;
-    var tr = g.querySelector('.gtrack'), th = g.querySelectorAll('.gth'), n = th.length;
-    function idx(){ return Math.round(tr.scrollLeft / tr.clientWidth); }
-    function go(i){ i = (i + n) % n; tr.scrollTo({ left: i * tr.clientWidth, behavior: 'smooth' }); }
-    tr.addEventListener('scroll', function(){ var i = idx(); th.forEach(function(b, k){ b.classList.toggle('on', k === i); }); }, { passive: true });
-    g.addEventListener('click', function(e){ var b = e.target.closest('[data-gi]'); if (b) go(+b.dataset.gi); if (e.target.closest('[data-gp]')) go(idx() - 1); if (e.target.closest('[data-gn]')) go(idx() + 1); });
-    tr.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') go(idx() + 1); if (e.key === 'ArrowLeft') go(idx() - 1); });
+    var tr = g.querySelector('.gtrack'), th = g.querySelectorAll('.gth'), n = th.length, tm;
+    var W = function(){ return tr.clientWidth; };
+    var jump = function(r){ tr.style.scrollSnapType = 'none'; tr.scrollLeft = r * W(); tr.offsetHeight; tr.style.scrollSnapType = ''; };
+    var raw = function(){ return Math.round(tr.scrollLeft / W()); };
+    var real = function(){ return ((raw() - 1) % n + n) % n; };
+    var mark = function(){ var i = real(); th.forEach(function(b, k){ b.classList.toggle('on', k === i); }); };
+    var go = function(i){ tr.scrollTo({ left: (i + 1) * W(), behavior: 'smooth' }); };
+    requestAnimationFrame(function(){ jump(1); });
+    tr.addEventListener('scroll', function(){ mark(); clearTimeout(tm); tm = setTimeout(function(){ var r = raw(); if (r <= 0) jump(n); else if (r >= n + 1) jump(1); mark(); }, 140); }, { passive: true });
+    g.addEventListener('click', function(e){ var b = e.target.closest('[data-gi]'); if (b) go(+b.dataset.gi); if (e.target.closest('[data-gp]')) go(raw() - 2); if (e.target.closest('[data-gn]')) go(raw()); });
+    tr.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') go(raw()); if (e.key === 'ArrowLeft') go(raw() - 2); });
+    window.addEventListener('resize', function(){ jump(raw()); });
   }); })();
-  </script>
+</script>
   {%- else -%}
   <div class="gal">
     {%- assign m = product.media -%}

@@ -260,15 +260,17 @@
 <script>
 (function(){
   if (!window.__cmLoop) { window.__cmLoop = 1;
-    var sx = 0, sy = 0, sc = null, atEnd = false, atStart = false;
-    function scroller(el){ while (el && el !== document.body) { if (el.scrollWidth > el.clientWidth + 4) { var cs = getComputedStyle(el); if ((cs.scrollSnapType || '').indexOf('x') >= 0 && /(auto|scroll)/.test(cs.overflowX)) return el; } el = el.parentElement; } return null; }
-    document.addEventListener('touchstart', function(e){ var t = e.touches[0]; sx = t.clientX; sy = t.clientY; sc = scroller(e.target);
-      if (sc) { atEnd = sc.scrollLeft + sc.clientWidth >= sc.scrollWidth - 6; atStart = sc.scrollLeft <= 6; } }, { passive: true });
-    document.addEventListener('touchend', function(e){ if (!sc) return; var t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
-      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-      if (dx < 0 && atEnd) sc.scrollTo({ left: 0, behavior: 'smooth' });
-      else if (dx > 0 && atStart) sc.scrollTo({ left: sc.scrollWidth, behavior: 'smooth' });
-      sc = null; }, { passive: true });
+    function loopify(sc){ if (sc.__loop) return; var kids = [].slice.call(sc.children); if (kids.length < 3 || sc.scrollWidth <= sc.clientWidth + 4) return; sc.__loop = 1;
+      var cl = function(k){ var c = k.cloneNode(true); c.setAttribute('aria-hidden','true'); c.querySelectorAll('a,button').forEach(function(a){ a.tabIndex = -1; }); return c; };
+      var pre = kids.map(cl), post = kids.map(cl); pre.forEach(function(c){ sc.insertBefore(c, kids[0]); }); post.forEach(function(c){ sc.appendChild(c); });
+      var set = function(){ return kids[0].offsetLeft - pre[0].offsetLeft; };
+      var jump = function(x){ var b = sc.style.scrollBehavior, s = sc.style.scrollSnapType; sc.style.scrollBehavior = 'auto'; sc.style.scrollSnapType = 'none'; sc.scrollLeft = x; sc.offsetHeight; sc.style.scrollSnapType = s; sc.style.scrollBehavior = b; };
+      jump(sc.scrollLeft + set()); var tm;
+      sc.addEventListener('scroll', function(){ clearTimeout(tm); tm = setTimeout(function(){ var w = set(), x = sc.scrollLeft; if (x < w * 0.5) jump(x + w); else if (x > w * 1.5) jump(x - w); }, 140); }, { passive: true });
+    }
+    function scan(){ document.querySelectorAll('.cm-revrow, .ns-quotes').forEach(function(sc){ var cs = getComputedStyle(sc); if ((cs.scrollSnapType || '').indexOf('x') >= 0 && /(auto|scroll)/.test(cs.overflowX)) loopify(sc); }); }
+    if (document.readyState !== 'loading') setTimeout(scan, 300); else document.addEventListener('DOMContentLoaded', function(){ setTimeout(scan, 300); });
+    window.addEventListener('resize', function(){ clearTimeout(window.__cmLoopT); window.__cmLoopT = setTimeout(scan, 400); });
   }
   if (window.__cmCartCount) return; window.__cmCartCount = 1;
   function upd(){ fetch('{{ routes.cart_url }}.js', { credentials: 'same-origin' }).then(function(r){ return r.json(); }).then(function(c){
