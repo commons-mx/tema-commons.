@@ -268,7 +268,7 @@
       jump(sc.scrollLeft + set()); var tm;
       sc.addEventListener('scroll', function(){ clearTimeout(tm); tm = setTimeout(function(){ var w = set(), x = sc.scrollLeft; if (x < w * 0.5) jump(x + w); else if (x > w * 1.5) jump(x - w); }, 140); }, { passive: true });
     }
-    function scan(){ document.querySelectorAll('.cm-revrow, .ns-quotes').forEach(function(sc){ var cs = getComputedStyle(sc); if ((cs.scrollSnapType || '').indexOf('x') >= 0 && /(auto|scroll)/.test(cs.overflowX)) loopify(sc); }); }
+    function scan(){ document.querySelectorAll('.cm-revrow, .ns-quotes, .scifeed').forEach(function(sc){ var cs = getComputedStyle(sc); if ((cs.scrollSnapType || '').indexOf('x') >= 0 && /(auto|scroll)/.test(cs.overflowX)) loopify(sc); }); }
     if (document.readyState !== 'loading') setTimeout(scan, 300); else document.addEventListener('DOMContentLoaded', function(){ setTimeout(scan, 300); });
     window.addEventListener('resize', function(){ clearTimeout(window.__cmLoopT); window.__cmLoopT = setTimeout(scan, 400); });
   }
