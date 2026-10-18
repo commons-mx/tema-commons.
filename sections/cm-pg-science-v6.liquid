@@ -37,7 +37,7 @@
 <div class="ndx-a"><img src="{{ 'cm-sci-crocus.jpg' | asset_url }}" alt="Planta de azafrán con sus flores moradas y la raíz en tierra" loading="lazy" width="1080" height="1920"></div>
 <div class="ndx-b">
 <div class="ndx-t"><span class="sec-n">Nature, decoded</span><p id="ndh" class="disp h2">Empieza en una flor.<br>Termina en una dosis exacta.</p><p class="small">De la planta tomamos solo lo que se estudió, y en la cantidad que se usó en los estudios.</p></div>
-<div class="ndx-c"><figure><div class="fi"><img src="{{ 'cm-sci-estigmas.jpg' | asset_url }}" alt="Tres estigmas de azafrán" loading="lazy" width="1080" height="1350"></div><figcaption>001. El estigma</figcaption></figure><figure><div class="fi"><img src="{{ 'cm-sci-micro.jpg' | asset_url }}" alt="Estigmas de azafrán bajo el microscopio" loading="lazy" width="1080" height="1350"></div><figcaption>002. La medida</figcaption></figure></div>
+<div class="ndx-c"><figure class="fflask"><div class="fi"><img src="{{ 'cm-b-e4e505fc32.png' | asset_url }}" alt="Flor de azafrán dentro de un matraz de laboratorio" loading="lazy" width="901" height="1400"></div><figcaption>001. La flor</figcaption></figure><figure><div class="fi"><img src="{{ 'cm-sci-estigmas.jpg' | asset_url }}" alt="Tres estigmas de azafrán" loading="lazy" width="1080" height="1350"></div><figcaption>002. El estigma</figcaption></figure><figure><div class="fi"><img src="{{ 'cm-sci-micro.jpg' | asset_url }}" alt="Estigmas de azafrán bajo el microscopio" loading="lazy" width="1080" height="1350"></div><figcaption>003. La medida</figcaption></figure></div>
 </div>
 </section>
 <!-- 3 · DECODED: EL INGREDIENTE Y SU DOSIS -->
@@ -265,5 +265,15 @@ root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('cli
 #cmpg-{{ section.id }} .scifeed{padding:0 16px 32px;scroll-padding:0 16px;gap:10px}
 #cmpg-{{ section.id }} .scifeed figure{flex-basis:78vw}
 #cmpg-{{ section.id }} .soonc .ph.sph{display:block;width:64px;height:80px;flex:0 0 64px}
+}
+</style>
+<style>
+#cmpg-{{ section.id }} .ndx-c{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi{background:#fdfdfe}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi img{object-fit:contain;padding:6% 8%}
+@media (max-width:760px){
+#cmpg-{{ section.id }} .ndx-c{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#cmpg-{{ section.id }} .ndx-c .fflask{grid-column:1 / -1}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi{aspect-ratio:1/1}
 }
 </style>
