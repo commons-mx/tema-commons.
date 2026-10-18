@@ -280,7 +280,7 @@ class Component extends DCLogic {
     });
     var STEPS = [
       { name: 'Tú', q: '¿Para quién es?', hint: '', groups: [{ lab: '', cls: 'qopts', opts: mk('who', ['Para mí', 'Para alguien más']) }, { lab: 'Edad', cls: 'qopts three', opts: mk('age', ['Menos de 18', '18 a 29', '30 a 44', '45 a 59', '60 o más']) }, { lab: 'Sexo biológico', cls: 'qopts', opts: mk('sex', ['Mujer', 'Hombre']) }, { lab: '¿Ya tomas adaptógenos?', cls: 'qopts three', opts: mk('ada', ['No, nunca', 'A veces', 'Sí, diario']) }] },
-      { name: 'Lo que vives', q: '¿Qué quieres acompañar?', hint: 'Elige hasta 3.', groups: [{ lab: '', cls: 'qopts three', opts: mk('needs', needsAll, true, 3) }] },
+      { name: 'Lo que vives', q: '¿Qué quieres acompañar?', hint: 'Elige hasta 4.', groups: [{ lab: '', cls: 'qopts three', opts: mk('needs', needsAll, true, 4) }] },
       { name: 'Un poco más', q: 'Cuéntanos un poco más.', hint: 'Dos preguntas por cada cosa que elegiste.', groups: detGroups },
       { name: 'Seguridad', q: '¿Algo de esto aplica para ti?', hint: 'Obligatoria. Puedes elegir varias.', groups: [{ lab: '', cls: 'qopts', opts: mk('safe', ['Embarazo o lactancia', 'Antidepresivos', 'Anticoagulantes', 'Anticonceptivos o tratamiento hormonal', 'Hipertiroidismo', 'Enfermedad del hígado', 'Problemas de riñón', 'Enfermedad autoinmune', 'Otros medicamentos', 'Ninguna'], true) }] },
       { name: 'Cómo lo prefieres', q: '¿Cómo lo quieres tomar?', hint: '', groups: [{ lab: 'Formato', cls: 'qopts', opts: mk('fmt', ['Cápsulas', 'Polvo'], false, 0, ['Lo más práctico', 'Rinde más']) }, { lab: '¿Te sugerimos hasta 2 complementos de Rituals?', cls: 'qopts', opts: mk('rit', ['Sí', 'No']) }] }
@@ -328,7 +328,7 @@ var V = { 'agotad': 'Energía', 'energ': 'Energía', 'estr': 'Estrés', 'duermo'
 try {
   var vive = new URLSearchParams(location.search).get('vive');
   if (vive) { var ns = []; vive.split('|').forEach(function(t){ t = t.toLowerCase(); Object.keys(V).forEach(function(k){ if (t.indexOf(k) >= 0 && ns.indexOf(V[k]) < 0) ns.push(V[k]); }); });
-    C.state.needs = ns.slice(0, 3); if (ns.indexOf('Ciclo menstrual') >= 0 || ns.indexOf('Menopausia') >= 0) C.state.sex = 'Mujer'; }
+    C.state.needs = ns.slice(0, 4); if (ns.indexOf('Ciclo menstrual') >= 0 || ns.indexOf('Menopausia') >= 0) C.state.sex = 'Mujer'; }
 } catch (e) {}
 var root = document.getElementById('cmq-root');
 function paint(){ root.innerHTML = view(C.renderVals()); try { if (C.state.view === 'res') localStorage.setItem(CMQ_KEY, JSON.stringify({ t: Date.now(), s: C.state })); } catch (e) {} }
