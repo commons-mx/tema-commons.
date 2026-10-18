@@ -259,6 +259,17 @@
 <style>.mcart .cartb{position:absolute;top:2px;right:0;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:var(--ink,#141a16);color:#fff;font-size:10.5px;line-height:17px;text-align:center;font-weight:600}.mcart .cartb[hidden]{display:none}</style>
 <script>
 (function(){
+  if (!window.__cmLoop) { window.__cmLoop = 1;
+    var sx = 0, sy = 0, sc = null, atEnd = false, atStart = false;
+    function scroller(el){ while (el && el !== document.body) { if (el.scrollWidth > el.clientWidth + 4) { var cs = getComputedStyle(el); if ((cs.scrollSnapType || '').indexOf('x') >= 0 && /(auto|scroll)/.test(cs.overflowX)) return el; } el = el.parentElement; } return null; }
+    document.addEventListener('touchstart', function(e){ var t = e.touches[0]; sx = t.clientX; sy = t.clientY; sc = scroller(e.target);
+      if (sc) { atEnd = sc.scrollLeft + sc.clientWidth >= sc.scrollWidth - 6; atStart = sc.scrollLeft <= 6; } }, { passive: true });
+    document.addEventListener('touchend', function(e){ if (!sc) return; var t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      if (dx < 0 && atEnd) sc.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (dx > 0 && atStart) sc.scrollTo({ left: sc.scrollWidth, behavior: 'smooth' });
+      sc = null; }, { passive: true });
+  }
   if (window.__cmCartCount) return; window.__cmCartCount = 1;
   function upd(){ fetch('{{ routes.cart_url }}.js', { credentials: 'same-origin' }).then(function(r){ return r.json(); }).then(function(c){
     document.querySelectorAll('.cartn').forEach(function(el){ el.textContent = c.item_count; if (el.classList.contains('cartb')) el.hidden = !c.item_count; }); }).catch(function(){}); }
