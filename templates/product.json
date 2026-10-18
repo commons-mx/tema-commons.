@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "shipping": "<p>Envío gratis desde $990; si no, $150. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "line_label": "Commons",
         "show_volume": false
       },
@@ -47,7 +47,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+            "a": "<p>Sí. Envío gratis en pedidos desde $990. Llega en 3 a 6 días hábiles a toda la República.</p>"
           }
         }
       },
