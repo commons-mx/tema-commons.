@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "shipping": "<p>Envío gratis desde $990; si no, $150. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "short_name": "Eleuthero",
         "line_label": "Commons Botanicals",
         "sci": "Eleutherococcus senticosus · raíz",
@@ -17,10 +17,10 @@
         "big_text": "de eleuterósidos en cada cápsula de 500 mg (extracto al 0.8%).",
         "tab": "Extracto de Eleuthero|500 mg por cápsula\nEstandarizado|0.8% eleuterósidos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|0.8% eleuterósidos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
-        "tab_note": "[Validar ficha técnica con Fer]",
+        "tab_note": "",
         "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Solo en la mañana|Tómalo en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 2 meses y 1 mes de descanso.",
         "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar alrededor de 1 mes.\nCiclo|2 meses y 1 mes de descanso.",
-        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes la presión alta. [validar con Fer]\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes la presión alta.\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
         "comps": [
           "melena-de-leon-capsulas-organicas",
           "master-blend-160-capsulas",
@@ -48,21 +48,21 @@
           "type": "acc",
           "settings": {
             "title": "Lo que lleva · ingredientes",
-            "text": "<p>Por cápsula: 500 mg de extracto de Eleuthero (Eleutherococcus senticosus), estandarizado: 0.8% eleuterósidos. Sin rellenos. [Validar ficha técnica con Fer]</p>"
+            "text": "<p>Por cápsula: 500 mg de extracto de Eleuthero (Eleutherococcus senticosus), estandarizado: 0.8% eleuterósidos. Sin rellenos.</p>"
           }
         },
         "acc3": {
           "type": "acc",
           "settings": {
             "title": "Precauciones",
-            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tienes la presión alta. [validar con Fer]</li><li>Consulta a tu médico antes si tomas anticoagulantes.</li><li>Consulta a tu médico antes si tomas medicamentos para la diabetes.</li></ul>"
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tienes la presión alta.</li><li>Consulta a tu médico antes si tomas anticoagulantes.</li><li>Consulta a tu médico antes si tomas medicamentos para la diabetes.</li></ul>"
           }
         },
         "nut": {
           "type": "nut",
           "settings": {
             "title": "Tabla nutrimental",
-            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+            "text": ""
           }
         },
         "glos": {
@@ -97,7 +97,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+            "a": "<p>Sí. Envío gratis en pedidos desde $990.</p>"
           }
         }
       },

@@ -695,32 +695,32 @@
         "b1": {
           "type": "review",
           "settings": {
-            "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
+            "quote": "Me relaja y me ayuda no solo a dormir: me descansa completamente.",
+            "name": "Maribel R.",
             "tag": "Sueño · Reishi"
           }
         },
         "b2": {
           "type": "review",
           "settings": {
-            "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
+            "quote": "Me lo recetó mi ginecóloga y me ha ayudado mucho con mis niveles de estrés.",
+            "name": "Karina C.",
             "tag": "Estrés · Ashwagandha"
           }
         },
         "b3": {
           "type": "review",
           "settings": {
-            "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
-            "tag": "Ánimo · Azafrán"
+            "quote": "Realmente siento una diferencia en mi desempeño diario: me da energía y me regula el estrés.",
+            "name": "Miriam S.",
+            "tag": "Energía · Master Blend"
           }
         },
         "b4": {
           "type": "review",
           "settings": {
-            "quote": "[Reseña real, con permiso]",
-            "name": "[Nombre]",
+            "quote": "Me ayuda a concentrarme mejor y a hacer mis actividades del trabajo con más enfoque.",
+            "name": "Carlos D.",
             "tag": "Enfoque · Melena de León"
           }
         }

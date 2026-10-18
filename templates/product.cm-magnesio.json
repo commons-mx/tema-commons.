@@ -3,13 +3,13 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "shipping": "<p>Envío gratis desde $990; si no, $150. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "short_name": "Magnesio P.M.",
         "line_label": "Commons Science",
         "sci": "Bisglicinato de magnesio · glicina · apigenina · sin melatonina",
         "badge": "Nuevo",
         "needs": "Sueño, Relajación, Calma, Recuperación",
-        "claim": "Bisglicinato de magnesio, glicina y apigenina de manzanilla, con L-teanina, en polvo. Para preparar tu noche, sin melatonina. [Validar claims]",
+        "claim": "Bisglicinato de magnesio, glicina y apigenina de manzanilla, con L-teanina, en polvo. Para preparar tu noche, sin melatonina.",
         "ev_quick": "Evidencia por ingrediente · ver lo que se ha estudiado",
         "ten": "Para: Sueño y relajación\nLleva: Bisglicinato de magnesio, glicina y apigenina, con L-teanina\nPorción: 10 g · 2 cucharadas de 5 g\nMomento: En la noche, antes de dormir\nRinde: 450 g · 45 noches",
         "show_volume": true,
@@ -25,7 +25,7 @@
         "ev_tag": "Por ingrediente",
         "ev_word": "Sueño.",
         "ev_text": "El magnesio, la glicina y la L-teanina se han estudiado en la calidad del sueño y la relajación.",
-        "ev_cite": "[Validar referencias con Fer]",
+        "ev_cite": "",
         "prec": "Para mayores de edad. No en embarazo ni lactancia.\nNo lo tomes si eres intolerante o sensible a alguno de sus ingredientes.\nSi tienes enfermedad renal o tomas medicamentos, consulta a tu médico antes.\nEn dosis altas el magnesio puede aflojar el estómago. Toma solo la porción de la etiqueta.",
         "comps": [
           "hongo-reishi-100g-20-β-glucanos",
@@ -41,7 +41,7 @@
           "type": "acc",
           "settings": {
             "title": "Beneficios",
-            "text": "<ul><li>Acompaña un sueño más profundo.</li><li>Ayuda a relajarte antes de dormir.</li><li>Apoya la calma, sin melatonina.</li><li>Acompaña la recuperación muscular.</li></ul><p>[Validar con regulatorio]</p>"
+            "text": "<ul><li>Acompaña un sueño más profundo.</li><li>Ayuda a relajarte antes de dormir.</li><li>Apoya la calma, sin melatonina.</li><li>Acompaña la recuperación muscular.</li></ul><p></p>"
           }
         },
         "acc1": {
@@ -69,7 +69,7 @@
           "type": "nut",
           "settings": {
             "title": "Tabla nutrimental",
-            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+            "text": ""
           }
         },
         "faq1": {
@@ -83,7 +83,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Me da sueño al día siguiente?",
-            "a": "<p>No lleva sedantes ni melatonina. Tómalo en la noche, antes de dormir. [Validar]</p>"
+            "a": "<p>No lleva sedantes ni melatonina. Tómalo en la noche, antes de dormir.</p>"
           }
         },
         "faq3": {
@@ -97,7 +97,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Por qué tres formas de magnesio?",
-            "a": "<p>Cada forma se absorbe y se usa de manera distinta. Juntas cubren más que una sola. [Validar con Fer]</p>"
+            "a": "<p>Cada forma se absorbe y se usa de manera distinta. Juntas cubren más que una sola.</p>"
           }
         }
       },

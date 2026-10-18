@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "shipping": "<p>Envío gratis desde $990; si no, $150. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "short_name": "Master blend",
         "line_label": "Commons Botanicals",
         "sci": "8 hongos + Tulsi, Ginkgo y Astrágalo",
@@ -27,7 +27,7 @@
           "type": "acc",
           "settings": {
             "title": "Beneficios",
-            "text": "<ul><li>Apoya tus defensas.</li><li>Acompaña la energía del día.</li><li>Acompaña el enfoque.</li><li>8 hongos y 3 plantas en una sola toma.</li></ul><p>[Validar con regulatorio]</p>"
+            "text": "<ul><li>Apoya tus defensas.</li><li>Acompaña la energía del día.</li><li>Acompaña el enfoque.</li><li>8 hongos y 3 plantas en una sola toma.</li></ul><p></p>"
           }
         },
         "acc1": {
@@ -48,7 +48,7 @@
           "type": "nut",
           "settings": {
             "title": "Tabla nutrimental",
-            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+            "text": ""
           }
         },
         "faq1": {
@@ -76,7 +76,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+            "a": "<p>Sí. Envío gratis en pedidos desde $990.</p>"
           }
         }
       },

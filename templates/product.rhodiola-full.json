@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. [Tiempo de entrega] · [Política de devoluciones]</p>",
+        "shipping": "<p>Envío gratis desde $990; si no, $150. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "short_name": "Rhodiola",
         "line_label": "Commons Botanicals",
         "sci": "Rhodiola rosea · raíz",
@@ -17,7 +17,7 @@
         "big_text": "de rosavinas y 5 mg de salidrosida en cada cápsula de 500 mg.",
         "tab": "Extracto de Rhodiola|500 mg por cápsula\nEstandarizado|3% rosavinas · 1% salidrosida\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
         "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|3% rosavinas · 1% salidrosida|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
-        "tab_note": "[Validar ficha técnica con Fer]",
+        "tab_note": "",
         "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Solo en la mañana|Tómala en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
         "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 2 a 4 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
         "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tomas antidepresivos.\nConsulta a tu médico antes si eres sensible a la cafeína o a los estimulantes.",
@@ -48,7 +48,7 @@
           "type": "acc",
           "settings": {
             "title": "Lo que lleva · ingredientes",
-            "text": "<p>Por cápsula: 500 mg de extracto de Rhodiola (Rhodiola rosea), estandarizado: 3% rosavinas · 1% salidrosida. Sin rellenos. [Validar ficha técnica con Fer]</p>"
+            "text": "<p>Por cápsula: 500 mg de extracto de Rhodiola (Rhodiola rosea), estandarizado: 3% rosavinas · 1% salidrosida. Sin rellenos.</p>"
           }
         },
         "acc3": {
@@ -62,7 +62,7 @@
           "type": "nut",
           "settings": {
             "title": "Tabla nutrimental",
-            "text": "<p>[Tabla nutrimental pendiente · la manda Fer con la ficha técnica]</p>"
+            "text": ""
           }
         },
         "glos": {
@@ -97,7 +97,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990. [Tiempo de entrega]</p>"
+            "a": "<p>Sí. Envío gratis en pedidos desde $990.</p>"
           }
         }
       },
