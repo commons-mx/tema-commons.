@@ -1810,11 +1810,11 @@
     "cm_header": {
       "type": "cm-header",
       "settings": {
-        "ann_link": "/products/azafran-1",
+        "ann_link": "/#protocolo",
         "quiz_link": "/pages/quiz-commons",
         "mobile_footer": "cm-commons",
-        "ann_text": "Nuevo en Science, nuestras fórmulas estudiadas: Azafrán",
-        "ann_more": "",
+        "ann_text": "Arma tu protocolo: 2 productos −10% · 3 o más −15%",
+        "ann_more": "Envío gratis desde $990",
         "ann_link_label": ""
       },
       "blocks": {

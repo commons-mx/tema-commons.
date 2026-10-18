@@ -516,7 +516,12 @@
           </div>
         {%- endif -%}
         {%- if section.settings.text != blank -%}
-          <div class="rte mt-2 mb-6 lg:mb-12 color-text--{{ section.id }}">{{ section.settings.text }}</div>
+          <div class="rte cm-esc mt-2 mb-6 lg:mb-12 color-text--{{ section.id }}">{{ section.settings.text }}</div><style>/* escalones en botoncitos */
+.cm-esc p + p{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cm-esc p + p strong{display:inline-flex;align-items:center;border:1px solid #141A16;border-radius:999px;padding:7px 14px;font-weight:500;font-size:15px;line-height:1;background:#fff;color:#141A16}
+.cm-esc p + p strong:nth-child(2){background:#EDE47A;border-color:#EDE47A}
+.cm-esc p + p strong:nth-child(3){background:#141A16;color:#F6F3EC}
+</style>
         {% endif %}
       </div>      
     {%- endif -%}

@@ -240,22 +240,25 @@
 
 
 
-<style>/* hero recuadro */
+
+
+<style>/* hero limpio */
 @media (max-width:749px){
 #cm-hero-{{ section.id }} .hero{position:relative}
-#cm-hero-{{ section.id }} .hero .cm-slide-bg.dual{aspect-ratio:auto !important;height:600px}
-#cm-hero-{{ section.id }} .hero .dual .hh:first-child{height:405px;top:0}
-#cm-hero-{{ section.id }} .hero .dual .hh + .hh{top:405px;height:195px}
-#cm-hero-{{ section.id }} .hero .dual .hh:first-child .hbg{object-position:50% 30%}
-#cm-hero-{{ section.id }} .hgrid{position:absolute !important;left:0;right:0;top:0;height:405px;min-height:0 !important;display:flex;align-items:flex-start;padding:12px;pointer-events:none;z-index:2}
-#cm-hero-{{ section.id }} .hleft{width:100%;padding:0 !important;min-height:0 !important}
-#cm-hero-{{ section.id }} .hcopy{pointer-events:auto;background:rgba(246,243,236,.95);border-radius:14px;padding:12px 14px 12px !important;gap:6px !important;box-shadow:0 8px 24px rgba(20,26,22,.12)}
-#cm-hero-{{ section.id }} .hcopy .hrate{font-size:11px;margin:0 !important}
-#cm-hero-{{ section.id }} .hcopy .h1{font-size:21px !important;line-height:1.1 !important;margin:0 0 8px !important}
+#cm-hero-{{ section.id }} .hero .cm-slide-bg.dual{aspect-ratio:auto !important;height:460px}
+#cm-hero-{{ section.id }} .hero .dual .hh:first-child{height:100%;top:0;border-bottom:0}
+#cm-hero-{{ section.id }} .hero .dual .hh + .hh{display:none}
+#cm-hero-{{ section.id }} .hero .dual .hh:first-child .hbg{object-position:50% 60%}
+#cm-hero-{{ section.id }} .hero .dual .hh:first-child .hcap{display:none}
+#cm-hero-{{ section.id }} .hgrid,#cm-hero-{{ section.id }} .hleft,#cm-hero-{{ section.id }} .hcopy,#cm-hero-{{ section.id }} .cm-slide,#cm-hero-{{ section.id }} .ctas{position:static !important;min-height:0 !important}
+#cm-hero-{{ section.id }} .hleft{padding:20px 16px 24px !important}
+#cm-hero-{{ section.id }} .hcopy{gap:8px !important}
+#cm-hero-{{ section.id }} .hcopy .hrate{font-size:12px}
+#cm-hero-{{ section.id }} .hcopy .h1{font-size:28px !important;line-height:1.08 !important;margin:0 !important}
 #cm-hero-{{ section.id }} .hcopy .hdesc,#cm-hero-{{ section.id }} .hcopy .tags{display:none !important}
-#cm-hero-{{ section.id }} .hcopy .ctas{display:flex;align-items:center;gap:16px;margin:0 !important;flex-wrap:nowrap}
-#cm-hero-{{ section.id }} .hcopy .ctas .btn{padding-top:6px;padding-bottom:6px;font-size:14px}
-#cm-hero-{{ section.id }} .hcopy .hlink{display:none !important}
+#cm-hero-{{ section.id }} .hcopy .ctas{margin:0 !important;gap:0 !important}
+#cm-hero-{{ section.id }} .hcopy .ctas .btn{position:absolute !important;left:14px;top:396px;z-index:3;padding-top:5px;padding-bottom:5px;font-size:14px;box-shadow:0 6px 18px rgba(20,26,22,.18)}
+#cm-hero-{{ section.id }} .hcopy .hlink{font-size:13px;margin-top:4px}
 #cm-hero-{{ section.id }} .hright{display:none}
 }
 </style>

@@ -586,7 +586,7 @@
         "heading_tag": "h2",
         "heading_alignment": "left",
         "subheading": "Todo el año",
-        "text": "<p>Elige 2 o más y ahorra: 2 productos −10% · 3 o más −15%.</p><p><em>Pss: con 5 o más, −20%.</em></p>",
+        "text": "<p>Elige 2 o más y ahorra.</p><p><strong>2 productos −10%</strong><strong>3 o más −15%</strong><strong>5 o más −20%</strong></p>",
         "button_atb_label": "Agregar",
         "step_icon_size": 32,
         "enable_quickview": false,
@@ -988,12 +988,22 @@
         "asset1": "cm-life-corriendo.jpg",
         "asset2": "cm-life-sonrisa.jpg"
       }
+    },
+    "cm_sci_strip": {
+      "type": "cm-sci-strip",
+      "settings": {
+        "eyebrow": "Nuevo · Commons Science",
+        "text": "Azafrán, nuestra primera fórmula",
+        "link": "/products/azafran-1",
+        "asset": "cm-hero-sci.jpg"
+      }
     }
   },
   "order": [
     "cm_hero",
     "cm_needs",
     "cm_quiz",
+    "cm_sci_strip",
     "buy_your_own_bundle_pTbqYm",
     "cm_trust",
     "cm_life1",
