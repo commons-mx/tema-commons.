@@ -8,6 +8,8 @@
   assign rating = product.metafields.loox.avg_rating.value | default: product.metafields.reviews.rating.value.rating
   assign nrev = product.metafields.loox.num_reviews.value | default: product.metafields.reviews.rating_count.value
   assign name = s.short_name | default: product.title
+  assign rnum = rating | plus: 0
+  assign nnum = nrev | plus: 0
 -%}
 {{ 'cm-pg-producto.css' | asset_url | stylesheet_tag }}
 <div class="cmpg" id="cmp-{{ section.id }}" data-cmp>
@@ -127,7 +129,7 @@
       {%- if s.line_label != blank -%}<span class="lab">{{ s.line_label }}</span>{%- endif -%}
       <h1 class="disp h2" style="margin: 0">{{ name }}</h1>
       {%- if s.sci != blank -%}<p class="sci">{{ s.sci }}</p>{%- endif -%}
-      {%- if rating != blank -%}<a class="rating" href="#resenas" style="text-decoration:none;color:inherit"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 2 }}{% if nrev != blank %} · {{ nrev }} reseñas{% endif %}</span></a>{%- elsif s.reviews_note != blank -%}<div class="rating rpend"><b aria-hidden="true">★★★★★</b><span>{{ s.reviews_note }}</span></div>{%- endif -%}
+      {%- if rnum > 0 and nnum > 0 -%}<a class="rating" href="#resenas" style="text-decoration:none;color:inherit"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 1 }} · Reseñas</span></a>{%- endif -%}
       {%- if s.needs != blank -%}<div class="tags">{%- assign nn = s.needs | split: ',' -%}{%- for n in nn -%}<span class="tag">{{ n | strip }}</span>{%- endfor -%}</div>{%- endif -%}
       {%- if s.claim != blank -%}<p style="margin: 0; font-size: 18px">{{ s.claim }}</p>{%- endif -%}
       {%- if s.ev_quick != blank -%}<a class="evq" href="#evidencia"><span class="dt"></span>{{ s.ev_quick }}<span class="go">Ver evidencia ↓</span></a>{%- endif -%}
@@ -305,11 +307,11 @@
 {%- endif -%}
 
 {%- assign feed = product.metafields.loox.review_feed.value -%}
-{%- if feed.reviews.size > 0 or product.metafields.loox.reviews != blank -%}
+{%- if feed.reviews.size > 0 or nnum > 0 -%}
 <section class="cmrv" id="resenas" aria-labelledby="rv-{{ section.id }}">
   <div class="rvh">
     <div><span class="lab">Reseñas</span><h2 id="rv-{{ section.id }}" class="disp h2">Lo que cambió en su día.</h2></div>
-    {%- if rating != blank -%}<div class="rvsum"><span class="rvbig">{{ rating | round: 1 }}</span><span><b class="rvst" aria-label="{{ rating }} de 5">★★★★★</b><span class="small">{% if nrev != blank %}{{ nrev }} reseñas verificadas{% endif %}</span></span></div>{%- endif -%}
+    {%- if rnum > 0 -%}<div class="rvsum"><span class="rvbig">{{ rating | round: 1 }}</span><span><b class="rvst" aria-label="{{ rating }} de 5">★★★★★</b><span class="small">Reseñas verificadas</span></span></div>{%- endif -%}
   </div>
   {%- if feed.reviews.size > 0 -%}
   <div class="rvg">
@@ -368,7 +370,7 @@
       {%- endfor -%}
     </div>
   </div>
-  <div class="cellimg">{%- if s.faq_image != blank -%}{{ s.faq_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- elsif product.media[2] -%}{{ product.media[2] | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}</div>
+  <div class="cellimg">{%- if s.faq_image != blank -%}{{ s.faq_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- elsif product.handle == 'azafran-1' -%}<img src="{{ 'cm-sci-post-2.jpg' | asset_url }}" alt="Flor de azafrán de cerca · Beyond what we see" loading="lazy" width="1080" height="1350" style="width:100%;height:100%;object-fit:cover">{%- elsif product.handle == 'magnesio-p-m' -%}<img src="{{ 'cm-sci-post-7.jpg' | asset_url }}" alt="Pétalos de cerca · Nature decoded" loading="lazy" width="1080" height="1350" style="width:100%;height:100%;object-fit:cover">{%- elsif product.media[2] -%}{{ product.media[2] | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}</div>
 </section>
 {%- endif -%}
 </div>
