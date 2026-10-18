@@ -142,6 +142,11 @@
   endif
 -%}
 {%- if cm_sci -%}<style>/* Science en lima */ :root,body,.cm4,.cmpg .v4,.acY,.cm-hdr{--lime:#DFF68F !important} #CartDrawer .x-cart-item-count{background:#DFF68F !important}</style>{%- endif -%}
+<style>/* carrito commons */
+.x-badges-container{display:none !important}
+.main-cart-footer .button,.main-cart-footer button[type=submit],#checkout,button[name=checkout],#CartDrawer button[name=checkout],.cart-discount button,.cart-share button{background:#141A16 !important;border-color:#141A16 !important;color:#F6F3EC !important}
+.main-cart-footer a,.cart__footer a{color:#141A16 !important;text-decoration:underline}
+</style>
 </head>
   <body 
     class="gradient scrollbar-body overflow-x-hidden body-text-base-size{% if settings.lang_direction contains request.locale.iso_code %} rtl{% endif %}" 
