@@ -48,7 +48,7 @@
           "settings": {
             "icon": "Sueño",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-sueno"
           }
         },
         "b2": {
@@ -56,7 +56,7 @@
           "settings": {
             "icon": "Estrés",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-estres"
           }
         },
         "b3": {
@@ -64,7 +64,7 @@
           "settings": {
             "icon": "Ánimo",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-animo"
           }
         },
         "b4": {
@@ -72,7 +72,7 @@
           "settings": {
             "icon": "Enfoque",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-enfoque"
           }
         },
         "b5": {
@@ -80,15 +80,15 @@
           "settings": {
             "icon": "Energía",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-energia"
           }
         },
         "b6": {
           "type": "need",
           "settings": {
             "icon": "Ciclo",
-            "label": "",
-            "link": ""
+            "label": "Sistema hormonal",
+            "link": "/collections/necesidad-ciclo"
           }
         },
         "b7": {
@@ -96,7 +96,7 @@
           "settings": {
             "icon": "Defensas",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-defensas"
           }
         },
         "b8": {
@@ -104,7 +104,23 @@
           "settings": {
             "icon": "Metabolismo",
             "label": "",
-            "link": ""
+            "link": "/collections/necesidad-metabolismo"
+          }
+        },
+        "b9": {
+          "type": "need",
+          "settings": {
+            "icon": "Digestión",
+            "label": "",
+            "link": "/collections/necesidad-digestion"
+          }
+        },
+        "b10": {
+          "type": "need",
+          "settings": {
+            "icon": "Longevidad",
+            "label": "",
+            "link": "/collections/necesidad-longevidad"
           }
         }
       },
@@ -116,7 +132,9 @@
         "b5",
         "b6",
         "b7",
-        "b8"
+        "b8",
+        "b9",
+        "b10"
       ],
       "settings": {
         "heading": "¿Qué necesitas hoy?",

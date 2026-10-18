@@ -119,7 +119,9 @@ class Component extends DCLogic {
       // Digestión y Hormonas (hombre): categorías de la hoja Proyecto Quiz Commons (Eri, 10 oct)
       'Digestión': { why: 'para tu digestión', w: { 'Tulsi': 4, 'Cola de Pavo': 3, 'Reishi': 2, 'Amla': 2, 'Schisandra': 1 },
         det: { 'Inflamación o pesadez': { 'Reishi': 2, 'Cola de Pavo': 1 }, 'Acidez o estómago nervioso': { 'Tulsi': 2 }, 'Digestión lenta': { 'Amla': 2, 'Schisandra': 1 } }, det2: { 'Sí, mucho': { 'Tulsi': 1, 'Ashwagandha': 2 }, 'A veces': { 'Reishi': 1 }, 'No': { 'Cola de Pavo': 1 } } },
-      'Hormonas y libido': { why: 'para tu balance hormonal', w: { 'Mucuna': 4, 'Cordyceps': 4, 'Ashwagandha': 3, 'Eleuthero': 1, 'Rhodiola': 1 },
+      'Longevidad': { why: 'para cuidarte a largo plazo', w: { 'Master blend': 4, 'Astrágalo': 3, 'Reishi': 3, 'Cola de Pavo': 2, 'Amla': 2, 'Maitake': 1 },
+        det: { 'Cuidarme a largo plazo': { 'Master blend': 2, 'Reishi': 1 }, 'Mantener mi energía con los años': { 'Astrágalo': 2, 'Cordyceps': 1 }, 'Antioxidantes': { 'Amla': 2, 'Cola de Pavo': 1 } }, det2: { 'Sí, diario': { 'Master blend': 1 }, 'A veces': { 'Astrágalo': 1 }, 'Casi no': { 'Reishi': 1 } } },
+      'Sistema hormonal': { why: 'para tu balance hormonal', w: { 'Mucuna': 4, 'Cordyceps': 4, 'Ashwagandha': 3, 'Eleuthero': 1, 'Rhodiola': 1 },
         det: { 'Libido baja': { 'Mucuna': 2 }, 'Poca energía o resistencia': { 'Cordyceps': 2, 'Eleuthero': 1 }, 'Me cuesta recuperarme': { 'Ashwagandha': 2, 'Cordyceps': 1 } }, det2: { '3 o más veces por semana': { 'Cordyceps': 2 }, 'A veces': { 'Ashwagandha': 1 }, 'Casi no': { 'Eleuthero': 1 } } }
       // apagadas (off) hasta que el producto exista: se prenden quitando off
       ,'Azúcar y antojos': { off: true, why: 'para tu glucosa', w: { 'Glucose Response': 5, 'Schisandra': 1 },
@@ -158,7 +160,7 @@ class Component extends DCLogic {
   build() {
     var st = this.state, P = this.P, N = this.N, self = this;
     var safe = st.safe, warn = {};
-    var needs = st.needs.filter(function (n) { return N[n] && !N[n].off && !((n === 'Menopausia' && !(st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más'))) || (n === 'Ciclo menstrual' && (st.sex !== 'Mujer' || st.age === '60 o más')) || (n === 'Hormonas y libido' && st.sex !== 'Hombre')); });
+    var needs = st.needs.filter(function (n) { return N[n] && !N[n].off && !((n === 'Menopausia' && !(st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más'))) || (n === 'Ciclo menstrual' && (st.sex !== 'Mujer' || st.age === '60 o más')) || (n === 'Sistema hormonal' && st.sex !== 'Hombre')); });
     if (!needs.length) needs = ['Estrés'];
     var out = {};
     var has = function (x) { return safe.indexOf(x) >= 0; };
@@ -243,8 +245,8 @@ class Component extends DCLogic {
     var self = this, st = this.state;
     var tp = String(this.props.tipografia ?? 'A');
     var mk = function (k, arr, multi, max, subs) { return arr.map(function (t, i) { var on = multi ? st[k].indexOf(t) >= 0 : st[k] === t; return { t: t, s: (subs && subs[i]) || '', cls: 'qo' + (on ? ' on' : ''), pick: function () { self.set(k, t, multi, max); } }; }); };
-    var needsAll = ['Sueño', 'Estrés', 'Ánimo', 'Enfoque', 'Energía', 'Defensas', 'Digestión', 'Piel'];
-    if (st.sex === 'Hombre') needsAll = needsAll.concat(['Hormonas y libido']);
+    var needsAll = ['Sueño', 'Estrés', 'Ánimo', 'Enfoque', 'Energía', 'Defensas', 'Digestión', 'Longevidad', 'Piel'];
+    if (st.sex === 'Hombre') needsAll = needsAll.concat(['Sistema hormonal']);
     needsAll = needsAll.concat(['Azúcar y antojos', 'Ejercicio y recuperación'].filter(function (n) { return !self.N[n].off; }));
     if (st.sex === 'Mujer' && st.age !== '60 o más') needsAll = needsAll.concat(['Ciclo menstrual']);
     if (st.sex === 'Mujer' && (st.age === '45 a 59' || st.age === '60 o más')) needsAll = needsAll.concat(['Menopausia']);
@@ -258,15 +260,16 @@ class Component extends DCLogic {
       'Piel': ['Piel · ¿qué quieres mejorar?', ['Granitos', 'Manchas', 'Firmeza e hidratación']],
       'Ciclo menstrual': ['Ciclo · ¿qué te pasa más?', ['Ciclo irregular', 'Síntomas antes de la regla', 'Cólicos']],
       'Menopausia': ['Menopausia · ¿qué te molesta más?', ['Bochornos', 'Sueño', 'Ánimo']],
+      'Longevidad': ['Longevidad · ¿qué buscas?', ['Cuidarme a largo plazo', 'Mantener mi energía con los años', 'Antioxidantes']],
       'Digestión': ['Digestión · ¿qué sientes más?', ['Inflamación o pesadez', 'Acidez o estómago nervioso', 'Digestión lenta']],
-      'Hormonas y libido': ['Hormonas · ¿qué notas más?', ['Libido baja', 'Poca energía o resistencia', 'Me cuesta recuperarme']],
+      'Sistema hormonal': ['Sistema hormonal · ¿qué notas más?', ['Libido baja', 'Poca energía o resistencia', 'Me cuesta recuperarme']],
       'Azúcar y antojos': ['Azúcar · ¿qué te pasa más?', ['Me da sueño después de comer', 'Se me antoja el azúcar', 'Energía que sube y baja']],
       'Ejercicio y recuperación': ['Ejercicio · ¿qué buscas?', ['Fuerza', 'Resistencia', 'Recuperarme']]
     };
     var DET2 = {
       'Sueño': '¿Qué te quita el sueño?', 'Estrés': '¿Dónde lo sientes más?', 'Ánimo': '¿Hace cuánto te sientes así?', 'Enfoque': '¿Para qué lo necesitas?',
       'Energía': '¿Qué cansancio es?', 'Defensas': '¿Cuántas veces te enfermas?', 'Piel': '¿Y tu cabello?', 'Ciclo menstrual': '¿Cómo cambia tu ánimo en el ciclo?',
-      'Menopausia': '¿Qué más te pasa?', 'Digestión': '¿Tu estómago refleja tu estrés?', 'Hormonas y libido': '¿Haces ejercicio?',
+      'Menopausia': '¿Qué más te pasa?', 'Digestión': '¿Tu estómago refleja tu estrés?', 'Longevidad': '¿Cada cuánto tomas hongos o adaptógenos?', 'Sistema hormonal': '¿Haces ejercicio?',
       'Azúcar y antojos': '¿Te han dicho algo de tu glucosa?', 'Ejercicio y recuperación': '¿Cuánto entrenas?'
     };
     var detGroups = [];
@@ -321,7 +324,7 @@ try { var cmqSv = JSON.parse(localStorage.getItem(CMQ_KEY) || 'null');
   else if (cmqSv) localStorage.removeItem(CMQ_KEY);
 } catch (e) {}
 function cmqForget(){ try { localStorage.removeItem(CMQ_KEY); } catch (e) {} cmqRestored = false; C.state = new Component({}).state; paint(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-var V = { 'agotad': 'Energía', 'energ': 'Energía', 'estr': 'Estrés', 'duermo': 'Sueño', 'sueñ': 'Sueño', 'enfoc': 'Enfoque', 'ciclo': 'Ciclo menstrual', 'defens': 'Defensas', 'ánimo': 'Ánimo', 'animo': 'Ánimo', 'piel': 'Piel', 'menopaus': 'Menopausia' };
+var V = { 'agotad': 'Energía', 'energ': 'Energía', 'estr': 'Estrés', 'duermo': 'Sueño', 'sueñ': 'Sueño', 'enfoc': 'Enfoque', 'ciclo': 'Ciclo menstrual', 'defens': 'Defensas', 'ánimo': 'Ánimo', 'animo': 'Ánimo', 'piel': 'Piel', 'menopaus': 'Menopausia', 'digest': 'Digestión', 'longev': 'Longevidad', 'hormon': 'Sistema hormonal' };
 try {
   var vive = new URLSearchParams(location.search).get('vive');
   if (vive) { var ns = []; vive.split('|').forEach(function(t){ t = t.toLowerCase(); Object.keys(V).forEach(function(k){ if (t.indexOf(k) >= 0 && ns.indexOf(V[k]) < 0) ns.push(V[k]); }); });
