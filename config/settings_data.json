@@ -329,9 +329,15 @@
       "enable_featured_discount": true,
       "cart_enable_terms_and_conditions": false,
       "cart_terms_and_conditions_page": "",
-      "cart_upsell_product_list": [],
+      "cart_upsell_product_list": [
+        "hongo-reishi-100g-20-β-glucanos",
+        "melena-de-leon-capsulas-organicas",
+        "ashwagandha-organico-capsulas-extracto",
+        "magnesio-p-m",
+        "cordyceps-extracto-commons"
+      ],
       "number_of_product_shown": 6,
-      "cart_upsell_section_label": "Súmalo a tu protocolo",
+      "cart_upsell_section_label": "Suma 1 más y ahorras 10% en los dos",
       "enable_save_share_cart": true,
       "hide_cart": false,
       "enable_free_shipping": true,
@@ -351,7 +357,8 @@
       "checkout_button_color": "#141A16",
       "checkout_error_color": "#e12b28",
       "products_hover_to_reveal_second_image": true,
-      "content_for_index": []
+      "content_for_index": [],
+      "order_amount_freeshipping": "990"
     },
     "Placid": {
       "theme_mode_enabled": false,
