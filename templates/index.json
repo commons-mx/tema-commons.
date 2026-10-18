@@ -992,8 +992,8 @@
   },
   "order": [
     "cm_hero",
-    "cm_trust",
     "cm_needs",
+    "cm_trust",
     "cm_quiz",
     "buy_your_own_bundle_pTbqYm",
     "cm_life1",
