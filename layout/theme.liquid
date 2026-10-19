@@ -149,6 +149,7 @@
 .main-cart-footer a,.cart__footer a{color:#141A16 !important;text-decoration:underline}
 </style>
 <style>/* bandas bajas */ @media (min-width:750px){.cm4 .pband.pb-txt .pbi{aspect-ratio:auto !important;min-height:0 !important;height:min(68vh,620px)}}</style>
+<style>/* hover 2a foto */ .ph{position:relative} .ph img.prod2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;z-index:1} @media (hover:hover){.card:hover .ph img.prod2,.ph:hover img.prod2{opacity:1}} .ph .badge{z-index:2}</style>
 </head>
   <body 
     class="gradient scrollbar-body overflow-x-hidden body-text-base-size{% if settings.lang_direction contains request.locale.iso_code %} rtl{% endif %}" 

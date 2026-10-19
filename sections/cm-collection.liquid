@@ -47,7 +47,7 @@
   {%- assign v = p.selected_or_first_available_variant -%}
   <article class="card" data-line="{{ ln }}">
     <a class="ph" href="{{ p.url }}" style="display: block">
-      {%- if p.featured_image -%}{{ p.featured_image | image_url: width: 900 | image_tag: class: 'prod', loading: 'lazy', alt: p.title, sizes: '(min-width: 990px) 33vw, 50vw' }}{%- endif -%}
+      {%- if p.featured_image -%}{{ p.featured_image | image_url: width: 900 | image_tag: class: 'prod', loading: 'lazy', alt: p.title, sizes: '(min-width: 990px) 33vw, 50vw' }}{%- endif -%}{%- if p.media[1] and p.media[1].media_type == 'image' -%}{{ p.media[1] | image_url: width: 900 | image_tag: class: 'prod prod2', loading: 'lazy', alt: p.title, sizes: '(min-width: 990px) 33vw, 50vw' }}{%- endif -%}
       {%- assign cm_best = 'ashwagandha-organico-capsulas-extracto,melena-de-leon-capsulas-organicas,relaxing-hot-cacao,azafran-1,hongo-reishi-100g-20-β-glucanos,raiz-rhodiola-rosea-full-polvo,cordyceps-extracto-commons,master-blend-160-capsulas' | split: ',' -%}{%- if cm_best contains p.handle -%}<span class="badge">Más vendido</span>{%- endif -%}
     </a>
     <div class="cardrow"><div>

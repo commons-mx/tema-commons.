@@ -8,7 +8,7 @@
       {%- if p == blank -%}{%- continue -%}{%- endif -%}
       <article class="card" {{ block.shopify_attributes }}>
         <a class="ph" href="{{ p.url }}" aria-label="{{ p.title | escape }}">
-          {%- if p.featured_media -%}{{ p.featured_media | image_url: width: 800 | image_tag: class: 'prod', loading: 'lazy', sizes: '(min-width: 760px) 25vw, 50vw' }}{%- endif -%}
+          {%- if p.featured_media -%}{{ p.featured_media | image_url: width: 800 | image_tag: class: 'prod', loading: 'lazy', sizes: '(min-width: 760px) 25vw, 50vw' }}{%- endif -%}{%- if p.media[1] and p.media[1].media_type == 'image' -%}{{ p.media[1] | image_url: width: 800 | image_tag: class: 'prod prod2', loading: 'lazy', alt: p.title, sizes: '(min-width: 760px) 25vw, 50vw' }}{%- endif -%}
           {%- if p.media.size > 1 -%}{{ p.media[1] | image_url: width: 800 | image_tag: class: 'alt', loading: 'lazy', alt: '', sizes: '(min-width: 760px) 25vw, 50vw' }}{%- endif -%}
           {%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}
         </a>
