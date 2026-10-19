@@ -336,5 +336,38 @@
       </script>
     </div>
     {% render 'cm-popup' %}
-  {%- capture ecom_footer_content -%}{%- render 'ecom_footer' -%}{%- endcapture -%}{%- unless ecom_footer_content contains 'Liquid error' -%}{{ ecom_footer_content }}{%- endunless -%}</body>
+  {%- capture ecom_footer_content -%}{%- render 'ecom_footer' -%}{%- endcapture -%}{%- unless ecom_footer_content contains 'Liquid error' -%}{{ ecom_footer_content }}{%- endunless -%}{%- assign _cmaz = all_products['azafran-1'] -%}{%- assign _cmmg = all_products['magnesio-p-m'] -%}
+<style>
+.cm-soon{cursor:default !important;pointer-events:auto}
+.cm-soon-b{display:inline-flex;align-items:center;gap:6px;font:500 11px/1 'Jost',sans-serif;letter-spacing:.08em;text-transform:uppercase;background:#141414;color:#f4f1e8;border-radius:999px;padding:6px 10px;white-space:nowrap;vertical-align:middle}
+.cm-soon-b i{display:inline-flex;gap:3px}.cm-soon-b i b{width:4px;height:4px;border-radius:50%;background:#e6f06a;animation:cmsd 1.2s infinite ease-in-out}
+.cm-soon-b i b:nth-child(2){animation-delay:.2s}.cm-soon-b i b:nth-child(3){animation-delay:.4s}
+@keyframes cmsd{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-2px)}}
+.cm-soon-img{position:relative;display:block}.cm-soon-img>.cm-soon-b{position:absolute;left:12px;top:12px;z-index:3}
+.btn.cm-soon,.cm-soon.btn{opacity:.92}
+.cm-soon-t{margin-left:8px}
+</style>
+<script>
+(function(){
+  var soon=[{% if _cmaz.id == blank %}'azafran-1',{% endif %}{% if _cmmg.id == blank %}'magnesio-p-m'{% endif %}];
+  window.cmSoon=soon; if(!soon.length) return;
+  function badge(){var s=document.createElement('span');s.className='cm-soon-b';s.innerHTML='Cargando <i><b></b><b></b><b></b></i>';return s;}
+  function mark(root){
+    soon.forEach(function(h){
+      (root||document).querySelectorAll('a[href*="/products/'+h+'"]').forEach(function(a){
+        var href=a.getAttribute('href')||''; if(!new RegExp('/products/'+h+'(?:[?#/]|$)').test(href) || a.dataset.cmSoon) return;
+        a.dataset.cmSoon='1'; a.classList.add('cm-soon'); a.setAttribute('aria-disabled','true'); a.removeAttribute('href'); a.setAttribute('role','link');
+        if(a.querySelector('img')){ a.classList.add('cm-soon-img'); a.appendChild(badge()); return; }
+        if(a.classList.contains('btn')){ var arw=a.querySelector('.arw'); var nm=(h==='azafran-1')?'Azafrán':'Magnesio P.M.';
+          a.textContent=''; a.appendChild(document.createTextNode(nm+' · cargando ')); var b=badge(); b.innerHTML='<i><b></b><b></b><b></b></i>'; b.style.padding='4px 6px'; a.appendChild(b); return; }
+        var b2=badge(); b2.classList.add('cm-soon-t'); a.appendChild(b2);
+      });
+    });
+  }
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.cm-soon');if(a){e.preventDefault();e.stopPropagation();}},true);
+  if(document.readyState!=='loading') mark(); else document.addEventListener('DOMContentLoaded',function(){mark();});
+  var _p=0; new MutationObserver(function(){ if(!_p){_p=requestAnimationFrame(function(){_p=0;mark();});} }).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script>
+</body>
 </html>
