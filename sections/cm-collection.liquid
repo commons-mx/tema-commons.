@@ -12,7 +12,14 @@
       <p class="cm-quizline" style="margin: 0">¿No sabes cuál? <a class="tlink" href="{{ s.quiz_link }}">Haz el quiz · 3 min</a></p>
     </div>
   </div>
-  <div class="cimg">{%- if collection.image -%}{{ collection.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: collection.title }}{%- elsif s.image != blank -%}{{ s.image | image_url: width: 1600 | image_tag: loading: 'eager' }}{%- endif -%}</div>
+  <div class="cimg">{%- if collection.image -%}{{ collection.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: collection.title }}{%- elsif s.image != blank -%}{{ s.image | image_url: width: 1600 | image_tag: loading: 'eager' }}{%- else -%}{%- liquid
+  assign _fb = 'cm-botanicals-hero-2.jpg'
+  if collection.handle contains 'science' or collection.handle == 'azafran'
+    assign _fb = 'cm-hero-sci.jpg'
+  elsif collection.handle contains 'ritual' or collection.handle contains 'miel' or collection.handle contains 'chocolate' or collection.handle contains 'blend'
+    assign _fb = 'cm-rituals-hero-2.jpg'
+  endif
+-%}<img src="{{ _fb | asset_url }}" alt="{{ collection.title | escape }}" loading="eager">{%- endif -%}</div>
 </section>
 
 {%- if s.needs_menu != blank -%}
@@ -122,6 +129,11 @@
   }); });
 })();
 </script>
+<style>
+@media (min-width:761px){#cmc-{{ section.id }} .needs.c{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}}
+#cmc-{{ section.id }} .fgroup button{-webkit-appearance:none;appearance:none;background:transparent;color:var(--ink,#141A16);border:1px solid var(--ink,#141A16);border-radius:999px;padding:8px 14px;font:500 12px/1 Figtree,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+#cmc-{{ section.id }} .fgroup button.on{background:var(--ink,#141A16);color:#fff}
+</style>
 {% schema %}
 {
   "name": "Colección Commons v5",
