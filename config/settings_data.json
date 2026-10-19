@@ -343,7 +343,7 @@
       "enable_free_shipping": true,
       "enable_estimate_shipping": true,
       "estimate_delivery_cutoff_hour": "15",
-      "show_estimate_cart": true,
+      "show_estimate_cart": false,
       "show_in_cart_items": "none",
       "enable_scroll_top_desktop": true,
       "currency_code_enable": false,
