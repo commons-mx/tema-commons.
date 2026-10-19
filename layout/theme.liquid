@@ -354,12 +354,17 @@
   function badge(){var s=document.createElement('span');s.className='cm-ld-b';s.innerHTML='Cargando <i><b></b><b></b><b></b></i>';return s;}
   function mark(root){
     soon.forEach(function(h){
-      (root||document).querySelectorAll('a[href*="/products/'+h+'"]').forEach(function(a){
+      var nm0=(h==='azafran-1')?'Azafrán':'Magnesio';
+      document.querySelectorAll('[data-add][aria-label*="'+nm0+'"]').forEach(function(b){b.style.display='none';});
+      var L=[].slice.call((root||document).querySelectorAll('a[href*="/products/'+h+'"]'));
+      L.sort(function(x,y){return (y.querySelector('img')?1:0)-(x.querySelector('img')?1:0);});
+      L.forEach(function(a){
         var href=a.getAttribute('href')||''; if(!new RegExp('/products/'+h+'(?:[?#/]|$)').test(href) || a.dataset.cmLd) return;
         a.dataset.cmLd='1'; a.classList.add('cm-ld'); a.setAttribute('aria-disabled','true'); a.removeAttribute('href'); a.setAttribute('role','link');
         if(a.querySelector('img')){ a.classList.add('cm-ld-img'); a.appendChild(badge()); return; }
         if(a.classList.contains('btn')){ var arw=a.querySelector('.arw'); var nm=(h==='azafran-1')?'Azafrán':'Magnesio P.M.';
           a.textContent=''; a.appendChild(document.createTextNode(nm+' · cargando ')); var b=badge(); b.innerHTML='<i><b></b><b></b><b></b></i>'; b.style.padding='4px 6px'; a.appendChild(b); return; }
+        var cd=a.closest('[class*=card],article,li'); if(cd && cd.querySelector('.cm-ld-img .cm-ld-b')) return;
         var b2=badge(); b2.classList.add('cm-ld-t'); a.appendChild(b2);
       });
     });
