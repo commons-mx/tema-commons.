@@ -18,7 +18,7 @@
     assign link = block.settings.button_link | default: col.url | default: '#'
   -%}
   <article class="uband u-{{ block.settings.style }}{% cycle '', ' flip' %}" {{ block.shopify_attributes }}>
-    <a class="uph2" href="{{ link }}" tabindex="-1" aria-hidden="true">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw', alt: '' }}{%- elsif block.settings.asset != blank -%}<img src="{{ block.settings.asset | asset_url }}" alt="" loading="lazy" width="2000" height="1334">{%- else -%}<span class="uphn">[Foto 3:2 · {{ block.settings.label }}]</span>{%- endif -%}</a>
+    <a class="uph2" href="{{ link }}" tabindex="-1" aria-hidden="true">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 760px) 50vw, 100vw', alt: '' }}{%- elsif block.settings.asset != blank -%}<img src="{{ block.settings.asset | asset_url }}" alt="" loading="lazy" width="2000" height="1334">{%- else -%}<span class="uphn"></span>{%- endif -%}</a>
     <div class="utx2">
       <div class="umark2"><span class="udot" style="background: {{ mk }}"></span><span class="ulab">{{ block.settings.label }}</span>{%- if block.settings.badge != blank -%}<span class="badge">{{ block.settings.badge }}</span>{%- endif -%}<span class="unum">{{ forloop.index | prepend: '0' }} / {{ forloop.length | prepend: '0' }}</span></div>
       <h3 class="disp h2 utitle">{{ block.settings.title }}</h3>
