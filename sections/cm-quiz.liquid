@@ -22,8 +22,16 @@ function pickVar(q, usePw, n, pw){
   for (var i = 0; i < ks.length; i++) if (want.test(ks[i])) return v[ks[i]][0];
   return v[ks[0]][0];
 }
+function cmqAttrs(){
+  try {
+    var q = window.__cmq || {}, s = (typeof C !== 'undefined' && C.state) || {};
+    var a = { 'Quiz': [q.n, (q.prods || []).join(' + ')].filter(Boolean).join(' · '), 'Quiz necesidades': (s.needs || []).join(', '), 'Quiz edad': s.age || '', 'Quiz formato': s.fmt || '' };
+    return fetch('/cart/update.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ attributes: a }) }).catch(function(){});
+  } catch (e) { return Promise.resolve(); }
+}
 function addItems(items){
   if (!items.length) return;
+  cmqAttrs();
   fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: items }) })
     .then(function(r){ if (!r.ok) throw r; if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart(); } else { location.href = '{{ routes.cart_url }}'; } })
     .catch(function(){ location.href = '{{ routes.cart_url }}'; });
@@ -383,7 +391,11 @@ Promise.all(Object.keys(HANDLES).map(function(n){
     if (!em.value || em.value.indexOf('@') < 1) { er.hidden = false; em.focus(); return; }
     var q = window.__cmq || { n: '', needs: '', prods: [] };
     var slug = function(s){ return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); };
-    var tags = ['quiz-protocolo', 'quiz-' + slug(q.n)].concat(q.prods.map(function(p){ return 'quiz-p-' + slug(p); })).join(', ');
+    var st = (typeof C !== 'undefined' && C.state) || {};
+    var tags = ['quiz-protocolo', 'quiz-' + slug(q.n)].concat(q.prods.map(function(p){ return 'quiz-p-' + slug(p); }))
+      .concat((st.needs || []).map(function(n){ return 'quiz-n-' + slug(n); }))
+      .concat(st.age ? ['quiz-edad-' + slug(st.age)] : []).concat(st.sex ? ['quiz-sexo-' + slug(st.sex)] : []).concat(st.fmt ? ['quiz-fmt-' + slug(st.fmt)] : [])
+      .filter(function(x){ return x.length > 6; }).join(', ');
     var fd = new FormData();
     fd.append('form_type', 'customer'); fd.append('utf8', '✓');
     fd.append('contact[email]', em.value); fd.append('contact[tags]', tags);
