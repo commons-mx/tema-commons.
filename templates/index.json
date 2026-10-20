@@ -997,6 +997,25 @@
         "link": "/products/azafran-1",
         "asset": "cm-hero-sci.jpg"
       }
+    },
+    "science_registro": {
+      "type": "science-lista",
+      "settings": {
+        "ceja": "Prelanzamiento",
+        "titulo": "Entra antes que nadie",
+        "texto": "<p>La comunidad Commons prueba Science antes del lanzamiento público y con precio de fundador. Déjanos tu correo y te avisamos primero.</p>",
+        "beneficios": "Acceso antes del lanzamiento | Precio de fundador | Envío gratis desde $1,000",
+        "fecha": "",
+        "cuenta_label": "Abrimos al público en",
+        "interes_label": "¿Cuál quieres probar?",
+        "intereses": "azafran:Azafrán | magnesio-am:Magnesio A.M.",
+        "boton": "Quiero entrar primero",
+        "nota": "Solo te escribimos de Science y de Commons. Te das de baja cuando quieras.",
+        "ok_titulo": "Ya estás dentro",
+        "ok_texto": "Te escribimos antes que a nadie cuando abra el acceso anticipado.",
+        "imagen_tema": "science-hf-silueta.jpg",
+        "legal": "Este producto no es un medicamento. El consumo de este producto es responsabilidad de quien lo recomienda y de quien lo usa."
+      }
     }
   },
   "order": [
@@ -1004,6 +1023,7 @@
     "cm_needs",
     "cm_quiz",
     "buy_your_own_bundle_pTbqYm",
+    "science_registro",
     "cm_trust",
     "cm_life1",
     "cm_products",

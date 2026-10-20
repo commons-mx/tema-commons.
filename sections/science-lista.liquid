@@ -1,0 +1,153 @@
+{%- comment -%}
+  Commons Science · lista de prelanzamiento (fase 2 del roadmap de Erika: la comunidad
+  Commons entra antes que el público). Usa el formulario de clientes de Shopify: el
+  correo queda como cliente suscrito con las etiquetas science-lista + la fórmula que
+  le interesa, y de ahí lo toma Klaviyo. Incluye cuenta regresiva y la leyenda legal.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+{%- assign science_form_id = 'sci-lista-form-' | append: section.id -%}
+{% render 'science-registration-styles' %}
+<section class="sci sci-lista" id="lista">
+  <div class="sci-lista__foto" aria-hidden="true" style="background-image:url('{% if s.imagen != blank %}{{ s.imagen | image_url: width: 2400 }}{% else %}{{ s.imagen_tema | asset_url }}{% endif %}')"></div>
+  <div class="sci__in sci-lista__in">
+    <div class="sci-lista__txt sci-sube">
+      {%- if s.ceja != blank -%}<p class="sci-ceja">{{ s.ceja }}</p>{%- endif -%}
+      <h2 class="sci-h2">{{ s.titulo }}</h2>
+      {%- if s.texto != blank -%}<div class="sci-txt sci-lista__p">{{ s.texto }}</div>{%- endif -%}
+      {%- if s.beneficios != blank -%}
+        <ul class="sci-lista__ben" role="list">
+          {%- assign bs = s.beneficios | split: '|' -%}
+          {%- for x in bs -%}<li><span class="sci-simbolo" aria-hidden="true"></span>{{ x | strip }}</li>{%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="sci-lista__caja sci-sube">
+      {%- if s.fecha != blank -%}
+        <div class="sci-lista__cuenta" data-sci-fin="{{ s.fecha }}">
+          <span class="sci-mini">{{ s.cuenta_label }}</span>
+          <div class="sci-lista__num">
+            <div><b data-d>00</b><span class="sci-mini">Días</span></div>
+            <div><b data-h>00</b><span class="sci-mini">Horas</span></div>
+            <div><b data-m>00</b><span class="sci-mini">Min</span></div>
+            <div><b data-s>00</b><span class="sci-mini">Seg</span></div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- form 'customer', id: science_form_id, class: 'sci-lista__form' -%}
+        <input type="hidden" name="contact[tags]" value="science-lista, newsletter" data-sci-tags>
+        {%- if form.posted_successfully? -%}
+          <div class="sci-lista__ok" role="status">
+            <p class="sci-h3">{{ s.ok_titulo }}</p>
+            <p class="sci-txt">{{ s.ok_texto }}</p>
+          </div>
+        {%- else -%}
+          <fieldset class="sci-lista__interes">
+            <legend class="sci-mini">{{ s.interes_label }}</legend>
+            {%- assign ops = s.intereses | split: '|' -%}
+            {%- for o in ops -%}
+              {%- assign par = o | split: ':' -%}
+              <label><input type="checkbox" value="science-{{ par[0] | strip }}" data-sci-op> <span>{{ par[1] | default: par[0] | strip }}</span></label>
+            {%- endfor -%}
+          </fieldset>
+          <label class="sci-lista__campo">
+            <span class="sci-mini">Correo electrónico</span>
+            <input type="email" name="contact[email]" required autocomplete="email" placeholder="tucorreo@ejemplo.com" aria-label="Correo electrónico">
+          </label>
+          {%- if form.errors -%}<p class="sci-mini sci-lista__err" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+          <button type="submit" class="sci-btn sci-btn--negro sci-lista__btn">{{ s.boton }}</button>
+          <p class="sci-mini sci-lista__nota">{{ s.nota }}</p>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+  {%- if s.legal != blank -%}<p class="sci__in sci-mini sci-lista__legal">{{ s.legal }}</p>{%- endif -%}
+</section>
+<script>
+  (function(){
+    var f=document.getElementById({{ science_form_id | json }}); if(!f) return;
+    var counter=f.closest('.sci-lista').querySelector('[data-sci-fin]');
+    if(counter){
+      var end=new Date(counter.getAttribute('data-sci-fin')).getTime();
+      if(!isFinite(end) || end<=Date.now()){counter.hidden=true;}
+      else {
+        function tick(){
+          var left=Math.max(0,end-Date.now());
+          if(!counter.isConnected){clearInterval(timer);return;}
+          if(!left){counter.hidden=true;clearInterval(timer);return;}
+          var values={d:Math.floor(left/864e5),h:Math.floor(left%864e5/36e5),m:Math.floor(left%36e5/6e4),s:Math.floor(left%6e4/1e3)};
+          Object.keys(values).forEach(function(k){counter.querySelector('[data-'+k+']').textContent=String(values[k]).padStart(2,'0');});
+        }
+        var timer=setInterval(tick,1000);tick();
+      }
+    }
+    var tags=f.querySelector('[data-sci-tags]'), base=tags?tags.value:'';
+    function sync(){ var v=[].slice.call(f.querySelectorAll('[data-sci-op]:checked')).map(function(i){return i.value}); if(tags) tags.value=[base].concat(v).join(', '); }
+    f.addEventListener('change',sync);
+    f.addEventListener('submit',sync);
+    sync();
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('[data-sci-interes]'); if(!a) return;
+      var op=f.querySelector('[data-sci-op][value="science-'+a.getAttribute('data-sci-interes')+'"]');
+      if(op){ op.checked=true; sync(); }
+      setTimeout(function(){ var em=f.querySelector('input[type=email]'); if(em) em.focus({preventScroll:true}); },450);
+    });
+  })();
+</script>
+<style>
+  .sci-lista{position:relative;background:var(--sci-negro);color:var(--sci-blanco);padding:64px 0 28px;overflow:hidden;isolation:isolate;scroll-margin-top:70px}
+  .sci-lista__foto{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.35;filter:saturate(1.2);z-index:-1}
+  .sci-lista__hueco{opacity:1;filter:none;align-items:flex-start}
+  .sci-lista__in{display:grid;gap:28px}
+  .sci-lista__p{max-width:40ch;margin-top:16px}
+  .sci-lista__ben{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px;font-family:var(--sci-mono);font-size:13px;text-transform:uppercase}
+  .sci-lista__ben li{display:flex;gap:10px;align-items:center}
+  .sci-lista__ben .sci-simbolo{width:12px;color:var(--sci-rojo-azafran)}
+  .sci-lista__caja{background:var(--sci-blanco);color:var(--sci-negro);padding:20px 16px}
+  .sci-lista__cuenta{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--sci-negro)}
+  .sci-lista__num{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+  .sci-lista__num b{display:block;font-family:var(--sci-mono);font-weight:400;font-size:34px;line-height:1;letter-spacing:-.04em}
+  .sci-lista__interes{border:0;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .sci-lista__interes legend{margin-bottom:8px}
+  .sci-lista__interes label{display:flex;align-items:center;gap:8px;border:1px solid var(--sci-negro);padding:10px 12px;cursor:pointer;font-size:16px;text-transform:uppercase}
+  .sci-lista__interes input{accent-color:#000;width:16px;height:16px}
+  .sci-lista__interes label:has(input:checked){background:var(--sci-negro);color:var(--sci-blanco)}
+  .sci-lista__campo{display:grid;gap:6px}
+  .sci-lista__campo input{height:52px;border:1.5px solid var(--sci-negro);border-radius:0;padding:0 14px;font-size:16px;font-family:var(--sci-condensada);background:#fff;color:#000}
+  .sci-lista__btn{width:100%;margin-top:10px}
+  .sci-lista__nota{margin:10px 0 0;opacity:.7}
+  .sci-lista__err{color:#B6162A;margin:8px 0 0}
+  .sci-lista__legal{margin-top:36px;opacity:.65;text-align:center}
+  @media(min-width:990px){
+    .sci-lista{padding:120px 0 36px}
+    .sci-lista__in{grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+    .sci-lista__caja{padding:32px}
+    .sci-lista__num b{font-size:48px}
+  }
+</style>
+{% schema %}
+{
+  "name": "Science · Lista",
+  "presets": [{"name":"Science · Lista"}],
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "ceja", "label": "Texto chico", "default": "Prelanzamiento" },
+    { "type": "text", "id": "titulo", "label": "Titular", "default": "Entra antes que nadie" },
+    { "type": "richtext", "id": "texto", "label": "Texto" },
+    { "type": "text", "id": "beneficios", "label": "Beneficios (separados por |)" },
+    { "type": "text", "id": "fecha", "label": "Fecha de lanzamiento" },
+    { "type": "text", "id": "cuenta_label", "label": "Texto de la cuenta", "default": "Abrimos al público en" },
+    { "type": "text", "id": "interes_label", "label": "Pregunta de interés", "default": "¿Cuál quieres probar?" },
+    { "type": "text", "id": "intereses", "label": "Opciones (etiqueta:Nombre, separadas por |)", "default": "azafran:Azafrán | magnesio-am:Magnesio A.M." },
+    { "type": "text", "id": "boton", "label": "Botón", "default": "Quiero entrar primero" },
+    { "type": "text", "id": "nota", "label": "Nota bajo el botón" },
+    { "type": "text", "id": "ok_titulo", "label": "Título al registrarse", "default": "Ya estás dentro" },
+    { "type": "text", "id": "ok_texto", "label": "Texto al registrarse" },
+    { "type": "image_picker", "id": "imagen", "label": "Imagen de fondo" },
+    { "type": "text", "id": "imagen_tema", "label": "Imagen de fondo (archivo del tema)", "default": "science-campo-h.jpg" },
+    { "type": "text", "id": "legal", "label": "Leyenda legal" }
+  ],
+  "presets": [{ "name": "Science · Lista" }]
+}
+{% endschema %}
