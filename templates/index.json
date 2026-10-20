@@ -233,14 +233,12 @@
         "b3": {
           "type": "product",
           "settings": {
-            "product": "melena-de-leon-capsulas-organicas",
-            "title": "Melena de León",
-            "tag": "Enfoque",
+            "product": "hongo-reishi-100g-20-β-glucanos",
+            "title": "Reishi",
+            "tag": "Sueño",
             "badge": "",
             "size": "",
-            "per_serving": "Desde $4.95 por porción",
-            "fallback": "hongo-reishi-100g-20-β-glucanos",
-            "fallback_tag": "Sueño"
+            "per_serving": "Desde $4.95 por porción"
           }
         },
         "b4": {
