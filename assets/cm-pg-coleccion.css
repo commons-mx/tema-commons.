@@ -523,3 +523,5 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 .cmpg details>summary::-webkit-details-marker{display:none}
 .cmpg .v4{min-height:0}
 .cmpg > .v4{font-family:var(--fb);font-size:17px;line-height:1.55;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* rits contain */ .cmpg .rit .rph{background:#fff !important;padding:22px !important}.cmpg .rit .rph img{object-fit:contain !important}
