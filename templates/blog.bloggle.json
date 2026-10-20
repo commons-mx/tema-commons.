@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-blog",
       "settings": {
-        "link": "/collections/all"
+        "link": "/collections/tienda"
       }
     }
   },

@@ -1823,7 +1823,7 @@
           "settings": {
             "label": "Comprar",
             "style": "sq",
-            "link": "/collections/all",
+            "link": "/collections/tienda",
             "needs_menu": "cm-necesidades",
             "needs_title": "Por necesidad",
             "needs_all_label": "Ver todas las necesidades",

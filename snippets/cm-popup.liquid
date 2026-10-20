@@ -128,7 +128,7 @@
       <h2 class="pv-h">Listo. Aquí está tu <b>10%</b>.</h2>
       <div class="pv-code"><b>MIPRIMERHONGUITO</b><button type="button" class="pv-copy" data-pv-copy>Copiar</button></div>
       <p class="pv-p" style="font-size:14px">Se aplica solo al pagar. También te lo mandamos a tu correo.</p>
-      <a class="pv-btn" href="/collections/all" data-pv-go><span data-pv-go-label>Ir a la tienda</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pv-btn" href="/collections/tienda" data-pv-go><span data-pv-go-label>Ir a la tienda</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <span class="pv-eb" style="margin-top:6px">¿Vas por más? Combina y ahorra</span>
       <div class="pv-ladder"><div><b>−10%</b>2 productos</div><div><b>−15%</b>3 o más</div></div>
       <p class="pv-fine">Descuentos no acumulables. Se aplica el mayor beneficio disponible.</p>
@@ -140,7 +140,7 @@
 (function(){
   var K='cm-pp-v6', T='cm-pp-tab-off', CODE='MIPRIMERHONGUITO';
   var el=document.getElementById('cm-pp'), tab=document.getElementById('cm-pp-tab'); if(!el) return;
-  var st={need:'',label:'',url:'/collections/all',email:''};
+  var st={need:'',label:'',url:'/collections/tienda',email:''};
   function ls(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){} }
   function seen(){ var t=+ls(K); return t && (Date.now()-t)<14*864e5; }
   function tabOff(){ try{ return sessionStorage.getItem(T)==='1'; }catch(e){ return false; } }

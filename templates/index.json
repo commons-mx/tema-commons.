@@ -26,7 +26,7 @@
             "button_label": "Haz el quiz",
             "button_link": "/pages/quiz-commons",
             "button2_label": "Ver los más vendidos",
-            "button2_link": "/collections/all?sort_by=best-selling"
+            "button2_link": "/collections/tienda"
           }
         }
       },
@@ -264,7 +264,7 @@
       "settings": {
         "heading": "Los más vendidos.",
         "link_label": "Ver todo",
-        "link": "/collections/all?sort_by=best-selling",
+        "link": "/collections/tienda",
         "protocol_label": "Arma tu protocolo · hasta −15%",
         "protocol_head": false,
         "card_protocol": "+ Súmalo a tu protocolo",
@@ -871,7 +871,7 @@
         "heading": "Lo que hay dentro.",
         "intro": "Cada ingrediente, con su activo declarado o la dosis que se estudió.",
         "link_label": "Ver todos los productos",
-        "link": "/collections/all"
+        "link": "/collections/tienda"
       },
       "blocks": {
         "i1": {

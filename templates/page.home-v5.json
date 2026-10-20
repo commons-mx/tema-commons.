@@ -157,7 +157,7 @@
     "cm_products": {
       "type": "cm-products",
       "settings": {
-        "link": "/collections/all"
+        "link": "/collections/tienda"
       },
       "blocks": {
         "b1": {
@@ -235,7 +235,7 @@
             "title": "La dosis estudiada con Science",
             "text": "Ingredientes con estudios clínicos, en la dosis que se estudió. La evidencia, a la vista.",
             "button_label": "Explorar Science",
-            "button_link": "/collections/all",
+            "button_link": "/collections/tienda",
             "sig": "-Designed for human systems-"
           }
         }

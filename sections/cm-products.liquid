@@ -1,6 +1,6 @@
 <div class="cm4" id="cm-prod-{{ section.id }}">
 <section aria-labelledby="mv-{{ section.id }}">
-  <div class="hd-row"><h2 id="mv-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2><div class="hdl">{%- if section.settings.protocol_label != blank and section.settings.protocol_head -%}<a class="tlink" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.protocol_label }}</a>{%- endif -%}{%- if section.settings.link_label != blank -%}<a class="sq" href="{{ section.settings.link | default: '/collections/all' }}">{{ section.settings.link_label }}</a>{%- endif -%}</div></div>
+  <div class="hd-row"><h2 id="mv-{{ section.id }}" class="disp h2">{{ section.settings.heading }}</h2><div class="hdl">{%- if section.settings.protocol_label != blank and section.settings.protocol_head -%}<a class="tlink" href="{{ section.settings.protocol_link | default: '#protocolo' }}">{{ section.settings.protocol_label }}</a>{%- endif -%}{%- if section.settings.link_label != blank -%}<a class="sq" href="{{ section.settings.link | default: '/collections/tienda' }}">{{ section.settings.link_label }}</a>{%- endif -%}</div></div>
   <div class="box cards">
     {%- for block in section.blocks -%}
       {%- assign p = block.settings.product -%}{%- assign cm_tag = block.settings.tag -%}{%- assign cm_ttl = block.settings.title -%}

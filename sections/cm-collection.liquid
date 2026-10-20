@@ -5,7 +5,7 @@
 
 <section class="chead" aria-labelledby="ct-{{ section.id }}">
   <div style="display: flex; flex-direction: column">
-    <div class="crumb"><a href="{{ routes.root_url }}">Inicio</a> / {% if s.crumb_label != blank %}<a href="{{ s.crumb_link }}">{{ s.crumb_label }}</a> / {% endif %}{{ collection.title }}</div>
+    <div class="crumb"><a href="{{ routes.root_url }}">Inicio</a> / {% if s.crumb_label != blank and collection.handle contains 'necesidad' %}<a href="{{ s.crumb_link }}">{{ s.crumb_label }}</a> / {% endif %}{{ collection.title }}</div>
     <div class="ct">
       <h1 id="ct-{{ section.id }}" class="disp h1">{{ collection.title }}.</h1>
       {%- if collection.description != blank -%}<div class="sub" style="max-width: 44ch">{{ collection.description | strip_html | truncatewords: 40 }}</div>{%- elsif s.intro != blank -%}<p class="sub" style="max-width: 44ch">{{ s.intro }}</p>{%- endif -%}
