@@ -12,7 +12,7 @@
   }
   function properties(q){
     if(!q || !Array.isArray(q.det) || !q.det.length) throw new Error('No hay un protocolo disponible.');
-    return {protocol_name:q.n||'',intro:q.intro||'',products:q.det.map(function(p){var product={name:p.n||'',line:p.line||'',format:p.format||'',instructions:p.how||'',warning:p.warn||'',url:absoluteUrl(p.url),image:absoluteUrl(p.img)}; if(typeof p.reason === 'string' && p.reason.trim()) product.reason=p.reason.trim(); return product;}),weeks:[{label:'Semana 1–2',text:'Empieza con la dosis mínima para ver cómo te sienta.'},{label:'Semana 3',text:'Si te sientes bien, sube a tu dosis completa.'},{label:'Semana 8–10',text:'Evalúa cómo vas.'},{label:'Semana 12',text:'Descansa las que lo piden y retoma.'}],source:'commons_quiz',schema_version:1};
+    return {protocol_name:q.n||'',intro:q.intro||'',products:q.det.map(function(p){var product={name:p.n||'',line:p.line||'',format:p.format||'',instructions:p.how||'',url:absoluteUrl(p.url),image:absoluteUrl(p.img)}; if(typeof p.reason === 'string' && p.reason.trim()) product.reason=p.reason.trim(); return product;}),weeks:[{label:'Semana 1–2',text:'Empieza con la dosis mínima para ver cómo te sienta.'},{label:'Semana 3',text:'Si te sientes bien, sube a tu dosis completa.'},{label:'Semana 8–10',text:'Evalúa cómo vas.'},{label:'Semana 12',text:'Descansa las que lo piden y retoma.'}],source:'commons_quiz',schema_version:1};
   }
   async function send(email,q,id){
     var controller=new AbortController(),timer=setTimeout(function(){controller.abort();},15000);
