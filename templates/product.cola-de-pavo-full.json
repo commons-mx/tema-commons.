@@ -3,7 +3,7 @@
     "main": {
       "type": "cm-product",
       "settings": {
-        "shipping": "<p>Envío gratis desde $990; si no, $150. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
+        "shipping": "<p>Envío gratis desde $999; si no, $164. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
         "short_name": "Cola de Pavo",
         "line_label": "Commons Botanicals",
         "sci": "Trametes versicolor · cuerpo fructífero",
@@ -97,7 +97,7 @@
           "type": "faq",
           "settings": {
             "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $990.</p>"
+            "a": "<p>Sí. Envío gratis en pedidos desde $999.</p>"
           }
         }
       },

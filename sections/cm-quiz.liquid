@@ -316,7 +316,7 @@ class Component extends DCLogic {
       pintro: st.ess ? 'Empieza con los 2 principales de tu protocolo. Cuando quieras, sumas el resto.' : (st.ada === 'No, nunca' ? 'Como es tu primera vez, empezamos con lo esencial y los clásicos. Tómalo 12 semanas y evalúa cómo vas.' : 'Armado con lo que nos contaste. Tómalo 12 semanas y evalúa cómo vas.'),
       prods: r.prods, total: this.money(r.total), full: r.rate ? this.money(r.full) : '', save: this.money(r.full - r.total),
       discTxt: r.n >= 3 ? r.n + ' productos · −15%' : (r.n === 2 ? '2 productos · −10%' : 'Sin descuento'),
-      perDay: this.money(r.perDay) + ' al día', ship: r.total >= 990 ? 'Gratis' : '$150', err: st.err, addTxt: 'Agregar mi protocolo · ' + this.money(r.total), addAll: function () { self.addAll(r.prods); },
+      perDay: this.money(r.perDay) + ' al día', ship: r.total >= 999 ? 'Gratis' : '$164', err: st.err, addTxt: 'Agregar mi protocolo · ' + this.money(r.total), addAll: function () { self.addAll(r.prods); },
       essTxt: st.ess ? 'Ver mi protocolo completo' : 'Empezar con lo esencial (2 productos, −10%)',
       toggleEss: function () { self.setState({ ess: !st.ess }); },
       kitNear: st.ess ? '' : r.near, kitNearS: 'Súmalo y queda como kit, con su descuento.',
