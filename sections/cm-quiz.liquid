@@ -386,7 +386,7 @@ Promise.all(Object.keys(HANDLES).map(function(n){
   root.addEventListener('click', function(e){
     if (e.target.closest('[data-pdf]')) { e.preventDefault(); cmqPrint(); }
     var sh = e.target.closest('[data-wsh]');
-    if (sh && window.__cmq) { var stx = 'Me salió este protocolo en Commons: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). Haz el quiz aquí: ' + location.origin + '/pages/quiz';
+    if (sh && window.__cmq) { var stx = 'Me salió este protocolo en Commons: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). Haz el quiz aquí: ' + location.origin + '/pages/quiz-commons';
       if (navigator.share) { e.preventDefault(); navigator.share({ text: stx }).catch(function(){}); } else { sh.href = 'https://wa.me/?text=' + encodeURIComponent(stx); } }
     var wa = e.target.closest('[data-wa]');
     if (wa && window.__cmq) { wa.href = 'https://wa.me/525564299433?text=' + encodeURIComponent('Hola, hice el quiz y me salió: ' + window.__cmq.n + ' (' + window.__cmq.prods.join(', ') + '). ¿Me ayudan?'); }
