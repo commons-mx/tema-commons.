@@ -1911,6 +1911,10 @@
                         #mini-cart-upsell > div:first-child > div{padding-top:8px !important;padding-bottom:6px !important;font-size:12px !important;letter-spacing:.08em;text-transform:uppercase;line-height:1.2}
                         .x-cart-interact-group .x-cart-interact-item{padding-top:7px !important;padding-bottom:7px !important;font-size:12px !important;line-height:1.2}
                         .x-cart-interact-group .x-cart-interact-item p{margin:0;line-height:1.2}
+                        div[x-data="{show_saving_amounts: false}"]{padding-top:10px !important}
+                        div[x-data="{show_saving_amounts: false}"] .pt-3[role="status"]{padding-top:2px !important;font-size:13px;align-items:center}
+                        div[x-data="{show_saving_amounts: false}"] .pt-3[role="status"] s{font-size:13px;opacity:.6}
+                        div[x-data="{show_saving_amounts: false}"] p.text-normal{font-size:11px !important;line-height:1.3;margin:4px 0 8px !important;opacity:.7}
                       }
                     </style>
                     <div class="x-cart-interact-group border-solid border-t flex md:flex-wrap justify-between">
@@ -1995,13 +1999,13 @@
                         assign line_item_price = variant_original_price | times: item.quantity
                         assign total_original_price = total_original_price | plus: line_item_price
                       endfor
-                      assign total_discount = total_original_price | minus: cart.total_price | money_with_currency
+                      assign total_discount = total_original_price | minus: cart.total_price | money_without_trailing_zeros
                       assign total_discount_num = total_original_price | minus: cart.total_price
                     %}
                     {% if total_discount_num > 0 %}
                       <div class="flex justify-between items-end pt-3{% if settings.enable_estimate_shipping and settings.auto_calculate_shipping %} pr-6 rtl:pr-0 rtl:pl-6{% endif %}" role="status">
                         <p>{{ 'sections.cart.total_savings_html' | t: total_discount: total_discount }}</p>
-                        <s class="{% if is_rtl %} mr-8{% else %} ml-8{% endif %}" id="total-price">{{ total_original_price | money_with_currency }}</s>
+                        <s class="{% if is_rtl %} mr-8{% else %} ml-8{% endif %}" id="total-price">{{ total_original_price | money_without_trailing_zeros }}</s>
                       </div>   
                     {% endif %}
                   {%- endif -%}

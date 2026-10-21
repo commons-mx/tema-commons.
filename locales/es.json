@@ -474,7 +474,7 @@
       "title": "Tu carrito",
       "subtotal": "Subtotal",
       "total": "Total",
-      "total_savings_html": "Con tu pedido ahorras {{total_discount}}.",
+      "total_savings_html": "Ahorras {{total_discount}}",
       "order_note": "Nota para tu pedido",
       "note": "¿Algo que debamos saber de tu pedido?",
       "checkout": "Pagar",
