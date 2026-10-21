@@ -15,7 +15,10 @@
         "b0": {
           "type": "slide",
           "settings": {
-            "asset": "cm-hero-7.jpg",
+            "asset": "cm-hero-8.jpg",
+            "cap1": "",
+            "asset2": "",
+            "cap2": "",
             "tab_label": "Commons",
             "badge": "",
             "badge_style": "bot",
@@ -34,10 +37,10 @@
         "b0"
       ],
       "settings": {
+        "rating": "4.91 · +1,500 reseñas",
         "eyebrow": "",
         "text_mobile": true,
-        "autoplay": 0,
-        "rating": "4.91 · +1,500 reseñas"
+        "autoplay": 0
       }
     },
     "cm_needs": {
@@ -204,135 +207,6 @@
         "caption_n": "3",
         "compact": true
       }
-    },
-    "cm_products": {
-      "type": "cm-products",
-      "blocks": {
-        "b1": {
-          "type": "product",
-          "settings": {
-            "product": "ashwagandha-organico-capsulas-extracto",
-            "title": "Ashwagandha",
-            "tag": "Estrés",
-            "badge": "Más vendido",
-            "size": "",
-            "per_serving": "Desde $4.95 por porción"
-          }
-        },
-        "b2": {
-          "type": "product",
-          "settings": {
-            "product": "melena-de-leon-capsulas-organicas",
-            "title": "Melena de León",
-            "tag": "Enfoque",
-            "badge": "",
-            "size": "",
-            "per_serving": "Desde $4.95 por porción"
-          }
-        },
-        "b3": {
-          "type": "product",
-          "settings": {
-            "product": "hongo-reishi-100g-20-β-glucanos",
-            "title": "Reishi",
-            "tag": "Sueño",
-            "badge": "Nuevo",
-            "size": "",
-            "per_serving": "Desde $4.95 por porción"
-          }
-        },
-        "b4": {
-          "type": "product",
-          "settings": {
-            "product": "relaxing-hot-cacao",
-            "title": "Relaxing Hot Cacao",
-            "tag": "Relajación",
-            "badge": "",
-            "size": "",
-            "per_serving": ""
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
-      "settings": {
-        "heading": "Los más vendidos.",
-        "link_label": "Ver todo",
-        "link": "/collections/tienda",
-        "protocol_label": "Arma tu protocolo · hasta −15%",
-        "protocol_head": false,
-        "card_protocol": "+ Súmalo a tu protocolo",
-        "protocol_link": ""
-      },
-      "disabled": false
-    },
-    "cm_universes": {
-      "type": "cm-universes",
-      "blocks": {
-        "b1": {
-          "type": "universe",
-          "settings": {
-            "label": "Commons Botanicals",
-            "badge": "",
-            "style": "bot",
-            "image": "",
-            "title": "Adaptógenos.",
-            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado.",
-            "button_label": "Explorar Botanicals",
-            "button_link": "/pages/botanicals",
-            "sig": "",
-            "collection": "botanicals",
-            "products": [],
-            "cats": "Hongos funcionales|/collections/botanicals|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/botanicals|raiz-rhodiola-rosea-full-polvo|12 plantas",
-            "asset": "cm-home-botanicals.jpg",
-            "extra_tag": "También en Botanicals",
-            "extra_label": "Rituals: mieles, chocolates y blends con adaptógenos",
-            "extra_link": "/collections/mieles-adaptogenicas-y-funcionales"
-          }
-        },
-        "b2": {
-          "type": "universe",
-          "settings": {
-            "label": "Commons Science",
-            "badge": "Nuevo",
-            "style": "sci",
-            "image": "",
-            "title": "Fórmulas con ingredientes estudiados.",
-            "text": "Ingredientes de patente, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
-            "button_label": "Explorar Science",
-            "button_link": "/pages/science",
-            "sig": "2 fórmulas · 1 en camino",
-            "products": [
-              "azafran-1",
-              "magnesio-p-m"
-            ],
-            "asset": "cm-home-science-2.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2"
-      ],
-      "settings": {
-        "heading": "Nuestras líneas.",
-        "intro": "Botanicals son nuestros adaptógenos. Science, nuestras fórmulas con ingredientes estudiados. Se pueden combinar."
-      }
-    },
-    "cm_nature": {
-      "type": "cm-nature",
-      "settings": {
-        "heading": "Todo empieza en una planta.",
-        "image1": "shopify://shop_images/IMG_1766_dda1351e-bf17-4d2b-9a0d-304e637a2028.jpg",
-        "caption": "In common with nature",
-        "image2": "shopify://shop_images/IMG_1835.jpg",
-        "height": 720
-      },
-      "disabled": true
     },
     "buy_your_own_bundle_pTbqYm": {
       "type": "buy-your-own-bundle",
@@ -598,7 +472,7 @@
         "summary_layout": "vertical",
         "summary_position": "right",
         "bundler_heading": "Tu protocolo",
-        "background_color_light": "#EFEBE3",
+        "background_color_light": "#efebe3",
         "heading_color_light": "rgba(0,0,0,0)",
         "text_light": "rgba(0,0,0,0)",
         "button_light": "rgba(0,0,0,0)",
@@ -644,177 +518,6 @@
         "show_section_divider_mobile": false,
         "padding_top_mobile": 28,
         "padding_bottom_mobile": 28
-      }
-    },
-    "cm_standards": {
-      "type": "cm-standards",
-      "blocks": {
-        "b1": {
-          "type": "std",
-          "settings": {
-            "icon": "0",
-            "title": "Extracto estandarizado",
-            "text": "Planta concentrada, con el activo declarado en la etiqueta: 25% betaglucanos en Reishi, 5% withanólidos en Ashwagandha."
-          }
-        },
-        "b2": {
-          "type": "std",
-          "settings": {
-            "icon": "1",
-            "title": "100% cuerpo fructífero",
-            "text": "En hongos, solo el hongo. Sin micelio, sin grano y sin rellenos."
-          }
-        },
-        "b3": {
-          "type": "std",
-          "settings": {
-            "icon": "2",
-            "title": "Medio gramo por porción",
-            "text": "Más concentrado, menos cantidad. Una cápsula al día, no cucharadas de polvo."
-          }
-        },
-        "b4": {
-          "type": "std",
-          "settings": {
-            "icon": "4",
-            "title": "Te asesora una persona",
-            "text": "Escríbenos por WhatsApp y te ayudamos a armar tu protocolo. Sin bots."
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
-      "settings": {
-        "tag": "Nuestros estándares",
-        "heading": "Por qué somos diferentes.",
-        "text": "No da igual cuál compras. Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
-        "color": "#EFEBE3"
-      }
-    },
-    "cm_strip": {
-      "type": "cm-strip",
-      "settings": {
-        "label": "Evidencia · Commons Science",
-        "text": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas.",
-        "button_label": "Ver la evidencia",
-        "button_link": "/products/azafran-1"
-      },
-      "disabled": true
-    },
-    "cm_reviews": {
-      "type": "cm-reviews",
-      "blocks": {
-        "b1": {
-          "type": "review",
-          "settings": {
-            "quote": "Me relaja y me ayuda no solo a dormir: me descansa completamente.",
-            "name": "Maribel R.",
-            "tag": "Sueño · Reishi"
-          }
-        },
-        "b2": {
-          "type": "review",
-          "settings": {
-            "quote": "Me lo recetó mi ginecóloga y me ha ayudado mucho con mis niveles de estrés.",
-            "name": "Karina C.",
-            "tag": "Estrés · Ashwagandha"
-          }
-        },
-        "b3": {
-          "type": "review",
-          "settings": {
-            "quote": "Realmente siento una diferencia en mi desempeño diario: me da energía y me regula el estrés.",
-            "name": "Miriam S.",
-            "tag": "Energía · Master Blend"
-          }
-        },
-        "b4": {
-          "type": "review",
-          "settings": {
-            "quote": "Me ayuda a concentrarme mejor y a hacer mis actividades del trabajo con más enfoque.",
-            "name": "Carlos D.",
-            "tag": "Enfoque · Melena de León"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
-      "settings": {
-        "heading": "Lo que cambió en su día.",
-        "badge": "★ 4.91 · +1,500 reseñas",
-        "specialists": "Recomendado por +200 especialistas",
-        "link_label": "Ver todas las reseñas",
-        "link": ""
-      }
-    },
-    "cm_journal": {
-      "type": "cm-journal",
-      "settings": {
-        "heading": "Journal",
-        "blog": "noticias",
-        "button_label": "Más artículos en nuestro blog",
-        "button_link": "/blogs/noticias"
-      },
-      "disabled": true
-    },
-    "cm_faq": {
-      "type": "cm-faq",
-      "blocks": {
-        "b1": {
-          "type": "faq",
-          "settings": {
-            "q": "¿Qué es Botanicals y qué es Science?",
-            "a": "<p>Botanicals son nuestros adaptógenos: extractos estandarizados de hongos, raíces y plantas. Science son nuestras fórmulas con ingredientes de patente y estudios clínicos, en la dosis que se estudió. Puedes combinarlos en un mismo protocolo.</p>"
-          }
-        },
-        "b2": {
-          "type": "faq",
-          "settings": {
-            "q": "¿Qué significa “estandarizado”?",
-            "a": "<p>Que cada lote trae la misma cantidad de compuesto activo y que la declaramos en la etiqueta. Un polvo común es la planta molida: no sabes cuánto activo trae.</p>"
-          }
-        },
-        "b3": {
-          "type": "faq",
-          "settings": {
-            "q": "¿Cuánto me dura un frasco?",
-            "a": "<p>Con 2 cápsulas al día, un frasco de 120 te dura alrededor de 2 meses. Un polvo de 100 g, con 1 scoop al día, casi 4 meses.</p>"
-          }
-        },
-        "b4": {
-          "type": "faq",
-          "settings": {
-            "q": "¿Puedo combinar productos?",
-            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas, o haz el quiz y te lo armamos. Si tomas medicamentos, estás embarazada o en lactancia, consulta a tu médico.</p>"
-          }
-        },
-        "b5": {
-          "type": "faq",
-          "settings": {
-            "q": "¿Hacen envíos a todo México?",
-            "a": "<p>Sí. Envío gratis en pedidos desde $999. Llega en 3 a 6 días hábiles a toda la República.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5"
-      ],
-      "settings": {
-        "heading": "Preguntas frecuentes.",
-        "button_label": "Escríbenos por WhatsApp",
-        "button_link": "https://wa.me/525564299433"
       }
     },
     "cm_trust": {
@@ -863,14 +566,154 @@
         "facts": "Pioneros de los adaptógenos en México desde 2020\nRecomendado por +200 especialistas\nEnvío gratis desde $999"
       }
     },
+    "cm_life1": {
+      "type": "cm-photoband",
+      "settings": {
+        "text": "Sentirte bien también se nota.",
+        "sub": "In common with nature",
+        "asset1": "cm-life-pasto-ashwa.jpg",
+        "asset2": ""
+      }
+    },
+    "cm_products": {
+      "type": "cm-products",
+      "blocks": {
+        "b1": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-organico-capsulas-extracto",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Ashwagandha",
+            "tag": "Estrés",
+            "badge": "Más vendido",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b2": {
+          "type": "product",
+          "settings": {
+            "product": "melena-de-leon-capsulas-organicas",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Melena de León",
+            "tag": "Enfoque",
+            "badge": "",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b3": {
+          "type": "product",
+          "settings": {
+            "product": "hongo-reishi-100g-20-β-glucanos",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Reishi",
+            "tag": "Sueño",
+            "badge": "Nuevo",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b4": {
+          "type": "product",
+          "settings": {
+            "product": "relaxing-hot-cacao",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Relaxing Hot Cacao",
+            "tag": "Relajación",
+            "badge": "",
+            "size": "",
+            "per_serving": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "Los más vendidos.",
+        "link_label": "Ver todo",
+        "link": "/collections/tienda",
+        "protocol_label": "Arma tu protocolo · hasta −15%",
+        "protocol_head": false,
+        "card_protocol": "+ Súmalo a tu protocolo",
+        "protocol_link": ""
+      }
+    },
+    "cm_marquee": {
+      "type": "cm-marquee",
+      "disabled": true,
+      "settings": {
+        "items": "Extracto estandarizado · 100% cuerpo fructífero · Sin rellenos · Ingredientes de patente · La dosis que se estudió · Hecho en México"
+      }
+    },
+    "cm_universes": {
+      "type": "cm-universes",
+      "blocks": {
+        "b1": {
+          "type": "universe",
+          "settings": {
+            "label": "Commons Botanicals",
+            "badge": "",
+            "style": "bot",
+            "mark": "",
+            "collection": "botanicals",
+            "asset": "cm-home-botanicals.jpg",
+            "title": "Adaptógenos.",
+            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado.",
+            "cats": "Hongos funcionales|/collections/botanicals|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/botanicals|raiz-rhodiola-rosea-full-polvo|12 plantas",
+            "products": [],
+            "button_label": "Explorar Botanicals",
+            "button_link": "/pages/botanicals",
+            "sig": "",
+            "extra_tag": "También en Botanicals",
+            "extra_label": "Rituals: mieles, chocolates y blends con adaptógenos",
+            "extra_link": "/collections/mieles-adaptogenicas-y-funcionales"
+          }
+        },
+        "b2": {
+          "type": "universe",
+          "settings": {
+            "label": "Commons Science",
+            "badge": "Nuevo",
+            "style": "sci",
+            "mark": "",
+            "collection": "",
+            "asset": "cm-home-science-2.jpg",
+            "title": "Fórmulas con ingredientes estudiados.",
+            "text": "Ingredientes de patente, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
+            "cats": "",
+            "products": [
+              "azafran-1",
+              "magnesio-p-m"
+            ],
+            "button_label": "Explorar Science",
+            "button_link": "/pages/science",
+            "sig": "2 fórmulas · 1 en camino",
+            "extra_tag": "",
+            "extra_label": "",
+            "extra_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2"
+      ],
+      "settings": {
+        "heading": "Nuestras líneas.",
+        "intro": "Botanicals son nuestros adaptógenos. Science, nuestras fórmulas con ingredientes estudiados. Se pueden combinar."
+      }
+    },
     "cm_ingredients": {
       "type": "cm-ingredients",
-      "settings": {
-        "heading": "Lo que hay dentro.",
-        "intro": "Cada ingrediente, con su activo declarado o la dosis que se estudió.",
-        "link_label": "Ver todos los productos",
-        "link": "/collections/tienda"
-      },
       "blocks": {
         "i1": {
           "type": "ing",
@@ -963,37 +806,172 @@
         "i7",
         "i8"
       ],
-      "disabled": true
-    },
-    "cm_marquee": {
-      "type": "cm-marquee",
+      "disabled": true,
       "settings": {
-        "items": "Extracto estandarizado · 100% cuerpo fructífero · Sin rellenos · Ingredientes de patente · La dosis que se estudió · Hecho en México"
+        "heading": "Lo que hay dentro.",
+        "intro": "Cada ingrediente, con su activo declarado o la dosis que se estudió.",
+        "link_label": "Ver todos los productos",
+        "link": "/collections/tienda"
+      }
+    },
+    "cm_standards": {
+      "type": "cm-standards",
+      "blocks": {
+        "b1": {
+          "type": "std",
+          "settings": {
+            "icon": "0",
+            "title": "Extracto estandarizado",
+            "text": "Planta concentrada, con el activo declarado en la etiqueta: 25% betaglucanos en Reishi, 5% withanólidos en Ashwagandha."
+          }
+        },
+        "b2": {
+          "type": "std",
+          "settings": {
+            "icon": "1",
+            "title": "100% cuerpo fructífero",
+            "text": "En hongos, solo el hongo. Sin micelio, sin grano y sin rellenos."
+          }
+        },
+        "b3": {
+          "type": "std",
+          "settings": {
+            "icon": "2",
+            "title": "Medio gramo por porción",
+            "text": "Más concentrado, menos cantidad. Una cápsula al día, no cucharadas de polvo."
+          }
+        },
+        "b4": {
+          "type": "std",
+          "settings": {
+            "icon": "4",
+            "title": "Te asesora una persona",
+            "text": "Escríbenos por WhatsApp y te ayudamos a armar tu protocolo. Sin bots."
+          }
+        }
       },
-      "disabled": true
-    },
-    "cm_life1": {
-      "type": "cm-photoband",
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
-        "text": "Sentirte bien también se nota.",
-        "sub": "In common with nature",
-        "asset1": "cm-life-pasto-ashwa.jpg"
+        "tag": "Nuestros estándares",
+        "heading": "Por qué somos diferentes.",
+        "text": "No da igual cuál compras. Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
+        "color": "#efebe3"
       }
     },
     "cm_life2": {
       "type": "cm-photoband",
       "settings": {
+        "text": "",
+        "sub": "",
         "asset1": "cm-life-corriendo.jpg",
         "asset2": "cm-life-sonrisa.jpg"
       }
     },
-    "cm_sci_strip": {
-      "type": "cm-sci-strip",
+    "cm_reviews": {
+      "type": "cm-reviews",
+      "blocks": {
+        "b1": {
+          "type": "review",
+          "settings": {
+            "quote": "Me relaja y me ayuda no solo a dormir: me descansa completamente.",
+            "name": "Maribel R.",
+            "tag": "Sueño · Reishi"
+          }
+        },
+        "b2": {
+          "type": "review",
+          "settings": {
+            "quote": "Me lo recetó mi ginecóloga y me ha ayudado mucho con mis niveles de estrés.",
+            "name": "Karina C.",
+            "tag": "Estrés · Ashwagandha"
+          }
+        },
+        "b3": {
+          "type": "review",
+          "settings": {
+            "quote": "Realmente siento una diferencia en mi desempeño diario: me da energía y me regula el estrés.",
+            "name": "Miriam S.",
+            "tag": "Energía · Master Blend"
+          }
+        },
+        "b4": {
+          "type": "review",
+          "settings": {
+            "quote": "Me ayuda a concentrarme mejor y a hacer mis actividades del trabajo con más enfoque.",
+            "name": "Carlos D.",
+            "tag": "Enfoque · Melena de León"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
-        "eyebrow": "Nuevo · Commons Science",
-        "text": "Azafrán, nuestra primera fórmula",
-        "link": "/products/azafran-1",
-        "asset": "cm-hero-sci.jpg"
+        "heading": "Lo que cambió en su día.",
+        "badge": "★ 4.91 · +1,500 reseñas",
+        "specialists": "Recomendado por +200 especialistas",
+        "link_label": "Ver todas las reseñas",
+        "link": ""
+      }
+    },
+    "cm_faq": {
+      "type": "cm-faq",
+      "blocks": {
+        "b1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Qué es Botanicals y qué es Science?",
+            "a": "<p>Botanicals son nuestros adaptógenos: extractos estandarizados de hongos, raíces y plantas. Science son nuestras fórmulas con ingredientes de patente y estudios clínicos, en la dosis que se estudió. Puedes combinarlos en un mismo protocolo.</p>"
+          }
+        },
+        "b2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Qué significa “estandarizado”?",
+            "a": "<p>Que cada lote trae la misma cantidad de compuesto activo y que la declaramos en la etiqueta. Un polvo común es la planta molida: no sabes cuánto activo trae.</p>"
+          }
+        },
+        "b3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuánto me dura un frasco?",
+            "a": "<p>Con 2 cápsulas al día, un frasco de 120 te dura alrededor de 2 meses. Un polvo de 100 g, con 1 scoop al día, casi 4 meses.</p>"
+          }
+        },
+        "b4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Puedo combinar productos?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas, o haz el quiz y te lo armamos. Si tomas medicamentos, estás embarazada o en lactancia, consulta a tu médico.</p>"
+          }
+        },
+        "b5": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $999. Llega en 3 a 6 días hábiles a toda la República.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "heading": "Preguntas frecuentes.",
+        "button_label": "Escríbenos por WhatsApp",
+        "button_link": "https://wa.me/525564299433"
       }
     },
     "science_registro": {
@@ -1014,9 +992,50 @@
         "imagen_tema": "science-hf-silueta.jpg",
         "legal": "Este producto no es un medicamento. El consumo de este producto es responsabilidad de quien lo recomienda y de quien lo usa."
       }
+    },
+    "cm_sci_strip": {
+      "type": "cm-sci-strip",
+      "settings": {
+        "eyebrow": "Nuevo · Commons Science",
+        "text": "Azafrán, nuestra primera fórmula",
+        "link": "/products/azafran-1",
+        "asset": "cm-hero-sci.jpg"
+      }
+    },
+    "cm_nature": {
+      "type": "cm-nature",
+      "disabled": true,
+      "settings": {
+        "heading": "Todo empieza en una planta.",
+        "image1": "shopify://shop_images/IMG_1766_dda1351e-bf17-4d2b-9a0d-304e637a2028.jpg",
+        "caption": "In common with nature",
+        "image2": "shopify://shop_images/IMG_1835.jpg",
+        "height": 720
+      }
+    },
+    "cm_strip": {
+      "type": "cm-strip",
+      "disabled": true,
+      "settings": {
+        "label": "Evidencia · Commons Science",
+        "text": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas.",
+        "button_label": "Ver la evidencia",
+        "button_link": "/products/azafran-1"
+      }
+    },
+    "cm_journal": {
+      "type": "cm-journal",
+      "disabled": true,
+      "settings": {
+        "heading": "Journal",
+        "blog": "noticias",
+        "button_label": "Más artículos en nuestro blog",
+        "button_link": "/blogs/noticias"
+      }
     }
   },
   "order": [
+    "science_registro",
     "cm_hero",
     "cm_needs",
     "cm_quiz",
@@ -1031,7 +1050,6 @@
     "cm_life2",
     "cm_reviews",
     "cm_faq",
-    "science_registro",
     "cm_sci_strip",
     "cm_nature",
     "cm_strip",
