@@ -1906,6 +1906,13 @@
                         }
                       {% endif %}
                     {% endstyle %}
+                    <style>
+                      @media (max-width: 1023px){
+                        #mini-cart-upsell > div:first-child > div{padding-top:8px !important;padding-bottom:6px !important;font-size:12px !important;letter-spacing:.08em;text-transform:uppercase;line-height:1.2}
+                        .x-cart-interact-group .x-cart-interact-item{padding-top:7px !important;padding-bottom:7px !important;font-size:12px !important;line-height:1.2}
+                        .x-cart-interact-group .x-cart-interact-item p{margin:0;line-height:1.2}
+                      }
+                    </style>
                     <div class="x-cart-interact-group border-solid border-t flex md:flex-wrap justify-between">
                       {% comment %} share cart {% endcomment %}
                       {% if settings.enable_save_share_cart %}
