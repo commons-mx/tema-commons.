@@ -1265,7 +1265,7 @@
                                     {%- render 'cart-item-disclosures', item: item -%}
                                   {%- endif -%}
                                   <div class="price mt-2 mb-2 block lg:hidden">
-                                    {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                                    {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                                     {%- if item_original_price > item.final_price -%}
                                       <s class="cap mr-1 rtl:ml-1 rtl:mr-0 inline-block opacity-70">{%- if settings.currency_code_enable -%}{{ item_original_price | money_with_currency }}{%- else -%}{{ item_original_price | money }}{%- endif -%}
                                       </s> 
@@ -1453,7 +1453,7 @@
                                     {% render 'icon-alls', icon: 'icon-loading' %}
                                   </div>
                                   <div class="price hidden lg:flex lg:flex-col mb-2 items-end">
-                                    {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                                    {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                                     {%- if item_original_price > item.final_price -%}
                                       <s class="cap inline-block opacity-70">{%- if settings.currency_code_enable -%}{{ item_original_price | money_with_currency }}{%- else -%}{{ item_original_price | money }}{%- endif -%}
                                       </s> 
@@ -1980,10 +1980,10 @@
                     {% liquid
                       assign total_original_price = 0
                       for item in cart.items
-                        if item.variant.compare_at_price > item.original_price
+                        if item.variant.compare_at_price > item.variant.price
                           assign variant_original_price = item.variant.compare_at_price
                         else
-                          assign variant_original_price = item.original_price
+                          assign variant_original_price = item.variant.price
                         endif
                         assign line_item_price = variant_original_price | times: item.quantity
                         assign total_original_price = total_original_price | plus: line_item_price

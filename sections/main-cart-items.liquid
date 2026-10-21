@@ -1059,7 +1059,7 @@
                       {%- endif -%}
 
                       <div class="price mb-2 md:hidden">
-                        {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                        {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                         {%- if item_original_price > item.final_price -%}
                           <s class="cap mr-1 rtl:ml-1 rtl:mr-0 inline-block opacity-50">{%- if settings.currency_code_enable %}{{- item_original_price | money_with_currency -}}{%- else -%}{{ item_original_price | money }}{%- endif -%}</s>
                           <span class="selection:bg-text-[rgb(var(--colors-price-sale),0.2)] price-sale">
@@ -1192,7 +1192,7 @@
                   <td class="pt-7 pb-0 md:pt-5 md:pb-5 hidden md:table-cell md:align-top md:w-2/12{% if is_rtl %} pl-5{% else %} pr-5{% endif %}">
                     <div class="price">
                       <span>
-                        {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                        {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                         {%- if item_original_price > item.final_price -%}
                           <s class="cap mr-1 rtl:ml-1 rtl:mr-0 inline-block opacity-50">{%- if settings.currency_code_enable -%}{{- item_original_price | money_with_currency -}}{%- else -%}{{ item_original_price | money }}{%- endif -%}</s>
                           <span class="selection:bg-text-[rgb(var(--colors-price-sale),0.2)] price-sale">
@@ -1232,7 +1232,7 @@
                   <td class="lg:pl-2 pt-7 pb-0 md:pt-5 md:pb-5 md:hidden text-right md:text-left">
                     <div class="price">
                       <span class="flex flex-wrap justify-end gap-1">
-                        {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                        {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                         {% assign compare_at_price = item.quantity | times: item_original_price %}
                         {%- if compare_at_price > item.final_line_price -%}
                           <s class="cap opacity-50">
@@ -1311,7 +1311,7 @@
                   <td class="pb-5 md:pt-5 md:table-cell md:align-top lg:w-2/12 lg:pl-2">
                     <div class="flex justify-end md:justify-between">
                       <div class="price cart-item-price-{{ item.index | plus: 1 }} hidden md:flex md:flex-wrap">
-                        {%- assign item_original_price = item.variant.compare_at_price | default: item.original_price -%}
+                        {%- assign item_original_price = item.variant.compare_at_price | default: item.variant.price -%}
                         {% assign compare_at_price = item.quantity | times: item_original_price %}
                         {%- if compare_at_price > item.final_line_price -%}
                           <s class="cap mr-1 rtl:ml-1 rtl:mr-0 inline-block opacity-50">{%- if settings.currency_code_enable -%}{{- compare_at_price | money_with_currency -}}{%- else -%}{{- compare_at_price | money -}}{%- endif -%}</s>

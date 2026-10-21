@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": "Arise",
   "installed_preset_name": "Arise",
@@ -191,7 +200,7 @@
       "colors_price": "#202020",
       "colors_price_sale": "#141A16",
       "colors_error": "#c63f3f",
-      "colors_success": "#2b513a",
+      "colors_success": "#141A16",
       "colors_line_and_borders": "#dfddd5",
       "colors_cart_dot": "#141A16",
       "colors_cart_dot_text": "#ffffff",
@@ -337,7 +346,7 @@
         "cordyceps-extracto-commons"
       ],
       "number_of_product_shown": 6,
-      "cart_upsell_section_label": "Suma 1 más y ahorras 10% en los dos",
+      "cart_upsell_section_label": "Súmale a tu protocolo",
       "enable_save_share_cart": true,
       "hide_cart": false,
       "enable_free_shipping": true,
@@ -358,7 +367,8 @@
       "checkout_error_color": "#e12b28",
       "products_hover_to_reveal_second_image": true,
       "content_for_index": [],
-      "order_amount_freeshipping": "990"
+      "order_amount_freeshipping": "999",
+      "cart_enable_savings_amount": true
     },
     "Placid": {
       "theme_mode_enabled": false,
