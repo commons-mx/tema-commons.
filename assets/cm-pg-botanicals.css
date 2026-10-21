@@ -649,3 +649,5 @@ container-type:inline-size;container-name:cmpg;background:var(--bg);color:var(--
 @container cmpg (min-width: 761px){.cmpg .bfull.raiz{align-items:flex-end}.cmpg .bfull.raiz .bfx{padding:40px 40px 48px}}
 @container cmpg (max-width: 760px){.cmpg .bfull.raiz > img{order:1;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:62% 40%}.cmpg .bfull.raiz .bfx{order:2;padding:24px 16px 32px}}
 .cmpg .bfull.raiz > img{object-position:50% 50%}
+
+/* hero tapas */@media (min-width:761px){.cmpg .bfull.raiz>img{left:auto !important;right:0 !important;width:55% !important;height:100% !important;object-fit:cover;object-position:50% 50%}.cmpg .bfull.raiz{background:#F7F7F4 !important}.cmpg .bfull.raiz .bfx{max-width:42% !important}}
