@@ -193,7 +193,7 @@
             <div x-data="{ a: 0 }">{%- for l in block.settings.mobile_menu.links -%}
             {%- if l.links.size > 0 -%}
             <div class="acc"><button class="mrow" @click="a = a == {{ forloop.index }} ? 0 : {{ forloop.index }}">{{ l.title }}<span x-text="a == {{ forloop.index }} ? '−' : '+'">+</span></button>
-              <div class="accb" x-show="a == {{ forloop.index }}"><div class="mchips">{%- for c in l.links -%}<a class="chip" href="{{ c.url }}">{{ c.title }}</a>{%- endfor -%}</div></div></div>
+              <div class="accb" x-show="a == {{ forloop.index }}"><div class="mchips">{%- if l.title contains 'Rituals' -%}<a class="chip chipall" href="/collections/rituals">Ver todo Rituals</a>{%- endif -%}{%- for c in l.links -%}<a class="chip" href="{{ c.url }}">{{ c.title }}</a>{%- endfor -%}</div></div></div>
             {%- else -%}
             <a class="mrow" href="{{ l.url }}">{{ l.title }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
             {%- endif -%}
@@ -208,6 +208,7 @@
       {%- for block in section.blocks -%}
         {%- if block.type == 'panel' and block.settings.mobile_menu != blank -%}
         <div x-show="mp == '{{ block.id }}'" x-data="{ a: 0 }">
+          {%- if block.settings.label contains 'Botanicals' -%}<div class="mpad mtopb"><a class="btn mall" href="/collections/botanicals">Comprar todo Botanicals<span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>{%- elsif block.settings.label contains 'Science' -%}<div class="mpad mtopb"><a class="btn mall" href="/collections/science">Comprar todo Science<span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>{%- endif -%}
           {%- if block.settings.card_title != blank -%}
           <a class="mintro{% if block.settings.card_eyebrow contains 'Science' %} sci{% endif %}" href="{{ block.settings.card_link | default: block.settings.link }}">{%- if block.settings.card_eyebrow != blank -%}<span class="lab">{{ block.settings.card_eyebrow }}</span>{%- endif -%}<span class="disp h3t">{{ block.settings.card_title }}</span>{%- if block.settings.card_text != blank -%}<span class="mit">{{ block.settings.card_text }}</span>{%- endif -%}<span class="tlink">{{ block.settings.card_button | default: 'Ver' }}</span></a>
           {%- endif -%}
@@ -227,12 +228,12 @@
           {%- for l in block.settings.mobile_menu.links -%}
             {%- if l.links.size > 0 -%}
             <div class="acc"><button class="mrow" @click="a = a == {{ forloop.index }} ? 0 : {{ forloop.index }}">{{ l.title }}<span x-text="a == {{ forloop.index }} ? '−' : '+'">+</span></button>
-              <div class="accb" x-show="a == {{ forloop.index }}"><div class="mchips">{%- for c in l.links -%}<a class="chip" href="{{ c.url }}">{{ c.title }}</a>{%- endfor -%}</div></div></div>
+              <div class="accb" x-show="a == {{ forloop.index }}"><div class="mchips">{%- if l.title contains 'Rituals' -%}<a class="chip chipall" href="/collections/rituals">Ver todo Rituals</a>{%- endif -%}{%- for c in l.links -%}<a class="chip" href="{{ c.url }}">{{ c.title }}</a>{%- endfor -%}</div></div></div>
             {%- else -%}
             <a class="mrow" href="{{ l.url }}">{{ l.title }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
             {%- endif -%}
           {%- endfor -%}
-          {%- if block.settings.label contains 'Botanicals' -%}<a class="mrow mrall" href="/collections/botanicals">Comprar todo Botanicals<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a><a class="mrow mrall" href="/collections/rituals">Comprar todo Rituals<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- elsif block.settings.label contains 'Science' -%}<a class="mrow mrall" href="/collections/science">Comprar todo Science<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- elsif block.settings.label contains 'Journal' -%}{%- else -%}<a class="mrow mrall" href="/collections/tienda">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- endif -%}
+          {%- if block.settings.label contains 'Botanicals' or block.settings.label contains 'Science' -%}{%- elsif block.settings.label contains 'Journal' -%}{%- else -%}<a class="mrow mrall" href="/collections/tienda">Comprar todo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>{%- endif -%}
         </div>
         {%- endif -%}
       {%- endfor -%}
@@ -290,6 +291,10 @@
 .cm4 .mtop{gap:12px !important}
 .cm4 .mtop > *{flex:1 1 0 !important;min-width:0;box-sizing:border-box;width:auto !important;max-width:none}
 .cm-hdr .mlines{gap:12px;padding:20px 16px 16px}
+.cm4 .mtopb{padding:12px 16px 0}
+.cm4 .mtopb .btn.mall{height:44px;min-height:0;padding:0 6px 0 18px;font-size:15px}
+.cm4 .mtopb .btn.mall .arw{width:32px;height:32px}
+.cm-hdr .mchips .chipall{background:var(--ink,#141A16);color:#fff;border-color:var(--ink,#141A16)}
 .cm4 .ngrid.m svg{width:22px;height:22px}
 </style>
 {% schema %}
