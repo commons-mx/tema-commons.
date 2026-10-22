@@ -232,6 +232,7 @@
         x-show="loadingProductEls === '{{ section_id }}-{{ product_card_id }}'"
         class="opacity-30 absolute w-full h-full top-0 left-0 bg-[#acacac] z-10"
       ></div>
+      <a class="cm-card-link absolute top-0 left-0 w-full h-full z-[5]" href="{{ card_product.url | split: "?" | first }}" aria-label="Ver {{ card_product.title | escape }}"></a>
       <div class="w-full h-full z-0 overflow-hidden absolute top-0 left-0 animate_transition_card__image{% if card_product.featured_media %} animate-Xpulse skeleton-image{% endif %}">  
         <div
             id="x-slideshow-card-product-{{ section_id }}-{{ product_card_id }}-{{ index | minus: 1 }}"
@@ -525,12 +526,12 @@
           <div class="below-image ltr flex flex-wrap justify-{{ info_product_alignment }} mb-2.5 gap-1 empty:hidden"></div>
           <div class="w-full">
             <h3 class="x-card-title card__heading h5 collection-title mb-2.5 leading-tight">
-              <span
+              <a href="{{ card_product.url | split: "?" | first }}"
                 id="product-name-{{ section_id }}"
                 class="full-unstyled-link product-name text-[rgba(var(--colors-heading))] duration-200 p-break-words"
               >
                 {{ card_product.title | escape }}
-              </span>
+              </a>
             </h3>
           </div>
           {% if show_highlighted_features and settings.highlighted_features_position == "below_title" %}
