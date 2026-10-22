@@ -1,0 +1,195 @@
+{{ 'cm-pg-especialistas.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+
+
+<!-- REFERIDOS -->
+<section class="ed-hero" aria-labelledby="rh">
+<span class="pill lab">Programa de referidos</span>
+<h1 id="rh" class="disp h1">Recomienda Commons y gana dinero.</h1>
+<p class="sub">Para cualquier persona: especialistas, creadores de contenido o quien quiera ganar un extra recomendando lo que ya le gusta. Quien compra con tu código tiene 10% de descuento y tú ganas comisión.</p>
+<div class="ed-btns"><a class="btn" href="#programa">Elige cómo participar<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="tlink" href="https://commonsadaptogenos.goaffpro.com/" target="_blank" rel="noopener">Ya tengo código: entrar a mi panel</a></div>
+</section>
+
+<section class="ed-why" aria-labelledby="rw">
+<div class="ed-hd"><span class="lab">Cómo funciona</span><h2 id="rw" class="disp h2">Tres pasos.</h2></div>
+<div class="ed-g3">
+<div class="ed-box"><span class="ed-ic" style="background:#CDBDF0;font:500 22px Jost,sans-serif">1</span><h3>Elige tu grupo y regístrate</h3><p>Especialista, vendedor independiente o creador de contenido. Revisamos tu registro en 1 a 2 días hábiles.</p></div>
+<div class="ed-box"><span class="ed-ic" style="background:#EDE47A;font:500 22px Jost,sans-serif">2</span><h3>Recibe tu código y tu link</h3><p>Compártelo con quien quieras. Quien compra con él tiene 10% de descuento en commons.mx.</p></div>
+<div class="ed-box"><span class="ed-ic" style="background:#E9E6DF;font:500 22px Jost,sans-serif">3</span><h3>Te pagamos cada mes</h3><p>Sin mínimo: en crédito de tienda con 20% extra, o en dinero contra factura (desde $500).</p></div>
+</div>
+</section>
+
+<section id="programa" class="ed-ref" aria-labelledby="er">
+<div class="ed-ref-tx">
+<span class="lab" style="color:#EDE47A">Programa de referidos</span>
+<h2 id="er" class="disp h2">Elige lo que eres.</h2>
+<p class="ed-ref-sub">Las tres formas usan el mismo código y el mismo panel. Lo que cambia es la comisión y lo que te pedimos al registrarte.</p>
+<div class="ed-paths">
+<div class="ed-path"><div class="ed-path-tx"><span class="ed-path-pc">15%</span><h3>Soy especialista</h3><p>Salud o bienestar, con cédula o certificación. Sube a 18% y 20% según lo que recomiendes en el trimestre.</p></div><button type="button" class="btn ed-go" data-ref="especialista">Da clic aquí</button></div>
+<div class="ed-path"><div class="ed-path-tx"><span class="ed-path-pc">15%</span><h3>Soy vendedor independiente</h3><p>Le recomiendas Commons a tu gente y ganas por cada compra.</p></div><button type="button" class="btn ed-go" data-ref="vendedor">Da clic aquí</button></div>
+<div class="ed-path"><div class="ed-path-tx"><span class="ed-path-pc">10%</span><h3>Soy creador de contenido</h3><p>Más producto para que lo pruebes y lo expliques bien en tus redes.</p></div><button type="button" class="btn ed-go" data-ref="creador">Da clic aquí</button></div>
+</div>
+<p class="ed-ref-pay">Pago cada mes, sin mínimo: en crédito de tienda con 20% extra, o en dinero contra factura. <a href="https://commonsadaptogenos.goaffpro.com/" target="_blank" rel="noopener">Ya tengo código: entrar a mi panel</a></p>
+</div>
+<div class="ed-ref-img"><img src="{{ 'cm-esp-bosque.jpg' | asset_url }}" alt="Bosque en movimiento" loading="lazy"></div>
+</section>
+<dialog class="ed-lock" id="ed-lock" aria-labelledby="ed-lock-t">
+<form method="dialog" class="ed-lock-in">
+<button class="ed-lock-x" value="x" aria-label="Cerrar">×</button>
+<span class="lab" data-lock-type></span>
+<h3 id="ed-lock-t">Antes de registrarte</h3>
+<ul>
+<li><b>Tus propias compras no cuentan.</b> Las compras que hagas con tu código para ti se rechazan y no se pagan. Si compras para un consultorio o negocio, te damos precio de mayoreo.</li>
+<li>Tu cuenta queda pendiente hasta que la revisemos, en 1 a 2 días hábiles.</li>
+<li>No se vale publicar tu código en sitios de cupones o descuentos. Si pasa, se cierra la cuenta.</li>
+<li>Llena todos tus datos. Sin ellos no podemos aprobarte.</li>
+</ul>
+<label class="ed-lock-ok"><input type="checkbox" data-lock-ok> Entiendo y acepto estas reglas.</label>
+<a class="btn ed-lock-go" data-lock-go href="#" target="_blank" rel="noopener" aria-disabled="true">Ir al registro</a>
+</form>
+</dialog>
+<script>
+(function(){
+ /* Un link por grupo. Hoy todos van a GoAffPro; al pasar a UpPromote se cambia cada uno por el link de registro de su programa. */
+ var LINKS={especialista:'https://commonsadaptogenos.goaffpro.com/',vendedor:'https://commonsadaptogenos.goaffpro.com/',creador:'https://commonsadaptogenos.goaffpro.com/'};
+ var NOMBRES={especialista:'Especialista · 15%',vendedor:'Vendedor independiente · 15%',creador:'Creador de contenido · 10%'};
+ var d=document.getElementById('ed-lock'); if(!d) return;
+ var ok=d.querySelector('[data-lock-ok]'), go=d.querySelector('[data-lock-go]'), ty=d.querySelector('[data-lock-type]');
+ function sync(){ go.setAttribute('aria-disabled', ok.checked?'false':'true'); }
+ ok.addEventListener('change',sync);
+ go.addEventListener('click',function(e){ if(!ok.checked){ e.preventDefault(); ok.focus(); return; } setTimeout(function(){ d.close(); },300); });
+ document.querySelectorAll('.ed-go').forEach(function(b){ b.addEventListener('click',function(){
+   var k=b.getAttribute('data-ref'); ty.textContent=NOMBRES[k]||''; go.href=LINKS[k]; ok.checked=false; sync();
+   if(d.showModal) d.showModal(); else window.open(LINKS[k],'_blank'); }); });
+ d.addEventListener('click',function(e){ if(e.target===d) d.close(); });
+})();
+</script>
+<section class="my-faq" aria-labelledby="rf">
+<div class="cell"><span class="lab">Programa de referidos</span><h2 id="rf" class="disp h2" style="max-width: 10ch">Preguntas frecuentes.</h2></div>
+<div class="my-list"><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Quién puede entrar?</span><span aria-hidden="true">+</span></summary><p>Cualquier persona mayor de edad que quiera recomendar Commons. Si eres profesional de la salud o del bienestar, regístrate como especialista para tener tu comisión con niveles y acceso a capacitaciones.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Cuánto gano?</span><span aria-hidden="true">+</span></summary><p>Especialistas y vendedores independientes, 15% de cada compra con tu código. Creadores de contenido, 10% más producto para probar. Los especialistas suben a 18% con $10,000 vendidos en el trimestre y la capacitación tomada, y a 20% con $30,000.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Cuándo me pagan?</span><span aria-hidden="true">+</span></summary><p>Cada mes, el día 15, sin mínimo. Tú eliges: crédito de tienda con 20% extra, o dinero por transferencia o PayPal con factura o recibo (a partir de $500). Tus ventas y tu saldo los ves en tu panel.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Puedo usar mi código en mis propias compras?</span><span aria-hidden="true">+</span></summary><p>No. Las compras que hagas para ti con tu código se rechazan y no generan comisión. Si compras para un consultorio o negocio, te damos precio de mayoreo.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Puedo publicar mi código en sitios de cupones?</span><span aria-hidden="true">+</span></summary><p>No. Si tu código aparece en sitios de cupones o descuentos, se cierra la cuenta.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Tiene costo?</span><span aria-hidden="true">+</span></summary><p>No. Registrarte y participar es gratis.</p></details><details class="my-q"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px"><span>¿Qué puedo decir de los productos?</span><span aria-hidden="true">+</span></summary><p>Habla de tu experiencia y de lo que dice la evidencia, sin prometer que cura o trata enfermedades. Te compartimos una guía de cómo comunicar los productos.</p></details></div>
+</section>
+
+</div>
+</div>
+{%- comment -%} v5 · especialistas {%- endcomment -%}
+<style>
+#cmpg-{{ section.id }} .es-white{background:#fff}
+#cmpg-{{ section.id }} .es-white .my-g3 > div{background:#fff}
+#cmpg-{{ section.id }} .es-band{height:420px;overflow:hidden;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .es-band img{width:100%;height:100%;object-fit:cover;object-position:50% 72%;display:block}
+@media (max-width:760px){#cmpg-{{ section.id }} .es-band{height:260px}}
+</style>
+<style>
+#cmpg-{{ section.id }} .my-stats{background:#EDE47A}
+#cmpg-{{ section.id }} .my-stats .small{color:#2C342F}
+#cmpg-{{ section.id }} .es-white .my-g3 h3{font-size:20px;line-height:1.25}
+#cmpg-{{ section.id }} .es-comm{background:#141A16;color:#fff}
+#cmpg-{{ section.id }} .es-comm .lab,#cmpg-{{ section.id }} .es-comm .sub,#cmpg-{{ section.id }} .es-comm h2{color:#fff}
+#cmpg-{{ section.id }} .es-comm .cell{border-color:rgba(255,255,255,.2)}
+#cmpg-{{ section.id }} .es-comm .btn.dark{background:#EDE47A;color:#141A16}
+#cmpg-{{ section.id }} .my-form{background:#fff}
+</style>
+<style>
+#cmpg-{{ section.id }} .ed-hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;padding:96px 24px 80px;background:linear-gradient(180deg,#EFEBE3 0%,#F7F7F4 100%);border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .ed-hero h1{max-width:16ch;margin:0}
+#cmpg-{{ section.id }} .ed-hero .sub{max-width:56ch;margin:0;font-size:19px;line-height:1.5}
+#cmpg-{{ section.id }} .ed-pill{display:inline-flex;align-items:center;gap:8px;background:#E9E6DF;border-radius:999px;padding:8px 16px;font:500 12px/1 Figtree,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+#cmpg-{{ section.id }} .ed-pill i{width:7px;height:7px;border-radius:50%;background:#141A16}
+#cmpg-{{ section.id }} .ed-btns{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:center}
+#cmpg-{{ section.id }} .ed-checks{list-style:none;margin:0;padding:0;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;font-size:15px;color:#2C342F}
+#cmpg-{{ section.id }} .ed-checks li{display:inline-flex;align-items:center;gap:6px}
+#cmpg-{{ section.id }} .ed-why,#cmpg-{{ section.id }} .ed-dir{padding:88px 40px;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .ed-hd{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;margin-bottom:44px}
+#cmpg-{{ section.id }} .ed-hd h2,#cmpg-{{ section.id }} .ed-hd .sub{margin:0}
+#cmpg-{{ section.id }} .ed-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1180px;margin:0 auto}
+#cmpg-{{ section.id }} .ed-box{background:#fff;border:1px solid #E3E0D8;border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;gap:14px}
+#cmpg-{{ section.id }} .ed-box h3{margin:6px 0 0;font-size:22px;font-weight:500}
+#cmpg-{{ section.id }} .ed-box p{margin:0;font-size:16px;line-height:1.55;color:#2C342F}
+#cmpg-{{ section.id }} .ed-ic{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#141A16}
+#cmpg-{{ section.id }} .ed-ref{display:grid;grid-template-columns:1.1fr .9fr;background:#141A16;color:#fff}
+#cmpg-{{ section.id }} .ed-ref-tx{padding:80px 56px;display:flex;flex-direction:column;gap:26px}
+#cmpg-{{ section.id }} .ed-ref-tx h2{margin:0;color:#fff;max-width:18ch}
+#cmpg-{{ section.id }} .ed-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+#cmpg-{{ section.id }} .ed-steps li{display:flex;gap:16px;align-items:flex-start}
+#cmpg-{{ section.id }} .ed-steps b{flex:none;width:34px;height:34px;border-radius:50%;background:#EDE47A;color:#141A16;display:flex;align-items:center;justify-content:center;font-weight:600}
+#cmpg-{{ section.id }} .ed-steps h3{margin:0 0 4px;font-size:18px;font-weight:500;color:#fff}
+#cmpg-{{ section.id }} .ed-steps p{margin:0;color:#C9CCC8;font-size:15px;line-height:1.5}
+#cmpg-{{ section.id }} .ed-ref .ed-btns{justify-content:flex-start}
+#cmpg-{{ section.id }} .ed-ref-img{position:relative;min-height:420px}
+#cmpg-{{ section.id }} .ed-ref-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cmpg-{{ section.id }} .ed-filt{display:flex;gap:12px;align-items:center;flex-wrap:wrap;max-width:1180px;margin:0 auto 24px}
+#cmpg-{{ section.id }} .ed-filt select{-webkit-appearance:none;appearance:none;border:1px solid #141A16;border-radius:999px;background:#fff;padding:12px 40px 12px 18px;font:500 15px Figtree,sans-serif;color:#141A16;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23141A16' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+#cmpg-{{ section.id }} .ed-count{margin-left:auto;font-size:15px;color:#5A5F58}
+#cmpg-{{ section.id }} .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#cmpg-{{ section.id }} .ed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1180px;margin:0 auto}
+#cmpg-{{ section.id }} .ed-card{background:#fff;border:1px solid #E3E0D8;border-radius:18px;padding:22px;display:flex;gap:18px;align-items:center}
+#cmpg-{{ section.id }} .ed-card[hidden]{display:none}
+#cmpg-{{ section.id }} .ed-av{flex:none;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 20px Jost,sans-serif;color:#141A16}
+#cmpg-{{ section.id }} .ed-card h3{margin:0 0 4px;font-size:18px;font-weight:500;line-height:1.25}
+#cmpg-{{ section.id }} .ed-esp{margin:0 0 6px;font-size:15px;color:#2C342F}
+#cmpg-{{ section.id }} .ed-loc{margin:0;font-size:13px;color:#5A5F58;display:flex;align-items:center;gap:5px}
+#cmpg-{{ section.id }} .ed-card{align-items:flex-start}
+#cmpg-{{ section.id }} .ed-ph{object-fit:cover;background:#E9E6DF}
+#cmpg-{{ section.id }} .ed-tx{min-width:0}
+#cmpg-{{ section.id }} .ed-ol{display:inline-block;margin:8px 0 0;padding:3px 10px;border-radius:999px;background:#EDE47A;font-size:12px;font-weight:500;color:#141A16}
+#cmpg-{{ section.id }} .ed-ct{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+#cmpg-{{ section.id }} .ed-ct a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid #141A16;border-radius:999px;font-size:13px;font-weight:500;color:#141A16;text-decoration:none;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#cmpg-{{ section.id }} .ed-ct a:hover{background:#141A16;color:#fff}
+#cmpg-{{ section.id }} .ed-lv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:28px 0 4px}
+#cmpg-{{ section.id }} .ed-lv>div{border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:14px 12px;display:flex;flex-direction:column;gap:2px}
+#cmpg-{{ section.id }} .ed-lv b{font:500 26px Jost,sans-serif;color:#EDE47A;line-height:1.1}
+#cmpg-{{ section.id }} .ed-lv span{font-size:14px;font-weight:600;color:#fff}
+#cmpg-{{ section.id }} .ed-lv small{font-size:12px;line-height:1.35;color:#C9CCC8}
+#cmpg-{{ section.id }} select.in{-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23141A16' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px}
+#cmpg-{{ section.id }} .ed-ref-sub{margin:0;color:#C9CCC8;font-size:16px;line-height:1.55;max-width:52ch}
+#cmpg-{{ section.id }} .ed-paths{display:flex;flex-direction:column;gap:10px}
+#cmpg-{{ section.id }} .ed-path{display:flex;align-items:center;gap:16px;border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:16px 16px 16px 18px}
+#cmpg-{{ section.id }} .ed-path-tx{flex:1;min-width:0}
+#cmpg-{{ section.id }} .ed-path-pc{display:inline-block;font:500 13px Figtree,sans-serif;color:#141A16;background:#EDE47A;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+#cmpg-{{ section.id }} .ed-path h3{margin:0 0 4px;font-size:18px;font-weight:500;color:#fff}
+#cmpg-{{ section.id }} .ed-path p{margin:0;color:#C9CCC8;font-size:14px;line-height:1.45}
+#cmpg-{{ section.id }} .ed-go{flex:none;white-space:nowrap;cursor:pointer;border:0}
+#cmpg-{{ section.id }} .ed-ref-pay{margin:0;font-size:14px;color:#C9CCC8;line-height:1.5}
+#cmpg-{{ section.id }} .ed-ref-pay a{color:#fff;text-decoration:underline;margin-left:4px}
+.ed-lock{border:0;border-radius:20px;padding:0;max-width:460px;width:calc(100% - 32px);color:#141A16;background:#F7F7F4}
+.ed-lock::backdrop{background:rgba(20,26,22,.55)}
+.ed-lock-in{position:relative;padding:28px 24px 24px;display:flex;flex-direction:column;gap:14px}
+.ed-lock-in h3{margin:0;font:500 24px Jost,sans-serif}
+.ed-lock-in ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.45}
+.ed-lock-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;font-size:26px;cursor:pointer;color:#141A16}
+.ed-lock-ok{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;cursor:pointer;padding:12px;border:1px solid #141A16;border-radius:12px;background:#fff}
+.ed-lock-ok input{width:20px;height:20px;accent-color:#141A16;flex:none}
+.ed-lock-go{justify-content:center}
+.ed-lock-go[aria-disabled="true"]{opacity:.35;pointer-events:auto;cursor:not-allowed}
+@media (max-width:749px){#cmpg-{{ section.id }} .ed-path{flex-direction:column;align-items:stretch}#cmpg-{{ section.id }} .ed-go{width:100%;justify-content:center}}
+#cmpg-{{ section.id }} .ed-empty{text-align:center;color:#5A5F58}
+@media (max-width:989px){#cmpg-{{ section.id }} .ed-g3,#cmpg-{{ section.id }} .ed-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#cmpg-{{ section.id }} .ed-ref{grid-template-columns:1fr}#cmpg-{{ section.id }} .ed-ref-img{min-height:300px;order:-1}}
+@media (max-width:749px){#cmpg-{{ section.id }} .ed-hero{padding:64px 16px 56px}#cmpg-{{ section.id }} .ed-hero .sub{font-size:17px}#cmpg-{{ section.id }} .ed-why,#cmpg-{{ section.id }} .ed-dir{padding:56px 16px}#cmpg-{{ section.id }} .ed-g3,#cmpg-{{ section.id }} .ed-grid{grid-template-columns:1fr}#cmpg-{{ section.id }} .ed-ref-tx{padding:48px 20px}#cmpg-{{ section.id }} .ed-count{margin-left:0;width:100%}#cmpg-{{ section.id }} .ed-filt label{flex:1 1 45%}#cmpg-{{ section.id }} .ed-filt select{width:100%}#cmpg-{{ section.id }} .ed-checks{gap:10px 18px;font-size:14px}}
+</style><style>
+#cmpg-{{ section.id }} .es-white{background:#fff}
+#cmpg-{{ section.id }} .es-white .my-g3 > div{background:#fff}
+#cmpg-{{ section.id }} .es-band{height:420px;overflow:hidden;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .es-band img{width:100%;height:100%;object-fit:cover;object-position:50% 72%;display:block}
+@media (max-width:760px){#cmpg-{{ section.id }} .es-band{height:260px}}
+</style><style>
+#cmpg-{{ section.id }} .my-stats{background:#EDE47A}
+#cmpg-{{ section.id }} .my-stats .small{color:#2C342F}
+#cmpg-{{ section.id }} .es-white .my-g3 h3{font-size:20px;line-height:1.25}
+#cmpg-{{ section.id }} .es-comm{background:#141A16;color:#fff}
+#cmpg-{{ section.id }} .es-comm .lab,#cmpg-{{ section.id }} .es-comm .sub,#cmpg-{{ section.id }} .es-comm h2{color:#fff}
+#cmpg-{{ section.id }} .es-comm .cell{border-color:rgba(255,255,255,.2)}
+#cmpg-{{ section.id }} .es-comm .btn.dark{background:#EDE47A;color:#141A16}
+#cmpg-{{ section.id }} .my-form{background:#fff}
+</style>
+<style>
+#cmpg-{{ section.id }} .ed-hero .pill{display:inline-block;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #141A16}
+#cmpg-{{ section.id }} .ed-ic{display:flex;align-items:center;justify-content:center}
+</style>
+{% schema %}
+{
+  "name": "Programa de referidos",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
