@@ -169,6 +169,46 @@
         <button type="submit" class="btn dark full" data-add style="border: 0; cursor: pointer; width: 100%"><span data-cta>Agregar al carrito · {{ cur.price | money_without_trailing_zeros }}</span><span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></button>
       </form>
 
+      {%- liquid
+        assign pf_act = ''
+        assign pf_dose = ''
+        assign pf_p = 0
+        assign pf_c = 0
+        if s.ten != blank
+          assign tr = s.ten | newline_to_br | split: '<br />'
+          for r in tr
+            if r contains 'Estandarizado'
+              assign pf_act = r | split: ':' | last | strip
+            endif
+          endfor
+        endif
+        if s.cmp != blank
+          assign cr = s.cmp | newline_to_br | split: '<br />'
+          for r in cr
+            assign kv = r | strip | split: '|'
+            if kv[0] contains 'Cuánto'
+              assign pf_dose = kv[1] | strip | split: ' de ' | first
+            endif
+          endfor
+        endif
+        for v in product.variants
+          if v.title contains 'Polvo' and v.title contains '100'
+            assign pf_p = v.price | divided_by: 200.0 | round
+          endif
+          if v.title contains 'Cápsulas 120'
+            assign pf_c = v.price | divided_by: 120.0 | round
+          endif
+        endfor
+      -%}
+      {%- if pf_act != '' or pf_dose != '' or pf_p > 0 -%}
+      <div class="cm-prooft" aria-label="Lo que hay en el frasco">
+        {%- if pf_act != '' -%}{%- assign a1 = pf_act | split: ' ' | first -%}<div><b class="num">{{ a1 }}</b><span>{{ pf_act | remove_first: a1 | strip }}, declarado en la etiqueta</span></div>{%- endif -%}
+        {%- if pf_dose != '' -%}<div><b class="num">{{ pf_dose }}</b><span>al día de extracto</span></div>{%- endif -%}
+        {%- if pf_p > 0 -%}<div><b class="num">{{ pf_p | money_without_trailing_zeros }}</b><span>al día en polvo de 100 g{% if pf_c > 0 %} · {{ pf_c | money_without_trailing_zeros }} en cápsula{% endif %}</span></div>{%- elsif pf_c > 0 -%}<div><b class="num">{{ pf_c | money_without_trailing_zeros }}</b><span>al día en cápsula</span></div>{%- endif -%}
+      </div>
+      {%- if s.cmp != blank and s.big != blank -%}<a class="tlink" href="#porcion" style="align-self: flex-start">Compáralo con un polvo común ↓</a>{%- endif -%}
+      {%- endif -%}
+
       {%- if s.show_volume -%}<div class="volnote" data-vol>{%- if s.line_label contains 'Science' -%}<span>Súmalo a tu protocolo: 10% al llevar 2 o más productos</span>{%- else -%}<span>Lleva 2 frascos y ahorra 10% · 3 o más, 15%</span>{%- endif -%}<a class="tlink" href="/#protocolo">Arma tu protocolo</a></div>{%- endif -%}
       <div class="perks"><span>Envío gratis desde $999</span><span>3 meses sin intereses</span><span>Te asesora una persona por WhatsApp</span></div>
       <a class="tlink" href="/pages/quiz-commons" style="align-self: flex-start">¿Es para ti? Haz el quiz</a>
@@ -201,7 +241,7 @@
 {%- endif -%}
 
 {%- if s.big != blank -%}
-<section class="row2" aria-label="Origen y porción">
+<section class="row2" id="porcion" aria-label="Origen y porción">
   <div class="cellimg origin">
     {%- if s.origin_image != blank -%}{{ s.origin_image | image_url: width: 1400 | image_tag: loading: 'lazy' }}{%- elsif product.media[1] -%}{{ product.media[1] | image_url: width: 1400 | image_tag: loading: 'lazy' }}{%- endif -%}
     <div class="frame"></div>
@@ -273,8 +313,14 @@
       <div class="segl"><span>0</span><span>4</span><span>8</span><span>12 sem</span></div>
       {%- endif -%}
       {%- if s.ev_text != blank -%}<p style="margin: 0">{{ s.ev_text }}</p>{%- endif -%}
-      {%- if s.ev_link != blank -%}<a class="tlink" href="{{ s.ev_link }}">Leer el estudio</a>{%- endif -%}
+      {%- if s.ev_link != blank -%}<a class="tlink" href="{{ s.ev_link }}" target="_blank" rel="noopener">Leer el estudio</a>{%- endif -%}
       {%- if s.ev_cite != blank -%}<span class="small">{{ s.ev_cite }}</span>{%- endif -%}
+      {%- if s.ev_more != blank -%}
+      <div class="evmore"><span class="lab">Más estudios</span><ul>
+        {%- assign em = s.ev_more | newline_to_br | split: '<br />' -%}
+        {%- for r in em -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}<li><a href="{{ kv[1] | strip }}" target="_blank" rel="noopener">{{ kv[0] | strip }}</a><span class="small">{{ kv[2] | strip }}</span></li>{%- endif -%}{%- endfor -%}
+      </ul></div>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -391,6 +437,10 @@
   #cmp-{{ section.id }} .opt[disabled]{opacity:.45;cursor:not-allowed}
   #cmp-{{ section.id }} .cadd.on{background:var(--ink);color:#fff}
   #cmp-{{ section.id }} [hidden]{display:none !important}
+  #cmp-{{ section.id }} .evmore{display:flex;flex-direction:column;gap:12px;margin-top:8px;padding-top:16px;border-top:1px dotted var(--ink,#141a16)}
+  #cmp-{{ section.id }} .evmore ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  #cmp-{{ section.id }} .evmore li{display:flex;flex-direction:column;gap:4px}
+  #cmp-{{ section.id }} .evmore a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 </style>
 <script>
 (function(){
@@ -431,6 +481,15 @@
   var sel = root.querySelector('.opt.sel'); if (sel && vol) vol.hidden = !!sel.dataset.carry;
 })();
 </script>
+<style>/* tira de prueba */
+#cmp-{{ section.id }} .cm-prooft{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #141A16;border-bottom:1px solid #D9D6CC}
+#cmp-{{ section.id }} .cm-prooft>div{display:flex;flex-direction:column;gap:6px;padding:16px 14px 16px 0}
+#cmp-{{ section.id }} .cm-prooft>div+div{padding-left:14px;border-left:1px solid #D9D6CC}
+#cmp-{{ section.id }} .cm-prooft b{font-size:30px;line-height:1;font-weight:500;letter-spacing:-.01em}
+#cmp-{{ section.id }} .cm-prooft span{font-size:13px;line-height:1.4;color:#5A5F58}
+#cmp-{{ section.id }} #porcion{scroll-margin-top:90px}
+@media (max-width:749px){#cmp-{{ section.id }} .cm-prooft b{font-size:24px}#cmp-{{ section.id }} .cm-prooft>div{padding-right:8px}#cmp-{{ section.id }} .cm-prooft>div+div{padding-left:10px}}
+</style>
 {% schema %}
 {
   "name": "Ficha Commons v5",
@@ -639,6 +698,12 @@
       "type": "text",
       "id": "ev_cite",
       "label": "Cita"
+    },
+    {
+      "type": "textarea",
+      "id": "ev_more",
+      "label": "Más estudios",
+      "info": "Una línea por estudio: Autor año · Revista|https://link|Qué encontró"
     },
     {
       "type": "header",

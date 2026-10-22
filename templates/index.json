@@ -861,7 +861,8 @@
         "heading": "Por qué somos diferentes.",
         "text": "No da igual cuál compras. Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
         "color": "#efebe3"
-      }
+      },
+      "disabled": true
     },
     "cm_life2": {
       "type": "cm-photoband",
@@ -1032,6 +1033,23 @@
         "button_label": "Más artículos en nuestro blog",
         "button_link": "/blogs/noticias"
       }
+    },
+    "cm_compare": {
+      "type": "cm-compare",
+      "settings": {
+        "tag": "No da igual cuál compras",
+        "heading": "Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
+        "text": "Compara con la etiqueta en la mano.",
+        "proof": "★ 4.91 · +1,500 reseñas\n+200 especialistas lo recomiendan\nPioneros de los adaptógenos en México desde 2020",
+        "col2": "Extracto genérico",
+        "col3": "Polvo común",
+        "rows": "Activo declarado en la etiqueta|25% betaglucanos en hongos · 5% withanólidos en Ashwagandha|A veces|No se declara\nQué hay en el frasco de hongo|Solo cuerpo fructífero|Puede llevar micelio y grano|Hongo o planta molida\nLo que tomas al día|0.5 g de extracto|Depende de la marca|5 a 20 g de planta molida\nCosto por día|desde $4.95|Depende de la marca|Depende de la marca\nFórmulas con ingrediente de patente y dosis estudiada|Sí, línea Science|Rara vez|No",
+        "note": "Costo por día de Commons: polvo de 100 g a 0.5 g al día. Compara siempre la porción y el activo que declara cada etiqueta.",
+        "btn_label": "Ver los más vendidos",
+        "btn_link": "/collections/mejores-adaptogenos-naturales",
+        "link_label": "Haz el quiz · 3 min",
+        "link_url": "/pages/quiz-commons"
+      }
     }
   },
   "order": [
@@ -1043,6 +1061,7 @@
     "cm_trust",
     "cm_life1",
     "cm_products",
+    "cm_compare",
     "cm_marquee",
     "cm_universes",
     "cm_ingredients",
