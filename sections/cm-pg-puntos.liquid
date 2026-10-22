@@ -18,12 +18,16 @@
 </section>
 
 <style>/* tiendas tarjetas */
-.cmpg .cm-dir,.cm4 .cm-dir{gap:12px !important;padding:0 20px}
-.cmpg .cm-dir > div,.cm4 .cm-dir > div{background:#fff;border:1px solid #D9D6CC !important;border-radius:14px;padding:18px 18px 6px !important}
-.cmpg .cm-dir h3,.cm4 .cm-dir h3{margin:0 0 4px;padding-bottom:12px;border-bottom:2px solid #141A16}
+.cmpg .cm-dir,.cm4 .cm-dir{display:grid !important;grid-template-columns:repeat(5,minmax(0,1fr)) !important;gap:0 !important;margin:0 !important;padding:0 !important;border-top:1px solid var(--rule) !important}
+.cmpg .cm-dir > div,.cm4 .cm-dir > div{padding:28px 32px 24px !important;border-right:1px solid var(--rule) !important;border-bottom:1px solid var(--rule) !important;background:transparent;border-radius:0}
+.cmpg .cm-dir > div:nth-child(5n),.cm4 .cm-dir > div:nth-child(5n){border-right:0 !important}
+.cmpg .cm-dir h3,.cm4 .cm-dir h3{margin:0 0 6px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
 .cmpg .cm-dir ul,.cm4 .cm-dir ul{margin:0;padding:0;list-style:none;border:0 !important}
-.cmpg .cm-dir li,.cm4 .cm-dir li{padding:12px 0 !important;border-bottom:1px solid #E6E3DA;display:flex;flex-direction:column;gap:3px}
+.cmpg .cm-dir li,.cm4 .cm-dir li{padding:12px 0 !important;border-bottom:1px solid var(--soft,#E6E3DA);display:flex;flex-direction:column;gap:3px}
 .cmpg .cm-dir li:last-child,.cm4 .cm-dir li:last-child{border-bottom:0}
+.cmpg .pv-chains{grid-template-columns:repeat(6,minmax(0,1fr)) !important}
+@media (max-width:989px){.cmpg .cm-dir,.cm4 .cm-dir{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.cmpg .cm-dir > div:nth-child(5n){border-right:1px solid var(--rule) !important}.cmpg .cm-dir > div:nth-child(2n){border-right:0 !important}.cmpg .cm-dir > div{padding:22px 20px !important}.cmpg .pv-chains{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media (max-width:560px){.cmpg .cm-dir,.cm4 .cm-dir{grid-template-columns:minmax(0,1fr) !important}.cmpg .cm-dir > div{border-right:0 !important}}
 </style>
 <!-- 3 · TIENDAS ESPECIALIZADAS -->
 <section aria-labelledby="ti">
