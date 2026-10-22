@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -9,14 +18,14 @@
         "sci": "Inonotus obliquus · cuerpo fructífero",
         "needs": "Defensas",
         "claim": "Extracto estandarizado de cuerpo fructífero, sin micelio ni grano. Medio gramo por porción.",
-        "ten": "Para: Defensas\nParte: Cuerpo fructífero\nEstandarizado: 20% betaglucanos\nMomento: En la mañana\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
+        "ten": "Para: Defensas\nParte: Cuerpo fructífero\nEstandarizado: 25% betaglucanos\nMomento: En la mañana\nRinde: Cápsulas ~2 meses · polvo 100 g ~4 meses",
         "opt_hints": "Cápsulas 120|120 de 500 mg · alrededor de 2 meses\nPolvo 100 g|Extracto en polvo · rinde más, desde $4.95 por porción\nPolvo 50 g|Para llevar · va a precio completo",
         "show_volume": true,
         "forr": "Defensas",
-        "big": "100 mg",
-        "big_text": "de betaglucanos en cada cápsula de 500 mg (extracto al 20%).",
-        "tab": "Extracto de Chaga|500 mg por cápsula\nEstandarizado|20% betaglucanos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
-        "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|20% betaglucanos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
+        "big": "125 mg",
+        "big_text": "de betaglucanos en cada cápsula de 500 mg (extracto al 25%).",
+        "tab": "Extracto de Chaga|500 mg por cápsula\nEstandarizado|25% betaglucanos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
+        "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|25% betaglucanos|No se declara\n100 g te duran|4 a 8 meses|5 a 20 días",
         "tab_note": "",
         "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Mañana o tarde|Chaga se queda en 1 cápsula o ½ scoop al día.\nRitmo|6 días a la semana|Ciclo: 2 meses y una pausa de 2 a 4 semanas.",
         "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 8 a 10 semanas.\nCiclo|2 meses y una pausa de 2 a 4 semanas.",
@@ -27,7 +36,13 @@
           "chocolate-defend"
         ],
         "comp_why": "Elegidos por lo que hace Chaga: uno de Botanicals, uno de Science o Rituals.",
-        "product_color": ""
+        "product_color": "",
+        "ev_quick": "Evidencia de laboratorio",
+        "ev_tag": "Evidencia de laboratorio",
+        "ev_word": "Antioxidante.",
+        "ev_text": "Una revisión de la investigación sobre chaga describe su actividad antioxidante y antiinflamatoria en estudios de laboratorio. Todavía no hay estudios clínicos en personas.",
+        "ev_link": "https://doi.org/10.1016/j.heliyon.2024.e35638",
+        "ev_cite": "Camilleri et al., Heliyon, 2024"
       },
       "blocks": {
         "ben": {
@@ -48,7 +63,7 @@
           "type": "acc",
           "settings": {
             "title": "Lo que lleva · ingredientes",
-            "text": "<p>Por cápsula: 500 mg de extracto de Chaga (Inonotus obliquus), estandarizado: 20% betaglucanos. Sin rellenos.</p>"
+            "text": "<p>Por cápsula: 500 mg de extracto de Chaga (Inonotus obliquus), estandarizado: 25% betaglucanos. Sin rellenos.</p>"
           }
         },
         "acc3": {
