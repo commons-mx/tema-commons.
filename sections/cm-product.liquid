@@ -303,23 +303,31 @@
     
   </div>
   <div class="cell">
-    <div class="evc" style="min-height: 0">
-      {%- if s.ev_tag != blank -%}<span class="tag">{{ s.ev_tag }}</span>{%- endif -%}
-      <h3 class="disp evword">{{ s.ev_word }}</h3>
-      {%- if s.ev_weeks != blank -%}
-      <div class="evrow"><span class="evbig">{{ s.ev_weeks }}</span><span class="small">semanas de estudio{% if s.ev_people != blank %}<br>{{ s.ev_people }}{% endif %}</span></div>
-      {%- assign wk = s.ev_weeks | plus: 0 -%}
-      <div class="segs" aria-hidden="true">{%- for i in (1..12) -%}<i class="s{% if i <= wk %} on{% endif %}"></i>{%- endfor -%}</div>
-      <div class="segl"><span>0</span><span>4</span><span>8</span><span>12 sem</span></div>
+    <div class="evc evx" style="min-height: 0">
+      <div class="evx-hd">{%- if s.ev_tag != blank -%}<span class="tag">{{ s.ev_tag }}</span>{%- endif -%}<h3 class="disp evword">{{ s.ev_word }}</h3></div>
+      {%- if s.ev_weeks != blank or s.ev_people != blank or s.ev_cite != blank -%}
+      <div class="evx-study">
+        <span class="lab">El estudio</span>
+        <dl>
+          {%- if s.ev_people != blank -%}<div><dt>Quiénes</dt><dd>{{ s.ev_people }}</dd></div>{%- endif -%}
+          {%- if s.ev_weeks != blank -%}<div><dt>Duración</dt><dd>{{ s.ev_weeks }} semanas</dd></div>{%- endif -%}
+        </dl>
+        {%- if s.ev_weeks != blank -%}
+        {%- assign wk = s.ev_weeks | plus: 0 -%}
+        <div class="segs" aria-hidden="true">{%- for i in (1..12) -%}<i class="s{% if i <= wk %} on{% endif %}"></i>{%- endfor -%}</div>
+        <div class="segl"><span>0</span><span>4</span><span>8</span><span>12 sem</span></div>
+        {%- endif -%}
+        <div class="evx-ft">{%- if s.ev_cite != blank -%}<span class="small">{{ s.ev_cite }}</span>{%- endif -%}{%- if s.ev_link != blank -%}<a class="evx-go" href="{{ s.ev_link }}" target="_blank" rel="noopener">Leer el estudio <span aria-hidden="true">↗</span></a>{%- endif -%}</div>
+      </div>
       {%- endif -%}
-      {%- if s.ev_text != blank -%}<p style="margin: 0">{{ s.ev_text }}</p>{%- endif -%}
-      {%- if s.ev_link != blank -%}<a class="tlink" href="{{ s.ev_link }}" target="_blank" rel="noopener">Leer el estudio</a>{%- endif -%}
-      {%- if s.ev_cite != blank -%}<span class="small">{{ s.ev_cite }}</span>{%- endif -%}
+      {%- if s.ev_text != blank -%}<div class="evx-find"><span class="lab">Qué se encontró</span><p>{{ s.ev_text }}</p></div>{%- endif -%}
       {%- if s.ev_more != blank -%}
-      <div class="evmore"><span class="lab">Más estudios</span><ul>
+      <div class="evx-more"><span class="lab">Más estudios</span>
         {%- assign em = s.ev_more | newline_to_br | split: '<br />' -%}
-        {%- for r in em -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}<li><a href="{{ kv[1] | strip }}" target="_blank" rel="noopener">{{ kv[0] | strip }}</a><span class="small">{{ kv[2] | strip }}</span></li>{%- endif -%}{%- endfor -%}
-      </ul></div>
+        {%- for r in em -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}
+        <article class="evx-card"><p class="evx-cf">{{ kv[2] | strip }}</p><div class="evx-ft"><span class="small">{{ kv[0] | strip }}</span><a class="evx-go" href="{{ kv[1] | strip }}" target="_blank" rel="noopener">Leer el estudio <span aria-hidden="true">↗</span></a></div></article>
+        {%- endif -%}{%- endfor -%}
+      </div>
       {%- endif -%}
     </div>
   </div>
@@ -489,6 +497,24 @@
 #cmp-{{ section.id }} .cm-prooft span{font-size:13px;line-height:1.4;color:#5A5F58}
 #cmp-{{ section.id }} #porcion{scroll-margin-top:90px}
 @media (max-width:749px){#cmp-{{ section.id }} .cm-prooft b{font-size:24px}#cmp-{{ section.id }} .cm-prooft>div{padding-right:8px}#cmp-{{ section.id }} .cm-prooft>div+div{padding-left:10px}}
+</style>
+<style>/* evidencia legible */
+#cmp-{{ section.id }} .evx{outline:0 !important;border:0 !important;padding:0 !important;background:transparent !important;gap:14px !important}
+#cmp-{{ section.id }} .evx-hd{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+#cmp-{{ section.id }} .evx-study{background:#fff;border:1px solid #D9D6CC;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+#cmp-{{ section.id }} .evx-study dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#cmp-{{ section.id }} .evx-study dt{font:500 11px/1.2 var(--fl,Figtree),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#5A5F58;margin-bottom:4px}
+#cmp-{{ section.id }} .evx-study dd{margin:0;font-size:16px;line-height:1.35}
+#cmp-{{ section.id }} .evx-find{background:#EFEBE3;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+#cmp-{{ section.id }} .evx-find p{margin:0;font-size:18px;line-height:1.5}
+#cmp-{{ section.id }} .evx-ft{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #E6E3DA}
+#cmp-{{ section.id }} .evx-ft .small{color:#5A5F58}
+#cmp-{{ section.id }} .evx-go{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid #141A16;border-radius:999px;font-size:14px;font-weight:500;color:#141A16;text-decoration:none;white-space:nowrap}
+#cmp-{{ section.id }} .evx-go:hover{background:#141A16;color:#fff}
+#cmp-{{ section.id }} .evx-more{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+#cmp-{{ section.id }} .evx-card{background:#fff;border:1px solid #D9D6CC;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+#cmp-{{ section.id }} .evx-cf{margin:0;font-size:16px;line-height:1.45;font-weight:500}
+@media (max-width:749px){#cmp-{{ section.id }} .evx-study,#cmp-{{ section.id }} .evx-find,#cmp-{{ section.id }} .evx-card{padding:16px}#cmp-{{ section.id }} .evx-find p{font-size:16px}}
 </style>
 {% schema %}
 {
