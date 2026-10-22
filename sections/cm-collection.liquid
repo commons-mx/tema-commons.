@@ -136,10 +136,9 @@
 #cmc-{{ section.id }} .rit .rph{position:relative;aspect-ratio:4/3;height:auto;padding:0;overflow:hidden;display:block}
 </style>
 <style>/* necesidades claras */
-.cm4 .needs.c,.needs.c{gap:8px;padding:12px;background:transparent;border-right:0 !important}
-.needs.c .need{background:#fff;border:1px solid #D9D6CC !important;border-radius:12px;min-height:58px;transition:background .15s,color .15s}
-.needs.c .need:hover,.needs.c .need.on{background:#141A16;color:#fff;border-color:#141A16 !important}
-@media (max-width:760px){.needs.c{gap:6px;padding:10px}}
+.cm4 .needs.c,.needs.c{gap:0 !important;padding:0 !important;background:transparent;border-top:1px solid var(--rule) !important;border-left:1px solid var(--rule) !important}
+.needs.c .need{background:#fff;border:0 !important;border-right:1px solid var(--rule) !important;border-bottom:1px solid var(--rule) !important;border-radius:0 !important;min-height:64px;transition:background .15s,color .15s}
+.needs.c .need:hover,.needs.c .need.on{background:#1F5034;color:#fff}
 </style>
 {% schema %}
 {
