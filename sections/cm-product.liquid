@@ -204,7 +204,7 @@
       <div class="cm-prooft" aria-label="Lo que hay en el frasco">
         {%- if pf_act != '' -%}{%- assign a1 = pf_act | split: ' ' | first -%}<div><b class="num">{{ a1 }}</b><span>{{ pf_act | remove_first: a1 | strip }}, declarado en la etiqueta</span></div>{%- endif -%}
         {%- if pf_dose != '' -%}<div><b class="num">{{ pf_dose }}</b><span>al día de extracto</span></div>{%- endif -%}
-        {%- if pf_p > 0 -%}<div><b class="num">{{ pf_p | money_without_trailing_zeros }}</b><span>al día en polvo de 100 g{% if pf_c > 0 %} · {{ pf_c | money_without_trailing_zeros }} en cápsula{% endif %}</span></div>{%- elsif pf_c > 0 -%}<div><b class="num">{{ pf_c | money_without_trailing_zeros }}</b><span>al día en cápsula</span></div>{%- endif -%}
+        {%- if pf_p > 0 -%}<div><b class="num">{{ pf_p | money_without_trailing_zeros | remove: " " }}</b><span>al día en polvo de 100 g{% if pf_c > 0 %} · {{ pf_c | money_without_trailing_zeros | remove: " " }} en cápsula{% endif %}</span></div>{%- elsif pf_c > 0 -%}<div><b class="num">{{ pf_c | money_without_trailing_zeros | remove: " " }}</b><span>al día en cápsula</span></div>{%- endif -%}
       </div>
       {%- if s.cmp != blank and s.big != blank -%}<a class="tlink" href="#porcion" style="align-self: flex-start">Compáralo con un polvo común ↓</a>{%- endif -%}
       {%- endif -%}
