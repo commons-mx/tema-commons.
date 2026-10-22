@@ -15,7 +15,7 @@
   <div class="cimg">{%- if collection.image -%}{{ collection.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: collection.title }}{%- elsif s.image != blank -%}{{ s.image | image_url: width: 1600 | image_tag: loading: 'eager' }}{%- else -%}{%- liquid
   assign _fb = 'cm-botanicals-hero-2.jpg'
   if collection.handle contains 'science' or collection.handle == 'azafran'
-    assign _fb = 'cm-hero-sci.jpg'
+    assign _fb = 'cm-home-science-wide.jpg'
   elsif collection.handle contains 'ritual' or collection.handle contains 'miel' or collection.handle contains 'chocolate' or collection.handle contains 'blend'
     assign _fb = 'cm-rituals-hero-2.jpg'
   endif
@@ -134,6 +134,12 @@
 #cmc-{{ section.id }} .fgroup button{-webkit-appearance:none;appearance:none;background:transparent;color:var(--ink,#141A16);border:1px solid var(--ink,#141A16);border-radius:999px;padding:8px 14px;font:500 12px/1 Figtree,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 #cmc-{{ section.id }} .fgroup button.on{background:var(--ink,#141A16);color:#fff}
 #cmc-{{ section.id }} .rit .rph{position:relative;aspect-ratio:4/3;height:auto;padding:0;overflow:hidden;display:block}
+</style>
+<style>/* necesidades claras */
+.cm4 .needs.c,.needs.c{gap:8px;padding:12px;background:transparent;border-right:0 !important}
+.needs.c .need{background:#fff;border:1px solid #D9D6CC !important;border-radius:12px;min-height:58px;transition:background .15s,color .15s}
+.needs.c .need:hover,.needs.c .need.on{background:#141A16;color:#fff;border-color:#141A16 !important}
+@media (max-width:760px){.needs.c{gap:6px;padding:10px}}
 </style>
 {% schema %}
 {
