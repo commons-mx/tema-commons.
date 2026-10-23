@@ -27,7 +27,7 @@
       {%- endfor -%}
     </div>
   </div>
-  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-faq.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}</div>
+  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-faq-flores.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}</div>
 </section>
 </div>
 <style>
