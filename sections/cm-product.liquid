@@ -372,10 +372,17 @@
   </div>
   {%- if feed.reviews.size > 0 -%}
   <div class="rvg">
+    {%- comment -%} Destacadas: solo 4 y 5 estrellas; primero las que traen foto. {%- endcomment -%}
     {%- assign shown = 0 -%}
+    {%- for pass in (1..2) -%}
     {%- for r in feed.reviews -%}
       {%- if shown >= 6 -%}{%- break -%}{%- endif -%}
+      {%- assign rr = r.rating | plus: 0 -%}
+      {%- if rr < 4 -%}{%- continue -%}{%- endif -%}
       {%- if r.review.size < 15 -%}{%- continue -%}{%- endif -%}
+      {%- assign hasph = false -%}{%- for m in r.media -%}{%- if m.t == 'photo' -%}{%- assign hasph = true -%}{%- endif -%}{%- endfor -%}
+      {%- if pass == 1 and hasph == false -%}{%- continue -%}{%- endif -%}
+      {%- if pass == 2 and hasph -%}{%- continue -%}{%- endif -%}
       {%- assign shown = shown | plus: 1 -%}
       <article class="rvc">
         <span class="rvst" aria-label="{{ r.rating }} de 5">{%- for i in (1..5) -%}{%- if i <= r.rating -%}★{%- else -%}<i>★</i>{%- endif -%}{%- endfor -%}</span>
@@ -383,6 +390,7 @@
         {%- for m in r.media -%}{%- if m.t == 'photo' -%}<img src="https:{{ m.src }}" alt="Foto de la reseña de {{ r.author | escape }}" loading="lazy" width="{{ m.w }}" height="{{ m.h }}">{%- break -%}{%- endif -%}{%- endfor -%}
         <span class="rva">{{ r.author | escape }}{% if r.verified %} · Compra verificada{% endif %}</span>
       </article>
+    {%- endfor -%}
     {%- endfor -%}
   </div>
   {%- endif -%}
