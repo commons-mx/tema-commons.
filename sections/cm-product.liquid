@@ -284,7 +284,7 @@
 
 {%- liquid
   assign lifes = 'cm-life-cielo.jpg,cm-life-montana.jpg,cm-life-colina.jpg,cm-life-risa.jpg,cm-life-sol.jpg,cm-life-ventana.jpg,cm-life-campo.jpg,cm-life-lila.jpg,cm-life-cordyceps.jpg' | split: ','
-  assign li = product.id | modulo: 8
+  assign li = product.handle.size | modulo: 8
   assign life = lifes[li]
   if product.handle contains 'reishi'
     assign life = 'cm-life-cielo.jpg'
@@ -304,6 +304,18 @@
     assign life = 'cm-life-campo.jpg'
   elsif product.handle contains 'shatavari' or product.handle contains 'vitex'
     assign life = 'cm-life-lila.jpg'
+  elsif product.handle contains 'tulsi'
+    assign life = 'cm-life-cielo.jpg'
+  elsif product.handle contains 'schisandra' or product.handle contains 'eleuthero'
+    assign life = 'cm-life-campo.jpg'
+  elsif product.handle contains 'master'
+    assign life = 'cm-life-risa.jpg'
+  elsif product.handle contains 'astragal' or product.handle contains 'amla'
+    assign life = 'cm-life-sol.jpg'
+  elsif product.handle contains 'gotu' or product.handle contains 'gingko' or product.handle contains 'ginkgo'
+    assign life = 'cm-life-montana.jpg'
+  elsif product.handle contains 'mucuna'
+    assign life = 'cm-life-colina.jpg'
   endif
   if s.line_label contains 'Science'
     assign life = 'cm-life-sonrisa.jpg'
