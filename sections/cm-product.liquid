@@ -283,15 +283,33 @@
 {%- endif -%}
 
 {%- liquid
-  assign life = 'cm-life-acostada.jpg'
+  assign lifes = 'cm-life-cielo.jpg,cm-life-montana.jpg,cm-life-colina.jpg,cm-life-risa.jpg,cm-life-sol.jpg,cm-life-ventana.jpg,cm-life-campo.jpg,cm-life-lila.jpg,cm-life-cordyceps.jpg' | split: ','
+  assign li = product.id | modulo: 8
+  assign life = lifes[li]
+  if product.handle contains 'reishi'
+    assign life = 'cm-life-cielo.jpg'
+  elsif product.handle contains 'melena'
+    assign life = 'cm-life-montana.jpg'
+  elsif product.handle contains 'cordyceps'
+    assign life = 'cm-life-cordyceps.jpg'
+  elsif product.handle contains 'chaga'
+    assign life = 'cm-life-sol.jpg'
+  elsif product.handle contains 'cola-de-pavo'
+    assign life = 'cm-life-risa.jpg'
+  elsif product.handle contains 'maitake'
+    assign life = 'cm-life-colina.jpg'
+  elsif product.handle contains 'ashwagandha'
+    assign life = 'cm-life-ventana.jpg'
+  elsif product.handle contains 'rhodiola'
+    assign life = 'cm-life-campo.jpg'
+  elsif product.handle contains 'shatavari' or product.handle contains 'vitex'
+    assign life = 'cm-life-lila.jpg'
+  endif
   if s.line_label contains 'Science'
     assign life = 'cm-life-sonrisa.jpg'
   endif
   if product.handle contains 'magnesio'
     assign life = 'cm-life-cama.jpg'
-  endif
-  if product.handle contains 'ashwagandha'
-    assign life = 'cm-life-corriendo.jpg'
   endif
 -%}
 <div class="cm4"><section class="pband pb1 pb-txt" aria-hidden="true"><div class="pbt"><p class="disp h2">Sentirte bien también se nota.</p><span class="lab">In common with nature</span></div><div class="pbi">{%- if s.life_image != blank -%}{{ s.life_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- else -%}<img src="{{ life | asset_url }}" alt="" loading="lazy" width="1200" height="1500">{%- endif -%}</div></section></div>
