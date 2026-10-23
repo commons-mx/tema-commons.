@@ -14,11 +14,36 @@
 <p class="disp" style="width: 929px">Plantas, raíces y hongos, como vienen de la tierra. Medio gramo al día.</p>
 </section>
 
-<!-- 3 · TRES FAMILIAS -->
-<section class="fam3" id="fam" aria-label="Familias">
-<a class="fm" href="#mv" data-fam="0"><div class="fimg"><img src="{%- if section.settings.cm_img_2 != blank -%}{{ section.settings.cm_img_2 | image_url: width: 2000 }}{%- else -%}{{ 'cm-fam-hongos-manos.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Manos sosteniendo hongos recién cosechados"></div><div class="ftx"><span class="fn">Hongos</span><span class="small">Reishi, Melena de León, Cordyceps, Chaga</span><span class="fcta">Ver los 7 hongos</span></div></a>
-<a class="fm" href="#mv" data-fam="1"><div class="fimg"><img src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-fam-hierbas-flores.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Mano con flores amarillas silvestres"></div><div class="ftx"><span class="fn">Hierbas</span><span class="small">Ashwagandha, Tulsi, Rhodiola, Schisandra</span><span class="fcta">Ver las 12 hierbas</span></div></a>
+<!-- 3 · BANDA GRANDE + FAMILIAS EN RECUADROS -->
+<section class="bband" aria-labelledby="bb">
+<img src="{{ 'cm-bot-banda-master.jpg' | asset_url }}" alt="Mano sosteniendo un frasco de Master blend de Commons" loading="lazy" width="2048" height="768">
+<div class="bbtx"><span class="lab">Hongos y hierbas</span><h2 id="bb" class="disp h2">Lo que da la tierra, en medio gramo.</h2><a class="btn" href="#mv" style="align-self: flex-start">Ver las plantas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>
 </section>
+<section class="fam3 fam2" id="fam" aria-label="Familias">
+<a class="fm" href="#mv" data-fam="0"><div class="ftx"><span class="fcount">7 hongos</span><span class="fn">Hongos</span><span class="small">Reishi, Melena de León, Cordyceps, Chaga, Cola de Pavo, Maitake y Master blend</span><span class="fcta">Ver los hongos <span aria-hidden="true">→</span></span></div></a>
+<a class="fm" href="#mv" data-fam="1"><div class="ftx"><span class="fcount">12 hierbas</span><span class="fn">Hierbas</span><span class="small">Ashwagandha, Tulsi, Rhodiola, Schisandra, Shatavari y más</span><span class="fcta">Ver las hierbas <span aria-hidden="true">→</span></span></div></a>
+</section>
+<style>
+#cmpg-{{ section.id }} .bband{position:relative;border-bottom:1px solid var(--rule);background:#ECEFA7;overflow:hidden}
+#cmpg-{{ section.id }} .bband img{display:block;width:100%;height:auto;aspect-ratio:2048/768;object-fit:cover}
+#cmpg-{{ section.id }} .bbtx{position:absolute;left:0;top:0;bottom:0;width:46%;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:40px 56px;color:#141A16}
+#cmpg-{{ section.id }} .bbtx .h2{max-width:13ch}
+#cmpg-{{ section.id }} .fam2{grid-template-columns:repeat(2,minmax(0,1fr))}
+#cmpg-{{ section.id }} .fam2 .fm{background:#fff;transition:background .15s}
+#cmpg-{{ section.id }} .fam2 .fm:hover{background:#F5F5D2}
+#cmpg-{{ section.id }} .fam2 .ftx{padding:32px 40px 34px;gap:10px;flex:1}
+#cmpg-{{ section.id }} .fam2 .ftx .fn{font-size:44px}
+#cmpg-{{ section.id }} .fam2 .small{color:var(--ink2);max-width:42ch}
+@media (max-width:749px){
+  #cmpg-{{ section.id }} .bband img{aspect-ratio:4/3;object-position:72% center}
+  #cmpg-{{ section.id }} .bbtx{position:static;width:auto;padding:28px 16px 32px;background:#F7F7F4;border-top:1px solid var(--rule)}
+  #cmpg-{{ section.id }} .fam2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #cmpg-{{ section.id }} .fam2>*{border-bottom:0;border-right:1px solid var(--rule)}
+  #cmpg-{{ section.id }} .fam2>*:last-child{border-right:0}
+  #cmpg-{{ section.id }} .fam2 .ftx{padding:20px 16px 22px}
+  #cmpg-{{ section.id }} .fam2 .ftx .fn{font-size:30px}
+}
+</style>
 
 <!-- 4 · MEDIO GRAMO CONTRA VEINTE -->
 <section aria-labelledby="mv">
