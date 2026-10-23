@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "cm-product",
+      "settings": {
+        "shipping": "<p>Envío gratis desde $999; si no, $164. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
+        "short_name": "Ginkgo + Bacopa",
+        "line_label": "Commons Botanicals",
+        "sci": "Ginkgo biloba · Bacopa monnieri",
+        "needs": "Enfoque",
+        "claim": "Extracto estandarizado de la planta, con el activo declarado en la etiqueta. Medio gramo por porción.",
+        "ten": "Para: Enfoque\nParte: Bacopa monnieri\nEstandarizado: 24% + 50%\nMomento: En la mañana\nRinde: Cápsulas ~4 meses",
+        "opt_hints": "Cápsulas 120|1 al día · rinde 4 meses · $7.42 al día\nPolvo 100 g|½ scoop al día · el que más rinde · $4.95 al día\nPolvo 50 g|Para llevar · va a precio completo",
+        "show_volume": true,
+        "forr": "Enfoque\nMemoria",
+        "big": "24%",
+        "big_text": "de estandarización del extracto de ginkgo.",
+        "tab": "Extracto de Ginkgo + Bacopa|500 mg por cápsula\nEstandarizado|24% + 50%\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
+        "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|24% + 50%|No se declara\nCosto al día|Desde $7.42|Alrededor de $10",
+        "tab_note": "",
+        "how": "Cuánto|1 cápsula al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Con la comida|No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 3 meses y una pausa de 2 semanas.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar 8 a 12 semanas.\nCiclo|3 meses y una pausa de 2 semanas.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tomas anticoagulantes.\nNo se recomienda si tienes una cirugía programada.\nNo se recomienda si tienes epilepsia.\nNo se recomienda si tomas sedantes.\nNo se recomienda si tienes algún tema de tiroides.",
+        "comps": [
+          "azafran-1",
+          "cordyceps-extracto-commons",
+          "chocolate-think-80-gr"
+        ],
+        "comp_why": "Elegidos por lo que hace Ginkgo + Bacopa: uno de Botanicals, uno de Science o Rituals.",
+        "product_color": "",
+        "ev_quick": "4 estudios en humanos",
+        "ev_tag": "Bacopa 50% · Ginkgo 24%",
+        "ev_word": "Memoria.",
+        "ev_weeks": "12",
+        "ev_people": "Adultos sanos",
+        "ev_text": "En un estudio doble ciego con placebo, 300 mg al día de Bacopa durante 12 semanas mejoraron la velocidad para procesar información y la memoria.",
+        "ev_link": "https://doi.org/10.1007/s002130100815",
+        "ev_cite": "Stough et al., Psychopharmacology, 2001",
+        "ev_more": "Kongkeaw et al. 2014 · Journal of Ethnopharmacology|https://doi.org/10.1016/j.jep.2013.11.008|Revisión de 9 ensayos con 518 personas: con Bacopa la atención fue más rápida.\nCalabrese et al. 2008 · J Altern Complement Med|https://doi.org/10.1089/acm.2008.0018|54 adultos de 65 años o más, 12 semanas: mejor memoria y atención con Bacopa que con placebo.\nKaschel 2011 · Phytomedicine|https://doi.org/10.1016/j.phymed.2011.06.021|188 adultos sanos de 45 a 56 años, 6 semanas: con ginkgo recordaron mejor la información."
+      },
+      "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña el enfoque.</li><li>Apoya la memoria.</li><li>Dos plantas en una cápsula.</li></ul><p><b>Ginkgo · En la tradición</b></p><ul><li>La concentración y la memoria.</li><li>La circulación.</li><li>La claridad mental con la edad.</li></ul><p><b>Ginkgo · En estudios</b></p><ul><li><b>Memoria y concentración.</b> Su extracto estandarizado es de los más estudiados para la función cognitiva.</li><li><b>Circulación.</b> Se estudia por su efecto en el flujo sanguíneo, sobre todo en manos, pies y cerebro.</li></ul><p><b>Bacopa · En la tradición</b></p><ul><li>La memoria y el aprendizaje.</li><li>La concentración.</li><li>Calmar la mente y el estrés.</li></ul><p><b>Bacopa · En estudios</b></p><ul><li><b>Memoria.</b> Adultos que la tomaron 12 semanas mejoraron en velocidad para procesar información y en memoria.</li><li><b>Calma.</b> Se ha estudiado por su efecto en la ansiedad leve y el estrés.</li></ul><p><em>Estudios del ingrediente, no de nuestro producto terminado. Usos tradicionales: no sustituyen la atención médica.</em></p>"
+          }
+        },
+        "acc1": {
+          "type": "acc",
+          "settings": {
+            "title": "Cómo se toma",
+            "text": "<p>1 cápsula al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: 3 meses y una pausa de 2 semanas. Momento: con la comida.</p>"
+          }
+        },
+        "acc2": {
+          "type": "acc",
+          "settings": {
+            "title": "Lo que lleva · ingredientes",
+            "text": "<p>Por cápsula: 500 mg de extracto de Ginkgo + Bacopa (Ginkgo biloba), estandarizado: 24% + 50%. Sin rellenos.</p>"
+          }
+        },
+        "acc3": {
+          "type": "acc",
+          "settings": {
+            "title": "Precauciones",
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tomas anticoagulantes.</li><li>No se recomienda si tienes una cirugía programada.</li><li>No se recomienda si tienes epilepsia.</li><li>No se recomienda si tomas sedantes.</li><li>No se recomienda si tienes algún tema de tiroides.</li></ul>"
+          }
+        },
+        "nut": {
+          "type": "nut",
+          "settings": {
+            "title": "Tabla nutrimental",
+            "text": ""
+          }
+        },
+        "glos": {
+          "type": "acc",
+          "settings": {
+            "title": "Conoce la planta",
+            "text": "<p>De dónde viene, su tradición, lo que hay dentro y las referencias, en el glosario.</p><p><a href=\"/pages/gingko-ficha-tecnica\">Ver la ficha de Ginkgo →</a> · <a href=\"/pages/bacopa-ficha-tecnica\">Ver la ficha de Bacopa →</a></p>"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuándo voy a notar algo?",
+            "a": "<p>Cada cuerpo es distinto. Dale constancia: mínimo 8 a 10 semanas, 6 días de toma y 1 de descanso.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cápsulas o polvo?",
+            "a": "<p>Es el mismo extracto. Las cápsulas son prácticas; el polvo de 100 g rinde más y sale más barato por porción.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Lo puedo combinar?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas. Si tomas medicamentos, consulta a tu médico.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $999.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ben",
+        "acc1",
+        "acc2",
+        "acc3",
+        "nut",
+        "glos",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ]
+    },
+    "comparativa": {
+      "type": "cm-comparativa",
+      "settings": {
+        "t1_big": "24%",
+        "t1_txt": "flavonoides de ginkgo · 50% bacósidos",
+        "t2_big": "0.5 g",
+        "t2_txt": "al día de extracto",
+        "t3_big": "$7.42",
+        "t3_txt": "al día en cápsula",
+        "link_txt": "Compáralo con un polvo común ↓",
+        "sl_pos": 3,
+        "sl_label": "Ginkgo + Bacopa · Commons contra un polvo común",
+        "sl_title": "Medio gramo contra veinte.",
+        "sl_rows": "Lo que tomas al día|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|24% + 50%|No se declara\nCosto al día|desde $7.42|alrededor de $10",
+        "sl_note": "Dosis según la etiqueta de cada producto.",
+        "th_big": "0.5 g",
+        "th_small": "vs 20 g"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "comparativa"
+  ]
+}

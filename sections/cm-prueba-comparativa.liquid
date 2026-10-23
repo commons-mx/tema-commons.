@@ -1,0 +1,93 @@
+{%- comment -%}
+  Prueba CRO (oct 2026): tira de prueba bajo el botón + comparativa como imagen del carrusel.
+  Solo se usa en la plantilla product.ashwagandha-prueba. No modifica cm-product.liquid:
+  acomoda sus piezas dentro de la ficha al cargar.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<div id="cmpz-{{ section.id }}" hidden>
+  <div class="cmpz-tira" data-cmpz-tira aria-label="Lo que hay en el frasco">
+    <div><b>{{ s.t1_big }}</b><span>{{ s.t1_txt }}</span></div>
+    <div><b>{{ s.t2_big }}</b><span>{{ s.t2_txt }}</span></div>
+    <div><b>{{ s.t3_big }}</b><span>{{ s.t3_txt }}</span></div>
+  </div>
+  {%- if s.link_txt != blank -%}<a class="tlink cmpz-link" data-cmpz-link href="#comparativa">{{ s.link_txt }}</a>{%- endif -%}
+  <div class="cmpz-slide" data-cmpz-slide role="img" aria-label="{{ s.sl_label | escape }}">
+    <span class="cl">{{ s.sl_label }}</span>
+    <p class="ct">{{ s.sl_title }}</p>
+    <div class="cg">
+      <div class="h"></div><div class="h">Commons</div><div class="h x">Polvo común</div>
+      {%- assign rows = s.sl_rows | newline_to_br | split: '<br />' -%}
+      {%- for r in rows -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}
+      <div>{{ kv[0] }}</div><div class="c{% if forloop.last %} hi{% endif %}">{{ kv[1] }}</div><div class="x">{{ kv[2] }}</div>
+      {%- endif -%}{%- endfor -%}
+    </div>
+    <div class="cf"><b>commons</b><span>{{ s.sl_note }}</span></div>
+  </div>
+</div>
+<style>
+.cmpz-tira{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:14px 0;border-top:1px solid var(--ink,#141A16);border-bottom:1px solid #DCDCD5}
+.cmpz-tira div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.cmpz-tira b{font-family:var(--fd,Jost,sans-serif);font-size:30px;line-height:1;font-weight:500;color:var(--ink,#141A16)}
+.cmpz-tira span{font-size:12.5px;line-height:1.35;color:var(--ink2,#4A524C)}
+.cmpz-link{align-self:flex-start}
+.gsl .gslide .cmpz-slide{position:absolute;inset:0;container-type:size;box-sizing:border-box;padding:7cqw 7cqw 6cqw;background:#141A16;color:#fff;display:flex;flex-direction:column;gap:3cqw;font-family:var(--fb,Figtree,sans-serif)}
+.cmpz-slide .cl{font-size:2.3cqw;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#C9CEC9}
+.cmpz-slide .ct{margin:0;font-family:var(--fd,Jost,sans-serif);font-size:8.6cqw;line-height:.98;font-weight:400;letter-spacing:-.02em;color:#fff}
+.cmpz-slide .cg{margin-top:auto;display:grid;grid-template-columns:1.1fr 1fr 1fr;column-gap:2cqw}
+.cmpz-slide .cg>div{padding:2.4cqw 0;border-top:1px solid rgba(255,255,255,.22);font-size:2.9cqw;line-height:1.3;color:#C9CEC9}
+.cmpz-slide .cg .h{border-top:0;padding-top:0;font-size:2.1cqw;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.cmpz-slide .cg .c{color:#fff;font-weight:600}
+.cmpz-slide .cg .x{color:#A8AFA9}
+.cmpz-slide .cg .hi{color:#EEEFA8}
+.cmpz-slide .cf{display:flex;justify-content:space-between;align-items:center;gap:3cqw;padding-top:2.4cqw;border-top:1px solid rgba(255,255,255,.22)}
+.cmpz-slide .cf b{font-size:3.6cqw;font-weight:500;letter-spacing:-.02em;color:#EEEFA8}
+.cmpz-slide .cf span{font-size:2.1cqw;color:#A8AFA9}
+.gsl .gth .cmpz-th{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;height:100%;background:#141A16;color:#fff}
+.gsl .gth .cmpz-th b{font-family:var(--fd,Jost,sans-serif);font-size:15px;line-height:1;font-weight:500}
+.gsl .gth .cmpz-th i{font-style:normal;font-size:9px;color:#C9CEC9}
+@media (max-width:749px){.gsl .gth .cmpz-th{display:none}.cmpz-tira b{font-size:26px}}
+</style>
+<script>
+(function(){
+  var src = document.getElementById('cmpz-{{ section.id }}'); if (!src) return;
+  var root = document.querySelector('[data-cmp]'); if (!root) return;
+  var tira = src.querySelector('[data-cmpz-tira]'), link = src.querySelector('[data-cmpz-link]');
+  var form = root.querySelector('[data-form]');
+  if (form && tira) { form.insertAdjacentElement('afterend', tira); if (link) tira.insertAdjacentElement('afterend', link); }
+  var cv = root.querySelector('.cmpv'); if (cv) { (cv.previousElementSibling || cv).id = 'comparativa'; }
+  var slide = src.querySelector('[data-cmpz-slide]'), pos = {{ s.sl_pos | default: 3 }};
+  var g = root.querySelector('[data-gsl]');
+  if (g && slide) {
+    var sl = g.querySelectorAll('.gtrack .gslide');
+    if (sl[pos]) { sl[pos].innerHTML = ''; sl[pos].appendChild(slide); }
+    var th = g.querySelectorAll('.gth')[pos - 1];
+    if (th) th.innerHTML = '<span class="cmpz-th"><b>{{ s.th_big | escape }}</b><i>{{ s.th_small | escape }}</i></span>';
+  }
+  src.remove();
+})();
+</script>
+{% schema %}
+{
+  "name": "Prueba · comparativa",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Tira bajo el botón" },
+    { "type": "text", "id": "t1_big", "label": "Dato 1", "default": "5%" },
+    { "type": "text", "id": "t1_txt", "label": "Texto 1", "default": "withanólidos, declarado en la etiqueta" },
+    { "type": "text", "id": "t2_big", "label": "Dato 2", "default": "0.5 g" },
+    { "type": "text", "id": "t2_txt", "label": "Texto 2", "default": "al día de extracto de raíz" },
+    { "type": "text", "id": "t3_big", "label": "Dato 3", "default": "$4.95" },
+    { "type": "text", "id": "t3_txt", "label": "Texto 3", "default": "al día en polvo · $7.42 en cápsula" },
+    { "type": "text", "id": "link_txt", "label": "Liga a la comparativa", "default": "Compáralo con un polvo común ↓" },
+    { "type": "header", "content": "Imagen del carrusel" },
+    { "type": "number", "id": "sl_pos", "label": "Posición en el carrusel", "default": 3 },
+    { "type": "text", "id": "sl_label", "label": "Ceja", "default": "Ashwagandha · Commons contra un polvo común" },
+    { "type": "text", "id": "sl_title", "label": "Título", "default": "Medio gramo contra veinte." },
+    { "type": "textarea", "id": "sl_rows", "label": "Filas", "info": "Una línea: concepto|Commons|polvo común. La última va resaltada." },
+    { "type": "text", "id": "sl_note", "label": "Nota", "default": "Dosis según la etiqueta de cada producto." },
+    { "type": "text", "id": "th_big", "label": "Miniatura · dato", "default": "0.5 g" },
+    { "type": "text", "id": "th_small", "label": "Miniatura · texto", "default": "vs 20 g" }
+  ],
+  "presets": [{ "name": "Prueba · comparativa" }]
+}
+{% endschema %}

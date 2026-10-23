@@ -1,0 +1,83 @@
+{%- comment -%} Comparativa: Commons contra un extracto genérico y un polvo común. Sistema Commons: líneas de 1 px, esquinas rectas, columna Commons en negro. {%- endcomment -%}
+{%- assign s = section.settings -%}
+<div class="cm4" id="cmcmp-{{ section.id }}">
+<section class="cmcmp" aria-labelledby="cmp-h-{{ section.id }}">
+  <div class="cmcmp-hd">
+    <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+      <span class="lab">{{ s.tag }}</span>
+      <h2 id="cmp-h-{{ section.id }}" class="disp h2" style="max-width: 18ch; margin: 0">{{ s.heading }}</h2>
+      {%- if s.text != blank -%}<p class="sub" style="margin: 0; color: #2C342F">{{ s.text }}</p>{%- endif -%}
+    </div>
+    {%- if s.proof != blank -%}<ul class="cmcmp-proof">{%- assign pr = s.proof | newline_to_br | split: '<br />' -%}{%- for p in pr -%}{%- assign pp = p | strip -%}{%- if pp != blank -%}<li>{{ pp }}</li>{%- endif -%}{%- endfor -%}</ul>{%- endif -%}
+  </div>
+  <div class="cmcmp-wrap">
+    <table class="cmcmp-t">
+      <thead><tr><th scope="col"><span class="sr">Qué comparamos</span></th><th scope="col" class="cc">Commons</th><th scope="col">{{ s.col2 }}</th><th scope="col">{{ s.col3 }}</th></tr></thead>
+      <tbody>
+      {%- assign rows = s.rows | newline_to_br | split: '<br />' -%}
+      {%- for r in rows -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 3 -%}
+        <tr><th scope="row">{{ kv[0] }}</th><td class="cc">{%- if kv[1] contains '$' -%}<b class="num cmcmp-price">{{ kv[1] }}</b>{%- else -%}<b>{{ kv[1] }}</b>{%- endif -%}</td><td>{{ kv[2] }}</td><td>{{ kv[3] }}</td></tr>
+      {%- endif -%}{%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+  {%- if s.note != blank -%}<p class="cmcmp-note">{{ s.note }}</p>{%- endif -%}
+  <div class="cmcmp-cta">
+    {%- if s.btn_label != blank -%}<a class="btn dark" href="{{ s.btn_link }}">{{ s.btn_label }}<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a>{%- endif -%}
+    {%- if s.link_label != blank -%}<a class="tlink" href="{{ s.link_url }}">{{ s.link_label }}</a>{%- endif -%}
+  </div>
+</section>
+</div>
+<style>
+#cmcmp-{{ section.id }} .cmcmp{border-bottom:1px solid var(--rule,#141A16)}
+#cmcmp-{{ section.id }} .cmcmp-hd{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;padding:72px 40px 32px}
+#cmcmp-{{ section.id }} .cmcmp-proof{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px}
+#cmcmp-{{ section.id }} .cmcmp-proof li{display:flex;align-items:center;gap:8px}
+#cmcmp-{{ section.id }} .cmcmp-proof li:before{content:"";width:6px;height:6px;border-radius:99px;background:var(--cm-green,#022E21)}
+#cmcmp-{{ section.id }} .cmcmp-wrap{overflow-x:auto;border-top:1px solid var(--rule,#141A16);border-bottom:1px solid var(--rule,#141A16)}
+#cmcmp-{{ section.id }} .cmcmp-t{width:100%;min-width:720px;border-collapse:collapse;font-size:16px;line-height:1.4}
+#cmcmp-{{ section.id }} .cmcmp-t th,#cmcmp-{{ section.id }} .cmcmp-t td{padding:20px 24px;text-align:left;vertical-align:top;border-bottom:1px solid #D9D6CC;border-right:1px solid #D9D6CC}
+#cmcmp-{{ section.id }} .cmcmp-t tr:last-child th,#cmcmp-{{ section.id }} .cmcmp-t tr:last-child td{border-bottom:0}
+#cmcmp-{{ section.id }} .cmcmp-t th:last-child,#cmcmp-{{ section.id }} .cmcmp-t td:last-child{border-right:0}
+#cmcmp-{{ section.id }} .cmcmp-t thead th{font:500 12px/1.2 var(--fl,Figtree),sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#5A5F58;padding-top:18px;padding-bottom:18px}
+#cmcmp-{{ section.id }} .cmcmp-t tbody th{font-weight:500;width:28%;padding-left:40px}
+#cmcmp-{{ section.id }} .cmcmp-t td{color:#5A5F58;width:24%}
+#cmcmp-{{ section.id }} .cmcmp-t .cc{background:#141A16;color:#fff;border-color:#2C342F}
+#cmcmp-{{ section.id }} .cmcmp-t thead .cc{color:#EEEFA8}
+#cmcmp-{{ section.id }} .cmcmp-t td.cc b{font-weight:500}
+#cmcmp-{{ section.id }} .cmcmp-price{font-size:28px !important;line-height:1;color:#EEEFA8}
+#cmcmp-{{ section.id }} .cmcmp-note{margin:0;padding:14px 40px;font-size:13px;color:#5A5F58;border-bottom:1px solid #D9D6CC}
+#cmcmp-{{ section.id }} .cmcmp-cta{display:flex;gap:24px;align-items:center;flex-wrap:wrap;padding:28px 40px 40px}
+#cmcmp-{{ section.id }} .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:749px){
+#cmcmp-{{ section.id }} .cmcmp-hd{padding:48px 20px 24px}
+#cmcmp-{{ section.id }} .cmcmp-t{min-width:640px;font-size:14px}
+#cmcmp-{{ section.id }} .cmcmp-t th,#cmcmp-{{ section.id }} .cmcmp-t td{padding:14px 14px}
+#cmcmp-{{ section.id }} .cmcmp-t tbody th{padding-left:20px;position:sticky;left:0;background:#F7F7F4;z-index:1}
+#cmcmp-{{ section.id }} .cmcmp-price{font-size:22px !important}
+#cmcmp-{{ section.id }} .cmcmp-note{padding:12px 20px}
+#cmcmp-{{ section.id }} .cmcmp-cta{padding:22px 20px 32px}
+}
+</style>
+{% schema %}
+{
+  "name": "Commons · Comparativa",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {"type": "text", "id": "tag", "label": "Etiqueta", "default": "No da igual cuál compras"},
+    {"type": "text", "id": "heading", "label": "Título", "default": "Dos frascos pueden decir “Reishi” y ser cosas muy distintas."},
+    {"type": "text", "id": "text", "label": "Texto", "default": "Compara con la etiqueta en la mano."},
+    {"type": "textarea", "id": "proof", "label": "Datos de confianza (uno por línea)"},
+    {"type": "text", "id": "col2", "label": "Columna 2", "default": "Extracto genérico"},
+    {"type": "text", "id": "col3", "label": "Columna 3", "default": "Polvo común"},
+    {"type": "textarea", "id": "rows", "label": "Renglones: Qué|Commons|Columna 2|Columna 3"},
+    {"type": "text", "id": "note", "label": "Nota al pie"},
+    {"type": "text", "id": "btn_label", "label": "Botón", "default": "Ver los más vendidos"},
+    {"type": "url", "id": "btn_link", "label": "Liga del botón"},
+    {"type": "text", "id": "link_label", "label": "Liga secundaria", "default": "Haz el quiz · 3 min"},
+    {"type": "url", "id": "link_url", "label": "Liga secundaria (URL)"}
+  ],
+  "presets": [{"name": "Commons · Comparativa"}]
+}
+{% endschema %}

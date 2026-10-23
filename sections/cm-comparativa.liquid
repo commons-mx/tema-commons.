@@ -1,0 +1,106 @@
+{%- comment -%}
+  Comparativa CRO (oct 2026): tira de prueba bajo el botón + comparativa como imagen del carrusel.
+  Se agrega como sección en las plantillas de fichas Botanicals. No modifica cm-product.liquid:
+  acomoda sus piezas dentro de la ficha al cargar.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<div id="cmpz-{{ section.id }}" hidden>
+  <div class="cmpz-tira" data-cmpz-tira aria-label="Lo que hay en el frasco">
+    <div><b>{{ s.t1_big }}</b><span>{{ s.t1_txt }}</span></div>
+    <div><b>{{ s.t2_big }}</b><span>{{ s.t2_txt }}</span></div>
+    <div><b>{{ s.t3_big }}</b><span>{{ s.t3_txt }}</span></div>
+  </div>
+  {%- if s.link_txt != blank -%}<a class="tlink cmpz-link" data-cmpz-link href="#comparativa">{{ s.link_txt }}</a>{%- endif -%}
+  <div class="cmpz-slide" data-cmpz-slide role="img" aria-label="{{ s.sl_label | escape }}">
+    <span class="cl">{{ s.sl_label }}</span>
+    <p class="ct">{{ s.sl_title }}</p>
+    <div class="cg">
+      <div class="h"></div><div class="h">Commons</div><div class="h x">Polvo común</div>
+      {%- assign rows = s.sl_rows | newline_to_br | split: '<br />' -%}
+      {%- for r in rows -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}
+      <div>{{ kv[0] }}</div><div class="c{% if forloop.last %} hi{% endif %}">{{ kv[1] }}</div><div class="x">{{ kv[2] }}</div>
+      {%- endif -%}{%- endfor -%}
+    </div>
+    <div class="cf"><b>commons</b><span>{{ s.sl_note }}</span></div>
+  </div>
+</div>
+<style>
+.cmpz-tira{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:14px 0;border-top:1px solid var(--ink,#141A16);border-bottom:1px solid #DCDCD5}
+.cmpz-tira div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.cmpz-tira b{font-family:var(--fd,Jost,sans-serif);font-size:30px;line-height:1;font-weight:500;color:var(--ink,#141A16)}
+.cmpz-tira span{font-size:12.5px;line-height:1.35;color:var(--ink2,#4A524C)}
+.cmpz-link{align-self:flex-start}
+.cmpz-logo{display:block;width:auto;height:13px;color:#141A16;fill:currentColor}
+/* Panel de porción en negro; la comparativa va en verde Forest con Commons en amarillo */
+body .cmpg .porc .cmpv{background:#022E21;border-top:0;padding:0 14px;column-gap:12px}
+body .cmpg .porc .cmpv > div{border-bottom-color:rgba(255,255,255,.18);color:#FFFFFF;padding:12px 0}
+body .cmpg .porc .cmpv > div:nth-last-child(-n+3){border-bottom:0}
+body .cmpg .porc .cmpv .ch,body .cmpg .porc .cmpv .cx{color:rgba(255,255,255,.75)}
+body .cmpg .porc .cmpv > .ch:nth-child(2),body .cmpg .porc .cmpv > .cc{background:#EEEFA8;color:#141A16;padding-left:12px;padding-right:12px;border-bottom-color:rgba(20,26,22,.12)}
+.cmpv .ch .cmpz-logo{height:12px;margin-top:1px}
+/* Imagen del carrusel */
+.gsl .gslide .cmpz-slide{position:absolute;inset:0;container-type:size;box-sizing:border-box;padding:7cqw 7cqw 6cqw;background:#FFFFFF;color:#141A16;display:flex;flex-direction:column;gap:3cqw;font-family:var(--fb,Figtree,sans-serif)}
+.cmpz-slide .cl{font-size:2.3cqw;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#4A524C}
+.cmpz-slide .ct{margin:0;font-family:var(--fd,Jost,sans-serif);font-size:8.6cqw;line-height:.98;font-weight:400;letter-spacing:-.02em;color:#141A16}
+.cmpz-slide .cg{margin-top:auto;display:grid;grid-template-columns:1.1fr 1fr 1fr;column-gap:2.4cqw;border-top:1px solid #141A16}
+.cmpz-slide .cg>div{padding:2.4cqw 0;border-bottom:1px solid #DCDCD5;font-size:2.9cqw;line-height:1.3;color:#4A524C}
+.cmpz-slide .cg .h{font-size:2.1cqw;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.cmpz-slide .cg > .h:nth-child(2),.cmpz-slide .cg > .c{background:#EEEFA8;color:#141A16;font-weight:600;padding-left:2cqw;padding-right:2cqw;border-bottom-color:rgba(20,26,22,.12)}
+.cmpz-slide .cg .h .cmpz-logo{height:2.6cqw}
+.cmpz-slide .cf{display:flex;justify-content:space-between;align-items:center;gap:3cqw}
+.cmpz-slide .cf b .cmpz-logo{height:3.4cqw}
+.cmpz-slide .cf span{font-size:2.1cqw;color:#4A524C}
+.gsl .gth .cmpz-th{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;height:100%;background:#EEEFA8;color:#141A16}
+.gsl .gth .cmpz-th b{font-family:var(--fd,Jost,sans-serif);font-size:15px;line-height:1;font-weight:500}
+.gsl .gth .cmpz-th i{font-style:normal;font-size:9px;color:#141A16}
+@media (max-width:749px){.gsl .gth .cmpz-th{display:none}.cmpz-tira b{font-size:26px}}
+</style>
+<script>
+(function(){
+  var src = document.getElementById('cmpz-{{ section.id }}'); if (!src) return;
+  var root = document.querySelector('[data-cmp]'); if (!root) return;
+  var tira = src.querySelector('[data-cmpz-tira]'), link = src.querySelector('[data-cmpz-link]');
+  var form = root.querySelector('[data-form]');
+  if (form && tira) { form.insertAdjacentElement('afterend', tira); if (link) tira.insertAdjacentElement('afterend', link); }
+  var cv = root.querySelector('.cmpv'); if (cv) { (cv.previousElementSibling || cv).id = 'comparativa'; }
+  var slide = src.querySelector('[data-cmpz-slide]'), pos = {{ s.sl_pos | default: 3 }};
+  var g = root.querySelector('[data-gsl]');
+  if (g && slide) {
+    var sl = g.querySelectorAll('.gtrack .gslide');
+    if (sl[pos]) { sl[pos].innerHTML = ''; sl[pos].appendChild(slide); }
+    var th = g.querySelectorAll('.gth')[pos - 1];
+    if (th) th.innerHTML = '<span class="cmpz-th"><b>{{ s.th_big | escape }}</b><i>{{ s.th_small | escape }}</i></span>';
+  }
+  var lg = document.querySelector('svg[viewBox="0 0 442.65 60.96"]');
+  function logoIn(el){ if (!el || !lg) return; var c = lg.cloneNode(true); c.setAttribute('class', 'cmpz-logo'); c.removeAttribute('aria-hidden'); c.setAttribute('role', 'img'); c.setAttribute('aria-label', 'Commons'); el.textContent = ''; el.appendChild(c); }
+  if (cv) { var hs = cv.querySelectorAll('.ch'); logoIn(hs[1]); }
+  logoIn(slide.querySelectorAll('.cg .h')[1]);
+  logoIn(slide.querySelector('.cf b'));
+  src.remove();
+})();
+</script>
+{% schema %}
+{
+  "name": "Comparativa",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Tira bajo el botón" },
+    { "type": "text", "id": "t1_big", "label": "Dato 1", "default": "5%" },
+    { "type": "text", "id": "t1_txt", "label": "Texto 1", "default": "withanólidos, declarado en la etiqueta" },
+    { "type": "text", "id": "t2_big", "label": "Dato 2", "default": "0.5 g" },
+    { "type": "text", "id": "t2_txt", "label": "Texto 2", "default": "al día de extracto de raíz" },
+    { "type": "text", "id": "t3_big", "label": "Dato 3", "default": "$4.95" },
+    { "type": "text", "id": "t3_txt", "label": "Texto 3", "default": "al día en polvo · $7.42 en cápsula" },
+    { "type": "text", "id": "link_txt", "label": "Liga a la comparativa", "default": "Compáralo con un polvo común ↓" },
+    { "type": "header", "content": "Imagen del carrusel" },
+    { "type": "number", "id": "sl_pos", "label": "Posición en el carrusel", "default": 3 },
+    { "type": "text", "id": "sl_label", "label": "Ceja", "default": "Ashwagandha · Commons contra un polvo común" },
+    { "type": "text", "id": "sl_title", "label": "Título", "default": "Medio gramo contra veinte." },
+    { "type": "textarea", "id": "sl_rows", "label": "Filas", "info": "Una línea: concepto|Commons|polvo común. La última va resaltada." },
+    { "type": "text", "id": "sl_note", "label": "Nota", "default": "Dosis según la etiqueta de cada producto." },
+    { "type": "text", "id": "th_big", "label": "Miniatura · dato", "default": "0.5 g" },
+    { "type": "text", "id": "th_small", "label": "Miniatura · texto", "default": "vs 20 g" }
+  ],
+  "presets": [{ "name": "Comparativa" }]
+}
+{% endschema %}

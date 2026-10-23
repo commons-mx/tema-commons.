@@ -1,0 +1,1048 @@
+{
+  "sections": {
+    "cm_hero": {
+      "type": "cm-hero",
+      "blocks": {
+        "b0": {
+          "type": "slide",
+          "settings": {
+            "asset": "cm-hero-8.jpg",
+            "cap1": "",
+            "asset2": "",
+            "cap2": "",
+            "tab_label": "Commons",
+            "badge": "",
+            "badge_style": "bot",
+            "tag": "",
+            "tag2": "",
+            "heading": "Adaptógenos y fórmulas de verdad.",
+            "text": "El activo, la dosis y la evidencia, a la vista. Botanicals son nuestros adaptógenos; Science, nuestras fórmulas con ingredientes estudiados.",
+            "button_label": "Haz el quiz",
+            "button_link": "/pages/quiz-commons",
+            "button2_label": "Ver los más vendidos",
+            "button2_link": "/collections/tienda"
+          }
+        }
+      },
+      "block_order": [
+        "b0"
+      ],
+      "settings": {
+        "rating": "4.91 · +1,500 reseñas",
+        "eyebrow": "",
+        "text_mobile": true,
+        "autoplay": 0
+      }
+    },
+    "cm_needs": {
+      "type": "cm-needs",
+      "blocks": {
+        "b1": {
+          "type": "need",
+          "settings": {
+            "icon": "Sueño",
+            "label": "",
+            "link": "/collections/necesidad-sueno"
+          }
+        },
+        "b2": {
+          "type": "need",
+          "settings": {
+            "icon": "Estrés",
+            "label": "",
+            "link": "/collections/necesidad-estres"
+          }
+        },
+        "b3": {
+          "type": "need",
+          "settings": {
+            "icon": "Ánimo",
+            "label": "",
+            "link": "/collections/necesidad-animo"
+          }
+        },
+        "b4": {
+          "type": "need",
+          "settings": {
+            "icon": "Enfoque",
+            "label": "",
+            "link": "/collections/necesidad-enfoque"
+          }
+        },
+        "b5": {
+          "type": "need",
+          "settings": {
+            "icon": "Energía",
+            "label": "",
+            "link": "/collections/necesidad-energia"
+          }
+        },
+        "b6": {
+          "type": "need",
+          "settings": {
+            "icon": "Ciclo",
+            "label": "Sistema hormonal",
+            "link": "/collections/necesidad-ciclo"
+          }
+        },
+        "b7": {
+          "type": "need",
+          "settings": {
+            "icon": "Defensas",
+            "label": "",
+            "link": "/collections/necesidad-defensas"
+          }
+        },
+        "b8": {
+          "type": "need",
+          "settings": {
+            "icon": "Metabolismo",
+            "label": "",
+            "link": "/collections/necesidad-metabolismo"
+          }
+        },
+        "b9": {
+          "type": "need",
+          "settings": {
+            "icon": "Digestión",
+            "label": "",
+            "link": "/collections/necesidad-digestion"
+          }
+        },
+        "b10": {
+          "type": "need",
+          "settings": {
+            "icon": "Longevidad",
+            "label": "",
+            "link": "/collections/necesidad-longevidad"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10"
+      ],
+      "settings": {
+        "heading": "¿Qué necesitas hoy?",
+        "quiz_label": "",
+        "quiz_link": ""
+      }
+    },
+    "cm_quiz": {
+      "type": "cm-quiz-teaser",
+      "blocks": {
+        "b1": {
+          "type": "chip",
+          "settings": {
+            "label": "Me siento agotada"
+          }
+        },
+        "b2": {
+          "type": "chip",
+          "settings": {
+            "label": "Estoy estresada"
+          }
+        },
+        "b3": {
+          "type": "chip",
+          "settings": {
+            "label": "Duermo mal"
+          }
+        },
+        "b4": {
+          "type": "chip",
+          "settings": {
+            "label": "Me cuesta enfocarme"
+          }
+        },
+        "b5": {
+          "type": "chip",
+          "settings": {
+            "label": "Quiero cuidar mi ciclo"
+          }
+        },
+        "b6": {
+          "type": "chip",
+          "settings": {
+            "label": "Quiero más defensas"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "tag": "Quiz · 3 minutos",
+        "heading": "Encuentra tu Commons.",
+        "intro": "Cinco preguntas y te armamos tu protocolo: qué tomar, cuándo y cómo tomarlo.",
+        "lines": "",
+        "button_label": "Haz el quiz",
+        "question": "Pregunta 1 de 5 · ¿Qué estás viviendo estos días? · Elige hasta 3",
+        "next_label": "Siguiente pregunta",
+        "link": "",
+        "note": "Una guía, no un diagnóstico.",
+        "caption": "minutos",
+        "caption_n": "3",
+        "compact": true
+      }
+    },
+    "buy_your_own_bundle_pTbqYm": {
+      "type": "buy-your-own-bundle",
+      "blocks": {
+        "paso1": {
+          "type": "step",
+          "settings": {
+            "step_title": "Los básicos",
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "collection": "",
+            "product_to_show": 3,
+            "products": [
+              "ashwagandha-organico-capsulas-extracto",
+              "melena-de-leon-capsulas-organicas",
+              "cordyceps-extracto-commons",
+              "azafran-1"
+            ],
+            "show_max_product": 12,
+            "show_highlighted_features": false,
+            "each_product_can_added_to_bundle_once": false,
+            "show_qty": false,
+            "min_required": 0,
+            "enable_promotion_highlight": false,
+            "subheading": "",
+            "heading": "Promotion block",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "<p>Describe a promotion, make announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 1,
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "alignment": "center",
+            "content_position": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 3,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1"
+          }
+        },
+        "paso2": {
+          "type": "step",
+          "settings": {
+            "step_title": "Estrés y sueño",
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "collection": "",
+            "product_to_show": 3,
+            "products": [
+              "hongo-reishi-100g-20-β-glucanos",
+              "tulsi-full-polvo",
+              "baya-schisandra-full-polvo",
+              "master-blend-160-capsulas"
+            ],
+            "show_max_product": 12,
+            "show_highlighted_features": false,
+            "each_product_can_added_to_bundle_once": false,
+            "show_qty": false,
+            "min_required": 0,
+            "enable_promotion_highlight": false,
+            "subheading": "",
+            "heading": "Promotion block",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "<p>Describe a promotion, make announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 1,
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "alignment": "center",
+            "content_position": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 3,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1"
+          }
+        },
+        "paso3": {
+          "type": "step",
+          "settings": {
+            "step_title": "Energía y enfoque",
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "collection": "",
+            "product_to_show": 3,
+            "products": [
+              "raiz-rhodiola-rosea-full-polvo",
+              "eleuthero-full-polvo",
+              "gingko-biloba-y-bacopa",
+              "gotu-kola"
+            ],
+            "show_max_product": 12,
+            "show_highlighted_features": false,
+            "each_product_can_added_to_bundle_once": false,
+            "show_qty": false,
+            "min_required": 0,
+            "enable_promotion_highlight": false,
+            "subheading": "",
+            "heading": "Promotion block",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "<p>Describe a promotion, make announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 1,
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "alignment": "center",
+            "content_position": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 3,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1"
+          }
+        },
+        "paso4": {
+          "type": "step",
+          "settings": {
+            "step_title": "Defensas y ciclo",
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "<svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6024_25549)\">\n<path fill=\"none\" d=\"M9 13.5C11.4853 13.5 13.5 11.4853 13.5 9C13.5 6.51472 11.4853 4.5 9 4.5C6.51472 4.5 4.5 6.51472 4.5 9C4.5 11.4853 6.51472 13.5 9 13.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 9H17.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 1.5V0.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9 17.25V16.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 15L14.25 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M15 3L14.25 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 15L3.75 14.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M3 3L3.75 3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M0.75 9H1.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6024_25549\">\n<rect width=\"18\" height=\"18\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "collection": "",
+            "product_to_show": 3,
+            "products": [
+              "astragalus-full-polvo",
+              "amla-full-polvo",
+              "shatavari-full-polvo",
+              "vitex-extracto"
+            ],
+            "show_max_product": 12,
+            "show_highlighted_features": false,
+            "each_product_can_added_to_bundle_once": false,
+            "show_qty": false,
+            "min_required": 0,
+            "enable_promotion_highlight": false,
+            "subheading": "",
+            "heading": "Promotion block",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "<p>Describe a promotion, make announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 1,
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "alignment": "center",
+            "content_position": "center",
+            "background_color_light": "rgba(0,0,0,0)",
+            "text_color_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "text_color_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 3,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1"
+          }
+        }
+      },
+      "block_order": [
+        "paso1",
+        "paso2",
+        "paso3",
+        "paso4"
+      ],
+      "name": "t:sections.buy-your-own-bundle.name",
+      "settings": {
+        "heading": "Arma tu protocolo.",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "left",
+        "subheading": "Todo el año",
+        "text": "<p>Elige 2 o más y ahorra.</p><p><strong>2 productos −10%</strong><strong>3 o más −15%</strong><strong>5 o más −20%</strong></p>",
+        "button_atb_label": "Agregar",
+        "step_icon_size": 32,
+        "enable_quickview": false,
+        "picker_type": "adapt",
+        "max_swatch": 20,
+        "enable_desktop_slider": false,
+        "enable_arrow": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "change_slides_speed": 5,
+        "summary_layout": "vertical",
+        "summary_position": "right",
+        "bundler_heading": "Tu protocolo",
+        "background_color_light": "#efebe3",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "button_light": "rgba(0,0,0,0)",
+        "button_text_light": "rgba(0,0,0,0)",
+        "button_hover_light": "rgba(0,0,0,0)",
+        "button_text_hover_light": "rgba(0,0,0,0)",
+        "color_marker_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "button_dark": "rgba(0,0,0,0)",
+        "button_text_dark": "rgba(0,0,0,0)",
+        "button_hover_dark": "rgba(0,0,0,0)",
+        "button_text_hover_dark": "rgba(0,0,0,0)",
+        "color_marker_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "caculate_discount_by": "quantity",
+        "pre_goal_msg": "Agrega [x] más para tener [goal_label].",
+        "reach_goal_msg": "Listo: tienes el 15% en tu protocolo.",
+        "goal_1": "2",
+        "goal_1_label": "10%",
+        "discount_type_1": "percentage",
+        "discount_value_1": "10",
+        "apply_discount_once_per_order_1": false,
+        "goal_2": "3",
+        "goal_2_label": "15%",
+        "discount_type_2": "percentage",
+        "discount_value_2": "15",
+        "apply_discount_once_per_order_2": false,
+        "goal_3": "",
+        "goal_3_label": "",
+        "discount_type_3": "percentage",
+        "discount_value_3": "0",
+        "apply_discount_once_per_order_3": false,
+        "spacing": 20,
+        "show_section_divider": false,
+        "full_width": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "columns_mobile": "2",
+        "spacing_mobile": 4,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "cm_trust": {
+      "type": "cm-trust",
+      "blocks": {
+        "s1": {
+          "type": "store",
+          "settings": {
+            "name": "HEB"
+          }
+        },
+        "s2": {
+          "type": "store",
+          "settings": {
+            "name": "Liverpool"
+          }
+        },
+        "s3": {
+          "type": "store",
+          "settings": {
+            "name": "Sanborns"
+          }
+        },
+        "s4": {
+          "type": "store",
+          "settings": {
+            "name": "San Pablo"
+          }
+        },
+        "s5": {
+          "type": "store",
+          "settings": {
+            "name": "La Comer"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "label": "También nos encuentras en",
+        "facts": "Pioneros de los adaptógenos en México desde 2020\nRecomendado por +200 especialistas\nEnvío gratis desde $999"
+      }
+    },
+    "cm_life1": {
+      "type": "cm-photoband",
+      "settings": {
+        "text": "Sentirte bien también se nota.",
+        "sub": "In common with nature",
+        "asset1": "cm-life-pasto-ashwa.jpg",
+        "asset2": ""
+      }
+    },
+    "cm_products": {
+      "type": "cm-products",
+      "blocks": {
+        "b1": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-organico-capsulas-extracto",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Ashwagandha",
+            "tag": "Estrés",
+            "badge": "Más vendido",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b2": {
+          "type": "product",
+          "settings": {
+            "product": "melena-de-leon-capsulas-organicas",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Melena de León",
+            "tag": "Enfoque",
+            "badge": "",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b3": {
+          "type": "product",
+          "settings": {
+            "product": "hongo-reishi-100g-20-β-glucanos",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Reishi",
+            "tag": "Sueño",
+            "badge": "Nuevo",
+            "size": "",
+            "per_serving": "Desde $4.95 por porción"
+          }
+        },
+        "b4": {
+          "type": "product",
+          "settings": {
+            "product": "relaxing-hot-cacao",
+            "fallback": "",
+            "fallback_tag": "",
+            "title": "Relaxing Hot Cacao",
+            "tag": "Relajación",
+            "badge": "",
+            "size": "",
+            "per_serving": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "Los más vendidos.",
+        "link_label": "Ver todo",
+        "link": "/collections/tienda",
+        "protocol_label": "Arma tu protocolo · hasta −15%",
+        "protocol_head": false,
+        "card_protocol": "+ Súmalo a tu protocolo",
+        "protocol_link": ""
+      }
+    },
+    "cm_marquee": {
+      "type": "cm-marquee",
+      "disabled": true,
+      "settings": {
+        "items": "Extracto estandarizado · 100% cuerpo fructífero · Sin rellenos · Ingredientes de patente · La dosis que se estudió · Hecho en México"
+      }
+    },
+    "cm_universes": {
+      "type": "cm-universes",
+      "blocks": {
+        "b1": {
+          "type": "universe",
+          "settings": {
+            "label": "Commons Botanicals",
+            "badge": "",
+            "style": "bot",
+            "mark": "",
+            "collection": "botanicals",
+            "asset": "cm-home-botanicals.jpg",
+            "title": "Adaptógenos.",
+            "text": "Hongos funcionales, raíces y plantas en extractos estandarizados, con el activo declarado.",
+            "cats": "Hongos funcionales|/collections/botanicals|cordyceps-extracto-commons|6 hongos\nHierbas y raíces|/collections/botanicals|raiz-rhodiola-rosea-full-polvo|12 plantas",
+            "products": [],
+            "button_label": "Explorar Botanicals",
+            "button_link": "/pages/botanicals",
+            "sig": "",
+            "extra_tag": "También en Botanicals",
+            "extra_label": "Rituals: mieles, chocolates y blends con adaptógenos",
+            "extra_link": "/collections/mieles-adaptogenicas-y-funcionales"
+          }
+        },
+        "b2": {
+          "type": "universe",
+          "settings": {
+            "label": "Commons Science",
+            "badge": "Nuevo",
+            "style": "sci",
+            "mark": "",
+            "collection": "",
+            "asset": "cm-home-science-2.jpg",
+            "title": "Fórmulas con ingredientes estudiados.",
+            "text": "Ingredientes de patente, en la dosis que se estudió: Azafrán para el ánimo y Magnesio P.M. para dormir.",
+            "cats": "",
+            "products": [
+              "azafran-1",
+              "magnesio-p-m"
+            ],
+            "button_label": "Explorar Science",
+            "button_link": "/pages/science",
+            "sig": "2 fórmulas · 1 en camino",
+            "extra_tag": "",
+            "extra_label": "",
+            "extra_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2"
+      ],
+      "settings": {
+        "heading": "Nuestras líneas.",
+        "intro": "Botanicals son nuestros adaptógenos. Science, nuestras fórmulas con ingredientes estudiados. Se pueden combinar."
+      }
+    },
+    "cm_ingredients": {
+      "type": "cm-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "ing",
+          "settings": {
+            "name": "Reishi",
+            "line": "Botanicals",
+            "note": "25% betaglucanos",
+            "asset": "cm-b-b546264987.jpg",
+            "link": "/products/hongo-reishi-100g-20-%CE%B2-glucanos"
+          }
+        },
+        "i2": {
+          "type": "ing",
+          "settings": {
+            "name": "Ashwagandha",
+            "line": "Botanicals",
+            "note": "5% withanólidos",
+            "asset": "cm-b-8104accace.jpg",
+            "link": "/products/ashwagandha-organico-capsulas-extracto"
+          }
+        },
+        "i3": {
+          "type": "ing",
+          "settings": {
+            "name": "Melena de León",
+            "line": "Botanicals",
+            "note": "Cuerpo fructífero",
+            "asset": "cm-b-86ba7b8ff3.jpg",
+            "link": "/products/melena-de-leon-capsulas-organicas"
+          }
+        },
+        "i4": {
+          "type": "ing",
+          "settings": {
+            "name": "Cordyceps",
+            "line": "Botanicals",
+            "note": "Cuerpo fructífero",
+            "asset": "cm-b-54f283793e.jpg",
+            "link": "/products/cordyceps-extracto-commons"
+          }
+        },
+        "i5": {
+          "type": "ing",
+          "settings": {
+            "name": "Cola de Pavo",
+            "line": "Botanicals",
+            "note": "25% betaglucanos",
+            "asset": "cm-b-8cb8cb38a3.jpg",
+            "link": "/products/hongo-cola-de-pavo-full-polvo"
+          }
+        },
+        "i6": {
+          "type": "ing",
+          "settings": {
+            "name": "Rhodiola",
+            "line": "Botanicals",
+            "note": "3% rosavinas",
+            "asset": "cm-b-db0267e016.jpg",
+            "link": "/products/raiz-rhodiola-rosea-full-polvo"
+          }
+        },
+        "i7": {
+          "type": "ing",
+          "settings": {
+            "name": "Affron® · azafrán",
+            "line": "Science",
+            "note": "28 mg por cápsula",
+            "asset": "cm-b-5f343f143d.jpg",
+            "link": "/products/azafran-1"
+          }
+        },
+        "i8": {
+          "type": "ing",
+          "settings": {
+            "name": "Bisglicinato de magnesio",
+            "line": "Science",
+            "note": "Con glicina y apigenina",
+            "asset": "cm-b-48a261a431.png",
+            "link": "/products/magnesio-p-m"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Lo que hay dentro.",
+        "intro": "Cada ingrediente, con su activo declarado o la dosis que se estudió.",
+        "link_label": "Ver todos los productos",
+        "link": "/collections/tienda"
+      }
+    },
+    "cm_standards": {
+      "type": "cm-standards",
+      "blocks": {
+        "b1": {
+          "type": "std",
+          "settings": {
+            "icon": "0",
+            "title": "Extracto estandarizado",
+            "text": "Planta concentrada, con el activo declarado en la etiqueta: 25% betaglucanos en Reishi, 5% withanólidos en Ashwagandha."
+          }
+        },
+        "b2": {
+          "type": "std",
+          "settings": {
+            "icon": "1",
+            "title": "100% cuerpo fructífero",
+            "text": "En hongos, solo el hongo. Sin micelio, sin grano y sin rellenos."
+          }
+        },
+        "b3": {
+          "type": "std",
+          "settings": {
+            "icon": "2",
+            "title": "Medio gramo por porción",
+            "text": "Más concentrado, menos cantidad. Una cápsula al día, no cucharadas de polvo."
+          }
+        },
+        "b4": {
+          "type": "std",
+          "settings": {
+            "icon": "4",
+            "title": "Te asesora una persona",
+            "text": "Escríbenos por WhatsApp y te ayudamos a armar tu protocolo. Sin bots."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "tag": "Nuestros estándares",
+        "heading": "Por qué somos diferentes.",
+        "text": "No da igual cuál compras. Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
+        "color": "#efebe3"
+      },
+      "disabled": true
+    },
+    "cm_life2": {
+      "type": "cm-photoband",
+      "settings": {
+        "text": "",
+        "sub": "",
+        "asset1": "cm-life-corriendo.jpg",
+        "asset2": "cm-life-sonrisa.jpg"
+      }
+    },
+    "cm_reviews": {
+      "type": "cm-reviews",
+      "blocks": {
+        "b1": {
+          "type": "review",
+          "settings": {
+            "quote": "Me relaja y me ayuda no solo a dormir: me descansa completamente.",
+            "name": "Maribel R.",
+            "tag": "Sueño · Reishi"
+          }
+        },
+        "b2": {
+          "type": "review",
+          "settings": {
+            "quote": "Me lo recetó mi ginecóloga y me ha ayudado mucho con mis niveles de estrés.",
+            "name": "Karina C.",
+            "tag": "Estrés · Ashwagandha"
+          }
+        },
+        "b3": {
+          "type": "review",
+          "settings": {
+            "quote": "Realmente siento una diferencia en mi desempeño diario: me da energía y me regula el estrés.",
+            "name": "Miriam S.",
+            "tag": "Energía · Master Blend"
+          }
+        },
+        "b4": {
+          "type": "review",
+          "settings": {
+            "quote": "Me ayuda a concentrarme mejor y a hacer mis actividades del trabajo con más enfoque.",
+            "name": "Carlos D.",
+            "tag": "Enfoque · Melena de León"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "Lo que cambió en su día.",
+        "badge": "★ 4.91 · +1,500 reseñas",
+        "specialists": "Recomendado por +200 especialistas",
+        "link_label": "Ver todas las reseñas",
+        "link": ""
+      }
+    },
+    "cm_faq": {
+      "type": "cm-faq",
+      "blocks": {
+        "b1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Qué es Botanicals y qué es Science?",
+            "a": "<p>Botanicals son nuestros adaptógenos: extractos estandarizados de hongos, raíces y plantas. Science son nuestras fórmulas con ingredientes de patente y estudios clínicos, en la dosis que se estudió. Puedes combinarlos en un mismo protocolo.</p>"
+          }
+        },
+        "b2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Qué significa “estandarizado”?",
+            "a": "<p>Que cada lote trae la misma cantidad de compuesto activo y que la declaramos en la etiqueta. Un polvo común es la planta molida: no sabes cuánto activo trae.</p>"
+          }
+        },
+        "b3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuánto me dura un frasco?",
+            "a": "<p>Con 2 cápsulas al día, un frasco de 120 te dura alrededor de 2 meses. Un polvo de 100 g, con 1 scoop al día, casi 4 meses.</p>"
+          }
+        },
+        "b4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Puedo combinar productos?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas, o haz el quiz y te lo armamos. Si tomas medicamentos, estás embarazada o en lactancia, consulta a tu médico.</p>"
+          }
+        },
+        "b5": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $999. Llega en 3 a 6 días hábiles a toda la República.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "heading": "Preguntas frecuentes.",
+        "button_label": "Escríbenos por WhatsApp",
+        "button_link": "https://wa.me/525564299433"
+      }
+    },
+    "cm_sci_strip": {
+      "type": "cm-sci-strip",
+      "settings": {
+        "eyebrow": "Nuevo · Commons Science",
+        "text": "Azafrán, nuestra primera fórmula",
+        "link": "/products/azafran-1",
+        "asset": "cm-hero-sci.jpg"
+      }
+    },
+    "cm_nature": {
+      "type": "cm-nature",
+      "disabled": true,
+      "settings": {
+        "heading": "Todo empieza en una planta.",
+        "image1": "shopify://shop_images/IMG_1766_dda1351e-bf17-4d2b-9a0d-304e637a2028.jpg",
+        "caption": "In common with nature",
+        "image2": "shopify://shop_images/IMG_1835.jpg",
+        "height": 720
+      }
+    },
+    "cm_strip": {
+      "type": "cm-strip",
+      "disabled": true,
+      "settings": {
+        "label": "Evidencia · Commons Science",
+        "text": "Cada fórmula con sus estudios: dosis, semanas y cuántas personas.",
+        "button_label": "Ver la evidencia",
+        "button_link": "/products/azafran-1"
+      }
+    },
+    "cm_journal": {
+      "type": "cm-journal",
+      "disabled": true,
+      "settings": {
+        "heading": "Journal",
+        "blog": "noticias",
+        "button_label": "Más artículos en nuestro blog",
+        "button_link": "/blogs/noticias"
+      }
+    },
+    "cm_compare": {
+      "type": "cm-compare",
+      "settings": {
+        "tag": "No da igual cuál compras",
+        "heading": "Dos frascos pueden decir “Reishi” y ser cosas muy distintas.",
+        "text": "Compara con la etiqueta en la mano.",
+        "proof": "★ 4.91 · +1,500 reseñas\n+200 especialistas lo recomiendan\nPioneros de los adaptógenos en México desde 2020",
+        "col2": "Extracto genérico",
+        "col3": "Polvo común",
+        "rows": "Activo declarado en la etiqueta|25% betaglucanos en hongos · 5% withanólidos en Ashwagandha|A veces|No se declara\nQué hay en el frasco de hongo|Solo cuerpo fructífero|Puede llevar micelio y grano|Hongo o planta molida\nLo que tomas al día|0.5 g de extracto|Depende de la marca|5 a 20 g de planta molida\nCosto por día|desde $4.95|Depende de la marca|Depende de la marca\nFórmulas con ingrediente de patente y dosis estudiada|Sí, línea Science|Rara vez|No",
+        "note": "Costo por día de Commons: polvo de 100 g a 0.5 g al día. Compara siempre la porción y el activo que declara cada etiqueta.",
+        "btn_label": "Ver los más vendidos",
+        "btn_link": "/collections/mejores-adaptogenos-naturales",
+        "link_label": "Haz el quiz · 3 min",
+        "link_url": "/pages/quiz-commons"
+      }
+    }
+  },
+  "order": [
+    "cm_hero",
+    "cm_needs",
+    "cm_quiz",
+    "buy_your_own_bundle_pTbqYm",
+    "cm_trust",
+    "cm_life1",
+    "cm_products",
+    "cm_compare",
+    "cm_marquee",
+    "cm_universes",
+    "cm_ingredients",
+    "cm_standards",
+    "cm_life2",
+    "cm_reviews",
+    "cm_faq",
+    "cm_sci_strip",
+    "cm_nature",
+    "cm_strip",
+    "cm_journal"
+  ]
+}

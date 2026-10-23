@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "cm-product",
+      "settings": {
+        "shipping": "<p>Envío gratis desde $999; si no, $164. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
+        "short_name": "Eleuthero",
+        "line_label": "Commons Botanicals",
+        "sci": "Eleutherococcus senticosus · raíz",
+        "needs": "Energía",
+        "claim": "Extracto estandarizado de la planta, con el activo declarado en la etiqueta. Medio gramo por porción.",
+        "ten": "Para: Energía\nParte: Raíz\nEstandarizado: 0.8% eleuterósidos\nMomento: Solo en la mañana, antes de las 12\nRinde: Cápsulas ~4 meses · polvo 100 g ~6 meses",
+        "opt_hints": "Cápsulas 120|1 al día · rinde 4 meses · $7.42 al día\nPolvo 100 g|½ scoop al día · el que más rinde · $4.95 al día\nPolvo 50 g|Para llevar · va a precio completo",
+        "show_volume": true,
+        "forr": "Energía\nResistencia",
+        "big": "4 mg",
+        "big_text": "de eleuterósidos en cada cápsula de 500 mg (extracto al 0.8%).",
+        "tab": "Extracto de Eleuthero|500 mg por cápsula\nEstandarizado|0.8% eleuterósidos\nRellenos|Ninguno\nPorción|1 cápsula o ½ scoop",
+        "cmp": "Cuánto tomas|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|0.8% eleuterósidos|No se declara\n100 g te duran|unos 6 meses|5 a 20 días\nCosto al día|Desde $4.95|Alrededor de $10",
+        "tab_note": "",
+        "how": "Cuánto|1 cápsula o ½ scoop al día|La primera semana empieza bajo: 1 cápsula o ½ scoop.\nCuándo|Solo en la mañana|Tómalo en la mañana: más tarde puede quitarte el sueño. No subas la dosis.\nRitmo|6 días a la semana|Ciclo: 2 meses y 1 mes de descanso.",
+        "weeks": "Semana 1|Empieza bajo: 1 cápsula o ½ scoop.\nSemana 2|Sube a la porción completa.\nNotarlo|Suele tardar alrededor de 1 mes.\nCiclo|2 meses y 1 mes de descanso.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nNo se recomienda si tienes la presión alta.\nConsulta a tu médico antes si tomas anticoagulantes.\nConsulta a tu médico antes si tomas medicamentos para la diabetes.",
+        "comps": [
+          "melena-de-leon-capsulas-organicas",
+          "master-blend-160-capsulas",
+          "cacao-latte-boost"
+        ],
+        "comp_why": "Elegidos por lo que hace Eleuthero: uno de Botanicals, uno de Science o Rituals.",
+        "product_color": "",
+        "ev_quick": "3 estudios y revisiones",
+        "ev_tag": "Adaptógeno clásico",
+        "ev_word": "Adaptación.",
+        "ev_text": "Una revisión de más de 35 estudios en unas 6,000 personas sanas encontró que el eleuthero mejora la capacidad de trabajo físico y mental en épocas de estrés. Fue de los primeros adaptógenos estudiados.",
+        "ev_link": "https://doi.org/10.3390/ph3010188",
+        "ev_cite": "Panossian y Wikman, Pharmaceuticals, 2010",
+        "ev_more": "Panossian y Wikman 2009 · Current Clinical Pharmacology|https://doi.org/10.2174/157488409789375311|Revisión de adaptógenos en la fatiga: buena evidencia de más resistencia física y mejor rendimiento mental con eleuthero.\nAslanyan et al. 2010 · Phytomedicine|https://pubmed.ncbi.nlm.nih.gov/20374974/|Estudio doble ciego con una mezcla de eleuthero, schisandra y rhodiola: mejor atención y velocidad mental tras una dosis."
+      },
+      "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Acompaña la energía y la resistencia.</li><li>Ayuda a sostenerte en días de mucha carga.</li><li>Apoya la respuesta al estrés.</li></ul><p><b>En la tradición</b></p><ul><li>La energía y la resistencia física y mental.</li><li>Aguantar jornadas largas, el frío y el cansancio.</li><li>La concentración y el rendimiento.</li></ul><p><b>En estudios</b></p><ul><li><b>Resistencia.</b> Fue de los primeros adaptógenos estudiados en la URSS, en atletas y trabajadores bajo esfuerzo.</li><li><b>Cansancio.</b> En adultos con cansancio moderado mostró mejoría en estudios de 2 meses.</li></ul><p><em>Estudios del ingrediente, no de nuestro producto terminado. Usos tradicionales: no sustituyen la atención médica.</em></p>"
+          }
+        },
+        "acc1": {
+          "type": "acc",
+          "settings": {
+            "title": "Cómo se toma",
+            "text": "<p>1 cápsula o ½ scoop al día. La primera semana empieza bajo: 1 cápsula o ½ scoop. Ritmo: 6 días a la semana. Ciclo: 2 meses y 1 mes de descanso. Momento: solo en la mañana.</p>"
+          }
+        },
+        "acc2": {
+          "type": "acc",
+          "settings": {
+            "title": "Lo que lleva · ingredientes",
+            "text": "<p>Por cápsula: 500 mg de extracto de Eleuthero (Eleutherococcus senticosus), estandarizado: 0.8% eleuterósidos. Sin rellenos.</p>"
+          }
+        },
+        "acc3": {
+          "type": "acc",
+          "settings": {
+            "title": "Precauciones",
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>No se recomienda si tienes la presión alta.</li><li>Consulta a tu médico antes si tomas anticoagulantes.</li><li>Consulta a tu médico antes si tomas medicamentos para la diabetes.</li></ul>"
+          }
+        },
+        "nut": {
+          "type": "nut",
+          "settings": {
+            "title": "Tabla nutrimental",
+            "text": ""
+          }
+        },
+        "glos": {
+          "type": "acc",
+          "settings": {
+            "title": "Conoce la planta",
+            "text": "<p>De dónde viene, su tradición, lo que hay dentro y las referencias, en el glosario.</p><p><a href=\"/pages/eleuthero-ficha-tecnica\">Ver la ficha de Eleuthero →</a></p>"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuándo voy a notar algo?",
+            "a": "<p>Cada cuerpo es distinto. Dale constancia: mínimo 8 a 10 semanas, 6 días de toma y 1 de descanso.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cápsulas o polvo?",
+            "a": "<p>Es el mismo extracto. Las cápsulas son prácticas; el polvo de 100 g rinde más y sale más barato por porción.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Lo puedo combinar?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas. Si tomas medicamentos, consulta a tu médico.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $999.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ben",
+        "acc1",
+        "acc2",
+        "acc3",
+        "nut",
+        "glos",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ]
+    },
+    "comparativa": {
+      "type": "cm-comparativa",
+      "settings": {
+        "t1_big": "0.8%",
+        "t1_txt": "eleuterósidos, declarado en la etiqueta",
+        "t2_big": "0.5 g",
+        "t2_txt": "al día de extracto",
+        "t3_big": "$4.95",
+        "t3_txt": "al día en polvo · $7.42 en cápsula",
+        "link_txt": "Compáralo con un polvo común ↓",
+        "sl_pos": 3,
+        "sl_label": "Eleuthero · Commons contra un polvo común",
+        "sl_title": "Medio gramo contra veinte.",
+        "sl_rows": "Lo que tomas al día|0.5 g de extracto|5 a 20 g de planta molida\nActivo declarado|0.8% eleuterósidos|No se declara\n100 g te duran|unos 6 meses|5 a 20 días\nCosto al día|desde $4.95|alrededor de $10",
+        "sl_note": "Dosis según la etiqueta de cada producto.",
+        "th_big": "0.5 g",
+        "th_small": "vs 20 g"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "comparativa"
+  ]
+}

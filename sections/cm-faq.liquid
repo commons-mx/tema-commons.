@@ -1,0 +1,108 @@
+<style>/* PRUEBA PALETA 23 oct: amarillo #EEEFA8, lila #E1DCF5, verde Forest #022E21 solo en el pie */
+:root,.cm4,.cm-hdr{--lime:#EEEFA8;--pale:#F5F5D2;--lila:#E1DCF5;--cm-green:#022E21}
+.cm4 .lila,.ldot,.cm4 .pcard .pimg .ph{background:#E1DCF5 !important}
+.hcap i{background:#E1DCF5 !important}
+.cm4 .uband:not(.u-sci) .uprod:hover{background:#F5F5D2}
+.cm4 .badge.bot{background:#022E21}
+.cm4 .ftr{background:#022E21 !important;color:#F7F7F4 !important;border-top:1px solid #141A16}
+.cm4 .ftr a,.cm4 .ftr summary,.cm4 .ftr .flogo,.cm4 .ftr .fsoc a{color:#F7F7F4 !important}
+.cm4 .ftr a:hover{color:#EEEFA8 !important}
+.cm4 .ftr .lab{color:rgba(247,247,244,.6) !important}
+.cm4 .ftr .fbot,.cm4 .ftr .small{color:rgba(247,247,244,.7) !important}
+.cm4 .ftr input{background:transparent !important;color:#F7F7F4 !important;border-color:rgba(247,247,244,.5) !important}
+.cm4 .ftr input::placeholder{color:rgba(247,247,244,.6)}
+.cm4 .ftr button{background:#EEEFA8 !important;color:#141A16 !important;border-color:#EEEFA8 !important}
+.cm4 .ftr details,.cm4 .ftr .fbot,.cm4 .ftr .nbox{border-color:rgba(247,247,244,.25) !important}
+</style>
+<div class="cm4" id="cm-faq-{{ section.id }}">
+<section class="row2" aria-labelledby="fq-{{ section.id }}">
+  <div class="cell yellow" style="gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start"><h2 id="fq-{{ section.id }}" class="disp h1">{{ section.settings.heading }}</h2>{%- if section.settings.button_label != blank -%}<a class="sq" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }}</a>{%- endif -%}</div>
+    <div>
+      {%- for block in section.blocks -%}
+      <details class="fq" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+        <summary class="fqb"><span>{{ block.settings.q }}</span><span aria-hidden="true" class="cm-sign"></span></summary>
+        <div class="fqa">{{ block.settings.a }}</div>
+      </details>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="cellimg">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1800 | image_tag: sizes: '50vw', loading: 'lazy', alt: section.settings.heading }}{%- else -%}<img src="{{ 'cm-faq.jpg' | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">{%- endif -%}</div>
+</section>
+</div>
+<style>
+  #cm-faq-{{ section.id }} summary{list-style:none}
+  #cm-faq-{{ section.id }} summary::-webkit-details-marker{display:none}
+  #cm-faq-{{ section.id }} .cm-sign:before{content:"+"}
+  #cm-faq-{{ section.id }} details[open] .cm-sign:before{content:"−"}
+  #cm-faq-{{ section.id }} .fqa p{margin:0}
+  @container cm4 (max-width: 760px){ #cm-faq-{{ section.id }} .cellimg{display:none} }
+</style>
+{% schema %}
+{
+  "name": "Commons · Preguntas",
+  "tag": "div",
+  "class": "cm-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Preguntas frecuentes."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Botón",
+      "default": "Escríbenos por WhatsApp"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Liga del botón (WhatsApp)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Foto"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "q",
+          "label": "Pregunta",
+          "default": "¿Cuánto tarda en hacer efecto?"
+        },
+        {
+          "type": "richtext",
+          "id": "a",
+          "label": "Respuesta",
+          "default": "<p>Cada cuerpo es distinto. Dale al menos 4 semanas tomándolo diario.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Commons · Preguntas",
+      "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

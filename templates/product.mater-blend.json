@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "cm-product",
+      "settings": {
+        "shipping": "<p>Envío gratis desde $999; si no, $164. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>",
+        "short_name": "Master blend",
+        "line_label": "Commons Botanicals",
+        "sci": "8 hongos + Tulsi, Ginkgo y Astrágalo",
+        "badge": "Mezcla",
+        "needs": "Defensas, Energía",
+        "claim": "Los 8 hongos de Commons con Tulsi, Ginkgo y Astrágalo, en una sola toma.",
+        "ten": "Para: Defensas y energía\nLleva: Melena de León, Reishi, Shiitake, Maitake, Hongo del sol, Chaga, Cola de pavo, Cordyceps, Tulsi, Ginkgo y Astrágalo\nHecho con: Solo extractos, los mismos de nuestras fichas\nMomento: En la mañana\nRinde: 160 cápsulas",
+        "show_volume": true,
+        "forr": "Defensas\nEnergía\nEnfoque",
+        "how": "Cuánto|2 cápsulas o 1 scoop|Al día.\nCuándo|En la mañana|Con tu desayuno.\nRitmo|Sin pausa por meses|Evalúa cómo vas a los 3 meses.",
+        "prec": "No en embarazo, lactancia ni menores de 18.\nSi tomas medicamentos o tienes una condición médica, consulta a tu médico antes.\nSe toma en la mañana.",
+        "comps": [
+          "hongo-reishi-100g-20-β-glucanos",
+          "ashwagandha-organico-capsulas-extracto",
+          "azafran-1"
+        ],
+        "comp_why": "Para sumar a tu base."
+      },
+      "blocks": {
+        "ben": {
+          "type": "acc",
+          "settings": {
+            "title": "Beneficios",
+            "text": "<ul><li>Apoya tus defensas.</li><li>Acompaña la energía del día.</li><li>Acompaña el enfoque.</li><li>8 hongos y 3 plantas en una sola toma.</li></ul><p></p>"
+          }
+        },
+        "acc1": {
+          "type": "acc",
+          "settings": {
+            "title": "Cómo se toma",
+            "text": "<p>2 cápsulas o 1 scoop al día, en la mañana. Sin pausa por meses.</p>"
+          }
+        },
+        "acc3": {
+          "type": "acc",
+          "settings": {
+            "title": "Precauciones",
+            "text": "<ul><li>No en embarazo, lactancia ni menores de 18.</li><li>Si tomas medicamentos o tienes una condición médica, consulta a tu médico antes.</li><li>Se toma en la mañana.</li></ul>"
+          }
+        },
+        "nut": {
+          "type": "nut",
+          "settings": {
+            "title": "Tabla nutrimental",
+            "text": ""
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cuándo voy a notar algo?",
+            "a": "<p>Cada cuerpo es distinto. Dale constancia: mínimo 8 a 10 semanas, 6 días de toma y 1 de descanso.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Cápsulas o polvo?",
+            "a": "<p>Es el mismo extracto. Las cápsulas son prácticas; el polvo de 100 g rinde más y sale más barato por porción.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Lo puedo combinar?",
+            "a": "<p>Sí. Arma tu protocolo con 2 o 3 frascos según lo que necesitas. Si tomas medicamentos, consulta a tu médico.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "q": "¿Hacen envíos a todo México?",
+            "a": "<p>Sí. Envío gratis en pedidos desde $999.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ben",
+        "acc1",
+        "acc3",
+        "nut",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

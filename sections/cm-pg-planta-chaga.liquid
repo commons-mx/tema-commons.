@@ -1,0 +1,115 @@
+{{ 'cm-pg-planta.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+{%- assign rp = all_products["chaga"] -%}
+
+<div class="pl-top"><a href="/pages/que-son">Glosario</a><span>/</span><a href="/pages/que-son">Hongos</a><span>/</span><span>Chaga</span></div>
+
+<section class="pl-hero" aria-labelledby="ph">
+<div class="pl-ph" style="background-color: #EFEBE3"><img class="cover" src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ '2_6cc025ad-d0fb-4751-9160-70648a27eca5.jpg' | file_url }}{%- endif -%}" loading="eager" alt="Chaga · Inonotus obliquus"></div>
+<div class="pl-tx">
+<span class="lab">Glosario · Hongo · Defensas</span>
+<h1 id="ph" class="disp h1">Chaga</h1>
+<span class="pl-lat">Inonotus obliquus · también conocido como &quot;Diamante del bosque&quot;</span>
+<p class="sub">Crece en los abedules de los bosques fríos de Rusia y el norte de Europa, donde se toma en té desde hace siglos.</p>
+{%- if rp.id -%}<div class="pl-buy"><div class="pi"><img src="{%- if rp.featured_image -%}{{ rp.featured_image | image_url: width: 800 }}{%- endif -%}" loading="lazy" alt="{{ rp.title | escape }}"></div><div><b>Commons Chaga</b><span>25% betaglucanos · cápsulas y polvo · desde {{ rp.price_min | money_without_trailing_zeros }}</span></div><a class="pl-btn" href="#s4">Comprar<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a></div>{%- endif -%}
+</div>
+</section>
+<nav class="pl-toc" aria-label="En esta página"><a href="#sd">Para qué se toma</a><a href="#s1">Lo que hay dentro</a><a href="#s3">Cómo se toma</a><a href="#s4">Comprar</a><a href="#s5">Antes de tomarlo</a></nav>
+
+<section id="s0" aria-label="En 10 segundos">
+<div class="pl-spec">
+<div class="r2"><span>Parte que usamos</span><span>Cuerpo fructífero</span></div>
+<div class="r2"><span>Tradición</span><span>Medicina popular rusa y escandinava</span></div>
+<div class="r2"><span>De dónde viene</span><span>Bosques de abedul del norte</span></div>
+<div class="r2"><span>Momento</span><span>Mañana o tarde</span></div>
+<div class="r2"><span>Nuestro extracto</span><span>25% betaglucanos</span></div>
+<div class="r2"><span>Formatos</span><span>Cápsulas y polvo</span></div>
+</div>
+</section>
+
+<section id="sd" class="pl-dm" aria-labelledby="dmh"><div class="dmh"><span class="lab">Para qué se toma</span><h2 id="dmh" class="disp h2">Dos miradas, una planta.</h2></div><div class="dmc dmt"><div class="dmi"><img src="{{ 'cm-ff-img-2282-filtro.jpg' | asset_url }}" width="1600" height="700" loading="lazy" alt=""></div><div class="dmb"><span class="lab">La tradición · Medicina popular rusa, siberiana y escandinava</span><h3>Lo que se ha hecho con ella por siglos</h3><ul><li>Fortalecer las defensas en los inviernos largos.</li><li>Cuidar la digestión y el estómago.</li><li>Aportar antioxidantes: es de los hongos con más.</li><li>Dar vitalidad: se toma en té en lugar de café.</li></ul><details class="pl-acc"><summary><span>Leer la historia</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><p class="ah">El diamante del bosque.</p><p><span class="lab">Sabor y energía</span><br>Amargo, cálido y seco</p><p>Crece en los abedules de los bosques más fríos del norte: Siberia, Rusia, Escandinavia y Canadá. Necesita los inviernos extremos para formarse.</p><p>Su nombre viene de &quot;чага&quot;, la antigua palabra rusa para hongo, que a su vez viene de la lengua de los pueblos komi de los Urales. Allá se ha tomado en té por generaciones. Se cree que Ötzi, el hombre de hielo de hace más de 5,000 años encontrado en los Alpes, ya cargaba hongos de árbol como este.</p><p class="pdato"><span class="lab">Dato</span>Por fuera parece carbón quemado; por dentro es color naranja dorado.</p></div></details><span class="small">Usos tradicionales. No sustituyen la atención médica.</span></div></div><div class="dmc dmm"><div class="dmi"><img src="{{ 'cm-f-chaga-commons-adaptogenos-y-hongos.jpg' | asset_url }}" width="1600" height="700" loading="lazy" alt=""></div><div class="dmb"><span class="lab">La ciencia hoy</span><h3>Lo que se ha visto en estudios</h3><ul><li><b>Antioxidantes.</b> Es de los hongos con más antioxidantes medidos en laboratorio, por su melanina y sus polifenoles.</li><li><b>Defensas.</b> Sus betaglucanos se estudian por cómo acompañan la respuesta inmune.</li></ul><details class="pl-acc"><summary><span>Qué encontraron los estudios</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><div class="me"><b>Antioxidantes</b><p>Es de los hongos con más antioxidantes medidos en laboratorio, por su melanina y sus polifenoles.</p><span class="small">Estudios de laboratorio</span></div><div class="me"><b>Defensas</b><p>Sus betaglucanos se estudian por cómo acompañan la respuesta inmune.</p><span class="small">Estudios en animales y laboratorio</span></div></div></details><details class="pl-acc"><summary><span>Ver las referencias</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><ol><li></li></ol></div></details><span class="small">Estudios del ingrediente, no de nuestro producto terminado.</span></div></div></section>
+<section id="s1" class="pl-in" aria-labelledby="ld">
+<div class="cell"><span class="lab">Lo que hay dentro</span><h2 id="ld" class="disp h2">Los betaglucanos.</h2><p class="sub" style="max-width: 48ch">Son los compuestos del hongo que más se han estudiado, y los declaramos en la etiqueta.</p></div>
+<div class="cell"><span class="pl-big num">125<small>mg</small></span><p class="small" style="margin: 0; font-size: 16px; max-width: 34ch">de betaglucanos en cada cápsula de 500 mg (extracto al 25%).</p><p class="small" style="margin: 0; font-size: 16px; max-width: 34ch">500 mg de extracto por cápsula o ½ scoop. Suele notarse en 8 a 10 semanas.</p></div>
+</section>
+
+<section id="s3" aria-labelledby="ct">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Cómo se toma</span><h2 id="ct" class="disp h2">Poco, todos los días y con constancia.</h2></div></div>
+<div class="pl-steps">
+<div><span class="lab">Cuánto</span><b>1 cápsula o ½ scoop al día</b><p>Empieza con la mitad la primera semana y luego sube a la porción completa.</p></div>
+<div><span class="lab">Descansos</span><b>6 días y 1 de descanso</b><p>Cada semana descansa 1 día, el que tú elijas. Toma 2 meses seguidos y descansa 2 a 4 semanas.</p></div>
+<div><span class="lab">Cuándo</span><b>No subas la dosis</b><p>Chaga se queda en 1 cápsula o ½ scoop al día.</p></div>
+</div>
+</section>
+
+{%- if rp.id -%}
+<section id="s4" aria-labelledby="dl">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Dónde lo encuentras</span><h2 id="dl" class="disp h2">Chaga en Commons.</h2></div></div>
+<div class="pl-one">
+<div class="im"><a href="{{ rp.url }}"><img src="{%- if rp.featured_image -%}{{ rp.featured_image | image_url: width: 800 }}{%- endif -%}" loading="lazy" alt="{{ rp.title | escape }}"></a></div>
+<div class="tx">
+<span class="lab">Commons Botanicals</span>
+<b class="disp">{{ rp.title }}</b>
+<span class="small">25% betaglucanos · cuerpo fructífero</span>
+<span class="lab" style="margin-top: 8px">Elige tu presentación</span>
+<div class="pl-fmts" role="radiogroup" aria-label="Presentación">{%- for v in rp.variants -%}<button type="button" class="{% if forloop.first %}on{% endif %}" role="radio" data-v="{{ v.id }}" data-p="{{ v.price | money_without_trailing_zeros }}" data-t="{{ v.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' | escape }}"{% unless v.available %} disabled{% endunless %}><b>{{ v.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' }}</b><span>{{ v.price | money_without_trailing_zeros }}</span></button>{%- endfor -%}</div>
+<span class="small" data-fd>{{ rp.selected_or_first_available_variant.title | replace: 'Carry On 50g', 'Polvo 50 g' | replace: 'Polvo 100g', 'Polvo 100 g' }}</span>
+<div class="row"><span class="num pl-price" data-fp>{{ rp.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span><button type="button" class="pl-add pl-btn" data-add data-v="{{ rp.selected_or_first_available_variant.id }}">Agregar al carrito</button></div>
+<a class="tlink" href="{{ rp.url }}" style="align-self:flex-start">Ver la ficha completa</a>
+</div>
+</div>
+<p class="pl-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Llevando 2 frascos ahorras 10%; con 3 o más, 15%. <a class="tlink" href="/#protocolo">Arma tu protocolo</a></p>
+</section>
+{%- endif -%}
+
+<section aria-labelledby="cb">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Combina bien con</span><h2 id="cb" class="disp h2">Chaga, acompañado.</h2></div></div>
+<div class="pl-comb">{%- assign cp = all_products["hongo-reishi-100g-20-β-glucanos"] -%}{%- if cp.id -%}<a href="{{ cp.url }}"><div><div class="circ">{%- if cp.featured_image -%}<img src="{{ cp.featured_image | image_url: width: 300 }}" loading="lazy" alt="{{ cp.title | escape }}">{%- else -%}<span class="ini">{{ cp.title | slice: 0 }}</span>{%- endif -%}</div></div><div><span class="lab">Defensas</span><b>{{ cp.title }}</b><span>Botanicals · hongo</span></div></a>{%- endif -%}{%- assign cp = all_products["master-blend-160-capsulas"] -%}{%- if cp.id -%}<a href="{{ cp.url }}"><div><div class="circ">{%- if cp.featured_image -%}<img src="{{ cp.featured_image | image_url: width: 300 }}" loading="lazy" alt="{{ cp.title | escape }}">{%- else -%}<span class="ini">{{ cp.title | slice: 0 }}</span>{%- endif -%}</div></div><div><span class="lab">Base diaria</span><b>{{ cp.title }}</b><span>Botanicals · mezcla</span></div></a>{%- endif -%}{%- assign cp = all_products["chocolate-defend"] -%}{%- if cp.id -%}<a href="{{ cp.url }}"><div><div class="circ">{%- if cp.featured_image -%}<img src="{{ cp.featured_image | image_url: width: 300 }}" loading="lazy" alt="{{ cp.title | escape }}">{%- else -%}<span class="ini">{{ cp.title | slice: 0 }}</span>{%- endif -%}</div></div><div><span class="lab">Ritual</span><b>{{ cp.title }}</b><span>Rituals · chocolate</span></div></a>{%- endif -%}</div>
+</section>
+
+<section id="s5" class="pl-warn" aria-labelledby="at">
+<div class="cell"><span class="lab">Antes de tomarlo</span><h2 id="at" class="disp h2" style="max-width: 12ch">Lo que debes saber.</h2></div>
+<div class="pl-wl">
+<details class="pl-acc"><summary><span>No se recomienda si…</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><ul><li>Estás embarazada o lactando.</li><li>Eres menor de 18 años.</li><li>Tienes problemas renales o cálculos.</li><li>Contiene oxalatos: por eso lleva pausa cada 2 meses.</li></ul></div></details>
+<details class="pl-acc"><summary><span>Consulta a tu médico antes si…</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><ul><li>Tomas anticoagulantes.</li><li>Tomas medicamentos para la diabetes.</li></ul></div></details>
+<details class="pl-acc"><summary><span>Cómo guardarlo</span><span class="pm" aria-hidden="true"></span></summary><div class="ab"><p>Lejos de la luz y la humedad, a temperatura ambiente. Dura hasta 36 meses en buenas condiciones. La fecha de caducidad viene impresa en cada frasco.</p></div></details>
+<p class="small"><a class="tlink" href="https://wa.me/523316035820" target="_blank" rel="noopener">WhatsApp para consultas sobre adaptógenos o dosis</a></p><p class="small"></p>
+</div>
+</section>
+
+<nav class="pl-more" aria-label="Sigue aprendiendo">
+<a href="/pages/adaptogenos">Qué es un adaptógeno<span aria-hidden="true">→</span></a>
+<a href="/pages/nuestra-ciencia">Nuestra ciencia y la biblioteca de evidencia<span aria-hidden="true">→</span></a>
+<a href="/pages/que-son">Volver al glosario<span aria-hidden="true">→</span></a>
+</nav>
+
+</div>
+</div>
+<script>
+(function(){
+var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
+var add = root.querySelector('[data-add]'), fp = root.querySelector('[data-fp]'), fd = root.querySelector('[data-fd]');
+root.querySelectorAll('.pl-fmts [data-v]').forEach(function(x){ x.addEventListener('click', function(){
+  root.querySelectorAll('.pl-fmts [data-v]').forEach(function(y){ y.classList.toggle('on', y === x); y.setAttribute('aria-checked', y === x); });
+  add.dataset.v = x.dataset.v; fp.textContent = x.dataset.p; fd.textContent = x.dataset.t; add.textContent = 'Agregar al carrito'; add.classList.remove('on'); }); });
+if (add) add.addEventListener('click', function(){ add.disabled = true;
+  fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: +add.dataset.v, quantity: 1 }] }) })
+  .then(function(r){ if (!r.ok) throw r; add.textContent = 'Agregado ✓'; add.classList.add('on');
+    if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart && Alpine.store('xMiniCart').openCart(); } })
+  .catch(function(){ location.href = '{{ routes.cart_url }}'; }).finally(function(){ add.disabled = false; }); });
+})();
+</script>
+{% schema %}
+{
+ "name": "Planta · Chaga",
+ "tag": "section",
+ "settings": [
+  {
+   "type": "image_picker",
+   "id": "cm_img_1",
+   "label": "Foto de la planta"
+  }
+ ]
+}
+{% endschema %}

@@ -1,0 +1,838 @@
+{%- liquid
+  assign s = section.settings
+  assign cur = product.selected_or_first_available_variant
+  assign has_sub = false
+  if product.selling_plan_groups.size > 0
+    assign has_sub = true
+  endif
+  assign rating = product.metafields.loox.avg_rating.value | default: product.metafields.reviews.rating.value.rating
+  assign nrev = product.metafields.loox.num_reviews.value | default: product.metafields.reviews.rating_count.value
+  assign name = s.short_name | default: product.title
+  assign rnum = rating | plus: 0
+  assign nnum = nrev | plus: 0
+-%}
+{{ 'cm-pg-producto.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmp-{{ section.id }}" data-cmp>
+<div class="v4 tA acY{% if s.product_color != blank %} pc{% endif %}" style="--pc:#141A16;--pc2:#EEEFA8;">
+
+<div class="stickybar" aria-label="Compra rápida">
+  <span class="sbname">{{ name }}</span>
+  <div class="sbright">
+    <div class="sbsel"><span data-optlabel>{{ cur.title }}</span><span class="num" data-price>{{ cur.price | money_without_trailing_zeros }}</span></div>
+    <button type="button" class="sbbtn" data-add>Agregar al carrito</button>
+  </div>
+</div>
+
+<section class="buy" aria-label="Comprar {{ name | escape }}">
+  {%- liquid
+    assign gal_list = ''
+    case product.handle
+      when 'ashwagandha-organico-capsulas-extracto'
+        assign gal_list = 'cm-gal-ashwagandha-01.jpg,cm-gal-ashwagandha-02.jpg,cm-gal-ashwagandha-03.jpg,cm-gal-ashwagandha-04.jpg,cm-gal-ashwagandha-05.jpg,cm-gal-ashwagandha-06.jpg,cm-gal-ashwagandha-07.jpg,cm-gal-ashwagandha-08.jpg,cm-gal-ashwagandha-09.jpg'
+      when 'hongo-reishi-100g-20-β-glucanos'
+        assign gal_list = 'cm-gal-reishi-01.jpg,cm-gal-reishi-02.jpg,cm-gal-reishi-03.jpg,cm-gal-reishi-04.jpg,cm-gal-reishi-05.jpg,cm-gal-reishi-06.jpg,cm-gal-reishi-07.jpg,cm-gal-reishi-08.jpg'
+      when 'melena-de-leon-capsulas-organicas'
+        assign gal_list = 'cm-gal-melena-01.jpg,cm-gal-melena-03.jpg,cm-gal-melena-04.jpg,cm-gal-melena-05.jpg,cm-gal-melena-06.jpg,cm-gal-melena-07.jpg,cm-gal-melena-08.jpg,cm-gal-melena-09.jpg'
+      when 'raiz-rhodiola-rosea-full-polvo'
+        assign gal_list = 'cm-gal-rhodiola-01.jpg,cm-gal-rhodiola-03.jpg,cm-gal-rhodiola-04.jpg,cm-gal-rhodiola-05.jpg,cm-gal-rhodiola-06.jpg,cm-gal-rhodiola-07.jpg,cm-gal-rhodiola-08.jpg,cm-gal-rhodiola-09.jpg'
+      when 'cordyceps-extracto-commons'
+        assign gal_list = 'cm-gal-cordyceps-01.jpg,cm-gal-cordyceps-03.jpg,cm-gal-cordyceps-04.jpg,cm-gal-cordyceps-05.jpg,cm-gal-cordyceps-06.jpg,cm-gal-cordyceps-07.jpg,cm-gal-cordyceps-08.jpg,cm-gal-cordyceps-09.jpg'
+      when 'master-blend-160-capsulas'
+        assign gal_list = 'cm-gal-master-blend-01.jpg,cm-gal-master-blend-03.jpg,cm-gal-master-blend-04.jpg,cm-gal-master-blend-05.jpg,cm-gal-master-blend-06.jpg,cm-gal-master-blend-07.jpg'
+      when 'chaga'
+        assign gal_list = 'cm-gal-chaga-01.jpg,cm-gal-chaga-03.jpg,cm-gal-chaga-04.jpg,cm-gal-chaga-05.jpg,cm-gal-chaga-06.jpg,cm-gal-chaga-07.jpg,cm-gal-chaga-08.jpg'
+      when 'hongo-cola-de-pavo-full-polvo'
+        assign gal_list = 'cm-gal-cola-de-pavo-01.jpg,cm-gal-cola-de-pavo-03.jpg,cm-gal-cola-de-pavo-04.jpg,cm-gal-cola-de-pavo-05.jpg,cm-gal-cola-de-pavo-06.jpg,cm-gal-cola-de-pavo-07.jpg,cm-gal-cola-de-pavo-08.jpg'
+      when 'hongo-maitake-full-polvo'
+        assign gal_list = 'cm-gal-maitake-01.jpg,cm-gal-maitake-03.jpg,cm-gal-maitake-04.jpg,cm-gal-maitake-05.jpg,cm-gal-maitake-06.jpg,cm-gal-maitake-07.jpg'
+      when 'mucuna-pruenis-organica-capsulas-y-polvo'
+        assign gal_list = 'cm-gal-mucuna-01.jpg,cm-gal-mucuna-03.jpg,cm-gal-mucuna-04.jpg,cm-gal-mucuna-05.jpg,cm-gal-mucuna-06.jpg,cm-gal-mucuna-07.jpg'
+      when 'baya-schisandra-full-polvo'
+        assign gal_list = 'cm-gal-schisandra-01.jpg,cm-gal-schisandra-03.jpg,cm-gal-schisandra-04.jpg,cm-gal-schisandra-05.jpg,cm-gal-schisandra-06.jpg,cm-gal-schisandra-07.jpg,cm-gal-schisandra-08.jpg'
+      when 'eleuthero-full-polvo'
+        assign gal_list = 'cm-gal-eleuthero-01.jpg,cm-gal-eleuthero-03.jpg,cm-gal-eleuthero-04.jpg,cm-gal-eleuthero-05.jpg,cm-gal-eleuthero-06.jpg,cm-gal-eleuthero-07.jpg'
+      when 'shatavari-full-polvo'
+        assign gal_list = 'cm-gal-shatavari-01.jpg,cm-gal-shatavari-03.jpg,cm-gal-shatavari-04.jpg,cm-gal-shatavari-05.jpg,cm-gal-shatavari-06.jpg,cm-gal-shatavari-07.jpg'
+      when 'vitex-extracto'
+        assign gal_list = 'cm-gal-vitex-01.jpg,cm-gal-vitex-03.jpg,cm-gal-vitex-04.jpg,cm-gal-vitex-05.jpg,cm-gal-vitex-06.jpg,cm-gal-vitex-07.jpg'
+      when 'tulsi-full-polvo'
+        assign gal_list = 'cm-gal-tulsi-01.jpg,cm-gal-tulsi-03.jpg,cm-gal-tulsi-04.jpg,cm-gal-tulsi-05.jpg,cm-gal-tulsi-06.jpg,cm-gal-tulsi-07.jpg,cm-gal-tulsi-08.jpg'
+      when 'gotu-kola'
+        assign gal_list = 'cm-gal-gotukola-01.jpg,cm-gal-gotukola-03.jpg,cm-gal-gotukola-04.jpg,cm-gal-gotukola-05.jpg,cm-gal-gotukola-06.jpg,cm-gal-gotukola-07.jpg'
+      when 'astragalus-full-polvo'
+        assign gal_list = 'cm-gal-astragalo-01.jpg,cm-gal-astragalo-03.jpg,cm-gal-astragalo-04.jpg,cm-gal-astragalo-05.jpg,cm-gal-astragalo-06.jpg,cm-gal-astragalo-07.jpg'
+      when 'amla-full-polvo'
+        assign gal_list = 'cm-gal-amla-01.jpg,cm-gal-amla-03.jpg,cm-gal-amla-04.jpg,cm-gal-amla-05.jpg,cm-gal-amla-06.jpg,cm-gal-amla-07.jpg'
+      when 'gingko-biloba-y-bacopa'
+        assign gal_list = 'cm-gal-ginkgo-bacopa-01.jpg,cm-gal-ginkgo-bacopa-03.jpg,cm-gal-ginkgo-bacopa-04.jpg,cm-gal-ginkgo-bacopa-05.jpg,cm-gal-ginkgo-bacopa-06.jpg,cm-gal-ginkgo-bacopa-07.jpg'
+    endcase
+  -%}
+  {%- if gal_list != blank -%}
+  {%- assign ga = gal_list | split: ',' -%}
+  <div class="gal gsl" data-gsl>
+    <div class="gstage">
+    <div class="gtrack" tabindex="0" aria-label="Galería de {{ name | escape }}">
+      {%- assign glast = ga | last | strip -%}{%- assign gfirst = ga | first | strip -%}<div class="gslide" aria-hidden="true"><img src="{{ glast | asset_url }}" alt="" width="1400" height="1400" loading="lazy"></div>
+      {%- for a in ga -%}<div class="gslide">{%- assign af = a | strip -%}<img src="{{ af | asset_url }}" alt="{{ name | escape }} · imagen {{ forloop.index }}" width="1400" height="1400" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{%- if forloop.first and s.badge != blank -%}<span class="badge">{{ s.badge }}</span>{%- endif -%}</div>{%- endfor -%}<div class="gslide" aria-hidden="true"><img src="{{ gfirst | asset_url }}" alt="" width="1400" height="1400" loading="lazy"></div>
+    </div>
+    <button type="button" class="garr gprev" aria-label="Anterior" data-gp>‹</button><button type="button" class="garr gnext" aria-label="Siguiente" data-gn>›</button>
+    </div>
+    <div class="gthumbs">{%- for a in ga -%}{%- assign af = a | strip -%}<button type="button" class="gth{% if forloop.first %} on{% endif %}" data-gi="{{ forloop.index0 }}" aria-label="Ver imagen {{ forloop.index }}"><img src="{{ af | asset_url }}" alt="" width="120" height="120" loading="lazy"></button>{%- endfor -%}</div>
+  </div>
+  <style>
+  .gsl{position:relative;min-width:0;display:block !important;height:auto !important}.gsl .gstage{position:relative}
+  .gsl .gtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .gsl .gtrack::-webkit-scrollbar{display:none}
+  .gsl .gslide{flex:0 0 100%;scroll-snap-align:start;position:relative;aspect-ratio:1;background:#f7f8f3}
+  .gsl .gslide img{width:100%;height:100%;object-fit:cover;display:block}
+  .gsl .garr{position:absolute;top:calc(50% - 22px);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink,#141a16);background:rgba(255,255,255,.9);font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink,#141a16)}
+  .gsl .gprev{left:12px}.gsl .gnext{right:12px}
+  .gsl .gthumbs{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-top:10px}
+  .gsl .gth{padding:0;border:1px solid transparent;background:none;cursor:pointer;aspect-ratio:1;opacity:.6}
+  .gsl .gth.on{border-color:var(--ink,#141a16);opacity:1}
+  .gsl .gth img{width:100%;height:100%;object-fit:cover;display:block}
+  @media (max-width:749px){.gsl .garr{display:none}.gsl .gthumbs{display:flex;justify-content:center;gap:6px;margin-top:12px}.gsl .gth{width:7px;height:7px;border-radius:50%;background:#c9cbc4;border:0;opacity:1}.gsl .gth.on{background:var(--ink,#141a16)}.gsl .gth img{display:none}}
+  </style>
+  <script>
+  (function(){ document.querySelectorAll('[data-gsl]').forEach(function(g){ if (g.__ok) return; g.__ok = 1;
+    var tr = g.querySelector('.gtrack'), th = g.querySelectorAll('.gth'), n = th.length, tm;
+    var W = function(){ return tr.clientWidth; };
+    var jump = function(r){ tr.style.scrollSnapType = 'none'; tr.scrollLeft = r * W(); tr.offsetHeight; tr.style.scrollSnapType = ''; };
+    var raw = function(){ return Math.round(tr.scrollLeft / W()); };
+    var real = function(){ return ((raw() - 1) % n + n) % n; };
+    var mark = function(){ var i = real(); th.forEach(function(b, k){ b.classList.toggle('on', k === i); }); };
+    var go = function(i){ tr.scrollTo({ left: (i + 1) * W(), behavior: 'smooth' }); };
+    requestAnimationFrame(function(){ jump(1); });
+    tr.addEventListener('scroll', function(){ mark(); clearTimeout(tm); tm = setTimeout(function(){ var r = raw(); if (r <= 0) jump(n); else if (r >= n + 1) jump(1); mark(); }, 140); }, { passive: true });
+    g.addEventListener('click', function(e){ var b = e.target.closest('[data-gi]'); if (b) go(+b.dataset.gi); if (e.target.closest('[data-gp]')) go(raw() - 2); if (e.target.closest('[data-gn]')) go(raw()); });
+    tr.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') go(raw()); if (e.key === 'ArrowLeft') go(raw() - 2); });
+    window.addEventListener('resize', function(){ jump(raw()); });
+  }); })();
+</script>
+  {%- else -%}
+  <div class="gal">
+    {%- assign m = product.media -%}
+    <div class="gimg">
+      {%- if m[0] -%}{{ m[0] | image_url: width: 1400 | image_tag: class: 'prod', loading: 'eager', sizes: '(min-width: 990px) 50vw, 100vw' }}{%- endif -%}
+      {%- if s.badge != blank -%}<span class="badge">{{ s.badge }}</span>{%- endif -%}
+    </div>
+    {%- if m[1] or m[2] -%}
+    <div class="gpair">
+      {%- if m[1] -%}<div class="gimg">{{ m[1] | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '25vw' }}</div>{%- endif -%}
+      {%- if m[2] -%}<div class="gimg">{{ m[2] | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '25vw' }}</div>{%- endif -%}
+    </div>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+  <div class="bcol">
+    <div class="bbox">
+      {%- if s.line_label != blank -%}<span class="lab">{{ s.line_label }}</span>{%- endif -%}
+      <h1 class="disp h2" style="margin: 0">{{ name }}</h1>
+      {%- if s.sci != blank -%}<p class="sci">{{ s.sci }}</p>{%- endif -%}
+      {%- if rnum > 0 and nnum > 0 -%}<a class="rating" href="#resenas" style="text-decoration:none;color:inherit"><b aria-label="{{ rating }} de 5">★★★★★</b><span>{{ rating | round: 1 }} · Reseñas</span></a>{%- endif -%}
+      {%- if s.needs != blank -%}<div class="tags">{%- assign nn = s.needs | split: ',' -%}{%- for n in nn -%}<span class="tag">{{ n | strip }}</span>{%- endfor -%}</div>{%- endif -%}
+      {%- if s.claim != blank -%}<p style="margin: 0; font-size: 18px">{{ s.claim }}</p>{%- endif -%}
+      {%- if s.ev_quick != blank -%}<a class="evq" href="#evidencia"><span class="dt"></span>{{ s.ev_quick }}<span class="go">Ver evidencia ↓</span></a>{%- endif -%}
+      {%- if s.ten != blank -%}
+      <div class="ten"><div class="tenh lab">En 10 segundos</div><dl>
+        {%- assign rows = s.ten | newline_to_br | split: '<br />' -%}
+        {%- for r in rows -%}{%- assign kv = r | strip | split: ':' -%}{%- if kv.size > 1 -%}<dt>{{ kv[0] | strip }}</dt><dd>{{ r | strip | remove_first: kv[0] | remove_first: ':' | strip }}</dd>{%- endif -%}{%- endfor -%}
+      </dl></div>
+      {%- endif -%}
+
+      <form method="post" action="{{ routes.cart_add_url }}" data-form>
+        <input type="hidden" name="id" value="{{ cur.id }}" data-vid>
+        <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="selling_plan" value="" data-plan>
+        {%- unless product.has_only_default_variant -%}
+        <span class="lab">Presentación</span>
+        <div class="optset">
+          {%- for v in product.variants -%}
+          {%- assign hint = '' -%}
+          {%- assign hl = s.opt_hints | newline_to_br | split: '<br />' -%}
+          {%- for h in hl -%}{%- assign hp = h | strip | split: '|' -%}{%- if hp[0] == v.title -%}{%- assign hint = hp[1] -%}{%- endif -%}{%- endfor -%}
+          <button type="button" class="opt{% if v.id == cur.id %} sel{% endif %}" data-v="{{ v.id }}" data-price="{{ v.price | money_without_trailing_zeros }}" data-title="{{ v.title | escape }}" data-carry="{% if v.title contains 'Carry' or v.title contains '50' %}1{% endif %}"{% unless v.available %} disabled{% endunless %}>
+            <span><b>{{ v.title }}</b>{%- if hint != '' -%}<span class="hint">{{ hint }}</span>{%- endif -%}</span><span class="num">{{ v.price | money_without_trailing_zeros }}</span>
+          </button>
+          {%- endfor -%}
+        </div>
+        {%- endunless -%}
+        {%- if has_sub -%}
+        {%- assign plan = product.selling_plan_groups.first.selling_plans.first -%}
+        <span class="lab">¿Cómo lo quieres?</span>
+        <div class="pmode" role="radiogroup" aria-label="Cómo lo quieres">
+          <button type="button" class="pm on" data-mode="0" role="radio" aria-checked="true"><span class="rd"></span><span class="pmt"><b>Compra única</b><small>Pagas una vez</small></span><span class="pmp"><span class="num" data-price>{{ cur.price | money_without_trailing_zeros }}</span></span></button>
+          <button type="button" class="pm" data-mode="1" data-plan-id="{{ plan.id }}" role="radio" aria-checked="false"><span class="rd"></span><span class="pmt"><b>Suscríbete y ahorra</b>{%- if s.sub_save != blank -%}<span class="save">{{ s.sub_save }}</span>{%- endif -%}<small>{{ plan.name }}</small></span><span class="pmp"><span class="num">{{ cur.selling_plan_allocations.first.price | default: cur.price | money_without_trailing_zeros }}</span></span></button>
+        </div>
+        {%- if s.sub_benefits != blank -%}<ul class="subben" data-subben hidden>{%- assign sb = s.sub_benefits | newline_to_br | split: '<br />' -%}{%- for b in sb -%}<li>{{ b | strip }}</li>{%- endfor -%}</ul>{%- endif -%}
+        {%- endif -%}
+        <button type="submit" class="btn dark full" data-add style="border: 0; cursor: pointer; width: 100%"><span data-cta>Agregar al carrito · {{ cur.price | money_without_trailing_zeros }}</span><span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></button>
+      </form>
+
+      {%- liquid
+        assign pf_act = ''
+        assign pf_dose = ''
+        assign pf_p = 0
+        assign pf_c = 0
+        if s.ten != blank
+          assign tr = s.ten | newline_to_br | split: '<br />'
+          for r in tr
+            if r contains 'Estandarizado'
+              assign pf_act = r | split: ':' | last | strip
+            endif
+          endfor
+        endif
+        if s.cmp != blank
+          assign cr = s.cmp | newline_to_br | split: '<br />'
+          for r in cr
+            assign kv = r | strip | split: '|'
+            if kv[0] contains 'Cuánto'
+              assign pf_dose = kv[1] | strip | split: ' de ' | first
+            endif
+          endfor
+        endif
+        for v in product.variants
+          if v.title contains 'Polvo' and v.title contains '100'
+            assign pf_p = v.price | divided_by: 200.0 | round
+          endif
+          if v.title contains 'Cápsulas 120'
+            assign pf_c = v.price | divided_by: 120.0 | round
+          endif
+        endfor
+      -%}
+      {%- if pf_act != '' or pf_dose != '' or pf_p > 0 -%}
+      <div class="cm-prooft" aria-label="Lo que hay en el frasco">
+        {%- if pf_act != '' -%}{%- assign a1 = pf_act | split: ' ' | first -%}<div><b class="num">{{ a1 }}</b><span>{{ pf_act | remove_first: a1 | strip }}, declarado en la etiqueta</span></div>{%- endif -%}
+        {%- if pf_dose != '' -%}<div><b class="num">{{ pf_dose }}</b><span>al día de extracto</span></div>{%- endif -%}
+        {%- if pf_p > 0 -%}<div><b class="num">{{ pf_p | money_without_trailing_zeros | remove: " " }}</b><span>al día en polvo de 100 g{% if pf_c > 0 %} · {{ pf_c | money_without_trailing_zeros | remove: " " }} en cápsula{% endif %}</span></div>{%- elsif pf_c > 0 -%}<div><b class="num">{{ pf_c | money_without_trailing_zeros | remove: " " }}</b><span>al día en cápsula</span></div>{%- endif -%}
+      </div>
+      {%- if s.cmp != blank and s.big != blank -%}<a class="tlink cm-prooflink" href="#porcion" style="align-self: flex-start">Compáralo con un polvo común ↓</a>{%- endif -%}
+      {%- endif -%}
+
+      {%- if s.show_volume -%}<div class="volnote" data-vol>{%- if s.line_label contains 'Science' -%}<span>Súmalo a tu protocolo: 10% al llevar 2 o más productos</span>{%- else -%}<span>Lleva 2 frascos y ahorra 10% · 3 o más, 15%</span>{%- endif -%}<a class="tlink" href="/#protocolo">Arma tu protocolo</a></div>{%- endif -%}
+      <div class="perks"><span>Envío gratis desde $999</span><span>3 meses sin intereses</span><span>Te asesora una persona por WhatsApp</span></div>
+      <a class="tlink" href="/pages/quiz-commons" style="align-self: flex-start">¿Es para ti? Haz el quiz</a>
+      <div class="bacc">
+        {%- for block in section.blocks -%}
+        {%- if block.type == 'acc' -%}{%- unless block.settings.title contains 'Envío' -%}
+        <details class="ai" {{ block.shopify_attributes }}><summary class="ah"><span>{{ block.settings.title }}</span><span aria-hidden="true">+</span></summary><div class="ab">{%- if block.settings.text != blank -%}{{ block.settings.text }}{%- elsif block.settings.title == 'Beneficios' -%}{{ product.description }}{%- endif -%}</div></details>
+        {%- endunless -%}{%- elsif block.type == 'nut' -%}
+        <details class="ai" {{ block.shopify_attributes }}><summary class="ah"><span>{{ block.settings.title | default: 'Tabla nutrimental' }}</span><span aria-hidden="true">+</span></summary><div class="ab">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: 'Tabla nutrimental', style: 'width:100%;height:auto;background:#fff' }}{%- endif -%}{{ block.settings.text }}</div></details>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- if s.shipping != blank -%}<div class="shipv"><span class="lab">Envío y devoluciones</span><div>{{ s.shipping }}</div></div>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+{%- if s.forr != blank -%}
+<section aria-labelledby="fp-{{ section.id }}">
+  <div class="hd-row"><h2 id="fp-{{ section.id }}" class="lab" style="margin: 0; font-size: 14px">Formulado para acompañar:</h2></div>
+  <div class="forrows">
+    {%- assign fr = s.forr | newline_to_br | split: '<br />' -%}
+    {%- for f in fr -%}{%- assign t = f | strip -%}{%- if t != '' -%}
+    {%- assign d = 'M10 38 C10 20 22 10 40 8 C38 26 28 38 10 38 Z M10 38 L28 20' -%}{%- assign tl = t | downcase -%}
+    {%- if tl contains 'estr' or tl contains 'calma' -%}{%- assign d = 'M8 16 C12 10 16 10 20 16 C24 22 28 22 32 16 C36 10 40 10 40 13 M8 25 C12 21.5 16 21.5 20 25 C24 28.5 28 28.5 32 25 C36 21.5 40 21.5 40 23.5 M8 34 L40 34' -%}{%- elsif tl contains 'sue' -%}{%- assign d = 'M7 23 C12 32 36 32 41 23 M11.5 28.5 L8.5 32.5 M17.5 31 L16 35.8 M24 31.8 L24 36.8 M30.5 31 L32 35.8 M36.5 28.5 L39.5 32.5 M30 8 H37 L30 16 H37' -%}{%- elsif tl contains 'nimo' -%}{%- assign d = 'M6 35 L42 35 M12.5 35 A11.5 11.5 0 0 1 35.5 35 M39.22 30.06 L44.92 28.2 M33.4 22.06 L36.93 17.2 M24 19 L24 13 M14.6 22.06 L11.07 17.2 M8.78 30.06 L3.08 28.2' -%}{%- elsif tl contains 'enfoque' or tl contains 'claridad' or tl contains 'memoria' -%}{%- assign d = 'M36 27 A15 15 0 1 1 21 12 M30 27 A9 9 0 1 1 21 18 M21 27 L40 8 M35 7 L40 8 L41 13' -%}{%- endif -%}
+    <div class="forrow"><div class="fic"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ d }}"></path></g></svg></div><div class="ftx">{{ t }}</div></div>
+    {%- endif -%}{%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+{%- if s.big != blank -%}
+<section class="row2" id="porcion" aria-label="Origen y porción">
+  <div class="cellimg origin">
+    {%- if s.origin_image != blank -%}{{ s.origin_image | image_url: width: 1400 | image_tag: loading: 'lazy' }}{%- elsif product.media[1] -%}{{ product.media[1] | image_url: width: 1400 | image_tag: loading: 'lazy' }}{%- endif -%}
+    <div class="frame"></div>
+    {%- if s.a1 != blank -%}<span class="anno" style="left: 56px; top: 64px"><span class="dotn"></span><i></i>{{ s.a1 }}</span>{%- endif -%}
+    {%- if s.a2 != blank -%}<span class="anno" style="left: 56px; bottom: 64px"><span class="dotn"></span><i></i>{{ s.a2 }}</span>{%- endif -%}
+  </div>
+  <div class="cell porc" style="justify-content: space-between">
+    <span class="lab">Lo que trae cada porción</span>
+    <div style="display: flex; flex-direction: column; gap: 8px"><span class="big">{{ s.big }}</span><span style="font-size: 18px">{{ s.big_text }}</span></div>
+    {%- if s.tab != blank -%}<div class="ftab">{%- assign tr = s.tab | newline_to_br | split: '<br />' -%}{%- for r in tr -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 1 -%}<div>{{ kv[0] }}</div><div>{{ kv[1] }}</div>{%- endif -%}{%- endfor -%}</div>{%- endif -%}
+    {%- if s.cmp != blank -%}
+    <span class="lab" style="margin-top: 8px">No todos los polvos son iguales</span>
+    <div class="cmpv" aria-label="Commons contra polvo común">
+      <div class="ch">Por día</div><div class="ch">Commons</div><div class="ch">Polvo común</div>
+      {%- assign cr = s.cmp | newline_to_br | split: '<br />' -%}{%- for r in cr -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}<div>{{ kv[0] }}</div><div class="cc">{{ kv[1] }}</div><div class="cx">{{ kv[2] }}</div>{%- endif -%}{%- endfor -%}
+    </div>
+    {%- endif -%}
+    {%- if s.tab_note != blank -%}<span class="small">{{ s.tab_note }}</span>{%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{%- if s.how != blank -%}
+<section aria-labelledby="ct-{{ section.id }}">
+  <div class="hd-row"><h2 id="ct-{{ section.id }}" class="disp h2">Cómo se toma.</h2>{%- if s.manual_link != blank -%}<a class="sq" href="{{ s.manual_link }}">Ver el manual</a>{%- endif -%}</div>
+  <div class="steps3">
+    {%- assign hr = s.how | newline_to_br | split: '<br />' -%}
+    {%- for r in hr -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 1 -%}<div><span class="lab" style="color: var(--ink2)">{{ kv[0] }}</span><span class="disp h3t">{{ kv[1] }}</span>{%- if kv[2] -%}<span class="small">{{ kv[2] }}</span>{%- endif -%}</div>{%- endif -%}{%- endfor -%}
+  </div>
+  {%- if s.weeks != blank -%}
+  <details class="wkacc"><summary class="ah"><span>Semana a semana</span><span aria-hidden="true">+</span></summary>
+    <div class="weeks"><span class="lab">Semana a semana</span><div class="wline">
+      {%- assign wr = s.weeks | newline_to_br | split: '<br />' -%}
+      {%- for r in wr -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 1 -%}<div class="wk{% if forloop.first %} on{% endif %}"><span class="disp h3t">{{ kv[0] }}</span><p>{{ kv[1] }}</p></div>{%- endif -%}{%- endfor -%}
+    </div></div>
+  </details>
+  {%- endif -%}
+</section>
+{%- endif -%}
+
+{%- liquid
+  assign life = 'cm-life-acostada.jpg'
+  if s.line_label contains 'Science'
+    assign life = 'cm-life-sonrisa.jpg'
+  endif
+  if product.handle contains 'magnesio'
+    assign life = 'cm-life-cama.jpg'
+  endif
+  if product.handle contains 'ashwagandha'
+    assign life = 'cm-life-corriendo.jpg'
+  endif
+-%}
+<div class="cm4"><section class="pband pb1 pb-txt" aria-hidden="true"><div class="pbt"><p class="disp h2">Sentirte bien también se nota.</p><span class="lab">In common with nature</span></div><div class="pbi">{%- if s.life_image != blank -%}{{ s.life_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- else -%}<img src="{{ life | asset_url }}" alt="" loading="lazy" width="1200" height="1500">{%- endif -%}</div></section></div>
+{%- if s.ev_word != blank -%}
+<section class="row2" id="evidencia" aria-labelledby="ev-{{ section.id }}">
+  <div class="cell" style="justify-content: space-between">
+    <span class="lab">Evidencia</span>
+    <h2 id="ev-{{ section.id }}" class="disp h2" style="max-width: 14ch">Lo que se ha estudiado.</h2>
+    
+  </div>
+  <div class="cell">
+    <div class="evc evx" style="min-height: 0">
+      <div class="evx-hd">{%- if s.ev_tag != blank -%}<span class="tag">{{ s.ev_tag }}</span>{%- endif -%}<h3 class="disp evword">{{ s.ev_word }}</h3></div>
+      {%- if s.ev_weeks != blank or s.ev_people != blank or s.ev_cite != blank -%}
+      <div class="evx-study">
+        <span class="lab">El estudio</span>
+        <dl>
+          {%- if s.ev_people != blank -%}<div><dt>Quiénes</dt><dd>{{ s.ev_people }}</dd></div>{%- endif -%}
+          {%- if s.ev_weeks != blank -%}<div><dt>Duración</dt><dd>{{ s.ev_weeks }} semanas</dd></div>{%- endif -%}
+        </dl>
+        {%- if s.ev_weeks != blank -%}
+        {%- assign wk = s.ev_weeks | plus: 0 -%}
+        <div class="segs" aria-hidden="true">{%- for i in (1..12) -%}<i class="s{% if i <= wk %} on{% endif %}"></i>{%- endfor -%}</div>
+        <div class="segl"><span>0</span><span>4</span><span>8</span><span>12 sem</span></div>
+        {%- endif -%}
+        <div class="evx-ft">{%- if s.ev_cite != blank -%}<span class="small">{{ s.ev_cite }}</span>{%- endif -%}{%- if s.ev_link != blank -%}<a class="evx-go" href="{{ s.ev_link }}" target="_blank" rel="noopener">Leer el estudio <span aria-hidden="true">↗</span></a>{%- endif -%}</div>
+      </div>
+      {%- endif -%}
+      {%- if s.ev_text != blank -%}<div class="evx-find"><span class="lab">Qué se encontró</span><p>{{ s.ev_text }}</p></div>{%- endif -%}
+      {%- if s.ev_more != blank -%}
+      <div class="evx-more"><span class="lab">Más estudios</span>
+        {%- assign em = s.ev_more | newline_to_br | split: '<br />' -%}
+        {%- for r in em -%}{%- assign kv = r | strip | split: '|' -%}{%- if kv.size > 2 -%}
+        <article class="evx-card"><p class="evx-cf">{{ kv[2] | strip }}</p><div class="evx-ft"><span class="small">{{ kv[0] | strip }}</span><a class="evx-go" href="{{ kv[1] | strip }}" target="_blank" rel="noopener">Leer el estudio <span aria-hidden="true">↗</span></a></div></article>
+        {%- endif -%}{%- endfor -%}
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- if s.prec != blank -%}
+<section class="prec" aria-labelledby="pr-{{ section.id }}">
+  <div style="display: flex; flex-direction: column; gap: 14px"><span class="lab">Antes de tomarlo</span><h2 id="pr-{{ section.id }}" class="disp h3t">Precauciones.</h2><a class="tlink" href="https://wa.me/525564299433" style="align-self: flex-start">Pregúntanos por WhatsApp</a></div>
+  <ul>
+    {%- assign pr = s.prec | newline_to_br | split: '<br />' -%}
+    {%- for c in pr -%}{%- assign t = c | strip -%}{%- if t != '' -%}<li><span class="pn">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="pt">{{ t }}</span></li>{%- endif -%}{%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+{%- if s.comps != blank -%}
+<section class="comp" id="combina" aria-labelledby="cmb-{{ section.id }}">
+  <div class="comph"><span class="sec-n">Combínalo</span><h2 id="cmb-{{ section.id }}" class="disp h2">Va bien con.</h2>{%- if s.comp_why != blank -%}<p class="small" style="margin: 0; max-width: 34ch">{{ s.comp_why }}</p>{%- endif -%}</div>
+  <div>
+    <div class="clist">
+      {%- for c in s.comps -%}
+      {%- assign cv = c.selected_or_first_available_variant -%}
+      <div class="ci">
+        <div class="cim">{%- if c.featured_image -%}{{ c.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', alt: c.title }}{%- endif -%}</div>
+        <div class="ctx"><span class="lab" style="color: var(--ink2)">{{ c.type }}</span><a class="cn" href="{{ c.url }}">{{ c.title }}</a></div>
+        <div class="cr"><span class="num">{{ cv.price | money_without_trailing_zeros }}</span><button type="button" class="cadd" data-comp="{{ cv.id }}">+ Agregar</button></div>
+      </div>
+      {%- endfor -%}
+    </div>
+    <div class="cfoot"><span class="cmsg">Suma 1 frasco de Botanicals o Science y ahorras 10% en los dos. Rituals no suman al descuento.</span><a class="tlink" href="/#protocolo">Arma tu protocolo</a>{%- if s.kit_label != blank -%}<a class="tlink" href="{{ s.kit_link }}">{{ s.kit_label }}</a>{%- endif -%}</div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- assign feed = product.metafields.loox.review_feed.value -%}
+{%- if feed.reviews.size > 0 or nnum > 0 -%}
+<section class="cmrv" id="resenas" aria-labelledby="rv-{{ section.id }}">
+  <div class="rvh">
+    <div><span class="lab">Reseñas</span><h2 id="rv-{{ section.id }}" class="disp h2">Lo que cambió en su día.</h2></div>
+    {%- if rnum > 0 -%}<div class="rvsum"><span class="rvbig">{{ rating | round: 1 }}</span><span><b class="rvst" aria-label="{{ rating }} de 5">★★★★★</b><span class="small">Reseñas verificadas</span></span></div>{%- endif -%}
+  </div>
+  {%- if feed.reviews.size > 0 -%}
+  <div class="rvg">
+    {%- comment -%} Destacadas: solo 4 y 5 estrellas; primero las que traen foto. {%- endcomment -%}
+    {%- assign shown = 0 -%}
+    {%- for pass in (1..2) -%}
+    {%- for r in feed.reviews -%}
+      {%- if shown >= 6 -%}{%- break -%}{%- endif -%}
+      {%- assign rr = r.rating | plus: 0 -%}
+      {%- if rr < 4 -%}{%- continue -%}{%- endif -%}
+      {%- if r.review.size < 15 -%}{%- continue -%}{%- endif -%}
+      {%- assign hasph = false -%}{%- for m in r.media -%}{%- if m.t == 'photo' -%}{%- assign hasph = true -%}{%- endif -%}{%- endfor -%}
+      {%- if pass == 1 and hasph == false -%}{%- continue -%}{%- endif -%}
+      {%- if pass == 2 and hasph -%}{%- continue -%}{%- endif -%}
+      {%- assign shown = shown | plus: 1 -%}
+      <article class="rvc">
+        <span class="rvst" aria-label="{{ r.rating }} de 5">{%- for i in (1..5) -%}{%- if i <= r.rating -%}★{%- else -%}<i>★</i>{%- endif -%}{%- endfor -%}</span>
+        <p>{{ r.review | escape | truncate: 280 }}</p>
+        {%- for m in r.media -%}{%- if m.t == 'photo' -%}<img src="https:{{ m.src }}" alt="Foto de la reseña de {{ r.author | escape }}" loading="lazy" width="{{ m.w }}" height="{{ m.h }}">{%- break -%}{%- endif -%}{%- endfor -%}
+        <span class="rva">{{ r.author | escape }}{% if r.verified %} · Compra verificada{% endif %}</span>
+      </article>
+    {%- endfor -%}
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+  <details class="rvall">
+    <summary><span class="sq">Ver todas las reseñas</span></summary>
+    <div id="looxReviews" data-product-id="{{ product.id }}" class="loox-reviews-default">{{ product.metafields.loox.reviews }}</div>
+  </details>
+</section>
+<style>
+#cmp-{{ section.id }} .cmrv{border-bottom:1px solid var(--rule);padding:48px 40px;display:flex;flex-direction:column;gap:28px}
+#cmp-{{ section.id }} .cmrv .rvh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+#cmp-{{ section.id }} .cmrv .rvh .lab{display:block;margin-bottom:10px}
+#cmp-{{ section.id }} .cmrv .rvsum{display:flex;align-items:center;gap:14px}
+#cmp-{{ section.id }} .cmrv .rvbig{font-family:Jost,sans-serif;font-size:48px;line-height:1}
+#cmp-{{ section.id }} .cmrv .rvsum>span:last-child{display:flex;flex-direction:column;gap:2px}
+#cmp-{{ section.id }} .cmrv .rvst{color:var(--ink);letter-spacing:2px;font-size:14px}
+#cmp-{{ section.id }} .cmrv .rvst i{font-style:normal;color:#DCDCD5}
+#cmp-{{ section.id }} .cmrv .rvg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+#cmp-{{ section.id }} .cmrv .rvc{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff}
+#cmp-{{ section.id }} .cmrv .rvc p{margin:0;font-size:15px;line-height:1.55}
+#cmp-{{ section.id }} .cmrv .rvc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;background:#EFEFEA}
+#cmp-{{ section.id }} .cmrv .rva{margin-top:auto;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+#cmp-{{ section.id }} .cmrv .rvall summary{list-style:none;cursor:pointer}
+#cmp-{{ section.id }} .cmrv .rvall summary::-webkit-details-marker{display:none}
+#cmp-{{ section.id }} .cmrv .rvall[open] summary{margin-bottom:20px}
+@media (max-width: 760px){
+  #cmp-{{ section.id }} .cmrv{padding:36px 20px}
+  #cmp-{{ section.id }} .cmrv .rvg{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+{%- endif -%}
+
+
+{%- assign faqs = section.blocks | where: 'type', 'faq' -%}
+{%- if faqs.size > 0 -%}
+<section class="row2" aria-labelledby="fq-{{ section.id }}">
+  <div class="cell yellow" style="gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start"><h2 id="fq-{{ section.id }}" class="disp h1">Preguntas frecuentes.</h2><a class="sq" href="https://wa.me/525564299433">Escríbenos por WhatsApp</a></div>
+    <div>
+      {%- for block in faqs -%}
+      <details class="fq" {{ block.shopify_attributes }}><summary class="fqb"><span>{{ block.settings.q }}</span><span aria-hidden="true">+</span></summary><div class="fqa">{{ block.settings.a }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="cellimg">{%- if s.faq_image != blank -%}{{ s.faq_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- elsif product.handle == 'azafran-1' -%}<img src="{{ 'cm-sci-post-2.jpg' | asset_url }}" alt="Flor de azafrán de cerca · Beyond what we see" loading="lazy" width="1080" height="1350" style="width:100%;height:100%;object-fit:cover">{%- elsif product.handle == 'magnesio-p-m' -%}<img src="{{ 'cm-sci-post-7.jpg' | asset_url }}" alt="Pétalos de cerca · Nature decoded" loading="lazy" width="1080" height="1350" style="width:100%;height:100%;object-fit:cover">{%- elsif product.media[2] -%}{{ product.media[2] | image_url: width: 1400 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}</div>
+</section>
+{%- endif -%}
+</div>
+</div>
+<style>
+  #cmp-{{ section.id }} details[open] > summary span[aria-hidden]{transform:rotate(45deg)}
+  #cmp-{{ section.id }} details > summary span[aria-hidden]{display:inline-block;transition:transform .2s}
+  #cmp-{{ section.id }} .ab{padding:0 0 18px;font-size:15px;line-height:1.55;color:var(--ink2)}
+  #cmp-{{ section.id }} .fqa{padding:0 0 18px}
+  #cmp-{{ section.id }} .ab ul{margin:0;padding-left:18px}
+  #cmp-{{ section.id }} .shipv{display:flex;flex-direction:column;gap:6px;padding:16px 0 0;font-size:14px;line-height:1.5;color:var(--ink2)}
+  #cmp-{{ section.id }} .shipv p{margin:0}
+  #cmp-{{ section.id }} .rpend b{opacity:.35}
+  #cmp-{{ section.id }} .rpend span{font-size:13px}
+  #cmp-{{ section.id }} .opt[disabled]{opacity:.45;cursor:not-allowed}
+  #cmp-{{ section.id }} .cadd.on{background:var(--ink);color:#fff}
+  #cmp-{{ section.id }} [hidden]{display:none !important}
+  #cmp-{{ section.id }} .evmore{display:flex;flex-direction:column;gap:12px;margin-top:8px;padding-top:16px;border-top:1px dotted var(--ink,#141a16)}
+  #cmp-{{ section.id }} .evmore ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  #cmp-{{ section.id }} .evmore li{display:flex;flex-direction:column;gap:4px}
+  #cmp-{{ section.id }} .evmore a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+</style>
+<script>
+(function(){
+  var root = document.getElementById('cmp-{{ section.id }}'); if (!root) return;
+  var vid = root.querySelector('[data-vid]'), plan = root.querySelector('[data-plan]');
+  var cta = root.querySelector('[data-cta]'), vol = root.querySelector('[data-vol]'), subben = root.querySelector('[data-subben]');
+  var price = '{{ cur.price | money_without_trailing_zeros }}', mode = 0;
+  function paint(){
+    root.querySelectorAll('[data-price]').forEach(function(e){ if (e.tagName !== 'BUTTON') e.textContent = price; });
+    if (cta) cta.textContent = (mode ? 'Suscribirme' : 'Agregar al carrito') + ' · ' + price;
+  }
+  root.querySelectorAll('.opt').forEach(function(b){ b.addEventListener('click', function(){
+    root.querySelectorAll('.opt').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    vid.value = b.dataset.v; price = b.dataset.price;
+    var l = root.querySelector('[data-optlabel]'); if (l) l.textContent = b.dataset.title;
+    if (vol) vol.hidden = !!b.dataset.carry;
+    var u = new URL(location.href); u.searchParams.set('variant', b.dataset.v); history.replaceState(null, '', u);
+    paint();
+  }); });
+  root.querySelectorAll('.pm').forEach(function(b){ b.addEventListener('click', function(){
+    root.querySelectorAll('.pm').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-checked','false'); });
+    b.classList.add('on'); b.setAttribute('aria-checked','true'); mode = +b.dataset.mode;
+    plan.value = mode ? (b.dataset.planId || '') : ''; if (subben) subben.hidden = !mode; paint();
+  }); });
+  function add(id, sp, btn){
+    var body = { items: [{ id: +id, quantity: 1 }] }; if (sp) body.items[0].selling_plan = +sp;
+    return fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
+      .then(function(r){ if (!r.ok) throw r; return r.json(); })
+      .then(function(){ if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart(); } else { location.href = '{{ routes.cart_url }}'; } })
+      .catch(function(){ location.href = '{{ routes.cart_url }}'; });
+  }
+  var form = root.querySelector('[data-form]');
+  if (form) form.addEventListener('submit', function(e){ e.preventDefault(); add(vid.value, plan.value); });
+  root.querySelectorAll('.sbbtn').forEach(function(b){ b.addEventListener('click', function(){ add(vid.value, plan.value); }); });
+  root.querySelectorAll('[data-comp]').forEach(function(b){ b.addEventListener('click', function(){
+    if (b.classList.contains('on')) return; b.classList.add('on'); b.textContent = '✓ Agregado'; add(b.dataset.comp);
+  }); });
+  var sel = root.querySelector('.opt.sel'); if (sel && vol) vol.hidden = !!sel.dataset.carry;
+})();
+</script>
+<style>/* tira de prueba (se oculta si la ficha trae la comparativa CRO) */
+body:has([data-cmpz-tira]) #cmp-{{ section.id }} .cm-prooft,body:has([data-cmpz-tira]) #cmp-{{ section.id }} .cm-prooflink{display:none !important}
+#cmp-{{ section.id }} .cm-prooft{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #141A16;border-bottom:1px solid #D9D6CC}
+#cmp-{{ section.id }} .cm-prooft>div{display:flex;flex-direction:column;gap:6px;padding:16px 14px 16px 0}
+#cmp-{{ section.id }} .cm-prooft>div+div{padding-left:14px;border-left:1px solid #D9D6CC}
+#cmp-{{ section.id }} .cm-prooft b{font-size:30px;line-height:1;font-weight:500;letter-spacing:-.01em}
+#cmp-{{ section.id }} .cm-prooft span{font-size:13px;line-height:1.4;color:#5A5F58}
+#cmp-{{ section.id }} #porcion{scroll-margin-top:90px}
+@media (max-width:749px){#cmp-{{ section.id }} .cm-prooft b{font-size:24px}#cmp-{{ section.id }} .cm-prooft>div{padding-right:8px}#cmp-{{ section.id }} .cm-prooft>div+div{padding-left:10px}}
+</style>
+<style>/* evidencia legible */
+#cmp-{{ section.id }} .evx{outline:0 !important;border:0 !important;padding:0 !important;background:transparent !important;gap:14px !important}
+#cmp-{{ section.id }} .evx-hd{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+#cmp-{{ section.id }} .evx-study{background:#fff;border:1px solid #D9D6CC;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+#cmp-{{ section.id }} .evx-study dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#cmp-{{ section.id }} .evx-study dt{font:500 11px/1.2 var(--fl,Figtree),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#5A5F58;margin-bottom:4px}
+#cmp-{{ section.id }} .evx-study dd{margin:0;font-size:16px;line-height:1.35}
+#cmp-{{ section.id }} .evx-find{background:#EFEBE3;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+#cmp-{{ section.id }} .evx-find p{margin:0;font-size:18px;line-height:1.5}
+#cmp-{{ section.id }} .evx-ft{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #E6E3DA}
+#cmp-{{ section.id }} .evx-ft .small{color:#5A5F58}
+#cmp-{{ section.id }} .evx-go{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid #141A16;border-radius:999px;font-size:14px;font-weight:500;color:#141A16;text-decoration:none;white-space:nowrap}
+#cmp-{{ section.id }} .evx-go:hover{background:#141A16;color:#fff}
+#cmp-{{ section.id }} .evx-more{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+#cmp-{{ section.id }} .evx-card{background:#fff;border:1px solid #D9D6CC;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+#cmp-{{ section.id }} .evx-cf{margin:0;font-size:16px;line-height:1.45;font-weight:500}
+@media (max-width:749px){#cmp-{{ section.id }} .evx-study,#cmp-{{ section.id }} .evx-find,#cmp-{{ section.id }} .evx-card{padding:16px}#cmp-{{ section.id }} .evx-find p{font-size:16px}}
+</style>
+{% schema %}
+{
+  "name": "Ficha Commons v5",
+  "tag": "section",
+  "class": "cm-product-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Compra"
+    },
+    {
+      "type": "text",
+      "id": "short_name",
+      "label": "Nombre corto (vacío = título del producto)"
+    },
+    {
+      "type": "text",
+      "id": "line_label",
+      "label": "Línea",
+      "default": "Commons Botanicals"
+    },
+    {
+      "type": "text",
+      "id": "sci",
+      "label": "Nombre científico / ingrediente"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Etiqueta en la foto"
+    },
+    {
+      "type": "text",
+      "id": "needs",
+      "label": "Necesidades (separadas por coma)"
+    },
+    {
+      "type": "textarea",
+      "id": "claim",
+      "label": "Frase principal"
+    },
+    {
+      "type": "text",
+      "id": "ev_quick",
+      "label": "Liga corta a la evidencia"
+    },
+    {
+      "type": "textarea",
+      "id": "ten",
+      "label": "En 10 segundos",
+      "info": "Una línea por dato: Clave: valor"
+    },
+    {
+      "type": "textarea",
+      "id": "opt_hints",
+      "label": "Texto bajo cada presentación",
+      "info": "Una línea: Nombre exacto de la variante|texto"
+    },
+    {
+      "type": "text",
+      "id": "sub_save",
+      "label": "Ahorro de suscripción",
+      "default": "−10% hoy · −15% desde el 2º envío"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_benefits",
+      "label": "Beneficios de suscripción",
+      "default": "Llega antes de que se acabe tu frasco\nMínimo 2 envíos; después pausas o cancelas cuando quieras\nNo se suma con el descuento por volumen ni con códigos"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_volume",
+      "label": "Mostrar descuento por volumen",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reviews_note",
+      "label": "Texto mientras no hay reseñas",
+      "default": "[Reseñas: las conecta Paul con la app]"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping",
+      "label": "Envío y devoluciones (a la vista)",
+      "default": "<p>Envío gratis desde $999; si no, $164. Llega en 3 a 6 días hábiles. Devoluciones dentro de 7 días hábiles con el producto sellado.</p>"
+    },
+    {
+      "type": "color",
+      "id": "product_color",
+      "label": "Color del producto"
+    },
+    {
+      "type": "header",
+      "content": "Formulado para"
+    },
+    {
+      "type": "textarea",
+      "id": "forr",
+      "label": "Formulado para acompañar",
+      "info": "Una línea por tema"
+    },
+    {
+      "type": "header",
+      "content": "Porción"
+    },
+    {
+      "type": "image_picker",
+      "id": "origin_image",
+      "label": "Foto de origen"
+    },
+    {
+      "type": "text",
+      "id": "a1",
+      "label": "Anotación 1"
+    },
+    {
+      "type": "text",
+      "id": "a2",
+      "label": "Anotación 2"
+    },
+    {
+      "type": "text",
+      "id": "big",
+      "label": "Cifra grande"
+    },
+    {
+      "type": "text",
+      "id": "big_text",
+      "label": "Texto de la cifra"
+    },
+    {
+      "type": "textarea",
+      "id": "tab",
+      "label": "Tabla de la porción",
+      "info": "Una línea: concepto|valor"
+    },
+    {
+      "type": "textarea",
+      "id": "cmp",
+      "label": "Comparación contra polvo común",
+      "info": "Una línea: concepto|Commons|polvo común"
+    },
+    {
+      "type": "text",
+      "id": "tab_note",
+      "label": "Nota bajo la tabla"
+    },
+    {
+      "type": "header",
+      "content": "Cómo se toma"
+    },
+    {
+      "type": "textarea",
+      "id": "how",
+      "label": "Pasos",
+      "info": "Una línea: título|valor|nota"
+    },
+    {
+      "type": "textarea",
+      "id": "weeks",
+      "label": "Semana a semana",
+      "info": "Una línea: semana|texto"
+    },
+    {
+      "type": "url",
+      "id": "manual_link",
+      "label": "Liga al manual"
+    },
+    {
+      "type": "header",
+      "content": "Evidencia"
+    },
+    {
+      "type": "text",
+      "id": "ev_tag",
+      "label": "Etiqueta"
+    },
+    {
+      "type": "text",
+      "id": "ev_word",
+      "label": "Palabra grande"
+    },
+    {
+      "type": "text",
+      "id": "ev_weeks",
+      "label": "Semanas de estudio"
+    },
+    {
+      "type": "text",
+      "id": "ev_people",
+      "label": "Personas en el estudio"
+    },
+    {
+      "type": "textarea",
+      "id": "ev_text",
+      "label": "Texto"
+    },
+    {
+      "type": "url",
+      "id": "ev_link",
+      "label": "Liga al estudio"
+    },
+    {
+      "type": "text",
+      "id": "ev_cite",
+      "label": "Cita"
+    },
+    {
+      "type": "textarea",
+      "id": "ev_more",
+      "label": "Más estudios",
+      "info": "Una línea por estudio: Autor año · Revista|https://link|Qué encontró"
+    },
+    {
+      "type": "header",
+      "content": "Precauciones y complementos"
+    },
+    {
+      "type": "textarea",
+      "id": "prec",
+      "label": "Precauciones",
+      "info": "Una por línea"
+    },
+    {
+      "type": "product_list",
+      "id": "comps",
+      "label": "Va bien con",
+      "limit": 3
+    },
+    {
+      "type": "text",
+      "id": "comp_why",
+      "label": "Por qué estos"
+    },
+    {
+      "type": "text",
+      "id": "kit_label",
+      "label": "Texto del kit"
+    },
+    {
+      "type": "url",
+      "id": "kit_link",
+      "label": "Liga del kit"
+    },
+    {
+      "type": "image_picker",
+      "id": "life_image",
+      "label": "Foto de ambiente (vacío = la de la línea)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "acc",
+      "name": "Acordeón",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto",
+          "info": "Si el título es Beneficios y lo dejas vacío, se usa la descripción del producto"
+        }
+      ]
+    },
+    {
+      "type": "nut",
+      "name": "Tabla nutrimental",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Tabla nutrimental"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto de la tabla"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "q",
+          "label": "Pregunta"
+        },
+        {
+          "type": "richtext",
+          "id": "a",
+          "label": "Respuesta"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

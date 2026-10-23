@@ -1,0 +1,145 @@
+{{ 'cm-pg-glosario.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+
+
+<!-- 1 · GLOSARIO -->
+<section class="gl-hero" aria-labelledby="gh">
+<div class="cell"><span class="lab">Glosario</span><h1 id="gh" class="disp h1" style="max-width: 11ch">Conoce cada planta.</h1></div>
+<div class="cell"><p class="sub">De dónde viene, qué parte usamos, qué activo trae nuestro extracto y para qué se ha usado.</p><div class="gl-search">Busca una planta</div></div>
+</section>
+<div class="gl-bar" role="tablist" aria-label="Familia"><button type="button" class="on" data-fam="" role="tab">Todas · 19</button><button type="button" class="" data-fam="Hongo" role="tab">Hongos · 6</button><button type="button" class="" data-fam="Hierba" role="tab">Hierbas · 13</button><span class="small">De la A a la Z</span></div>
+
+<!-- 2 · VISTA RÁPIDA -->
+<section class="gl-quick" aria-live="polite" aria-label="Planta seleccionada">
+<div class="gl-qc"><div class="qw" data-qc><div class="circ"><img src="{{ 'cm-gl-reishi-hongo.png' | asset_url }}" alt="Reishi" loading="lazy"></div></div></div>
+<div class="gl-qt">
+<div style="display: flex; flex-direction: column; gap: 6px"><span class="lab"><span data-q="fam">Hongo</span> · <span data-q="need">Estrés, sueño e inmunidad</span></span><h2 class="disp"><span data-q="n">Reishi</span></h2><span class="gl-lat"><span data-q="lat">Ganoderma lucidum</span></span></div>
+<div class="gl-facts"><div><span class="lab">Parte que usamos</span><b><span data-q="part">Cuerpo fructífero</span></b></div><div><span class="lab">Nuestro extracto</span><b><span data-q="act">25% betaglucanos</span></b></div><div><span class="lab">Formatos</span><b><span data-q="fmt">Cápsulas y polvo</span></b></div><div><span class="lab">Se ha usado para</span><b><span data-q="need">Sueño</span></b></div></div>
+<div class="gl-links"><a class="btn dark" href="/pages/reishi-ficha-tecnica" data-ficha>Ver la planta completa<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="tlink" href="/collections/tienda">Comprar <span data-q="n">Reishi</span></a></div>
+</div>
+</section>
+
+<!-- 3 · TODAS LAS PLANTAS -->
+<section aria-label="Plantas">
+<div class="gl-grid"><button type="button" class="gl-card" data-i="0" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-amla.jpg' | asset_url }}" alt="Amla" loading="lazy" width="800" height="800"></div></div><div class="nm"><b>Amla</b><span>Hierba · Defensas</span></div></button><button type="button" class="gl-card" data-i="1" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-ashwagandha.jpg' | asset_url }}" alt="Ashwagandha" loading="lazy"></div></div><div class="nm"><b>Ashwagandha</b><span>Hierba · Estrés</span></div></button><button type="button" class="gl-card" data-i="2" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-9517bdf511.jpg' | asset_url }}{%- endif -%}" alt="Astrágalo" loading="lazy"></div></div><div class="nm"><b>Astrágalo</b><span>Hierba · Defensas</span></div></button><button type="button" class="gl-card" data-i="3" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-bacopa.jpg' | asset_url }}" alt="Bacopa" loading="lazy" width="800" height="800"></div></div><div class="nm"><b>Bacopa</b><span>Hierba · Enfoque</span></div></button><button type="button" class="gl-card" data-i="4" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-391cf6d523.jpg' | asset_url }}{%- endif -%}" alt="Chaga" loading="lazy"></div></div><div class="nm"><b>Chaga</b><span>Hongo · Defensas</span></div></button><button type="button" class="gl-card" data-i="5" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_5 != blank -%}{{ section.settings.cm_img_5 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-8cb8cb38a3.jpg' | asset_url }}{%- endif -%}" alt="Cola de Pavo" loading="lazy"></div></div><div class="nm"><b>Cola de Pavo</b><span>Hongo · Defensas</span></div></button><button type="button" class="gl-card" data-i="6" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_6 != blank -%}{{ section.settings.cm_img_6 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-54f283793e.jpg' | asset_url }}{%- endif -%}" alt="Cordyceps" loading="lazy"></div></div><div class="nm"><b>Cordyceps</b><span>Hongo · Energía</span></div></button><button type="button" class="gl-card" data-i="7" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_7 != blank -%}{{ section.settings.cm_img_7 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-7f1e263174.jpg' | asset_url }}{%- endif -%}" alt="Eleuthero" loading="lazy"></div></div><div class="nm"><b>Eleuthero</b><span>Hierba · Energía</span></div></button><button type="button" class="gl-card" data-i="8" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_8 != blank -%}{{ section.settings.cm_img_8 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-1cf256e62b.jpg' | asset_url }}{%- endif -%}" alt="Ginkgo" loading="lazy"></div></div><div class="nm"><b>Ginkgo</b><span>Hierba · Enfoque</span></div></button><button type="button" class="gl-card" data-i="9" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-gotukola.jpg' | asset_url }}" alt="Gotu Kola" loading="lazy" width="800" height="800"></div></div><div class="nm"><b>Gotu Kola</b><span>Hierba · Claridad</span></div></button><button type="button" class="gl-card" data-i="10" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_9 != blank -%}{{ section.settings.cm_img_9 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-ce67a95d00.jpg' | asset_url }}{%- endif -%}" alt="Maitake" loading="lazy"></div></div><div class="nm"><b>Maitake</b><span>Hongo · Metabolismo</span></div></button><button type="button" class="gl-card" data-i="11" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_10 != blank -%}{{ section.settings.cm_img_10 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-86ba7b8ff3.jpg' | asset_url }}{%- endif -%}" alt="Melena de León" loading="lazy"></div></div><div class="nm"><b>Melena de León</b><span>Hongo · Enfoque</span></div></button><button type="button" class="gl-card" data-i="12" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-mucuna.jpg' | asset_url }}" alt="Mucuna" loading="lazy" width="800" height="800"></div></div><div class="nm"><b>Mucuna</b><span>Hierba · Ánimo</span></div></button><button type="button" class="gl-card on" data-i="13" data-fam="Hongo"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-reishi.jpg' | asset_url }}" alt="Reishi" loading="lazy"></div></div><div class="nm"><b>Reishi</b><span>Hongo · Sueño</span></div></button><button type="button" class="gl-card" data-i="14" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_12 != blank -%}{{ section.settings.cm_img_12 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-db0267e016.jpg' | asset_url }}{%- endif -%}" alt="Rhodiola" loading="lazy"></div></div><div class="nm"><b>Rhodiola</b><span>Hierba · Energía</span></div></button><button type="button" class="gl-card" data-i="15" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_13 != blank -%}{{ section.settings.cm_img_13 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-68b928fe5f.jpg' | asset_url }}{%- endif -%}" alt="Schisandra" loading="lazy"></div></div><div class="nm"><b>Schisandra</b><span>Hierba · Balance</span></div></button><button type="button" class="gl-card" data-i="16" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_14 != blank -%}{{ section.settings.cm_img_14 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-2b1b2191c2.jpg' | asset_url }}{%- endif -%}" alt="Shatavari" loading="lazy"></div></div><div class="nm"><b>Shatavari</b><span>Hierba · Sistema hormonal</span></div></button><button type="button" class="gl-card" data-i="17" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{%- if section.settings.cm_img_15 != blank -%}{{ section.settings.cm_img_15 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-4d303cdac8.jpg' | asset_url }}{%- endif -%}" alt="Tulsi" loading="lazy"></div></div><div class="nm"><b>Tulsi</b><span>Hierba · Estrés</span></div></button><button type="button" class="gl-card" data-i="18" data-fam="Hierba"><div class="gph"><div class="circ"><img src="{{ 'cm-gl-vitex.jpg' | asset_url }}" alt="Vitex" loading="lazy" width="800" height="800"></div></div><div class="nm"><b>Vitex</b><span>Hierba · Sistema hormonal</span></div></button></div>
+</section>
+
+
+</div>
+</div>
+<script>
+(function(){
+var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
+var D = [{"href": "/pages/amla-ficha-tecnica", "n": "Amla", "lat": "Phyllanthus emblica", "fam": "Hierba", "need": "Defensas", "part": "Fruto", "act": "—", "fmt": "Polvo"}, {"href": "/pages/ashwagandha-ficha-tecnica", "n": "Ashwagandha", "lat": "Withania somnifera", "fam": "Hierba", "need": "Estrés", "part": "Raíz", "act": "5% withanólidos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/astragalo-ficha-tecnica", "n": "Astrágalo", "lat": "Astragalus membranaceus", "fam": "Hierba", "need": "Defensas", "part": "Raíz", "act": "10:1", "fmt": "Polvo"}, {"href": "/pages/bacopa-ficha-tecnica", "n": "Bacopa", "lat": "Bacopa monnieri", "fam": "Hierba", "need": "Enfoque", "part": "Planta entera", "act": "50% bacósidos", "fmt": "Cápsulas, con Ginkgo"}, {"href": "/pages/chaga-ficha-tecnica", "n": "Chaga", "lat": "Inonotus obliquus", "fam": "Hongo", "need": "Defensas", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/cola-de-pavo-ficha-tecnica", "n": "Cola de Pavo", "lat": "Trametes versicolor", "fam": "Hongo", "need": "Defensas", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/cordiceps-ficha-tecnica", "n": "Cordyceps", "lat": "Cordyceps militaris", "fam": "Hongo", "need": "Energía", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/eleuthero-ficha-tecnica", "n": "Eleuthero", "lat": "Eleutherococcus senticosus", "fam": "Hierba", "need": "Energía", "part": "Raíz", "act": "0.8% eleuterósidos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/gingko-ficha-tecnica", "n": "Ginkgo", "lat": "Ginkgo biloba", "fam": "Hierba", "need": "Enfoque", "part": "Hoja", "act": "24%", "fmt": "Cápsulas, con Bacopa"}, {"href": "/pages/gotu-kola-ficha-tecnica", "n": "Gotu Kola", "lat": "Centella asiatica", "fam": "Hierba", "need": "Claridad", "part": "Hoja", "act": "—", "fmt": "Cápsulas y polvo"}, {"href": "/pages/maitake-ficha-tecnica", "n": "Maitake", "lat": "Grifola frondosa", "fam": "Hongo", "need": "Metabolismo", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas"}, {"href": "/pages/melena-de-leon-que-es", "n": "Melena de León", "lat": "Hericium erinaceus", "fam": "Hongo", "need": "Enfoque", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/mucuna-ficha-tecnica", "n": "Mucuna", "lat": "Mucuna pruriens", "fam": "Hierba", "need": "Ánimo", "part": "Semilla", "act": "20% L-dopa", "fmt": "Cápsulas"}, {"href": "/pages/reishi-ficha-tecnica", "n": "Reishi", "lat": "Ganoderma lucidum", "fam": "Hongo", "need": "Estrés, sueño e inmunidad", "part": "Cuerpo fructífero", "act": "25% betaglucanos", "fmt": "Cápsulas y polvo"}, {"href": "/pages/rhodiola-ficha-tecnica", "n": "Rhodiola", "lat": "Rhodiola rosea", "fam": "Hierba", "need": "Energía", "part": "Raíz", "act": "3% rosavinas · 1% salidrosida", "fmt": "Cápsulas y polvo"}, {"href": "/pages/schisandra-ficha-tecnica", "n": "Schisandra", "lat": "Schisandra chinensis", "fam": "Hierba", "need": "Balance", "part": "Fruto", "act": "10:1", "fmt": "Cápsulas y polvo"}, {"href": "/pages/shatavari-ficha-tecnica", "n": "Shatavari", "lat": "Asparagus racemosus", "fam": "Hierba", "need": "Sistema hormonal", "part": "Raíz", "act": "4:1", "fmt": "Cápsulas y polvo"}, {"href": "/pages/tulsi", "n": "Tulsi", "lat": "Ocimum tenuiflorum", "fam": "Hierba", "need": "Estrés", "part": "Hoja", "act": "10:1", "fmt": "Cápsulas y polvo"}, {"href": "/pages/vitex-adaptogeno", "n": "Vitex", "lat": "Vitex agnus-castus", "fam": "Hierba", "need": "Sistema hormonal", "part": "Fruto", "act": "0.5%", "fmt": "Cápsulas"}];
+var cur = D.findIndex(function(d){ return d.n === 'Reishi'; });
+function sel(c){
+  var i = +c.dataset.i, d = D[i]; cur = i;
+  root.querySelectorAll('.gl-card').forEach(function(x){ x.classList.toggle('on', x === c); });
+  root.querySelectorAll('[data-q]').forEach(function(e){ e.textContent = d[e.dataset.q]; });
+  var fh = root.querySelector('[data-ficha]'); if (fh) { fh.hidden = !d.href; if (d.href) fh.href = d.href; }
+  var qc = root.querySelector('[data-qc]'); if (qc) qc.innerHTML = c.querySelector('.circ').outerHTML;
+}
+root.querySelectorAll('.gl-card').forEach(function(c){ c.addEventListener('click', function(){ var d = D[+c.dataset.i]; if (d && d.href) { location.href = d.href; return; } sel(c); var q = root.querySelector('.gl-quick'); if (q && q.getBoundingClientRect().top < 0) q.scrollIntoView({ behavior: 'smooth' }); }); });
+var qcw = root.querySelector('[data-qc]'); if (qcw) { qcw.style.cursor = 'pointer'; qcw.addEventListener('click', function(){ var d = D[cur]; if (d && d.href) location.href = d.href; }); }
+root.querySelectorAll('[data-fam]').forEach(function(b){ if (b.classList.contains('gl-card')) return; b.addEventListener('click', function(){
+  root.querySelectorAll('.gl-bar [data-fam]').forEach(function(x){ x.classList.toggle('on', x === b); });
+  root.querySelectorAll('.gl-card').forEach(function(c){ c.hidden = !!b.dataset.fam && c.dataset.fam !== b.dataset.fam; });
+}); });
+(function(){ var want = new URLSearchParams(location.search).get('planta'); if (!want) return;
+  var norm = function(t){ return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, '-'); };
+  var i = D.findIndex(function(d){ return norm(d.n) === norm(want); }); if (i < 0) return;
+  var c = root.querySelector('.gl-card[data-i="' + i + '"]'); if (!c) return; sel(c);
+  var q = root.querySelector('.gl-quick'); if (q) setTimeout(function(){ q.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+})();
+})();
+</script>
+<style>/* glosario círculos */ .cmpg .gl-card .circ{border-radius:999px !important;background:#E9E6DD !important} .cmpg .gl-card .circ img{object-fit:cover !important}</style>
+{%- comment -%} v5 · glosario {%- endcomment -%}
+{% schema %}
+{
+  "name": "Glosario v5",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Reishi"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_2",
+      "label": "Foto 2 · Ashwagandha"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_3",
+      "label": "Foto 3 · Astrágalo"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_4",
+      "label": "Foto 4 · Chaga"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_5",
+      "label": "Foto 5 · Cola de Pavo"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_6",
+      "label": "Foto 6 · Cordyceps"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_7",
+      "label": "Foto 7 · Eleuthero"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_8",
+      "label": "Foto 8 · Ginkgo"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_9",
+      "label": "Foto 9 · Maitake"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_10",
+      "label": "Foto 10 · Melena de León"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_11",
+      "label": "Foto 11 · Reishi"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_12",
+      "label": "Foto 12 · Rhodiola"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_13",
+      "label": "Foto 13 · Schisandra"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_14",
+      "label": "Foto 14 · Shatavari"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_15",
+      "label": "Foto 15 · Tulsi"
+    }
+  ]
+}
+{% endschema %}
