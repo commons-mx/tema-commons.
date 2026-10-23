@@ -1,0 +1,301 @@
+{{ 'cm-pg-science-v51.css' | asset_url | stylesheet_tag }}
+<div class="cmpg" id="cmpg-{{ section.id }}">
+<div class="v4 tA acY">
+
+<div class="sbar2"><span><b></b>Commons Science</span><span>Fórmulas con ingredientes estudiados</span><span>Nature, decoded</span></div>
+
+<!-- 1 · HERO -->
+<section class="shero" aria-labelledby="sh">
+<div class="st">
+<span class="sec-n">Commons Science · nuestra línea nueva</span>
+<h1 id="sh" class="disp h1 nd">Nature, decoded.</h1>
+<p class="disp h3t" style="margin:0">La naturaleza, descifrada: fórmulas con ingredientes estudiados.</p>
+<p class="sub" style="max-width: 40ch">Ingredientes de patente, en la dosis que se usó en los estudios clínicos. Para cuando buscas algo específico: ánimo, descanso y, muy pronto, glucosa.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center"><a class="btn dark" href="#formulas">Ver las fórmulas<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a><a class="sq" href="#evidencia">Cómo lo sabemos</a></div>
+</div>
+<div class="si sphoto"><div class="ffr"></div><img src="{%- if section.settings.cm_img_1 != blank -%}{{ section.settings.cm_img_1 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-petri.jpg' | asset_url }}{%- endif -%}" loading="eager" alt="Manos con guantes sostienen una caja de Petri con estigmas de azafrán"></picture><span class="fcap"><span>Crocus sativus L.</span><span>→ Affron®</span></span></div>
+</section>
+
+
+
+<!-- 3 · FÓRMULAS -->
+<section id="formulas" aria-labelledby="fm">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Las fórmulas</span><h2 id="fm" class="disp h2">Elige por lo que buscas.</h2></div></div>
+<div class="fmgrid">
+<article class="card"><div class="ph"><a href="/products/azafran-1" aria-label="Ver Azafrán" style="position:absolute;inset:0;display:block"><img class="prod" src="{%- if section.settings.cm_img_2 != blank -%}{{ section.settings.cm_img_2 | image_url: width: 2000 }}{%- else -%}{{ 'cm-b-25c434e5af.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Lata de Azafrán Commons Science"></a><span class="badge">SC-001 · Nuevo</span></div>
+<div class="cardrow"><div><span class="lab ctag">Para el ánimo</span><h3 class="cname"><a href="/products/azafran-1" style="color:inherit;text-decoration:none">Azafrán</a></h3><span class="fmkey">Affron® · 28 mg</span><p class="fmben">Extracto de azafrán estudiado por su relación con el estado de ánimo, el estrés y la calidad del sueño.<span class="regv"></span></p><div class="cmeta">$990 · 60 cápsulas · $16.50 por porción</div></div><button type="button" class="cart" data-add="67173285855405" aria-label="Agregar Azafrán al carrito"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></button></div></article>
+<article class="card"><div class="ph"><a href="/products/magnesio-p-m" aria-label="Ver Magnesio P.M." style="position:absolute;inset:0;display:block"><img class="prod" src="{%- if section.settings.cm_img_3 != blank -%}{{ section.settings.cm_img_3 | image_url: width: 2000 }}{%- else -%}{{ 'cm-magnesio-frasco.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Lata de Magnesio P.M. Commons Science"></a><span class="badge">SC-002 · Nuevo</span></div>
+<div class="cardrow"><div><span class="lab ctag">Para dormir mejor</span><h3 class="cname"><a href="/products/magnesio-p-m" style="color:inherit;text-decoration:none">Magnesio P.M.</a></h3><span class="fmkey">Bisglicinato · glicina · apigenina</span><p class="fmben">Una fórmula desarrollada para acompañar el descanso nocturno.<span class="regv"></span></p><div class="cmeta">$1,150 · polvo 450 g · sin melatonina</div></div><button type="button" class="cart" data-add="67173286117549" aria-label="Agregar Magnesio P.M. al carrito"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></button></div></article>
+<article class="soonc"><div class="ph sph"><img src="{{ 'cm-sci-pronto.jpg' | asset_url }}" alt="Lata oscura de Commons Science con gotas de agua · lo que sigue" loading="lazy" width="1080" height="1350"></div><div><span class="lab ctag">Próximamente</span><h3 class="cname">Glucose Response</h3><div class="cmeta">SC-003 · Reducose®, Eriomin® y cromo</div>{%- if section.settings.logo_reducose != blank or section.settings.logo_eriomin != blank -%}<div class="soonlogos">{%- if section.settings.logo_reducose != blank -%}{{ section.settings.logo_reducose | image_url: height: 80 | image_tag: alt: 'Reducose®', style: 'height:18px;width:auto' }}{%- endif -%}{%- if section.settings.logo_eriomin != blank -%}{{ section.settings.logo_eriomin | image_url: height: 80 | image_tag: alt: 'Eriomin®', style: 'height:18px;width:auto' }}{%- endif -%}</div>{%- endif -%}</div></article>
+</div>
+</section>
+
+<!-- 1b · INGREDIENTES DE PATENTE -->
+
+
+<section class="ndx" aria-labelledby="ndh">
+<div class="ndx-a"><img src="{{ 'cm-sci-crocus.jpg' | asset_url }}" alt="Planta de azafrán con sus flores moradas y la raíz en tierra" loading="lazy" width="1080" height="1920"></div>
+<div class="ndx-b">
+<div class="ndx-t"><span class="sec-n">Nature, decoded</span><p id="ndh" class="disp h2">Empieza en una flor.<br>Termina en una dosis exacta.</p><p class="small">De la planta tomamos solo lo que se estudió, y en la cantidad que se usó en los estudios.</p></div>
+<div class="ndx-c"><figure class="fflask"><div class="fi"><img src="{{ 'cm-b-e4e505fc32.png' | asset_url }}" alt="Flor de azafrán dentro de un matraz de laboratorio" loading="lazy" width="901" height="1400"></div><figcaption>001. La flor</figcaption></figure><figure><div class="fi"><img src="{{ 'cm-sci-estigmas.jpg' | asset_url }}" alt="Tres estigmas de azafrán" loading="lazy" width="1080" height="1350"></div><figcaption>002. El estigma</figcaption></figure><figure><div class="fi"><img src="{{ 'cm-sci-micro.jpg' | asset_url }}" alt="Estigmas de azafrán bajo el microscopio" loading="lazy" width="1080" height="1350"></div><figcaption>003. La medida</figcaption></figure></div>
+</div>
+</section>
+<!-- 3 · DECODED: EL INGREDIENTE Y SU DOSIS -->
+<section id="evidencia" aria-labelledby="dc">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Etiqueta abierta</span><h2 id="dc" class="disp h2" style="max-width: 18ch">Lo que lleva y lo que se ha estudiado.</h2><p class="small" style="margin:0;max-width:52ch">Sin mezclas secretas: el ingrediente y la dosis que se usaron en los estudios, a la vista.</p></div></div>
+<div class="dec3">
+<div class="dc"><div class="dimg wh"><img src="{%- if section.settings.cm_img_4 != blank -%}{{ section.settings.cm_img_4 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-estigma-sq.jpg' | asset_url }}{%- endif -%}" class="dfull" loading="lazy" alt="Estigmas de azafrán"></div><div class="dtx"><span class="dn">28 mg</span><span class="dk">Affron® · estigma de azafrán</span><span class="small" style="display:block;margin:6px 0 10px">Estudiado en estado de ánimo, estrés y calidad del sueño · estudios de 8 a 12 semanas</span><a class="tlink" href="/products/azafran-1">Ver Azafrán</a></div><details class="dlab"><summary>Todo lo que lleva, y cuánto<span class="dplus" aria-hidden="true">+</span></summary><div class="otab"><div class="ohd"><span>Azafrán</span><span>Por porción · 1 cápsula</span></div><div class="orow"><span>Extracto de azafrán Affron®</span><span class="num">28 mg</span></div><div class="orow"><span>Cápsulas por lata</span><span class="num">60</span></div><div class="orow"><span>Rinde</span><span class="num">2 meses</span></div><div class="orow"><span>Excipientes</span><span class="num">Ver etiqueta</span></div></div><span class="small dnote"></span></details></div>
+<div class="dc"><div class="dimg wh"><img src="{%- if section.settings.cm_img_5 != blank -%}{{ section.settings.cm_img_5 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-cristal.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Cristal de magnesio"></div><div class="dtx"><span class="dn">200 mg</span><span class="dk">Magnesio · glicina 3 g · apigenina 50 mg</span><span class="small" style="display:block;margin:6px 0 10px">Cada ingrediente con estudios en descanso y relajación</span><a class="tlink" href="/products/magnesio-p-m">Ver Magnesio P.M.</a></div><details class="dlab"><summary>Todo lo que lleva, y cuánto<span class="dplus" aria-hidden="true">+</span></summary><div class="otab"><div class="ohd"><span>Magnesio P.M.</span><span>Por porción · 10 g</span></div><div class="orow"><span>Trimagnesio (bisglicinato, treonato, malato), elemental</span><span class="num">200 mg</span></div><div class="orow"><span>Glicina</span><span class="num">3 g</span></div><div class="orow"><span>L-teanina</span><span class="num">200 mg</span></div><div class="orow"><span>Apigenina (manzanilla al 20%)</span><span class="num">50 mg</span></div><div class="orow"><span>Vitamina B6</span><span class="num">Sí</span></div></div><span class="small dnote">Lata de 450 g · 45 porciones de 10 g (2 cucharadas de 5 g). Endulzado con alulosa y stevia.</span></details></div>
+</div>
+<div style="padding:24px 40px"><a class="sq" href="/pages/nuestra-ciencia">Ver la biblioteca de evidencia</a></div>
+</section>
+
+
+
+<!-- 4b · DESIGNED FOR HUMAN SYSTEMS (empaque) -->
+
+
+<section class="patents" aria-labelledby="pt">
+<div class="pthd"><span class="sec-n">De su fabricante original</span><h2 id="pt" class="disp h3t">Ingredientes de patente.</h2><p class="small" style="margin:0;max-width:52ch">Cada uno viene de su fabricante original, con sus propios estudios clínicos.</p></div>
+<div class="ptrow"><div class="pti">{%- if section.settings.logo_affron != blank -%}{{ section.settings.logo_affron | image_url: height: 120 | image_tag: alt: 'Affron®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Affron®</span>{%- endif -%}<span class="small">En Azafrán · SC-001</span></div><div class="pti">{%- if section.settings.logo_reducose != blank -%}{{ section.settings.logo_reducose | image_url: height: 120 | image_tag: alt: 'Reducose®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Reducose®</span>{%- endif -%}<span class="small">En Glucose Response · SC-003</span></div><div class="pti">{%- if section.settings.logo_eriomin != blank -%}{{ section.settings.logo_eriomin | image_url: height: 120 | image_tag: alt: 'Eriomin®', class: 'plogo', style: 'height:28px;width:auto' }}{%- else -%}<span class="pword">Eriomin®</span>{%- endif -%}<span class="small">En Glucose Response · SC-003</span></div></div>
+<span class="small ptlegal">{{ section.settings.logos_legal }}</span>
+</section>
+<section class="pack" aria-labelledby="pk">
+<div class="pkimg"><img src="{%- if section.settings.cm_img_6 != blank -%}{{ section.settings.cm_img_6 | image_url: width: 2000 }}{%- else -%}{{ 'cm-sci-azafran-red.jpg' | asset_url }}{%- endif -%}" loading="lazy" alt="Hebras de azafrán sostenidas por una pinza: It starts in red"></div>
+<div class="pktx">
+<span class="sec-n">Lo verás en cada etiqueta</span>
+<h2 id="pk" class="disp h2" style="max-width: 16ch">Designed for human systems.</h2>
+<p class="sub" style="max-width: 46ch">Diseñado para cómo funciona tu cuerpo. Cada ingrediente tiene una razón de estar aquí, en la cantidad que se estudió, con el lote y la dosis a la vista.</p>
+<span class="dpill">Lote · ingrediente · dosis</span>
+</div>
+</section>
+<!-- 1a · SCIENCE O BOTANICALS -->
+<section class="sbcmp" aria-labelledby="sb">
+<div class="sbh"><span class="sec-n">¿Science o Botanicals?</span><h2 id="sb" class="disp h2">Dos formas de acompañarte.</h2><p class="small" style="margin:0;max-width:48ch">Se combinan: muchas personas toman un adaptógeno de Botanicals y una fórmula de Science.</p></div>
+<div class="sbt"><div class="sbr sbhd"><span></span><b><i style="background:#CDBDF0"></i>Botanicals</b><b><i style="background:#DFF68F"></i>Science</b></div><div class="sbr"><span>Qué es</span><p>Plantas, raíces y hongos completos, en extracto estandarizado.</p><p>Un ingrediente de patente, aislado y medido.</p></div><div class="sbr"><span>La evidencia</span><p>Siglos de uso tradicional y estudios del activo.</p><p>Estudios clínicos de ese mismo ingrediente.</p></div><div class="sbr"><span>La dosis</span><p>Empiezas bajo y ajustas, con descansos.</p><p>Fija: la que se usó en los estudios.</p></div><div class="sbr"><span>Elígelo si…</span><p>Buscas acompañar tu bienestar en general.</p><p>Buscas algo específico: ánimo o descanso.</p></div></div>
+<div class="sbm"><div class="sbmc"><b><i style="background:#CDBDF0"></i>Botanicals</b><div><span>Qué es</span><p>La planta o el hongo completo</p></div><div><span>Evidencia</span><p>Uso tradicional y estudios</p></div><div><span>Dosis</span><p>Empiezas bajo y ajustas</p></div><div><span>Para</span><p>Tu bienestar en general</p></div></div><div class="sbmc"><b><i style="background:#DFF68F"></i>Science</b><div><span>Qué es</span><p>Un ingrediente de patente</p></div><div><span>Evidencia</span><p>Estudios clínicos</p></div><div><span>Dosis</span><p>Fija, la de los estudios</p></div><div><span>Para</span><p>Algo específico: ánimo o descanso</p></div></div></div>
+<a class="tlink" href="/pages/botanicals" style="align-self:flex-start">Conoce Botanicals</a>
+</section>
+<section class="scomb" aria-labelledby="cb"><div><span class="sec-n">Combínalo</span><h2 id="cb" class="disp h3t">Science y Botanicals se toman juntos.</h2><p class="small" style="margin:0">Por ejemplo: Azafrán en la mañana y Reishi en la noche.</p></div><div class="scbr"><div class="dchips"><span><b>−10%</b>2 productos</span><span class="top"><b>−15%</b>3 o más</span></div><span class="small" style="display:block;margin-top:6px">En Science el descuento es de 10%.</span><a class="tlink" href="/#protocolo">Arma tu protocolo</a></div></section>
+<!-- 6 · QUIZ (franja) -->
+<section class="scif" aria-labelledby="sfh">
+<div class="hd-row"><div style="display: flex; flex-direction: column; gap: 14px"><span class="sec-n">Commons Science</span><h2 id="sfh" class="disp h2">Curiosity meets science.</h2></div></div>
+<div class="scifeed"><figure><img src="{{ 'cm-sci-post-1.jpg' | asset_url }}" alt="Curiosity meets science · gotero, estigmas y flor de azafrán" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-2.jpg' | asset_url }}" alt="Beyond what we see · flor de azafrán de cerca" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-3.jpg' | asset_url }}" alt="Nature decoded · flores de azafrán en charola de laboratorio" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-4.jpg' | asset_url }}" alt="Nature is our starting point · cápsulas sobre musgo" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-5.jpg' | asset_url }}" alt="Science reveals its potential · flores en luz verde" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-6.jpg' | asset_url }}" alt="There is more to nature · flor y estigmas de azafrán" loading="lazy" width="1080" height="1350"></figure><figure><img src="{{ 'cm-sci-post-7.jpg' | asset_url }}" alt="Nature decoded · pétalos de cerca" loading="lazy" width="1080" height="1350"></figure></div>
+</section>
+<section class="qstrip yellow" aria-label="Quiz"><div style="display: flex; flex-direction: column; gap: 6px"><span class="lab">Quiz · 3 minutos</span><span class="qs">¿No sabes cuál es tu fórmula?</span></div><a class="btn dark" href="/pages/quiz-commons">Encuentra tu Commons<span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a></section>
+
+
+</div>
+</div>
+<script>
+(function(){
+var root = document.getElementById('cmpg-{{ section.id }}'); if (!root) return;
+root.querySelectorAll('[data-lab]').forEach(function(x){ x.addEventListener('click', function(){ var i = x.dataset.lab;
+  root.querySelectorAll('[data-lab]').forEach(function(y){ y.classList.toggle('on', y === x); });
+  root.querySelectorAll('[data-labp]').forEach(function(p){ p.hidden = p.dataset.labp !== i; }); }); });
+root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('click', function(){ b.disabled = true;
+  fetch('/cart/add.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: +b.dataset.add, quantity: 1 }] }) })
+  .then(function(r){ if (!r.ok) throw r; b.disabled = false; b.classList.add('on'); if (window.Alpine && Alpine.store('xMiniCart')) { Alpine.store('xMiniCart').reLoad && Alpine.store('xMiniCart').reLoad(); Alpine.store('xMiniCart').openCart(); } else { location.href = '/cart'; } })
+  .catch(function(){ location.href = '/cart'; }); }); });
+})();
+</script>
+{%- comment -%} prueba · science-v6 {%- endcomment -%}
+<style>
+#cmpg-{{ section.id }} .natb .ncap{position:absolute;inset:auto;right:12%;top:50%;transform:translateY(-50%) rotate(14deg);width:auto;height:auto;z-index:1;pointer-events:none}
+#cmpg-{{ section.id }} .natb .ncap img{position:static;width:auto;height:400px;object-fit:contain;filter:drop-shadow(0 24px 28px rgba(20,24,10,.35))}
+@media (max-width:760px){#cmpg-{{ section.id }} .natb{align-items:flex-end;padding-top:150px}#cmpg-{{ section.id }} .natb .ncap{right:auto;left:50%;top:40px;transform:translateX(-50%) rotate(-8deg)}#cmpg-{{ section.id }} .natb .ncap img{height:auto;width:270px}}
+#cmpg-{{ section.id }} .sbm{display:none}
+@media (max-width:760px){#cmpg-{{ section.id }} .sbt{display:none}#cmpg-{{ section.id }} .sbm{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#cmpg-{{ section.id }} .sbmc{background:#F7F6F2;border:1px solid #DDD8CC;padding:14px 12px;display:flex;flex-direction:column;gap:10px}
+#cmpg-{{ section.id }} .sbmc b{font-weight:500;font-size:16px;display:flex;align-items:center;gap:8px}#cmpg-{{ section.id }} .sbmc b i{width:10px;height:10px;border-radius:99px;display:inline-block}
+#cmpg-{{ section.id }} .sbmc span{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+#cmpg-{{ section.id }} .sbmc p{margin:2px 0 0;font-size:14px;line-height:1.35}}
+#cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:48px 24px 64px}
+@media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:250px !important}#cmpg-{{ section.id }} .shero .si.wh img.hcap{padding:36px 32px 52px}}
+@media (max-width:760px){#cmpg-{{ section.id }} .shero .si{min-height:0 !important;aspect-ratio:16/9}#cmpg-{{ section.id }} .shero .si img{padding:20px 28px 44px !important}}
+#cmpg-{{ section.id }} .natb{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .natb picture,#cmpg-{{ section.id }} .natb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+#cmpg-{{ section.id }} .natb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,24,10,.55),rgba(18,24,10,0) 55%)}
+#cmpg-{{ section.id }} .natx{position:relative;z-index:1;padding:56px 40px;max-width:640px;display:flex;flex-direction:column;gap:14px;color:#F6F3EC}
+#cmpg-{{ section.id }} .natx .lab,#cmpg-{{ section.id }} .natx .small{color:#F6F3EC;margin:0}
+#cmpg-{{ section.id }} .natx .disp{margin:0;color:#F6F3EC}
+@media (max-width:760px){#cmpg-{{ section.id }} .natb{min-height:460px}#cmpg-{{ section.id }} .natb img{object-position:50% 50%}#cmpg-{{ section.id }} .natb::after{background:linear-gradient(0deg,rgba(20,10,8,.7),rgba(20,10,8,0) 65%)}#cmpg-{{ section.id }} .natx{padding:28px 20px}}
+#cmpg-{{ section.id }} #evidencia .dlab{grid-column:1/-1;border-top:1px solid var(--rule);padding:0 20px}
+#cmpg-{{ section.id }} #evidencia .dlab summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+#cmpg-{{ section.id }} #evidencia .dlab summary::-webkit-details-marker{display:none}
+#cmpg-{{ section.id }} #evidencia .dlab .dplus{font-size:20px;transition:transform .2s}
+#cmpg-{{ section.id }} #evidencia .dlab[open] .dplus{transform:rotate(45deg)}
+#cmpg-{{ section.id }} #evidencia .dlab .otab{margin-bottom:10px}
+#cmpg-{{ section.id }} #evidencia .dlab .dnote{display:block;padding-bottom:16px}
+@media (max-width:760px){#cmpg-{{ section.id }} #evidencia .dlab{padding:0 14px}}
+#cmpg-{{ section.id }} #evidencia .dc{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:0}
+#cmpg-{{ section.id }} #evidencia .dimg{aspect-ratio:1/1 !important;height:auto;background:#fff;border-right:1px solid var(--rule);border-bottom:0}
+#cmpg-{{ section.id }} #evidencia .dimg img{object-fit:contain;padding:10px}
+#cmpg-{{ section.id }} #evidencia .dtx{padding:16px 20px;gap:4px}
+#cmpg-{{ section.id }} #evidencia .dn{font-size:34px;line-height:1}
+@media (max-width:760px){#cmpg-{{ section.id }} #evidencia .dc{grid-template-columns:104px minmax(0,1fr)}#cmpg-{{ section.id }} #evidencia .dtx{padding:12px 14px}#cmpg-{{ section.id }} #evidencia .dn{font-size:28px}}
+#cmpg-{{ section.id }} .sbcmp{display:flex;flex-direction:column;gap:24px;padding:56px 40px;background:#EFEBE3;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .sbh{display:flex;flex-direction:column;gap:12px}
+#cmpg-{{ section.id }} .sbt{border-top:1px solid var(--rule)}
+#cmpg-{{ section.id }} .sbr{display:grid;grid-template-columns:140px minmax(0,1fr) minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #D9D5CB;align-items:start}
+#cmpg-{{ section.id }} .sbr > span{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-top:2px}
+#cmpg-{{ section.id }} .sbr p{margin:0;font-size:15px;line-height:1.45}
+#cmpg-{{ section.id }} .sbhd b{display:flex;align-items:center;gap:8px;font-weight:500;font-size:15px}
+#cmpg-{{ section.id }} .sbhd i{width:10px;height:10px;border-radius:99px;box-shadow:inset 0 0 0 1px rgba(20,26,22,.2)}
+#cmpg-{{ section.id }} .evlink{padding:24px 40px;border-top:1px solid var(--rule)}
+#cmpg-{{ section.id }} .scomb{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:40px;background:#EFEBE3;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .scbr{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+#cmpg-{{ section.id }} .dchips{display:flex;flex-wrap:wrap;gap:6px}
+#cmpg-{{ section.id }} .dchips span{display:inline-flex;align-items:baseline;gap:6px;background:#F7F6F2;border:1px solid #E2DED4;border-radius:999px;padding:6px 12px;font-size:13px;color:#4A524C;white-space:nowrap}
+#cmpg-{{ section.id }} .dchips b{font-family:var(--fd);font-weight:500;font-size:16px;color:#141A16}
+#cmpg-{{ section.id }} .dchips .top{background:#EDE47A;border-color:#EDE47A;color:#141A16}
+#cmpg-{{ section.id }} .dec3{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){#cmpg-{{ section.id }} .sbcmp{padding:40px 16px}#cmpg-{{ section.id }} .sbr{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 12px}#cmpg-{{ section.id }} .sbr > span{grid-column:1/-1}#cmpg-{{ section.id }} .sbhd > span{display:none}#cmpg-{{ section.id }} .scomb{padding:32px 16px}#cmpg-{{ section.id }} .evlink{padding:20px 16px}#cmpg-{{ section.id }} .dec3{grid-template-columns:minmax(0,1fr)}#cmpg-{{ section.id }} .dchips span{padding:5px 9px;font-size:12px;gap:4px}#cmpg-{{ section.id }} .dchips b{font-size:15px}}
+#cmpg-{{ section.id }} .patents{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px 48px;align-items:center;padding:56px 40px;border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .pthd{display:flex;flex-direction:column;gap:12px}
+#cmpg-{{ section.id }} .ptrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-left:1px solid var(--rule)}
+#cmpg-{{ section.id }} .pti{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:8px 24px;border-right:1px solid var(--rule)}
+#cmpg-{{ section.id }} .plogo{filter:grayscale(1) brightness(.25);max-width:100%}
+#cmpg-{{ section.id }} .pword{font-size:26px;letter-spacing:-.01em;font-weight:500;line-height:28px}
+#cmpg-{{ section.id }} .ptlegal{grid-column:1/-1;font-size:11px}
+#cmpg-{{ section.id }} .soonlogos{display:flex;gap:14px;align-items:center;margin-top:8px}
+#cmpg-{{ section.id }} .soonlogos img{filter:grayscale(1) brightness(.25)}
+@media (max-width:760px){#cmpg-{{ section.id }} .patents{grid-template-columns:1fr;padding:40px 16px}#cmpg-{{ section.id }} .ptrow{grid-template-columns:1fr;border-left:0}#cmpg-{{ section.id }} .pti{flex-direction:row;justify-content:space-between;align-items:center;border-right:0;border-top:1px solid var(--rule);padding:16px 0}#cmpg-{{ section.id }} .pword{font-size:22px}}
+</style>
+{% schema %}
+{
+  "name": "Science v6 (prueba)",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fotos de la página"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_1",
+      "label": "Foto 1 · Flor y estigmas de azafrán dentro de un matraz de laboratorio"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_2",
+      "label": "Foto 2 · Lata de Azafrán Commons Science"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_3",
+      "label": "Foto 3 · Lata de Magnesio P.M. Commons Science"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_4",
+      "label": "Foto 4 · Hebras de azafrán"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_5",
+      "label": "Foto 5 · Piedra de magnesio en bruto"
+    },
+    {
+      "type": "image_picker",
+      "id": "cm_img_6",
+      "label": "Foto 6 · Bolsa plateada sellada de Commons con la leyenda Designed for"
+    },
+    {
+      "type": "header",
+      "content": "Logos de ingredientes de patente"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_affron",
+      "label": "Logo Affron®",
+      "info": "PNG transparente o SVG. Se muestra en tinta."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_reducose",
+      "label": "Logo Reducose®"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_eriomin",
+      "label": "Logo Eriomin®"
+    },
+    {
+      "type": "text",
+      "id": "logos_legal",
+      "label": "Leyenda legal de marcas",
+      "default": "Affron® es marca registrada de Pharmactive Biotech Products. Reducose® es marca registrada de Phynova Group. Eriomin® es marca registrada de Ingredients by Nature."
+    }
+  ]
+}
+{% endschema %}
+<style>
+#cmpg-{{ section.id }} .shero .si.sphoto{background:#eef0f1;overflow:hidden}
+#cmpg-{{ section.id }} .shero .si.sphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;padding:0 !important}
+#cmpg-{{ section.id }} .shero .si.sphoto .ffr{z-index:1}
+#cmpg-{{ section.id }} .shero .si.sphoto .fcap span{background:rgba(246,243,236,.88);padding:2px 6px}
+#cmpg-{{ section.id }} .soonc .ph.sph{position:relative;outline:0;overflow:hidden;background:#1d2022}
+#cmpg-{{ section.id }} .soonc .ph.sph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+#cmpg-{{ section.id }} .dimg img.dfull{object-fit:cover;padding:0;width:100%;height:100%}
+#cmpg-{{ section.id }} .ndx{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-bottom:1px solid var(--rule);background:#F3F2EE}
+#cmpg-{{ section.id }} .ndx-a{position:relative;min-height:0;border-right:1px dotted #8E959B}
+#cmpg-{{ section.id }} .ndx-a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+#cmpg-{{ section.id }} .ndx-b{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:56px 40px 40px}
+#cmpg-{{ section.id }} .ndx-t{display:flex;flex-direction:column;gap:14px;max-width:560px}
+#cmpg-{{ section.id }} .ndx-t .disp,#cmpg-{{ section.id }} .ndx-t .small{margin:0}
+#cmpg-{{ section.id }} .ndx-c{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+#cmpg-{{ section.id }} .ndx-c figure,#cmpg-{{ section.id }} .scifeed figure{margin:0}
+#cmpg-{{ section.id }} .ndx-c .fi{position:relative;aspect-ratio:4/5;overflow:hidden}
+#cmpg-{{ section.id }} .ndx-c .fi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cmpg-{{ section.id }} .ndx-c figcaption{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;margin-top:8px}
+#cmpg-{{ section.id }} .scif{border-bottom:1px solid var(--rule)}
+#cmpg-{{ section.id }} .scif .hd-row{border-bottom:0}
+#cmpg-{{ section.id }} .scifeed{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 40px 48px;scroll-padding:0 40px;scrollbar-width:none}
+#cmpg-{{ section.id }} .scifeed::-webkit-scrollbar{display:none}
+#cmpg-{{ section.id }} .scifeed figure{flex:0 0 clamp(240px,26vw,380px);scroll-snap-align:start}
+#cmpg-{{ section.id }} .scifeed figure{position:relative;aspect-ratio:4/5;overflow:hidden}
+#cmpg-{{ section.id }} .scifeed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){
+#cmpg-{{ section.id }} .ndx{grid-template-columns:minmax(0,1fr)}
+#cmpg-{{ section.id }} .ndx-a{aspect-ratio:4/5;border-right:0;border-bottom:1px dotted #8E959B}
+#cmpg-{{ section.id }} .ndx-b{padding:28px 16px 32px;gap:28px}
+#cmpg-{{ section.id }} .ndx-c{gap:12px}
+#cmpg-{{ section.id }} .shero .si.sphoto{aspect-ratio:4/5 !important}
+#cmpg-{{ section.id }} .scifeed{padding:0 16px 32px;scroll-padding:0 16px;gap:10px}
+#cmpg-{{ section.id }} .scifeed figure{flex-basis:78vw}
+#cmpg-{{ section.id }} .soonc .ph.sph{display:block;width:64px;height:80px;flex:0 0 64px}
+}
+</style>
+<style>
+#cmpg-{{ section.id }} .ndx-c{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi{background:#fdfdfe}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi img{object-fit:contain;padding:6% 8%}
+@media (max-width:760px){
+#cmpg-{{ section.id }} .ndx-c{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#cmpg-{{ section.id }} .ndx-c .fflask{grid-column:1 / -1}
+#cmpg-{{ section.id }} .ndx-c .fflask .fi{aspect-ratio:1/1}
+}
+</style>
+<style>/* etiqueta oscura */
+#cmpg-{{ section.id }} #evidencia{background:#141A16;color:#F6F3EC;--rule:#3A413B;--ink:#F6F3EC;--ink2:#B9BDB6}
+#cmpg-{{ section.id }} #evidencia .hd-row{border-bottom:1px solid #3A413B !important}
+#cmpg-{{ section.id }} #evidencia .sec-n,#cmpg-{{ section.id }} #evidencia .disp,#cmpg-{{ section.id }} #evidencia .small,#cmpg-{{ section.id }} #evidencia .tlink,#cmpg-{{ section.id }} #evidencia summary{color:#F6F3EC}
+#cmpg-{{ section.id }} #evidencia .hd-row .small{color:#B9BDB6}
+#cmpg-{{ section.id }} #evidencia .dec3{border-bottom:1px solid #3A413B !important}
+#cmpg-{{ section.id }} #evidencia .dec3 > *{border-right:1px solid #3A413B !important}
+#cmpg-{{ section.id }} #evidencia .dc{grid-template-columns:200px minmax(0,1fr)}
+#cmpg-{{ section.id }} #evidencia .dimg{border-right:1px solid #3A413B}
+#cmpg-{{ section.id }} #evidencia .dn{color:#DFF68F;font-size:48px}
+#cmpg-{{ section.id }} #evidencia .dk{color:#F6F3EC}
+#cmpg-{{ section.id }} #evidencia .dtx .small{color:#B9BDB6}
+#cmpg-{{ section.id }} #evidencia .dlab{border-top:1px solid #3A413B}
+#cmpg-{{ section.id }} #evidencia .otab{background:transparent;border-color:#3A413B}
+#cmpg-{{ section.id }} #evidencia .otab .orow,#cmpg-{{ section.id }} #evidencia .otab .ohd{border-bottom-color:#3A413B;color:#F6F3EC}
+#cmpg-{{ section.id }} #evidencia .dnote{color:#B9BDB6}
+#cmpg-{{ section.id }} #evidencia .sq{color:#F6F3EC;border-color:#F6F3EC}
+@media (max-width:760px){
+#cmpg-{{ section.id }} #evidencia .dc{grid-template-columns:120px minmax(0,1fr)}
+#cmpg-{{ section.id }} #evidencia .dn{font-size:36px}
+}
+</style>
